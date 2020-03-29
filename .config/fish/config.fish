@@ -7,12 +7,14 @@ set -gx LESS eFRX
 set -gx READER zathura
 set -gx FILE ranger
 set -gx TERMINAL kitty
-set -gx VISUAL vim
+set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
 set -gx GIT_EDITOR $VISUAL
 set -gx REACT_EDITOR $VISUAL
 
+# FIXME
 set -gx XDG_CONFIG_HOME "$HOME/.config"
+
 set -gx XDG_CURRENT_DESKTOP i3-gaps
 
 # add our user binaries to path
@@ -27,11 +29,11 @@ end
 # force 24 bit support
 set -gx fish_term24bit 1
 
-# set user key bindings
+# WHATSTHIS? 
 fish_user_key_bindings
 
-# Remove greeting
-set -gx fish_greeting
+# set start greeting
+set -gx fish_greeting "Hii, "(date)
 
 # Tomorrow Night color palette
 set -gx tomorrow_window 4d5057
@@ -66,13 +68,9 @@ set -gx fish_pager_color_progress $tomorrow_foreground --background=cyan
 # gnu utilities
 abbr -a storage du -ah --max-depth=1 | sort -hr
 abbr -a .. cd ..
-abbr -a ... cd ../..
-abbr -a ':q' exit
-abbr -a ls \ls -lG 
-abbr -a lsa ls -laG 
-abbr -a ll ls -ahlG 
-abbr -a lla ls -ahlG
-abbr -a grep grep 
+abbr -a :q exit
+abbr -a ls ls -lhG
+abbr -a lsa ls -lah
 abbr -a mkdir mkdir -p
 abbr -a mv mv -v
 abbr -a rm rm -rf
@@ -82,32 +80,29 @@ abbr -a scp scp -r
 # third party programs
 abbr -a tf terraform
 abbr -a resize mogrify -path . -resize 1600x1600\> -format jpg
-abbr -a myip curl -s icanhazip.com
+abbr -a public_ip curl -s icanhazip.com
 abbr -a cclip xclip -selection clipboard
 abbr -a npmg npm ls -g --depth=0
-abbr -a npmgls npm list -g --depth=0
-abbr -a ctrlkey setxkbmap -option caps:ctrl_modifier
-abbr -a sortmirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-abbr -a vpn sudo protonvpn connect -f
-abbr -a arch_usb sudo dd bs=4M if=arch.iso of=/dev/sdX status=progress oflag=sync
+abbr -a ctrl_key setxkbmap -option caps:ctrl_modifier
+abbr -a sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 abbr -a dotfiles /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
+abbr -a protonvpn sudo protonvpn connect -f
 
 # config files
-abbr -a vimrc $EDITOR ~/.vimrc
-abbr -a tmuxrc $EDITOR ~/.tmux.conf
-abbr -a kittyrc $EDITOR ~/.config/kitty/kitty.conf
-abbr -a tridactylrc $EDITOR ~/.config/tridactyl/tridactylrc
-abbr -a xinitrc $EDITOR ~/.xinitrc
-abbr -a i3rc $EDITOR ~/.config/i3/config
-abbr -a fishrc $EDITOR ~/.config/fish/config.fish
-abbr -a prompt $EDITOR ~/.config/fish/functions/fish_prompt.fish
-abbr -a config $EDITOR ~/.config/fish/config.fish
-abbr -a refresh source ~/.config/fish/config.fish
+abbr -a vimrc $EDITOR $HOME/.vimrc
+abbr -a tmuxrc $EDITOR $HOME/.tmux.conf
+abbr -a kittyrc $EDITOR $HOME/.config/kitty/kitty.conf
+abbr -a tridactylrc $EDITOR $HOME/.config/tridactyl/tridactylrc
+abbr -a xinitrc $EDITOR $HOME/.xinitrc
+abbr -a i3rc $EDITOR $HOME/.config/i3/config
+abbr -a fishrc $EDITOR $HOME/.config/fish/config.fish
+abbr -a prompt $EDITOR $HOME/.config/fish/functions/fish_prompt.fish
+abbr -a refresh source $HOME/.config/fish/config.fish
 
-# shortcuts
-abbr -a ds cd ~/Desktop
-abbr -a dw cd ~/Downloads
-abbr -a dm cd ~/Documents
+# file shortcuts
+abbr -a ds cd $HOME/Desktop
+abbr -a dw cd $HOME/Downloads
+abbr -a dm cd $HOME/Documents
 
 # automatically start X server at login
 if status --is-login
