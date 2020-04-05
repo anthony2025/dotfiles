@@ -4,7 +4,7 @@ set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 set -gx PAGER less
 set -gx LESS eFRX
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -gx MANPAGER "/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 set -gx READER zathura
 set -gx FILE nnn
 set -gx TERMINAL kitty
@@ -128,6 +128,8 @@ abbr -a dm $HOME/Documents
 # automatically start X server at login
 if status --is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+        # first set ls colors
+        bash ~/.local/share/lscolors.sh
         exec startx -- -keeptty
     end
 end
