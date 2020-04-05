@@ -3,13 +3,25 @@
 # this file requires xorg-xinit
 # run with $ startx
 
+# Disable beeps
+xset -b &
+
+# explicitely set backlight
+xbacklight -set 20 &
+
 # set caps to act as another ctrl key
-setxkbmap -option caps:ctrl_modifier
+setxkbmap -option caps:ctrl_modifier &
+
+# set background color
+xsetroot -solid '#800020' &
 
 # start applications to later let i3 arrange them at start
-# exec /usr/bin/$PASSMNG &
-# exec /usr/bin/$BROWSER &
-# exec /usr/bin/$TERMINAL &
+exec keepassxc &
+exec $BROWSER &
+exec $TERMINAL &
+
+# start notification manager
+exec dunst &
 
 # start windows manager
 exec i3

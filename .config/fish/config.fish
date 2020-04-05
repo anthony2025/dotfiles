@@ -15,22 +15,22 @@ set -gx GIT_EDITOR $VISUAL
 
 #  set custom xdg defaults
 set -gx XDG_CURRENT_DESKTOP i3-gaps
-set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_CONFIG_HOME $HOME/.config
 
 # local folders
-set -gx XDG_DESKTOP_DIR "$HOME/Desktop"
-set -gx XDG_DOCUMENTS_DIR "$HOME/Documents"
-set -gx XDG_DOWNLOAD_DIR "$HOME/Downloads"
+set -gx XDG_DESKTOP_DIR $HOME/Desktop
+set -gx XDG_DOCUMENTS_DIR $HOME/Documents
+set -gx XDG_DOWNLOAD_DIR $HOME/Downloads
 
 # remote folders
-set -gx XDG_MUSIC_DIR "$HOME/music"
-set -gx XDG_PICTURES_DIR "$HOME/pictures"
-set -gx XDG_PUBLICSHARE_DIR "$HOME/shared"
-set -gx XDG_TEMPLATES_DIR "$HOME/templates"
-set -gx XDG_VIDEOS_DIR "$HOME/videos"
+set -gx XDG_MUSIC_DIR $HOME/music
+set -gx XDG_PICTURES_DIR $HOME/pictures
+set -gx XDG_PUBLICSHARE_DIR $HOME/shared
+set -gx XDG_TEMPLATES_DIR $HOME/templates
+set -gx XDG_VIDEOS_DIR $HOME/videos
 
 # set path only if necessary
-set local_bin_path "$HOME/.local/bin"
+set local_bin_path $HOME/.local/bin
 if not contains $local_bin_path $PATH
     set fish_user_paths $fish_user_paths $local_bin_path
 end
@@ -53,7 +53,7 @@ set -gx fish_term24bit 1
 fish_user_key_bindings
 
 # set start greeting
-set -gx fish_greeting "Hii, "(date)
+set -gx fish_greeting "Hii, (date)"
 
 # Tomorrow Night color palette
 set -gx tomorrow_window 4d5057
@@ -121,9 +121,9 @@ abbr -a refresh source $HOME/.config/fish/config.fish
 abbr -a tridactyl $EDITOR $HOME/.config/tridactyl/tridactylrc
 
 # file shortcuts
-abbr -a ds $HOME/Desktop
-abbr -a dw $HOME/Downloads
-abbr -a dm $HOME/Documents
+abbr -a ds cd $HOME/Desktop
+abbr -a dw cd $HOME/Downloads
+abbr -a dm cd $HOME/Documents
 
 # automatically start X server at login
 if status --is-login
