@@ -28,6 +28,7 @@ SETUVAR _fish_abbr_dotfiles:/usr/bin/git\x20\x2d\x2dgit\x2ddir\x3d/home/anthony/
 SETUVAR _fish_abbr_ds:/home/anthony/Desktop
 SETUVAR _fish_abbr_dw:/home/anthony/Downloads
 SETUVAR _fish_abbr_fishrc:nvim\x20/home/anthony/\x2econfig/fish/config\x2efish
+SETUVAR _fish_abbr_gitrc:nvim\x20/home/anthony/\x2egitconfig
 SETUVAR _fish_abbr_grep:grep
 SETUVAR _fish_abbr_i3rc:nvim\x20/home/anthony/\x2econfig/i3/config
 SETUVAR _fish_abbr_kittyrc:nvim\x20/home/anthony/\x2econfig/kitty/kitty\x2econf
@@ -57,7 +58,7 @@ SETUVAR _fish_abbr_tridactylrc:nvim\x20/home/anthony/\x2econfig/tridactyl/tridac
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_vimrc:nvim\x20/home/anthony/\x2evimrc
 SETUVAR _fish_abbr_vpn:sudo\x20protonvpn\x20connect\x20\x2df
-SETUVAR _fish_abbr_xclip:xclip\x20\x2dselection\x20clipboard
+SETUVAR _fish_abbr_xclip:xclip\x20\x2ds\x20clipboard
 SETUVAR _fish_abbr_xinitrc:nvim\x20/home/anthony/\x2exinitrc
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2dr

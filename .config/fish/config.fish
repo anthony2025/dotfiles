@@ -92,9 +92,9 @@ abbr -a mv mv -v
 abbr -a rm rm -rf
 abbr -a cp cp -r
 abbr -a scp scp -r
+abbr -a xclip xclip -s clipboard
 
 # third party programs
-abbr -a tf terraform
 abbr -a resize mogrify -path . -resize 1600x1600\> -format jpg
 abbr -a public_ip curl -s icanhazip.com
 abbr -a npmg npm ls -g --depth=0
@@ -103,18 +103,11 @@ abbr -a sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --
 abbr -a dotfiles /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a protonvpn sudo protonvpn connect -f
 
-# clipboard helpers
-abbr -a xclip xclip -selection clipboard
-abbr -a cbf() { cat "$1" | cb; }
-abbr -a cbf() { cat "$1" | cb; }
-abbr -a cbssh="cbf ~/.ssh/id_rsa.pub"
-abbr -a cbwd="pwd | cb"
-abbr -a cbhs="cat $HISTFILE | tail -n 1 | cb"
-
 # config files
 abbr -a vimrc $EDITOR $HOME/.vimrc
 abbr -a tmuxrc $EDITOR $HOME/.tmux.conf
 abbr -a kittyrc $EDITOR $HOME/.config/kitty/kitty.conf
+abbr -a gitrc $EDITOR $HOME/.gitconfig
 abbr -a xinitrc $EDITOR $HOME/.xinitrc
 abbr -a i3rc $EDITOR $HOME/.config/i3/config
 abbr -a fishrc $EDITOR $HOME/.config/fish/config.fish
