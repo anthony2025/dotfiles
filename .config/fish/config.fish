@@ -4,6 +4,7 @@ set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 set -gx PAGER less
 set -gx LESS eFRX
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx READER zathura
 set -gx FILE nnn
 set -gx TERMINAL kitty
@@ -28,8 +29,11 @@ set -gx XDG_PUBLICSHARE_DIR "$HOME/shared"
 set -gx XDG_TEMPLATES_DIR "$HOME/templates"
 set -gx XDG_VIDEOS_DIR "$HOME/videos"
 
-# add our user binaries to path
-set PATH "$HOME/.local/bin" $PATH
+# set path only if necessary
+set local_bin_path "$HOME/.local/bin"
+if not contains $local_bin_path $PATH
+    set fish_user_paths $fish_user_paths $local_bin_path
+end
 
 # fetch fish plugins if needed
 if not functions -q fisher
@@ -85,11 +89,12 @@ set -gx fish_pager_color_progress $tomorrow_foreground --background=cyan
 abbr -a storage du -ah --max-depth=1 | sort -hr
 abbr -a .. cd ..
 abbr -a :q exit
-abbr -a ls ls -lhG
-abbr -a lsa ls -lah
+abbr -a ls ls -lhG --color=auto
+abbr -a lsa ls -lah --color=auto
+abbr -a grep grep --color=auto
 abbr -a mkdir mkdir -p
 abbr -a mv mv -v
-abbr -a rm rm -rf
+abbr -a rm rm -r
 abbr -a cp cp -r
 abbr -a scp scp -r
 abbr -a xclip xclip -s clipboard

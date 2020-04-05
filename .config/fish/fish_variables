@@ -29,13 +29,13 @@ SETUVAR _fish_abbr_ds:/home/anthony/Desktop
 SETUVAR _fish_abbr_dw:/home/anthony/Downloads
 SETUVAR _fish_abbr_fishrc:nvim\x20/home/anthony/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_gitrc:nvim\x20/home/anthony/\x2egitconfig
-SETUVAR _fish_abbr_grep:grep
+SETUVAR _fish_abbr_grep:grep\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_i3rc:nvim\x20/home/anthony/\x2econfig/i3/config
 SETUVAR _fish_abbr_kittyrc:nvim\x20/home/anthony/\x2econfig/kitty/kitty\x2econf
 SETUVAR _fish_abbr_ll:ls\x20\x2dahlG
 SETUVAR _fish_abbr_lla:ls\x20\x2dahlG
-SETUVAR _fish_abbr_ls:ls\x20\x2dlhG
-SETUVAR _fish_abbr_lsa:ls\x20\x2dlah
+SETUVAR _fish_abbr_ls:ls\x20\x2dlhG\x20\x2d\x2dcolor\x3dauto
+SETUVAR _fish_abbr_lsa:ls\x20\x2dlah\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dp
 SETUVAR _fish_abbr_mv:mv\x20\x2dv
 SETUVAR _fish_abbr_myip:curl\x20\x2ds\x20icanhazip\x2ecom
@@ -46,7 +46,7 @@ SETUVAR _fish_abbr_protonvpn:sudo\x20protonvpn\x20connect\x20\x2df
 SETUVAR _fish_abbr_public__ip:curl\x20\x2ds\x20icanhazip\x2ecom
 SETUVAR _fish_abbr_refresh:source\x20/home/anthony/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_resize:mogrify\x20\x2dpath\x20\x2e\x20\x2dresize\x201600x1600\x3e\x20\x2dformat\x20jpg
-SETUVAR _fish_abbr_rm:rm\x20\x2drf
+SETUVAR _fish_abbr_rm:rm\x20\x2dr
 SETUVAR _fish_abbr_scp:scp\x20\x2dr
 SETUVAR _fish_abbr_sort__mirrors:sudo\x20reflector\x20\x2d\x2dlatest\x20100\x20\x2d\x2dprotocol\x20https\x20\x2d\x2dsort\x20rate\x20\x2d\x2dsave\x20/etc/pacman\x2ed/mirrorlist
 SETUVAR _fish_abbr_sortmirrors:sudo\x20reflector\x20\x2d\x2dlatest\x20100\x20\x2d\x2dprotocol\x20https\x20\x2d\x2dsort\x20rate\x20\x2d\x2dsave\x20/etc/pacman\x2ed/mirrorlist

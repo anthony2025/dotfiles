@@ -43,7 +43,7 @@ function fish_prompt
   _print_in_color (prompt_hostname) $tomorrow_blue
   _print_in_color ' '(prompt_pwd) $tomorrow_purple
   _print_in_color ' ] ' $tomorrow_red
-  _print_in_color (battery) $tomorrow_orange
+  _print_in_color (battery)%% $tomorrow_orange
 
   __fish_git_prompt " %s"
 
