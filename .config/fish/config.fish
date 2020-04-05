@@ -5,25 +5,41 @@ set -gx LC_ALL en_US.UTF-8
 set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
-set -gx FILE ranger
+set -gx FILE nnn
 set -gx TERMINAL kitty
+set -gx BROWSER firefox-beta
 set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
 set -gx GIT_EDITOR $VISUAL
-set -gx REACT_EDITOR $VISUAL
 
-# FIXME
+#  set custom xdg defaults
+set -gx XDG_CURRENT_DESKTOP i3-gaps
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 
-set -gx XDG_CURRENT_DESKTOP i3-gaps
+# local folders
+set -gx XDG_DESKTOP_DIR "$HOME/Desktop"
+set -gx XDG_DOCUMENTS_DIR "$HOME/Documents"
+set -gx XDG_DOWNLOAD_DIR "$HOME/Downloads"
+
+# remote folders
+set -gx XDG_MUSIC_DIR "$HOME/music"
+set -gx XDG_PICTURES_DIR "$HOME/pictures"
+set -gx XDG_PUBLICSHARE_DIR "$HOME/shared"
+set -gx XDG_TEMPLATES_DIR "$HOME/templates"
+set -gx XDG_VIDEOS_DIR "$HOME/videos"
 
 # add our user binaries to path
 set PATH "$HOME/.local/bin" $PATH
 
-# fetch plugins if needed
+# fetch fish plugins if needed
 if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
+end
+
+# fetch tmux plugins if needed
+if not test -d $HOME/.tmux/plugins/tpm
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm && $HOME/.tmux/plugins/tpm/bin/install_plugins
 end
 
 # force 24 bit support
@@ -81,28 +97,35 @@ abbr -a scp scp -r
 abbr -a tf terraform
 abbr -a resize mogrify -path . -resize 1600x1600\> -format jpg
 abbr -a public_ip curl -s icanhazip.com
-abbr -a cclip xclip -selection clipboard
 abbr -a npmg npm ls -g --depth=0
 abbr -a ctrl_key setxkbmap -option caps:ctrl_modifier
 abbr -a sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 abbr -a dotfiles /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a protonvpn sudo protonvpn connect -f
 
+# clipboard helpers
+abbr -a xclip xclip -selection clipboard
+abbr -a cbf() { cat "$1" | cb; }
+abbr -a cbf() { cat "$1" | cb; }
+abbr -a cbssh="cbf ~/.ssh/id_rsa.pub"
+abbr -a cbwd="pwd | cb"
+abbr -a cbhs="cat $HISTFILE | tail -n 1 | cb"
+
 # config files
 abbr -a vimrc $EDITOR $HOME/.vimrc
 abbr -a tmuxrc $EDITOR $HOME/.tmux.conf
 abbr -a kittyrc $EDITOR $HOME/.config/kitty/kitty.conf
-abbr -a tridactylrc $EDITOR $HOME/.config/tridactyl/tridactylrc
 abbr -a xinitrc $EDITOR $HOME/.xinitrc
 abbr -a i3rc $EDITOR $HOME/.config/i3/config
 abbr -a fishrc $EDITOR $HOME/.config/fish/config.fish
 abbr -a prompt $EDITOR $HOME/.config/fish/functions/fish_prompt.fish
 abbr -a refresh source $HOME/.config/fish/config.fish
+abbr -a tridactyl $EDITOR $HOME/.config/tridactyl/tridactylrc
 
 # file shortcuts
-abbr -a ds cd $HOME/Desktop
-abbr -a dw cd $HOME/Downloads
-abbr -a dm cd $HOME/Documents
+abbr -a ds $HOME/Desktop
+abbr -a dw $HOME/Downloads
+abbr -a dm $HOME/Documents
 
 # automatically start X server at login
 if status --is-login

@@ -1,4 +1,5 @@
-function battery -d 'print battery charging status'
+# Defined in /tmp/fish.BpySid/battery.fish @ line 2
+function battery --description 'print battery charging status'
     for battery in /sys/class/power_supply/BAT0
         set capacity (cat $battery'/capacity')
         set stage (cat $battery'/status') # status is reserved
@@ -18,5 +19,6 @@ function battery -d 'print battery charging status'
       set color $tomorrow_white
     end
 
-    echo $stage $capacity 
+    # echo $stage $capacity
+    echo $capacity
 end
