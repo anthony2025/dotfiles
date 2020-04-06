@@ -1,6 +1,7 @@
 #!/bin/sh
 # starts an x11 server and a desktop environment whitin
 # this file requires xorg-xinit
+# only exec last line on this file
 # run with $ startx
 
 # Disable beeps
@@ -16,12 +17,12 @@ setxkbmap -option caps:ctrl_modifier &
 xsetroot -solid '#800020' &
 
 # start applications to later let i3 arrange them at start
-exec keepassxc &
-exec $BROWSER &
-exec $TERMINAL &
+keepassxc &
+$BROWSER &
+$TERMINAL &
 
 # start notification manager
-exec dunst &
+dunst &
 
 # start windows manager
 exec i3

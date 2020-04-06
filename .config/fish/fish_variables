@@ -23,10 +23,10 @@ SETUVAR _fish_abbr_cp:cp\x20\x2dr
 SETUVAR _fish_abbr_ctrl__key:setxkbmap\x20\x2doption\x20caps\x3actrl_modifier
 SETUVAR _fish_abbr_ctrlkey:setxkbmap\x20\x2doption\x20caps\x3actrl_modifier
 SETUVAR _fish_abbr_disks:du\x20\x2da\x20\x2dh\x20\x2d\x2dmax\x2ddepth\x3d1
-SETUVAR _fish_abbr_dm:/home/anthony/Documents
+SETUVAR _fish_abbr_dm:cd\x20/home/anthony/Documents
 SETUVAR _fish_abbr_dotfiles:/usr/bin/git\x20\x2d\x2dgit\x2ddir\x3d/home/anthony/\x2edotfiles\x20\x2d\x2dwork\x2dtree\x3d/home/anthony
-SETUVAR _fish_abbr_ds:/home/anthony/Desktop
-SETUVAR _fish_abbr_dw:/home/anthony/Downloads
+SETUVAR _fish_abbr_ds:cd\x20/home/anthony/Desktop
+SETUVAR _fish_abbr_dw:cd\x20/home/anthony/Downloads
 SETUVAR _fish_abbr_fishrc:nvim\x20/home/anthony/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_gitrc:nvim\x20/home/anthony/\x2egitconfig
 SETUVAR _fish_abbr_grep:grep\x20\x2d\x2dcolor\x3dauto
