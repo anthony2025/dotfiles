@@ -1,0 +1,14 @@
+--theme="Tomorrow-Night"
+
+# set number of spaces of tab-placeholders
+--tabs=2
+
+# Show line numbers, Git modifications and file header (but no grid)
+--style="full"
+
+# Use italic text on the terminal (not supported on all terminals)
+--italic-text=always
+
+# Use C++ syntax for .ino files
+--map-syntax "*.ino:C++"
+

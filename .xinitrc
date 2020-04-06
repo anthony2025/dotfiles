@@ -4,6 +4,9 @@
 # only exec last line on this file
 # run with $ startx
 
+# load settings for X server, do not ampersand this line
+[[ -f $HOME/.Xresources ]] && xrdb -merge -I$HOME $HOME/.Xresources
+
 # Disable beeps
 xset -b &
 
@@ -16,13 +19,11 @@ setxkbmap -option caps:ctrl_modifier &
 # set background color
 xsetroot -solid '#800020' &
 
-# start applications to later let i3 arrange them at start
-keepassxc &
-$BROWSER &
-$TERMINAL &
-
 # start notification manager
 dunst &
+
+# start a terminal
+$TERMINAL &
 
 # start windows manager
 exec i3

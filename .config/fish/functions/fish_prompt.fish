@@ -3,10 +3,10 @@ set fish_prompt_pwd_dir_length 0
 # Git prompt
 set __fish_git_prompt_showdirtystate yes
 set __fish_git_prompt_showupstream yes
-set __fish_git_prompt_color_branch $tomorrow_line
-set __fish_git_prompt_color_dirtystate $tomorrow_yellow
-set __fish_git_prompt_color_stagedstate $tomorrow_green
-set __fish_git_prompt_color_upstream $tomorrow_aqua
+set __fish_git_prompt_color_branch $base16_line
+set __fish_git_prompt_color_dirtystate $base16_yellow
+set __fish_git_prompt_color_stagedstate $base16_green
+set __fish_git_prompt_color_upstream $base16_aqua
 
 # Git Characters
 set __fish_git_prompt_char_dirtystate '*'
@@ -28,34 +28,34 @@ end
 
 function _prompt_color_for_status
   if test $argv[1] -eq 0
-    echo $tomorrow_green
+    echo $base16_green
   else
-    echo $tomorrow_red
+    echo $base16_red
   end
 end
 
 function fish_prompt
   set -l last_status $status
 
-  _print_in_color '[ ' $tomorrow_red
-  _print_in_color $USER $tomorrow_yellow
+  _print_in_color '[ ' $base16_red
+  _print_in_color $USER $base16_yellow
   _print_in_color @ (_prompt_color_for_status $last_status)
-  _print_in_color (prompt_hostname) $tomorrow_blue
-  _print_in_color ' '(prompt_pwd) $tomorrow_purple
-  _print_in_color ' ] ' $tomorrow_red
-  _print_in_color (battery)%% $tomorrow_orange
+  _print_in_color (prompt_hostname) $base16_blue
+  _print_in_color ' '(prompt_pwd) $base16_purple
+  _print_in_color ' ] ' $base16_red
+  _print_in_color (battery)%% $base16_orange
 
   __fish_git_prompt " %s"
 
   switch $fish_bind_mode
       case default
-          _print_in_color "\n❯ " $tomorrow_blue
+          _print_in_color "\n❯ " $base16_blue
       case insert
-          _print_in_color "\n❯ " $tomorrow_green
+          _print_in_color "\n❯ " $base16_green
       case replace-one
-          _print_in_color "\n❯ " $tomorrow_orange
+          _print_in_color "\n❯ " $base16_orange
       case visual
-          _print_in_color "\n❯ " $tomorrow_purple
+          _print_in_color "\n❯ " $base16_purple
   end
 end
 

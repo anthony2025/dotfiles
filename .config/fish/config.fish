@@ -53,37 +53,62 @@ set -gx fish_term24bit 1
 fish_user_key_bindings
 
 # set start greeting
-set -gx fish_greeting "Hii, (date)"
+set -gx fish_greeting Hii, (date)
 
 # Tomorrow Night color palette
-set -gx tomorrow_window 4d5057
-set -gx tomorrow_foreground c5c8c6
-set -gx tomorrow_background 1d1f21
-set -gx tomorrow_selection 373b41
-set -gx tomorrow_line 282a2e
-set -gx tomorrow_comment 969896
-set -gx tomorrow_red cc6666
-set -gx tomorrow_orange de935f
-set -gx tomorrow_yellow f0c674
-set -gx tomorrow_green b5bd68
-set -gx tomorrow_aqua 8abeb7
-set -gx tomorrow_blue 81a2be
-set -gx tomorrow_purple b294bb
+set -gx base16_color00 1d1f21
+set -gx base16_color01 282a2e
+set -gx base16_color02 373b41
+set -gx base16_color03 969896
+set -gx base16_color04 b4b7b4
+set -gx base16_color05 c5c8c6
+set -gx base16_color06 e0e0e0
+set -gx base16_color07 ffffff
+set -gx base16_color08 cc6666
+set -gx base16_color09 de935f
+set -gx base16_color0A f0c674
+set -gx base16_color0B b5bd68
+set -gx base16_color0C 8abeb7
+set -gx base16_color0D 81a2be
+set -gx base16_color0E b294bb
+set -gx base16_color0F a3685a
+
+# set color aliases
+set -gx base16_background $base16_color00
+set -gx base16_line $base16_color01
+set -gx base16_selection $base16_color02
+set -gx base16_comment $base16_color03
+set -gx base16_window $base16_color04
+set -gx base16_foreground $base16_color05
+set -gx base16_red $base16_color08
+set -gx base16_orange $base16_color09
+set -gx base16_yellow $base16_color0A
+set -gx base16_green $base16_color0B
+set -gx base16_aqua $base16_color0C
+set -gx base16_blue $base16_color0D
+set -gx base16_purple $base16_color0E
+
+# set colors for fzf
+# set -U FZF_DEFAULT_OPTS "
+  # --color=bg+:#$color01,bg:#$color00,spinner:#$color0C,hl:#$color0D
+  # --color=fg:#$color04,header:#$color0D,info:#$color0A,pointer:#$color0C
+  # --color=marker:#$color0C,fg+:#$color06,prompt:#$color0A,hl+:#$color0D
+# "
 
 # set terminal color palette
-set -gx fish_color_autosuggestion $tomorrow_comment
-set -gx fish_color_command $tomorrow_purple
-set -gx fish_color_comment $tomorrow_yellow
-set -gx fish_color_end $tomorrow_purple
-set -gx fish_color_error $tomorrow_red
-set -gx fish_color_param $tomorrow_blue
-set -gx fish_color_quote $tomorrow_green
-set -gx fish_color_redirection $tomorrow_aqua
-set -gx fish_color_search_match $tomorrow_yellow --background=black
+set -gx fish_color_autosuggestion $base16_comment
+set -gx fish_color_command $base16_purple
+set -gx fish_color_comment $base16_yellow
+set -gx fish_color_end $base16_purple
+set -gx fish_color_error $base16_red
+set -gx fish_color_param $base16_blue
+set -gx fish_color_quote $base16_green
+set -gx fish_color_redirection $base16_aqua
+set -gx fish_color_search_match $base16_yellow --background=black
 set -gx fish_pager_color_completion b3a06d
 set -gx fish_pager_color_description b3a06d
-set -gx fish_pager_color_prefix $tomorrow_aqua --underline
-set -gx fish_pager_color_progress $tomorrow_foreground --background=cyan
+set -gx fish_pager_color_prefix $base16_aqua --underline
+set -gx fish_pager_color_progress $base16_foreground --background=cyan
 
 # gnu utilities
 abbr -a storage du -ah --max-depth=1 | sort -hr
@@ -92,6 +117,7 @@ abbr -a :q exit
 abbr -a ls ls -lhG --color=auto
 abbr -a lsa ls -lah --color=auto
 abbr -a grep grep --color=auto
+abbr -a diff diff --color=auto
 abbr -a mkdir mkdir -p
 abbr -a mv mv -v
 abbr -a rm rm -r
@@ -125,11 +151,12 @@ abbr -a ds cd $HOME/Desktop
 abbr -a dw cd $HOME/Downloads
 abbr -a dm cd $HOME/Documents
 
+# source ls colors
+bash ~/.local/share/lscolors.sh
+
 # automatically start X server at login
 if status --is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        # first set ls colors
-        bash ~/.local/share/lscolors.sh
         exec startx -- -keeptty
     end
 end
