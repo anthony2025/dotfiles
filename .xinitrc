@@ -10,6 +10,9 @@
 # Disable beeps
 xset -b &
 
+# turn on num lock
+numlockx &
+
 # explicitely set backlight
 xbacklight -set 20 &
 
@@ -17,7 +20,7 @@ xbacklight -set 20 &
 setxkbmap -option caps:ctrl_modifier &
 
 # set background color
-xsetroot -solid '#800020' &
+xsetroot -solid '#900040' &
 
 # start notification manager
 dunst &

@@ -16,14 +16,13 @@ call plug#begin('~/.vim/plugged')
 " base and navigation 
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-vinegar'
-Plug 'qpkorr/vim-bufkill'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'vifm/vifm.vim'
+" Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'qpkorr/vim-bufkill'
+Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " editing utilities
 Plug 'tpope/vim-fugitive'
@@ -46,7 +45,7 @@ Plug 'ap/vim-css-color'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
-" Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 Plug 'dikiaap/minimalist'
 
 call plug#end()
@@ -61,28 +60,24 @@ syntax on
 " generate help for plugins
 silent! helptags ALL
 
-set termguicolors " enable 24 bit colors
-set completeopt-=preview
-set encoding   =utf-8
-set hidden			" buffers don't need to be saved to switch
-set nowrap			" don't wrap lines
-set shiftround		" use multiple of sw when indenting with '<' and '>'
+set encoding=utf-8
+set termguicolors   " enable 24 bit colors
+set hidden			    " buffers don't need to be saved to switch
+set nowrap			    " don't wrap lines
+set shiftround		  " use multiple of sw when indenting with '<' and '>'
 set showmatch     	" set show matching parenthesis
 set number        	" line numbers
 set relativenumber  " hybrid relative line numbers
-set ignorecase    	" ignore case when searching
 set smartcase     	" ignore case if all lowercase, case-sensitive otherwise
 set hlsearch      	" highlight search terms
 set incsearch     	" show search matches as you type
-set undolevels =1000 " use many muchos levels of undo
-set title           " change the terminal's title
+set undolevels=1000 " use many muchos levels of undo
 set novisualbell    " don't flash
 set noerrorbells    " don't beep
-set pastetoggle=<F2> "activate paste mode"
 set diffopt+=vertical " vertical layouts in diffs
-set colorcolumn=80 " renders a column at 80 characters
+set colorcolumn=80  " renders a column at 80 characters
 
-" dangerous, disable swap files, remember to always use git
+" dangerous, disable swap files
 set noswapfile
 
 " buftabline
@@ -144,7 +139,7 @@ let NERDTreeChDirMode = 2
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd VimEnter * if !argc()
-      " \ |   exe 'Startify'
+      \ |   exe 'Startify'
       " \ |   exe 'NERDTree'
       \ |   wincmd w
       \ | endif
@@ -156,7 +151,7 @@ nmap <silent> <leader>ev :vspl ~/.vimrc<CR>
 nmap <silent> <leader>sv :so ~/.vimrc<CR>
 
 " turn off highlighting after compeleting a search
-" nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " delimate cursor positioning after parens
 imap <C-c> <CR><Esc>O

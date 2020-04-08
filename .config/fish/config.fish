@@ -13,6 +13,11 @@ set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
 set -gx GIT_EDITOR $VISUAL
 
+# setup file finders
+set -gx FZF_DEFAULT_OPTS '--ansi'
+set -gx FZF_DEFAULT_COMMAND 'fd --type file --color=always'
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+
 #  set custom xdg defaults
 set -gx XDG_CURRENT_DESKTOP i3-gaps
 set -gx XDG_CONFIG_HOME $HOME/.config
@@ -89,11 +94,11 @@ set -gx base16_blue $base16_color0D
 set -gx base16_purple $base16_color0E
 
 # set colors for fzf
-# set -U FZF_DEFAULT_OPTS "
-  # --color=bg+:#$color01,bg:#$color00,spinner:#$color0C,hl:#$color0D
-  # --color=fg:#$color04,header:#$color0D,info:#$color0A,pointer:#$color0C
-  # --color=marker:#$color0C,fg+:#$color06,prompt:#$color0A,hl+:#$color0D
-# "
+set -U FZF_DEFAULT_OPTS "
+  --color=bg+:#$base16_color01,bg:#$base16_color00,spinner:#$base16_color0C,hl:#$base16_color0D
+  --color=fg:#$base16_color04,header:#$base16_color0D,info:#$base16_color0A,pointer:#$base16_color0C
+  --color=marker:#$base16_color0C,fg+:#$base16_color06,prompt:#$base16_color0A,hl+:#$base16_color0D
+"
 
 # set terminal color palette
 set -gx fish_color_autosuggestion $base16_comment
@@ -157,7 +162,7 @@ bash ~/.local/share/lscolors.sh
 # automatically start X server at login
 if status --is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx -- -keeptty
+        exec startx -- -keeptty &> /dev/null
     end
 end
 
