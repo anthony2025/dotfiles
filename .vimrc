@@ -2,49 +2,52 @@
 set nocompatible
 set nomodeline
 
-" Automatic installation {{{
+" Automatic installation  of plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !mkdir -p ~/.vim/autoload
     silent !curl -fLo ~/.vim/autoload/plug.vim
     			\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     au VimEnter * PlugInstall
 endif
-" }}}
 
 call plug#begin('~/.vim/plugged')
 
-" base and navigation 
+" base 
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'vifm/vifm.vim'
-" Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
+Plug 'qpkorr/vim-bufkill'
+Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-characterize'
+
+" navigation
+Plug 'ap/vim-buftabline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'qpkorr/vim-bufkill'
-Plug 'easymotion/vim-easymotion'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'vifm/vifm.vim', { 'on': 'Vifm' }
 
-" editing utilities
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdcommenter'
+" editing
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'easymotion/vim-easymotion'
 
-" language Support
+" language support
 Plug 'sheerun/vim-polyglot'
-Plug 'othree/yajs.vim',
-Plug 'othree/es.next.syntax.vim'
+" Plug 'othree/yajs.vim',
+" Plug 'othree/es.next.syntax.vim'
 Plug 'leshill/vim-json', { 'for': 'json' }
-Plug 'derekwyatt/vim-scala'
-Plug 'tmux-plugins/vim-tmux'
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
+Plug 'tpope/vim-afterimage'
 
 " cosmetics
 Plug 'ap/vim-css-color'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-buftabline'
 Plug 'mhinz/vim-startify'
 Plug 'dikiaap/minimalist'
 
