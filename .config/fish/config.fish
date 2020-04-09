@@ -128,7 +128,7 @@ abbr -a mv mv -v
 abbr -a rm rm -r
 abbr -a cp cp -r
 abbr -a scp scp -r
-abbr -a xclip xclip -s clipboard
+abbr -a xclip xclip -selection clipboard
 
 # third party programs
 abbr -a resize mogrify -path . -resize 1600x1600\> -format jpg

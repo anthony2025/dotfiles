@@ -59,7 +59,7 @@ SETUVAR _fish_abbr_tridactylrc:nvim\x20/home/anthony/\x2econfig/tridactyl/tridac
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_vimrc:nvim\x20/home/anthony/\x2evimrc
 SETUVAR _fish_abbr_vpn:sudo\x20protonvpn\x20connect\x20\x2df
-SETUVAR _fish_abbr_xclip:xclip\x20\x2ds\x20clipboard
+SETUVAR _fish_abbr_xclip:xclip\x20\x2dselection\x20clipboard
 SETUVAR _fish_abbr_xinitrc:nvim\x20/home/anthony/\x2exinitrc
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2dr
