@@ -20,14 +20,16 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
 Plug 'qpkorr/vim-bufkill'
+Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 
 " navigation
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
 Plug 'vifm/vifm.vim', { 'on': 'Vifm' }
-Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
 
 " editing
 Plug 'tpope/vim-commentary'
@@ -35,7 +37,6 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'easymotion/vim-easymotion'
 
 " language support
 Plug 'tpope/vim-characterize'
@@ -51,6 +52,7 @@ Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'dikiaap/minimalist'
+"Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -64,7 +66,6 @@ syntax on
 " generate help for plugins
 silent! helptags ALL
 
-set encoding=utf-8
 set termguicolors   " enable 24 bit colors
 set hidden			    " buffers don't need to be saved to switch
 set nowrap			    " don't wrap lines
@@ -73,16 +74,11 @@ set showmatch     	" set show matching parenthesis
 set number        	" line numbers
 " set relativenumber  " hybrid relative line numbers
 set smartcase     	" ignore case if all lowercase, case-sensitive otherwise
-set hlsearch      	" highlight search terms
-set incsearch     	" show search matches as you type
 set undolevels=1000 " use many muchos levels of undo
 set novisualbell    " don't flash
 set noerrorbells    " don't beep
 set diffopt+=vertical " vertical layouts in diffs
 set colorcolumn=80  " renders a column at 80 characters
-
-" dangerous, disable swap files
-" set noswapfile
 
 " buftabline
 let g:buftabline_show = 1
@@ -117,8 +113,8 @@ let g:mapleader = "\<SPACE>"
 nmap <leader>w :%s/\s\+$//<CR>
 
 " NERDTree setting stuff
-nmap <silent> <leader>e :NERDTreeToggle<CR>
-nmap <silent> <leader>f :NERDTree<CR>
+nmap <silent> <leader>f :NERDTreeToggle<CR>
+nmap <silent> <leader>ff :NERDTree<CR>
 let NERDTreeHijackNetrw = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
@@ -136,10 +132,10 @@ autocmd VimEnter * if !argc()
       \ | endif
 
 " Quickly edit the vimrc file
-nmap <silent> <leader>ev :vspl ~/.vimrc<CR>
+nmap <silent> <leader>c :vspl ~/.config/nvim/init.vim<CR>
 
 " Quickly reload the vimrc file
-nmap <silent> <leader>r :so ~/.vimrc<CR>
+nmap <silent> <leader>r :so ~/.config/nvim/init.vim<CR>
 
 " turn off highlighting after compeleting a search
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -157,7 +153,6 @@ set tabstop     =2 " The width of a \t is to 2.
 set shiftwidth  =2 " Indents will have a width of 2
 set softtabstop =2 " Sets the number of columns for a \t
 set mouse=a        " I think it activates mouse mode for all something
-set autoread
 set expandtab
 
 " folding
@@ -176,8 +171,7 @@ let g:indent_guides_guide_size = 1
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 
-" colors and theme
-set background=dark
+" set theme
 colorscheme minimalist
 
 " disable default EasyMotion mappings

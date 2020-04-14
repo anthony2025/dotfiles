@@ -4,7 +4,6 @@ set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 set -gx PAGER less
 set -gx LESS eFRX
-set -gx MANPAGER "/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 set -gx READER zathura
 set -gx FILE nnn
 set -gx TERMINAL kitty
@@ -12,11 +11,6 @@ set -gx BROWSER firefox-beta
 set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
 set -gx GIT_EDITOR $VISUAL
-
-# setup file finders
-set -gx FZF_DEFAULT_OPTS '--ansi'
-set -gx FZF_DEFAULT_COMMAND 'fd --type file --color=always'
-set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 #  set custom xdg defaults
 set -gx XDG_CURRENT_DESKTOP i3-gaps
@@ -93,13 +87,17 @@ set -gx base16_aqua $base16_color0C
 set -gx base16_blue $base16_color0D
 set -gx base16_purple $base16_color0E
 
+# setup fzf
+set -gx FZF_DEFAULT_OPTS '--ansi'
+set -gx FZF_DEFAULT_COMMAND 'fd --type file --color=always'
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+
 # set colors for fzf
 set -U FZF_DEFAULT_OPTS "
   --color=bg+:#$base16_color01,bg:#$base16_color00,spinner:#$base16_color0C,hl:#$base16_color0D
   --color=fg:#$base16_color04,header:#$base16_color0D,info:#$base16_color0A,pointer:#$base16_color0C
   --color=marker:#$base16_color0C,fg+:#$base16_color06,prompt:#$base16_color0A,hl+:#$base16_color0D
 "
-
 # set terminal color palette
 set -gx fish_color_autosuggestion $base16_comment
 set -gx fish_color_command $base16_purple
@@ -116,48 +114,55 @@ set -gx fish_pager_color_prefix $base16_aqua --underline
 set -gx fish_pager_color_progress $base16_foreground --background=cyan
 
 # gnu utilities
-abbr -a storage du -ah --max-depth=1 | sort -hr
-abbr -a .. cd ..
-abbr -a :q exit
-abbr -a ls ls -lhG --color=auto
-abbr -a lsa ls -lah --color=auto
-abbr -a grep grep --color=auto
-abbr -a diff diff --color=auto
-abbr -a mkdir mkdir -p
-abbr -a mv mv -v
-abbr -a rm rm -r
-abbr -a cp cp -r
-abbr -a scp scp -r
-abbr -a xclip xclip -selection clipboard
+abbr -a -g .. cd ..
+abbr -a -g :q exit
+abbr -a -g ls ls -lhG --color=auto
+abbr -a -g lsa ls -lah --color=auto
+abbr -a -g grep grep --color=auto
+abbr -a -g diff diff --color=auto
+abbr -a -g mkdir mkdir -p
+abbr -a -g mv mv -v
+abbr -a -g rm rm -r
+abbr -a -g cp cp -r
+abbr -a -g scp scp -r
+abbr -a -g ipa ip a
+abbr -a -g xclip xclip -selection clipboard
 
-# third party programs
-abbr -a resize mogrify -path . -resize 1600x1600\> -format jpg
-abbr -a public_ip curl -s icanhazip.com
-abbr -a npmg npm ls -g --depth=0
-abbr -a ctrl_key setxkbmap -option caps:ctrl_modifier
-abbr -a sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-abbr -a dotfiles /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
-abbr -a protonvpn sudo protonvpn connect -f
+# utilities
+abbr -a -g resize mogrify -path . -resize 1600x1600\> -format jpg
+abbr -a -g public_ip curl -s icanhazip.com
+abbr -a -g npmg npm ls -g --depth=0
+abbr -a -g ctrl_key setxkbmap -option caps:ctrl_modifier
+abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+abbr -a -g dotfiles /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
+abbr -a -g usage du -ah --max-depth=1 | sort -hr
+abbr -a -g protonvpn sudo protonvpn
+abbr -a -g cat bat
 
 # config files
-abbr -a vimrc $EDITOR $HOME/.vimrc
-abbr -a tmuxrc $EDITOR $HOME/.tmux.conf
-abbr -a kittyrc $EDITOR $HOME/.config/kitty/kitty.conf
-abbr -a gitrc $EDITOR $HOME/.gitconfig
-abbr -a xinitrc $EDITOR $HOME/.xinitrc
-abbr -a i3rc $EDITOR $HOME/.config/i3/config
-abbr -a fishrc $EDITOR $HOME/.config/fish/config.fish
-abbr -a prompt $EDITOR $HOME/.config/fish/functions/fish_prompt.fish
-abbr -a refresh source $HOME/.config/fish/config.fish
-abbr -a tridactyl $EDITOR $HOME/.config/tridactyl/tridactylrc
+abbr -a -g vimrc $EDITOR $HOME/.config/nvim/init.vim
+abbr -a -g tmuxrc $EDITOR $HOME/.tmux.conf
+abbr -a -g kittyrc $EDITOR $HOME/.config/kitty/kitty.conf
+abbr -a -g gitrc $EDITOR $HOME/.gitconfig
+abbr -a -g xinitrc $EDITOR $HOME/.xinitrc
+abbr -a -g i3rc $EDITOR $HOME/.config/i3/config
+abbr -a -g fishrc $EDITOR $HOME/.config/fish/config.fish
+abbr -a -g prompt $EDITOR $HOME/.config/fish/functions/fish_prompt.fish
+abbr -a -g refresh source $HOME/.config/fish/config.fish
+abbr -a -g tridactyl $EDITOR $HOME/.config/tridactyl/tridactylrc
 
 # file shortcuts
-abbr -a ds cd $HOME/Desktop
-abbr -a dw cd $HOME/Downloads
-abbr -a dm cd $HOME/Documents
+abbr -a -g ds cd $HOME/Desktop
+abbr -a -g dw cd $HOME/Downloads
+abbr -a -g dm cd $HOME/Documents
 
 # source ls colors
-bash ~/.local/share/lscolors.sh
+bax ~/.local/bin/lscolors.sh
+
+# source autojump cache
+if test -f /usr/share/autojump/autojump.fish
+	source /usr/share/autojump/autojump.fish
+end
 
 # automatically start X server at login
 if status --is-login
