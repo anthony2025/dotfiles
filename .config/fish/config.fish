@@ -8,13 +8,12 @@ set -gx READER zathura
 set -gx FILE nnn
 set -gx TERMINAL kitty
 set -gx BROWSER firefox-beta
-set -gx VISUAL nvim
-set -gx EDITOR $VISUAL
-set -gx GIT_EDITOR $VISUAL
+set -gx EDITOR nvim 
+set -gx VISUAL $EDITOR
+set -gx GIT_EDITOR $$EDITOR
 
 #  set custom xdg defaults
 set -gx XDG_CURRENT_DESKTOP i3-gaps
-set -gx XDG_CONFIG_HOME $HOME/.config
 
 # local folders
 set -gx XDG_DESKTOP_DIR $HOME/Desktop
@@ -28,10 +27,16 @@ set -gx XDG_PUBLICSHARE_DIR $HOME/shared
 set -gx XDG_TEMPLATES_DIR $HOME/templates
 set -gx XDG_VIDEOS_DIR $HOME/videos
 
-# set path only if necessary
+# add local bin path only if necessary
 set local_bin_path $HOME/.local/bin
 if not contains $local_bin_path $PATH
-    set fish_user_paths $fish_user_paths $local_bin_path
+    set fish_user_paths $fish_user_paths $local_bin_path 
+end
+
+# add doom emacs bin path only if necessary
+set emacs_doom_path $HOME/.emacs.d/bin
+if not contains $emacs_doom_path $PATH
+    set fish_user_paths $fish_user_paths $emacs_doom_path
 end
 
 # fetch fish plugins if needed
@@ -87,17 +92,20 @@ set -gx base16_aqua $base16_color0C
 set -gx base16_blue $base16_color0D
 set -gx base16_purple $base16_color0E
 
-# setup fzf
-set -gx FZF_DEFAULT_OPTS '--ansi'
-set -gx FZF_DEFAULT_COMMAND 'fd --type file --color=always'
-set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-
 # set colors for fzf
 set -U FZF_DEFAULT_OPTS "
   --color=bg+:#$base16_color01,bg:#$base16_color00,spinner:#$base16_color0C,hl:#$base16_color0D
   --color=fg:#$base16_color04,header:#$base16_color0D,info:#$base16_color0A,pointer:#$base16_color0C
   --color=marker:#$base16_color0C,fg+:#$base16_color06,prompt:#$base16_color0A,hl+:#$base16_color0D
 "
+# setup fzf
+set -gx FZF_DEFAULT_OPTS '--ansi'
+set -gx FZF_DEFAULT_COMMAND 'fd --type file --color=always'
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+
+# setup ack
+set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
+
 # set terminal color palette
 set -gx fish_color_autosuggestion $base16_comment
 set -gx fish_color_command $base16_purple
@@ -155,6 +163,9 @@ abbr -a -g tridactyl $EDITOR $HOME/.config/tridactyl/tridactylrc
 abbr -a -g ds cd $HOME/Desktop
 abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
+
+# move xauthority file away from home directory
+set -gx XAUTHORITY $XDG_RUNTIME_DIR/Xauthority
 
 # source ls colors
 bax ~/.local/bin/lscolors.sh

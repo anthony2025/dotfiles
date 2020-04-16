@@ -33,7 +33,6 @@ SETUVAR _fish_abbr_resize:mogrify\x20\x2dpath\x20\x2e\x20\x2dresize\x201600x1600
 SETUVAR _fish_abbr_rm:rm\x20\x2dr
 SETUVAR _fish_abbr_scp:scp\x20\x2dr
 SETUVAR _fish_abbr_sort__mirrors:sudo\x20reflector\x20\x2d\x2dlatest\x20100\x20\x2d\x2dprotocol\x20https\x20\x2d\x2dsort\x20rate\x20\x2d\x2dsave\x20/etc/pacman\x2ed/mirrorlist
-SETUVAR _fish_abbr_storage:du\x20\x2dah\x20\x2d\x2dmax\x2ddepth\x3d1
 SETUVAR _fish_abbr_tmuxrc:nvim\x20/home/anthony/\x2etmux\x2econf
 SETUVAR _fish_abbr_tridactyl:nvim\x20/home/anthony/\x2econfig/tridactyl/tridactylrc
 SETUVAR _fish_abbr_vimrc:nvim\x20/home/anthony/\x2evimrc

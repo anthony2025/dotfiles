@@ -17,11 +17,11 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " base
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'svermeulen/vim-yoink'
 
 " navigation
 Plug 'junegunn/fzf'
@@ -30,19 +30,20 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
 Plug 'vifm/vifm.vim', { 'on': 'Vifm' }
 Plug 'easymotion/vim-easymotion'
+Plug 'unblevable/quick-scope'
 
 " editing
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'sjl/gundo.vim'
+
 
 " language support
 Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
-Plug 'leshill/vim-json', { 'for': 'json' }
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'tpope/vim-afterimage'
 
 " cosmetics
@@ -137,6 +138,9 @@ nmap <silent> <leader>c :vspl ~/.config/nvim/init.vim<CR>
 " Quickly reload the vimrc file
 nmap <silent> <leader>r :so ~/.config/nvim/init.vim<CR>
 
+" Quickly install new plugins
+nmap <leader>i :PlugInstall<CR>
+
 " turn off highlighting after compeleting a search
 nmap <silent> <leader>/ :nohlsearch<CR>
 
@@ -226,10 +230,20 @@ let g:lightline = {
 " disable annoying man page shortcut
 nnoremap <S-k> <Nop>
 
-" vim-scala
-let g:scala_sort_across_groups = 1
-
 " vim-startify
 let g:startify_fortune_use_unicode = 1
 let g:startify_change_to_dir = 0
 
+" vim-yoink
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+
+" vim-gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" quick-scope
+" trigger a highlight in the appropriate direction when pressing these keys
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
