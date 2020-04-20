@@ -57,7 +57,7 @@ set -gx fish_term24bit 1
 fish_user_key_bindings
 
 # set start greeting
-set -gx fish_greeting Hii, (TZ='America/New_York' date)
+set -gx fish_greeting Hii, (date)
 
 # Tomorrow Night color palette
 set -gx base16_color00 1d1f21

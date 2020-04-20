@@ -22,6 +22,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'svermeulen/vim-yoink'
+Plug 'sjl/gundo.vim'
 
 " navigation
 Plug 'junegunn/fzf'
@@ -37,8 +38,8 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'sjl/gundo.vim'
-
+Plug 'matze/vim-move'
+Plug 'mboughaba/vim-lessmess'
 
 " language support
 Plug 'tpope/vim-characterize'
@@ -110,9 +111,6 @@ nnoremap <S-Tab> :bprevious<CR>
 " change the mapleader from \ to spacebar
 let g:mapleader = "\<SPACE>"
 
-" delete whitespace
-nmap <leader>w :%s/\s\+$//<CR>
-
 " NERDTree setting stuff
 nmap <silent> <leader>f :NERDTreeToggle<CR>
 nmap <silent> <leader>ff :NERDTree<CR>
@@ -139,7 +137,7 @@ nmap <silent> <leader>c :vspl ~/.config/nvim/init.vim<CR>
 nmap <silent> <leader>r :so ~/.config/nvim/init.vim<CR>
 
 " Quickly install new plugins
-nmap <leader>i :PlugInstall<CR>
+nmap <silent> <leader>i :PlugInstall<CR>
 
 " turn off highlighting after compeleting a search
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -150,7 +148,7 @@ imap jj <Esc>
 " open Startify window
 nmap <silent> <leader>z :Startify<cr>
 
-"jtab settings
+" tab settings
 set preserveindent " Preserve indent structure when changing indent level
 set copyindent     " Copy the indent level of previous lines
 set tabstop     =2 " The width of a \t is to 2.
