@@ -1,0 +1,308 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/anthony/
+	..
+1586335895
+'b
+	/home/anthony/bin/
+	..
+1586335895
+'h
+	/home/anthony/
+	..
+1586335895
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/etc/udev
+	rules.d
+2
+d/etc/udev/rules.d
+	51-disable-DS3-and-DS4-motion-controls.rules
+1
+d/etc/systemd/user
+	sockets.target.wants
+1
+d/etc/systemd/user/sockets.target.wants
+	..
+0
+d/etc/systemd/user
+	..
+0
+d/home/anthony
+	music
+8
+d/home/anthony/music
+	..
+0
+d/home/anthony
+	Desktop
+1
+d/home/anthony/Desktop
+	..
+0
+d/home/anthony
+	Desktop
+1
+d/home/anthony/Desktop
+	..
+0
+d/home/anthony
+	Downloads
+3
+d/home/anthony/Downloads
+	..
+0
+d/home/anthony
+	code
+7
+d/home/anthony/code
+	juice-shop
+4
+d/home/anthony/code/juice-shop
+	Gruntfile.js
+22
+d/home/anthony
+	Downloads
+9
+d/home/anthony/Downloads
+	src
+2
+d/home/anthony/Downloads/src
+	main
+1
+d/home/anthony/Downloads/src/main
+	java
+1
+d/home/anthony/Downloads/src/main/java
+	com
+1
+d/home/anthony/Downloads/src/main/java/com
+	example
+1
+d/home/anthony/Downloads/src/main/java/com/example
+	examplemod
+1
+d/home/anthony/Downloads/src/main/java/com/example/examplemod
+	ExampleMod.java
+1
+d/home/anthony/Downloads
+	..
+0
+d/home/anthony
+	Downloads
+9
+d/home/anthony/.minecraft
+	assets
+1
+d/home/anthony/.minecraft/assets
+	skins
+4
+d/home/anthony/.minecraft
+	bin
+2
+d/home/anthony/.minecraft/bin
+	..
+0
+d/home/anthony/.minecraft
+	saves
+10
+d/home/anthony/.minecraft/saves
+	..
+0
+d/home/anthony/.minecraft
+	versions
+12
+d/home/anthony/.minecraft/versions
+	..
+0
+d/home/anthony/.minecraft
+	config
+3
+d/home/anthony/.minecraft/config
+	controllable
+1
+d/home/anthony/.minecraft/config/controllable
+	mappings
+1
+d/home/anthony/.minecraft/config/controllable/mappings
+	..
+0
+d/home/anthony/.minecraft/config/controllable
+	..
+0
+d/home/anthony/.minecraft/config
+	jei
+2
+d/home/anthony/.minecraft/config/jei
+	..
+0
+d/home/anthony/.minecraft/config
+	waila
+3
+d/home/anthony/.minecraft/config/waila
+	waila.json
+1
+d/home/anthony/.minecraft
+	config
+3
+d/home/anthony/.minecraft/config
+	waila
+3
+d/home/anthony/.minecraft/config/waila
+	..
+0
+d/home/anthony/.minecraft/config
+	quark-common.toml
+9
+d/home/anthony/.minecraft
+	config
+3
+d/home/anthony/.minecraft/config
+	forge-client.toml
+9
+d/etc
+	X11
+4
+d/etc/X11
+	xinit
+1
+d/etc/X11/xinit
+	xinitrc.d
+1
+d/etc/X11/xinit/xinitrc.d
+	..
+0
+d/etc/X11/xinit
+	..
+0
+d/etc/X11
+	..
+0
+d/etc
+	X11
+4
+d/etc/X11
+	..
+0
+d/etc
+	UPower
+3
+d/etc/UPower
+	..
+0
+d/etc
+	acpi
+5
+d/etc/acpi
+	events
+1
+d/etc/acpi/events
+	..
+0
+d/etc/acpi
+	..
+0
+d/etc
+	fonts
+18
+d/etc/fonts
+	..
+0
+d/etc
+	fonts
+18
+d/etc/fonts
+	local.conf
+5
+d/etc
+	systemd
+28
+d/etc/systemd
+	system
+2
+d/etc/systemd/system
+	getty.target.wants
+1
+d
+
+# Right window history (oldest to newest):
+D/home/anthony
+	..
+0
+D/home
+	anthony
+1
+D/
+	sbin
+12
+D
+
+# Command line history (oldest to newest):
+:colorscheme
+:set hidden
+:help hidden
+:help 
+:help
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+pbackups
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/anthony/.local/share/vifm/Trash/000_nps-common.toml
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/anthony/.local/share/vifm/Trash/000_New World
+	/home/anthony/.minecraft/saves/New World
+t/home/anthony/.local/share/vifm/Trash/000_1.14.4
+	/home/anthony/.minecraft/versions/1.14.4
+t/home/anthony/.local/share/vifm/Trash/000_1.14.4-OptiFine_HD_U_F5
+	/home/anthony/.minecraft/versions/1.14.4-OptiFine_HD_U_F5
+t/home/anthony/.local/share/vifm/Trash/000_1.14.4-forge-28.2.0
+	/home/anthony/.minecraft/versions/1.14.4-forge-28.2.0
+t/home/anthony/.local/share/vifm/Trash/000_20w12a
+	/home/anthony/.minecraft/versions/20w12a
+t/home/anthony/.local/share/vifm/Trash/000_20w13b
+	/home/anthony/.minecraft/versions/20w13b
+t/home/anthony/.local/share/vifm/Trash/000_craftingtweaks-common.toml
+	/home/anthony/.minecraft/config/craftingtweaks-common.toml
+t/home/anthony/.local/share/vifm/Trash/000_craftingtweaks-client.toml
+	/home/anthony/.minecraft/config/craftingtweaks-client.toml
+t/home/anthony/.local/share/vifm/Trash/000_jeresources-common.toml
+	/home/anthony/.minecraft/config/jeresources-common.toml
+t/home/anthony/.local/share/vifm/Trash/000_jeresources.toml
+	/home/anthony/.minecraft/config/jeresources.toml
+t/home/anthony/.local/share/vifm/Trash/000_kleeslabs-common.toml
+	/home/anthony/.minecraft/config/kleeslabs-common.toml
+t/home/anthony/.local/share/vifm/Trash/000_nps-common.toml
+	/home/anthony/.minecraft/config/nps-common.toml
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].1
+]F
+s0
