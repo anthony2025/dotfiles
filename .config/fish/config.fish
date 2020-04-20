@@ -8,7 +8,7 @@ set -gx READER zathura
 set -gx FILE nnn
 set -gx TERMINAL kitty
 set -gx BROWSER firefox-beta
-set -gx EDITOR nvim 
+set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $$EDITOR
 
@@ -30,7 +30,7 @@ set -gx XDG_VIDEOS_DIR $HOME/videos
 # add local bin path only if necessary
 set local_bin_path $HOME/.local/bin
 if not contains $local_bin_path $PATH
-    set fish_user_paths $fish_user_paths $local_bin_path 
+    set fish_user_paths $fish_user_paths $local_bin_path
 end
 
 # add doom emacs bin path only if necessary
@@ -53,7 +53,7 @@ end
 # force 24 bit support
 set -gx fish_term24bit 1
 
-# WHATSTHIS? 
+# WHATSTHIS?
 fish_user_key_bindings
 
 # set start greeting
@@ -168,11 +168,11 @@ abbr -a -g dm cd $HOME/Documents
 set -gx XAUTHORITY $XDG_RUNTIME_DIR/Xauthority
 
 # source ls colors
-bax ~/.local/bin/lscolors.sh
+source $HOME/.local/bin/lscolors.sh
 
 # source autojump cache
 if test -f /usr/share/autojump/autojump.fish
-	source /usr/share/autojump/autojump.fish
+  source /usr/share/autojump/autojump.fish
 end
 
 # automatically start X server at login
