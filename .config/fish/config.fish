@@ -167,9 +167,6 @@ abbr -a -g dm cd $HOME/Documents
 # move xauthority file away from home directory
 set -gx XAUTHORITY $XDG_RUNTIME_DIR/Xauthority
 
-# source ls colors
-source $HOME/.local/bin/lscolors.sh
-
 # source autojump cache
 if test -f /usr/share/autojump/autojump.fish
   source /usr/share/autojump/autojump.fish

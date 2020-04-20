@@ -68,6 +68,9 @@ syntax on
 " generate help for plugins
 silent! helptags ALL
 
+" disable swap files
+set noswapfile
+
 set termguicolors   " enable 24 bit colors
 set hidden			    " buffers don't need to be saved to switch
 set nowrap			    " don't wrap lines

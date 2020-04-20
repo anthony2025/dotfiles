@@ -38,8 +38,9 @@ floating_modifier $mod
 # set split as default layout
 workspace_layout default
 
-# remove windows borders
-default_border none
+# remove outside window borders
+hide_edge_borders both
+default_border pixel 2
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block
@@ -177,4 +178,3 @@ for_window [class="fullscreen"] fullscreen enable
 
 # arrange applications in specific workspaces
 # assign [class="terminal"] $ws1
-
