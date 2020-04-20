@@ -1,0 +1,9 @@
+# /etc/systemd/network/wlp4s0.network
+[Match]
+Name=wlp4s0
+
+[Network]
+DHCP=ipv4
+
+[Link]
+#MTUBytes=1470
