@@ -34,7 +34,7 @@ if not contains $local_bin_path $PATH
 end
 
 # add doom emacs bin path only if necessary
-set emacs_doom_path $HOME/.emacs.d/bin
+set emacs_doom_path $HOME/.config/emacs/bin
 if not contains $emacs_doom_path $PATH
     set fish_user_paths $fish_user_paths $emacs_doom_path
 end
@@ -57,7 +57,7 @@ set -gx fish_term24bit 1
 fish_user_key_bindings
 
 # set start greeting
-set -gx fish_greeting Hii, (date)
+set -gx fish_greeting Hii, (date --utc)
 
 # Tomorrow Night color palette
 set -gx base16_color00 1d1f21

@@ -43,7 +43,7 @@ function fish_prompt
   _print_in_color (prompt_hostname) $base16_blue
   _print_in_color ' '(prompt_pwd) $base16_purple
   _print_in_color ' ] ' $base16_red
-  _print_in_color (battery)%% $base16_orange
+  _print_in_color (date +%H%M) $base16_orange
 
   __fish_git_prompt " %s"
 
@@ -59,3 +59,7 @@ function fish_prompt
   end
 end
 
+function fish_right_prompt
+  _print_in_color (battery) $base16_blue
+  _print_in_color %% $base16_orange
+end

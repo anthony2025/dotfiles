@@ -5,7 +5,7 @@
 # run with $ startx
 
 # load settings for X server, do not ampersand this line
-[[ -f $HOME/.Xresources ]] && xrdb -merge -I$HOME $HOME/.Xresources
+[[ -f ${XDG_CONFIG_HOME}/X11/.Xresources ]] && xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/.Xresources
 
 # Disable beeps
 xset -b &
