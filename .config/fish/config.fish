@@ -10,7 +10,7 @@ set -gx TERMINAL kitty
 set -gx BROWSER firefox-beta
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
-set -gx GIT_EDITOR $$EDITOR
+set -gx GIT_EDITOR $EDITOR
 
 #  set custom xdg defaults
 set -gx XDG_CURRENT_DESKTOP i3-gaps
