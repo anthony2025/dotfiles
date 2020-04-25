@@ -1,24 +1,29 @@
-# Defined in /tmp/fish.BpySid/battery.fish @ line 2
+# Defined in /tmp/fish.KEXPOK/battery.fish @ line 2
 function battery --description 'print battery charging status'
-    for battery in /sys/class/power_supply/BAT0
-        set capacity (cat $battery'/capacity')
-        set stage (cat $battery'/status') # status is reserved
+  set -l battery /sys/class/power_supply/BAT0
 
-        if test "$capacity" -ge 75 
-	          set color $tomorrow_green
-        else if test "$capacity" -ge 50 
-	          set color $tomorrow_yellow
-        else if test "$capacity" -ge 25 
-	          set color $tomorrow_orange
-        else
-	          set color $tomorrow_red
-	      end
-    end
+  # early return if not a laptop
+  if test -d battery
+    exit
+  end
 
-    if test "$stage" = 'Charging'
-      set color $tomorrow_white
-    end
+  set capacity (cat $battery'/capacity')
+  set stage (cat $battery'/status') # status is reserved
 
-    # echo $stage $capacity
-    echo $capacity
+  if test "$capacity" -ge 75
+    set color $tomorrow_green
+  else if test "$capacity" -ge 50
+    set color $tomorrow_yellow
+  else if test "$capacity" -ge 25
+    set color $tomorrow_orange
+  else
+    set color $tomorrow_red
+  end
+
+  if test "$stage" = 'Charging'
+    set color $tomorrow_white
+  end
+
+  # echo $stage $capacity
+  echo $capacity
 end
