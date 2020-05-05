@@ -10,7 +10,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !mkdir -p ~/.local/share/nvim/plugged
     silent !mkdir -p ~/.local/share/nvim/site/autoload
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim
-    			\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     au VimEnter * PlugInstall
 endif
 
@@ -28,8 +28,7 @@ Plug 'sjl/gundo.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
-Plug 'vifm/vifm.vim', { 'on': 'Vifm' }
+Plug 'scrooloose/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 
@@ -58,8 +57,9 @@ Plug 'dikiaap/minimalist'
 
 call plug#end()
 
-" Force vim-sensible to load and allow override of options
-runtime! plugin/sensible.vim
+" disable netrw completely
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 " turn on syntax detection
 filetype plugin indent on
@@ -71,14 +71,16 @@ silent! helptags ALL
 " disable swap files
 set noswapfile
 
+" automatically change cwd to the one of the current open file
+set autochdir
+
 set termguicolors   " enable 24 bit colors
-set hidden			    " buffers don't need to be saved to switch
-set nowrap			    " don't wrap lines
-set shiftround		  " use multiple of sw when indenting with '<' and '>'
-set showmatch     	" set show matching parenthesis
-set number        	" line numbers
-" set relativenumber  " hybrid relative line numbers
-set smartcase     	" ignore case if all lowercase, case-sensitive otherwise
+set hidden          " buffers don't need to be saved to switch
+set nowrap          " don't wrap lines
+set shiftround      " use multiple of sw when indenting with '<' and '>'
+set showmatch       " set show matching parenthesis
+set number          " line numbers
+set smartcase       " ignore case if all lowercase, case-sensitive otherwise
 set undolevels=1000 " use many muchos levels of undo
 set novisualbell    " don't flash
 set noerrorbells    " don't beep
@@ -114,7 +116,10 @@ nnoremap <S-Tab> :bprevious<CR>
 " change the mapleader from \ to spacebar
 let g:mapleader = "\<SPACE>"
 
-" NERDTree setting stuff
+" prepare for nerdtree start
+autocmd StdinReadPre * let s:std_in=1
+
+" nerdtree setting stuff
 nmap <silent> <leader>f :NERDTreeToggle<CR>
 nmap <silent> <leader>ff :NERDTree<CR>
 let NERDTreeHijackNetrw = 1
@@ -122,15 +127,17 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeChDirMode = 2
-" let NERDTreeIgnore = ['\.bs.js$']
-
-" quit if no files left open
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " open on startup
 autocmd VimEnter * if !argc()
       \ |   exe 'Startify'
+      \ |   NERDTree
       \ |   wincmd w
+      \ | endif
+
+" quit if no files left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
+      \ | q
       \ | endif
 
 " Quickly edit the vimrc file
@@ -138,9 +145,6 @@ nmap <silent> <leader>c :vspl ~/.config/nvim/init.vim<CR>
 
 " Quickly reload the vimrc file
 nmap <silent> <leader>r :so ~/.config/nvim/init.vim<CR>
-
-" Quickly install new plugins
-nmap <silent> <leader>i :PlugInstall<CR>
 
 " turn off highlighting after compeleting a search
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -192,9 +196,6 @@ map <Leader>k <Plug>(easymotion-k)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
-
-" use X clipboard by default
-" set clipboard=unnamedplus
 
 " by default only - is a word separator
 set iskeyword-=_
