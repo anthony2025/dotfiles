@@ -6,7 +6,7 @@ set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
 set -gx FILE nnn
-set -gx TERMINAL kitty
+set -gx TERMINAL alacritty
 set -gx BROWSER firefox-beta
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
@@ -14,6 +14,7 @@ set -gx GIT_EDITOR $EDITOR
 
 #  set custom xdg defaults
 set -gx XDG_CURRENT_DESKTOP i3-gaps
+set -gx XDG_CONFIG_HOME $HOME/.config
 
 # local folders
 set -gx XDG_DESKTOP_DIR $HOME/Desktop
@@ -34,7 +35,7 @@ if not contains $local_bin_path $PATH
 end
 
 # add doom emacs bin path only if necessary
-set emacs_doom_path $HOME/.config/emacs/bin
+set emacs_doom_path $XDG_CONFIG_HOME/emacs/bin
 if not contains $emacs_doom_path $PATH
     set fish_user_paths $fish_user_paths $emacs_doom_path
 end
@@ -148,16 +149,16 @@ abbr -a -g protonvpn sudo protonvpn
 abbr -a -g cat bat
 
 # config files
-abbr -a -g vimrc $EDITOR $HOME/.config/nvim/init.vim
+abbr -a -g vimrc $EDITOR $XDG_CONFIG_HOME/nvim/init.vim
 abbr -a -g tmuxrc $EDITOR $HOME/.tmux.conf
-abbr -a -g kittyrc $EDITOR $HOME/.config/kitty/kitty.conf
+abbr -a -g alacrittyrc $EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml
 abbr -a -g gitrc $EDITOR $HOME/.gitconfig
 abbr -a -g xinitrc $EDITOR $HOME/.xinitrc
-abbr -a -g i3rc $EDITOR $HOME/.config/i3/config
-abbr -a -g fishrc $EDITOR $HOME/.config/fish/config.fish
-abbr -a -g prompt $EDITOR $HOME/.config/fish/functions/fish_prompt.fish
-abbr -a -g refresh source $HOME/.config/fish/config.fish
-abbr -a -g tridactyl $EDITOR $HOME/.config/tridactyl/tridactylrc
+abbr -a -g i3rc $EDITOR $XDG_CONFIG_HOME/i3/config
+abbr -a -g fishrc $EDITOR $XDG_CONFIG_HOME/fish/config.fish
+abbr -a -g prompt $EDITOR $XDG_CONFIG_HOME/fish/functions/fish_prompt.fish
+abbr -a -g refresh source $XDG_CONFIG_HOME/fish/config.fish
+abbr -a -g tridactyl $EDITOR $XDG_CONFIG_HOME/tridactyl/tridactylrc
 
 # file shortcuts
 abbr -a -g ds cd $HOME/Desktop

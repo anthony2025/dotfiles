@@ -22,7 +22,6 @@ SETUVAR _fish_abbr_fishrc:nvim\x20/home/anthony/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_gitrc:nvim\x20/home/anthony/\x2egitconfig
 SETUVAR _fish_abbr_grep:grep\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_i3rc:nvim\x20/home/anthony/\x2econfig/i3/config
-SETUVAR _fish_abbr_kittyrc:nvim\x20/home/anthony/\x2econfig/kitty/kitty\x2econf
 SETUVAR _fish_abbr_ls:ls\x20\x2dlhG\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_lsa:ls\x20\x2dlah\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dp
