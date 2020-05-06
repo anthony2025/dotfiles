@@ -40,17 +40,6 @@ if not contains $emacs_doom_path $PATH
     set fish_user_paths $fish_user_paths $emacs_doom_path
 end
 
-# fetch fish plugins if needed
-if not functions -q fisher
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
-end
-
-# fetch tmux plugins if needed
-if not test -d $HOME/.tmux/plugins/tpm
-    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm && $HOME/.tmux/plugins/tpm/bin/install_plugins
-end
-
 # force 24 bit support
 set -gx fish_term24bit 1
 
@@ -132,6 +121,7 @@ abbr -a -g diff diff --color=auto
 abbr -a -g mkdir mkdir -p
 abbr -a -g mv mv -v
 abbr -a -g rm rm -r
+abbr -a -g rmf rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
 abbr -a -g ipa ip a
@@ -146,14 +136,13 @@ abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate
 abbr -a -g dotfiles /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
 abbr -a -g protonvpn sudo protonvpn
-abbr -a -g cat bat
 
 # config files
 abbr -a -g vimrc $EDITOR $XDG_CONFIG_HOME/nvim/init.vim
-abbr -a -g tmuxrc $EDITOR $HOME/.tmux.conf
+abbr -a -g tmuxrc $EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf
 abbr -a -g alacrittyrc $EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml
-abbr -a -g gitrc $EDITOR $HOME/.gitconfig
-abbr -a -g xinitrc $EDITOR $HOME/.xinitrc
+abbr -a -g gitrc $EDITOR $XDG_CONFIG_HOME/git/.gitconfig
+abbr -a -g xinitrc $EDITOR $XDG_CONFIG_HOME/X11/.xinitrc
 abbr -a -g i3rc $EDITOR $XDG_CONFIG_HOME/i3/config
 abbr -a -g fishrc $EDITOR $XDG_CONFIG_HOME/fish/config.fish
 abbr -a -g prompt $EDITOR $XDG_CONFIG_HOME/fish/functions/fish_prompt.fish
