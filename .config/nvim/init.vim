@@ -2,8 +2,10 @@
 set nocompatible
 set nomodeline
 
-" If vim-plug doesnt work correctly on fish shell, you might need to add this
-" set shell=/bin/sh
+" if posix is needed uncomment this
+"if &shell =~# 'fish$'
+"set shell=/bin/sh
+"endif
 
 " Automatic installation  of plugins
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -57,10 +59,6 @@ Plug 'dikiaap/minimalist'
 
 call plug#end()
 
-" disable netrw completely
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
-
 " turn on syntax detection
 filetype plugin indent on
 syntax on
@@ -74,6 +72,7 @@ set noswapfile
 " automatically change cwd to the one of the current open file
 set autochdir
 
+set complete-=t     " disable searching tags
 set termguicolors   " enable 24 bit colors
 set hidden          " buffers don't need to be saved to switch
 set nowrap          " don't wrap lines
@@ -116,12 +115,13 @@ nnoremap <S-Tab> :bprevious<CR>
 " change the mapleader from \ to spacebar
 let g:mapleader = "\<SPACE>"
 
-" prepare for nerdtree start
+" should be done before Nerdtree start, at least its in the docs
 autocmd StdinReadPre * let s:std_in=1
 
 " nerdtree setting stuff
 nmap <silent> <leader>f :NERDTreeToggle<CR>
-nmap <silent> <leader>ff :NERDTree<CR>
+nmap <silent> <leader>ff :NerdTreeFind<CR>
+nmap <silent> <leader>F :NERDTree<CR>
 let NERDTreeHijackNetrw = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
@@ -140,11 +140,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
       \ | q
       \ | endif
 
-" Quickly edit the vimrc file
-nmap <silent> <leader>c :vspl ~/.config/nvim/init.vim<CR>
+" quickly edit the vimrc file
+nmap <silent> <leader>c :e $MYVIMRC<CR>
 
-" Quickly reload the vimrc file
-nmap <silent> <leader>r :so ~/.config/nvim/init.vim<CR>
+" quickly reload the vimrc file
+nmap <silent> <leader>r :source $MYVIMRC<CR>
 
 " turn off highlighting after compeleting a search
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -249,3 +249,10 @@ nnoremap <leader>u :GundoToggle<CR>
 " quick-scope
 " trigger a highlight in the appropriate direction when pressing these keys
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" quickly edit a macro
+nnoremap <leader>q :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
+
+" only use cursor line when in the current window and not when being in insert mode
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline

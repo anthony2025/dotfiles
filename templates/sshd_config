@@ -29,7 +29,7 @@ LoginGraceTime 30s
 PermitRootLogin no
 StrictModes yes
 MaxAuthTries 3
-MaxSessions 2 
+MaxSessions 2
 
 AllowAgentForwarding no
 AllowTcpForwarding no
@@ -39,12 +39,12 @@ X11UseLocalhost yes
 PermitTTY yes
 PermitUserEnvironment no
 
-PrintMotd no 
+PrintMotd no
 PrintLastLog yes
 Compression delayed
 TCPKeepAlive no
-ClientAliveInterval 5m 
-ClientAliveCountMax 4 
+ClientAliveInterval 5m
+ClientAliveCountMax 4
 
 #UseDNS no
 #PidFile /run/sshd.pid
@@ -52,4 +52,3 @@ ClientAliveCountMax 4
 #PermitTunnel no
 #ChrootDirectory none
 #VersionAddendum none
-
