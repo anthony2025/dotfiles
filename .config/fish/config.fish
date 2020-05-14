@@ -1,7 +1,4 @@
 # system environment flags
-set -gx ARCHFLAGS '-arch x86_64'
-set -gx LANG en_US.UTF-8
-set -gx LC_ALL en_US.UTF-8
 set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
@@ -160,8 +157,8 @@ abbr -a -g dm cd $HOME/Documents
 
 # automatically start X server at login
 if status --is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx -- -keeptty &> /dev/null
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$IS_LAPTOP" = true
+        exec startx -- -keeptty
     end
 end
 
