@@ -5,7 +5,7 @@
 # run with $ startx
 
 # load settings for X server, do not ampersand this line
-[[ -f ${XDG_CONFIG_HOME}/X11/.Xresources ]] && xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/.Xresources
+[[ -f ${XDG_CONFIG_HOME}/X11/Xresources ]] && xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/Xresources
 
 # Disable beeps
 xset -b &
@@ -20,7 +20,7 @@ xbacklight -set 20 &
 setxkbmap -option caps:ctrl_modifier &
 
 # set background color
-xsetroot -solid '#26466D' &
+xsetroot -solid '#373b41' &
 
 # start notification manager
 dunst &

@@ -145,8 +145,8 @@ abbr -a -g protonvpn sudo protonvpn
 abbr -a -g vimrc $EDITOR $XDG_CONFIG_HOME/nvim/init.vim
 abbr -a -g tmuxrc $EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf
 abbr -a -g alacrittyrc $EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml
-abbr -a -g gitrc $EDITOR $XDG_CONFIG_HOME/git/.gitconfig
-abbr -a -g xinitrc $EDITOR $XDG_CONFIG_HOME/X11/.xinitrc
+abbr -a -g gitrc $EDITOR $XDG_CONFIG_HOME/git/config
+abbr -a -g xinitrc $EDITOR $HOME/.xinitrc
 abbr -a -g i3rc $EDITOR $XDG_CONFIG_HOME/i3/config
 abbr -a -g fishrc $EDITOR $XDG_CONFIG_HOME/fish/config.fish
 abbr -a -g prompt $EDITOR $XDG_CONFIG_HOME/fish/functions/fish_prompt.fish
