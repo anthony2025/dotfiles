@@ -29,4 +29,5 @@ dunst &
 $TERMINAL &
 
 # start windows manager
-exec i3
+i3
+

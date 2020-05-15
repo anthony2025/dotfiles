@@ -157,8 +157,8 @@ abbr -a -g dm cd $HOME/Documents
 
 # automatically start X server at login
 if status --is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$IS_LAPTOP" = true
-        exec startx -- -keeptty
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$IS_LAPTOP" = 1
+        exec ssh-agent startx -- -keeptty
     end
 end
 
