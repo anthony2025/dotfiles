@@ -1,4 +1,5 @@
 # system environment flags
+set -gx TERMINFO $XDG_CONFIG_HOME/terminfo
 set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
