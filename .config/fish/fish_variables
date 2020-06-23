@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR FZF_DEFAULT_OPTS:\x0a\x20\x20\x2d\x2dcolor\x3dbg\x2b\x3a\x23282a2e\x2cbg\x3a\x231d1f21\x2cspinner\x3a\x238abeb7\x2chl\x3a\x2381a2be\x0a\x20\x20\x2d\x2dcolor\x3dfg\x3a\x23b4b7b4\x2cheader\x3a\x2381a2be\x2cinfo\x3a\x23f0c674\x2cpointer\x3a\x238abeb7\x0a\x20\x20\x2d\x2dcolor\x3dmarker\x3a\x238abeb7\x2cfg\x2b\x3a\x23e0e0e0\x2cprompt\x3a\x23f0c674\x2chl\x2b\x3a\x2381a2be\x0a
+SETUVAR FZF_DISABLE_KEYBINDINGS:0
 SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010

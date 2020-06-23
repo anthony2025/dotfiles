@@ -44,11 +44,13 @@ PrintLastLog yes
 Compression delayed
 TCPKeepAlive no
 ClientAliveInterval 5m
-ClientAliveCountMax 4
+ClientAliveCountMax 2
+
+Host *
+  UseRoaming no
 
 #UseDNS no
 #PidFile /run/sshd.pid
 #MaxStartups 10:30:100
 #PermitTunnel no
-#ChrootDirectory none
 #VersionAddendum none

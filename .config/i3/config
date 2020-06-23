@@ -35,6 +35,9 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# restrict maximum size of dialogs so they won't exceed screen
+floating_maximum_size 1024 x 576
+
 # set split as default layout
 workspace_layout default
 
@@ -118,10 +121,10 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 # workspace $ws8 output LVDS1
 
 # split in horizontal orientation
-bindsym $mod+Shift+plus split h
+bindsym $mod+Shift+plus split v
 
 # split in vertical orientation
-bindsym $mod+Shift+bar split v
+bindsym $mod+Shift+bar split h
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
