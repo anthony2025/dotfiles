@@ -131,7 +131,7 @@ let NERDTreeChDirMode = 2
 " open on startup
 autocmd VimEnter * if !argc()
       \ |   exe 'Startify'
-      \ |   NERDTree
+      " \ |   NERDTree
       \ |   wincmd w
       \ | endif
 
