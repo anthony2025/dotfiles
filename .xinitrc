@@ -20,7 +20,7 @@ xbacklight -set 20 &
 setxkbmap -option caps:ctrl_modifier &
 
 # set background color
-xsetroot -solid '#373b41' &
+xsetroot -solid '#7E212A' &
 
 # start notification manager
 dunst &
