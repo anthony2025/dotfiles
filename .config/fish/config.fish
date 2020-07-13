@@ -128,6 +128,7 @@ abbr -a -g scp scp -r
 abbr -a -g ipa ip a
 abbr -a -g xclip xclip -selection clipboard
 abbr -a -g rsync rsync -r
+abbr -a -g zip zip -r
 
 # utilities
 abbr -a -g resize mogrify -path . -resize 1600x1600\> -format jpg

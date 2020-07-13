@@ -35,7 +35,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 
 " editing
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
