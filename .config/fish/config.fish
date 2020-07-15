@@ -44,7 +44,7 @@ end
 # force 24 bit support
 set -gx fish_term24bit 1
 
-# WHATSTHIS?
+# call a function to set our keybindings
 fish_user_key_bindings
 
 # set start greeting
@@ -115,8 +115,8 @@ set -gx fish_pager_color_progress $base16_foreground --background=cyan
 # gnu utilities
 abbr -a -g .. cd ..
 abbr -a -g :q exit
-abbr -a -g ls ls -lh --color=auto
-abbr -a -g lsa ls -lah --color=auto
+abbr -a -g ll ls -1 --color=auto
+abbr -a -g lsa ls -lAh --color=auto
 abbr -a -g grep grep --color=auto
 abbr -a -g diff diff --color=auto
 abbr -a -g mkdir mkdir -p
@@ -136,7 +136,7 @@ abbr -a -g public_ip curl -s icanhazip.com
 abbr -a -g npmg npm ls -g --depth=0
 abbr -a -g ctrl_key setxkbmap -option caps:ctrl_modifier
 abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-abbr -a -g dotfiles /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
+abbr -a -g dotfiles git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
 abbr -a -g protonvpn sudo protonvpn
 

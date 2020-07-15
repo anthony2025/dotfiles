@@ -23,7 +23,6 @@ SETUVAR _fish_abbr_fishrc:nvim\x20/home/anthony/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_gitrc:nvim\x20/home/anthony/\x2egitconfig
 SETUVAR _fish_abbr_grep:grep\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_i3rc:nvim\x20/home/anthony/\x2econfig/i3/config
-SETUVAR _fish_abbr_ls:ls\x20\x2dlhG\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_lsa:ls\x20\x2dlah\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dp
 SETUVAR _fish_abbr_mv:mv\x20\x2dv
@@ -64,7 +63,7 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_hybrid_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline

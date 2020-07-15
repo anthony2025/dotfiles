@@ -8,8 +8,7 @@ function bind_bang
 end
 
 function fish_user_key_bindings
-  # vi + emacs keybindings
-  fish_hybrid_key_bindings
+  fish_vi_key_bindings
   fish_vi_cursor
   # sudo !!
   bind -M insert ! bind_bang
