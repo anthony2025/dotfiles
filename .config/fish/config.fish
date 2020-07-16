@@ -115,7 +115,7 @@ set -gx fish_pager_color_progress $base16_foreground --background=cyan
 # gnu utilities
 abbr -a -g .. cd ..
 abbr -a -g :q exit
-abbr -a -g ll ls -1 --color=auto
+abbr -a -g ls ls -1 --color=auto
 abbr -a -g lsa ls -lAh --color=auto
 abbr -a -g grep grep --color=auto
 abbr -a -g diff diff --color=auto
