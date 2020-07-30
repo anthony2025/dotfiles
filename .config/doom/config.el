@@ -34,6 +34,9 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; Remap ESC to an easier to reach shortcut
+;; imap jj <Esc>
+(setq-default evil-escape-key-sequence "jj")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
