@@ -1,8 +1,0 @@
-[Unit]
-Description=Variety wallpaper rotation tool
-
-[Service]
-ExecStart=/usr/bin/variety
-
-[Install]
-WantedBy=default.target
