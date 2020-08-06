@@ -156,3 +156,4 @@ abbr -a -g tridactyl $EDITOR $XDG_CONFIG_HOME/tridactyl/tridactylrc
 abbr -a -g ds cd $HOME/Desktop
 abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
+

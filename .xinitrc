@@ -28,6 +28,6 @@ dunst &
 # start a terminal
 $TERMINAL &
 
-# start windows manager
-i3
+# start windows manager with access to ssh-agent
+ssh-agent i3
 
