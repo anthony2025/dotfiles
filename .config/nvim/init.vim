@@ -210,8 +210,7 @@ nnoremap <leader>o :exe ':silent !firefox-beta %'<CR>
 " disable polyglot to allow more specific language plugins
 " let g:polyglot_disabled = ['jsx','javascript','javascript.jsx', 'styled-components']
 
-" Yank text to both clipboards
-set clipboard^=unnamed,unnamedplus
+" Yank text to clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
 

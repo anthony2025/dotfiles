@@ -29,5 +29,4 @@ dunst &
 $TERMINAL &
 
 # start windows manager with access to ssh-agent
-ssh-agent i3
-
+exec i3

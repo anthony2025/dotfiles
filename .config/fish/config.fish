@@ -157,3 +157,10 @@ abbr -a -g ds cd $HOME/Desktop
 abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
 
+if status is-login
+  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+    # auto start X11 server
+    ssh-agent startx -- -keeptty
+  end
+end
+
