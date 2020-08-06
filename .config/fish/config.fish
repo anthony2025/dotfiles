@@ -126,7 +126,7 @@ abbr -a -g rmf rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
 abbr -a -g ipa ip a
-abbr -a -g xclip xclip -selection clipboard
+abbr -a -g cclip "xclip -f -selection primary | xclip -selection clipboard"
 abbr -a -g rsync rsync -r
 abbr -a -g zip zip -r
 
@@ -156,12 +156,3 @@ abbr -a -g tridactyl $EDITOR $XDG_CONFIG_HOME/tridactyl/tridactylrc
 abbr -a -g ds cd $HOME/Desktop
 abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
-
-# automatically start X server at login
-if status --is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$IS_LAPTOP" = 1
-        exec ssh-agent startx -- -keeptty
-    end
-end
-
-# for aws completions run $ fisher add oh-my-fish/plugin-aws after installing aws-cli

@@ -58,10 +58,3 @@ function fish_prompt
           _print_in_color "\n❯ " $base16_purple
   end
 end
-
-function fish_right_prompt
-  if test "$IS_LAPTOP" = 1
-    _print_in_color (battery) $base16_blue
-    _print_in_color %% $base16_purple
-  end
-end
