@@ -29,6 +29,7 @@ alert = #bd2c40
 
 [bar/example]
 monitor = eDP-1
+bottom = true
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -55,9 +56,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date
 
 tray-position = right
 tray-padding = 2
