@@ -256,3 +256,7 @@ nnoremap <leader>q :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:
 " only use cursor line when in the current window and not when being in insert mode
 autocmd InsertLeave,WinEnter * set cursorline
 autocmd InsertEnter,WinLeave * set nocursorline
+
+" quickly spawn new vertical split
+nnore map <silent> vv <C-w>v
+

@@ -173,11 +173,15 @@ for_window [class="fullscreen"] fullscreen enable
 # arrange applications in specific workspaces
 # assign [class="terminal"] $ws1
 
+# launch polybar as a status bar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# sreen brightness controls
+bindsym XF86MonBrightnessUp exec light -a 5
+bindsym XF86MonBrightnessDown exec light -u 5
+
 # media controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-# sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -a 5
-bindsym XF86MonBrightnessDown exec light -u 5

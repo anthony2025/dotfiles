@@ -1,4 +1,4 @@
-# Defined in /tmp/fish.KEXPOK/battery.fish @ line 2
+# Defined in /tmp/fish.4zuyUY/battery.fish @ line 2
 function battery --description 'print battery charging status'
   set -l battery /sys/class/power_supply/BAT0
 
@@ -24,6 +24,5 @@ function battery --description 'print battery charging status'
     set color $tomorrow_white
   end
 
-  # echo $stage $capacity
-  echo $capacity
+  echo $stage $capacity
 end

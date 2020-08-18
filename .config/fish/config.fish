@@ -125,8 +125,8 @@ abbr -a -g rm rm -r
 abbr -a -g rmf rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
-abbr -a -g ipa ip a
-abbr -a -g cclip "xclip -f -selection primary | xclip -selection clipboard"
+abbr -a -g ip ip -color=auto 
+abbr -a -g cclip 'xclip -f -selection primary | xclip -selection clipboard'
 abbr -a -g rsync rsync -r
 abbr -a -g zip zip -r
 
@@ -163,4 +163,3 @@ if status is-login
     ssh-agent startx -- -keeptty
   end
 end
-
