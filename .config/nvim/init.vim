@@ -69,6 +69,9 @@ silent! helptags ALL
 " disable swap files
 set noswapfile
 
+" disable backup files
+set nobackup
+
 " automatically change cwd to the one of the current open file
 set autochdir
 
