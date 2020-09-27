@@ -1,3 +1,4 @@
+# Defined in /tmp/fish.zsBydk/backup_world.fish @ line 2
 function backup_world
   set today (date '+%m-%d-%Y')
 
