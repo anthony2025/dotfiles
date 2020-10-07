@@ -48,11 +48,15 @@ default_border pixel 1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block
 font pango:Noto Sans Bold, Icons 10
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-# start a terminal
-bindsym $mod+Return exec $TERMINAL
-# bindsym $mod+Return exec i3-sensible-terminal
+# starts a terminal as a vertical split, disregarding the current mode
+bindsym $mod+Return "layout splitv; exec $TERMINAL; layout splith"
+#bindsym $mod+Return exec $TERMINAL
+#bindsym $mod+Return exec i3-sensible-terminal
+
+# starts a terminal as a horizontal split, disregarding the current mode
+bindsym $mod+Shift+Return "layout splith; exec $TERMINAL; layout splitv"
 
 # start a browser
 bindsym $mod+b exec /usr/bin/$BROWSER
@@ -62,7 +66,7 @@ bindsym $mod+Shift+q kill
 
 # start a program launcher
 bindsym $mod+d exec dmenu_run
-# bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun -show combi -modi combi --show-icons
+#bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun -show combi -modi combi --show-icons
 
 # change focus
 bindsym $mod+j focus down
@@ -171,7 +175,7 @@ bindsym $mod+Shift+Tab workspace prev
 for_window [class="fullscreen"] fullscreen enable
 
 # arrange applications in specific workspaces
-# assign [class="terminal"] $ws1
+#assign [class="terminal"] $ws1
 
 # launch polybar as a status bar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -184,4 +188,3 @@ bindsym XF86MonBrightnessDown exec light -u 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-

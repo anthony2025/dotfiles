@@ -158,7 +158,7 @@ abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
 
 if status is-login
-  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a (hostname) = 'violet'
     # auto start X11 server
     ssh-agent startx -- -keeptty
   end

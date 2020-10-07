@@ -1,6 +1,5 @@
-# /etc/systemd/network/wlp4s0.network
 [Match]
-Name=wlp4s0
+Name=wl*
 
 [Network]
 DHCP=ipv4

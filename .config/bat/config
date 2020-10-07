@@ -1,4 +1,4 @@
---theme="Tomorrow-Night"
+--theme="gruvbox"
 
 # set number of spaces of tab-placeholders
 --tabs=2
