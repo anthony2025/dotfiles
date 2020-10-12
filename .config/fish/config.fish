@@ -124,7 +124,7 @@ abbr -a -g mv mv -v
 abbr -a -g rm rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
-abbr -a -g ip ip -color=auto 
+abbr -a -g ip ip -color=auto
 abbr -a -g cclip 'xclip -f -selection primary | xclip -selection clipboard'
 abbr -a -g rsync rsync -r
 abbr -a -g zip zip -r
@@ -157,7 +157,7 @@ abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
 
 if status is-login
-  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a (hostname) = 'violet'
+  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$hostname" = 'violet'
     # auto start X11 server
     ssh-agent startx -- -keeptty
   end
