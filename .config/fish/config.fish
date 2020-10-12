@@ -122,7 +122,6 @@ abbr -a -g diff diff --color=auto
 abbr -a -g mkdir mkdir -p
 abbr -a -g mv mv -v
 abbr -a -g rm rm -rf
-abbr -a -g rmf rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
 abbr -a -g ip ip -color=auto 
