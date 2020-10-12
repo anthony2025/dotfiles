@@ -131,7 +131,7 @@ let NERDTreeChDirMode = 2
 " open on startup
 autocmd VimEnter * if !argc()
       \ |   exe 'Startify'
-      " \ |   NERDTree
+      \ |   NERDTree
       \ |   wincmd w
       \ | endif
 
@@ -259,4 +259,3 @@ autocmd InsertEnter,WinLeave * set nocursorline
 
 " quickly spawn new vertical split
 nnore map <silent> vv <C-w>v
-

@@ -121,8 +121,7 @@ abbr -a -g grep grep --color=auto
 abbr -a -g diff diff --color=auto
 abbr -a -g mkdir mkdir -p
 abbr -a -g mv mv -v
-abbr -a -g rm rm -r
-abbr -a -g rmf rm -rf
+abbr -a -g rm rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
 abbr -a -g ip ip -color=auto 
@@ -158,7 +157,7 @@ abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
 
 if status is-login
-  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a (hostname) = 'violet'
     # auto start X11 server
     ssh-agent startx -- -keeptty
   end

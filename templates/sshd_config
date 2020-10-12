@@ -46,9 +46,6 @@ TCPKeepAlive no
 ClientAliveInterval 5m
 ClientAliveCountMax 2
 
-Host *
-  UseRoaming no
-
 #UseDNS no
 #PidFile /run/sshd.pid
 #MaxStartups 10:30:100
