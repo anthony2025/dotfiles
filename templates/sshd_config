@@ -32,9 +32,9 @@ MaxAuthTries 3
 MaxSessions 2
 
 AllowAgentForwarding no
-AllowTcpForwarding no
+AllowTcpForwarding yes
 GatewayPorts no
-X11Forwarding no
+X11Forwarding yes
 X11UseLocalhost yes
 PermitTTY yes
 PermitUserEnvironment no
