@@ -10,9 +10,6 @@ set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR
 
-# move xauthority file away from home directory
-set -gx XAUTHORITY $XDG_RUNTIME_DIR/Xauthority
-
 # set custom xdg defaults
 set -gx XDG_CURRENT_DESKTOP i3-gaps
 set -gx XDG_CONFIG_HOME $HOME/.config
