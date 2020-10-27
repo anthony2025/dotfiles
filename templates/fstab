@@ -2,9 +2,9 @@
 # See fstab(5) for details.
 
 # <file system> <dir> <type> <options> <dump> <pass>
-# /dev/mapper/cryptroot
-UUID=ad426846-ff0b-434a-a497-7f41403e7238	/         	btrfs     	rw,noatime,discard,ssd,space_cache,subvolid=5,subvol=/	0 0
+# root /dev/mapper/cryptroot
+UUID=ad646-f0b-44a-a97-744378 / btrfs rw,noatime,discard,ssd,space_cache,subvolid=5,subvol=/  0 0
 
-# /dev/sda1
-UUID=A9D6-AD06      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
+# boot /dev/sda1
+UUID=96-A6  /boot vfat  rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro 0 2
 
