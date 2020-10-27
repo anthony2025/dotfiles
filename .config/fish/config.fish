@@ -21,10 +21,10 @@ set -gx XDG_DOWNLOAD_DIR $HOME/Downloads
 
 # remote folders
 set -gx XDG_MUSIC_DIR $HOME/music
-set -gx XDG_PICTURES_DIR $HOME/pictures
+set -gx XDG_PICTURES_DIR $HOME/media
+set -gx XDG_VIDEOS_DIR $HOME/media
 set -gx XDG_PUBLICSHARE_DIR $HOME/shared
 set -gx XDG_TEMPLATES_DIR $HOME/templates
-set -gx XDG_VIDEOS_DIR $HOME/videos
 
 # add local bin path only if necessary
 set local_bin_path $HOME/.local/bin
@@ -134,7 +134,8 @@ abbr -a -g ctrl_key setxkbmap -option caps:ctrl_modifier
 abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 abbr -a -g dotfiles git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
-abbr -a -g protonvpn sudo protonvpn
+abbr -a -g mount_raven sshfs raven:/srv/fabric $HOME/mnt/raven
+abbr -a -g umount_raven fusermount -u $HOME/mnt/raven
 
 # config files
 abbr -a -g vimrc $EDITOR $XDG_CONFIG_HOME/nvim/init.vim
