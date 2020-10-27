@@ -134,7 +134,7 @@ abbr -a -g ctrl_key setxkbmap -option caps:ctrl_modifier
 abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 abbr -a -g dotfiles git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
-abbr -a -g mount_raven raven:/srv/fabric $HOME/mnt/raven
+abbr -a -g mount_raven sshfs raven:/srv/fabric $HOME/mnt/raven
 abbr -a -g umount_raven fusermount -u $HOME/mnt/raven
 
 # config files
