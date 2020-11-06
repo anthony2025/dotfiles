@@ -11,7 +11,7 @@ set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR
 
 # set custom xdg defaults
-set -gx XDG_CURRENT_DESKTOP i3-gaps
+set -gx XDG_CURRENT_DESKTOP xmonad
 set -gx XDG_CONFIG_HOME $HOME/.config
 
 # local folders
@@ -94,7 +94,10 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 # setup ack
 set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
 
-# set terminal color palette
+# setup xmonad
+set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
+
+# setup terminal color palette
 set -gx fish_color_autosuggestion $base16_comment
 set -gx fish_color_command $base16_purple
 set -gx fish_color_comment $base16_yellow
@@ -143,7 +146,7 @@ abbr -a -g tmuxrc $EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf
 abbr -a -g alacrittyrc $EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml
 abbr -a -g gitrc $EDITOR $XDG_CONFIG_HOME/git/config
 abbr -a -g xinitrc $EDITOR $HOME/.xinitrc
-abbr -a -g i3rc $EDITOR $XDG_CONFIG_HOME/i3/config
+abbr -a -g xmonadrc $EDITOR $XDG_CONFIG_HOME/xmonad/xmonad.hs
 abbr -a -g fishrc $EDITOR $XDG_CONFIG_HOME/fish/config.fish
 abbr -a -g prompt $EDITOR $XDG_CONFIG_HOME/fish/functions/fish_prompt.fish
 abbr -a -g refresh source $XDG_CONFIG_HOME/fish/config.fish

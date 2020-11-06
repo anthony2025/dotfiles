@@ -20,7 +20,7 @@ xbacklight -set 20 &
 setxkbmap -option caps:ctrl_modifier &
 
 # set background color
-xsetroot -solid '#7E212A' &
+xsetroot -solid '#AB212A' &
 
 # start notification manager
 dunst &
@@ -28,5 +28,5 @@ dunst &
 # start a terminal
 $TERMINAL &
 
-# start windows manager with access to ssh-agent
-exec i3
+# start windows manager 
+exec xmonad
