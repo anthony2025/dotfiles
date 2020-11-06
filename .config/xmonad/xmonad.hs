@@ -10,7 +10,7 @@
 import XMonad
 import Data.Monoid
 import System.Exit
-import XMonad.Util.Run
+import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.ManageDocks
 
@@ -24,7 +24,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
     -- launch dmenu
-    , ((modm,               xK_d     ), spawn "dmenu")
+    , ((modm,               xK_d     ), spawn "dmenu_run")
     -- launch browser
     , ((modm,               xK_b     ), spawn "$BROWSER")
     -- close focused window
@@ -62,7 +62,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
-    , ((modm              , xK_d     ), sendMessage ToggleStruts)
+    , ((modm              , xK_p     ), sendMessage ToggleStruts)
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     -- Restart xmonad
@@ -136,11 +136,9 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
-myManageHook = composeAll
+myManageHook = manageDocks <+> composeAll
     [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , className =? "Gimp"           --> doFloat ]
 
 ------------------------------------------------------------------------
 -- Event handling
@@ -177,7 +175,7 @@ myStartupHook = return ()
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-  xmproc <- spawnPipe "xmobar /home/anthony/.config/xmonad/xmobarrc &"
+  xmproc <- spawnPipe "xmobar -b /home/anthony/.config/xmonad/xmobarrc"
   xmonad $ docks defaults
 
 -- A structure containing your configuration settings, overriding
@@ -193,8 +191,8 @@ defaults = def {
   borderWidth        = 1,
   modMask            = mod4Mask,
   workspaces         = ["terminal","browser","3","4","5","6","7","8"],
-  normalBorderColor  = "#373b41",
-  focusedBorderColor = "#b294bb",
+  normalBorderColor  = "#969896",
+  focusedBorderColor = "#373b41",
   keys               = myKeys,
   mouseBindings      = myMouseBindings,
   layoutHook         = myLayout,
