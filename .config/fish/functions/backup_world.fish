@@ -1,5 +1,5 @@
-# Defined in /tmp/fish.8vu8la/backup_world.fish @ line 2
-function backup_world
+# Defined in /tmp/fish.GsFZMO/backup_world.fish @ line 2
+function backup_world --description 'backup world and sync dumps'
   set today (date '+%m-%d-%Y')
 
   # we need to backup more folders to replicate
@@ -15,5 +15,5 @@ function backup_world
   scp -r $world_path $backup_path
   scp -r $mods_path $backup_path
   scp -r $config_path $backup_path
-  scp -r $dumps_path/* $local_dumps_path
+  # scp -r $dumps_path/* $local_dumps_path
 end
