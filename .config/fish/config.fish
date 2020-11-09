@@ -139,6 +139,7 @@ abbr -a -g dotfiles git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
 abbr -a -g mount_raven sshfs raven:/srv/fabric $HOME/mnt/raven
 abbr -a -g umount_raven fusermount -u $HOME/mnt/raven
+abbr -a -g remove_orphans pacman -Qtdq | sudo pacman -Rns -  
 
 # config files
 abbr -a -g vimrc $EDITOR $XDG_CONFIG_HOME/nvim/init.vim

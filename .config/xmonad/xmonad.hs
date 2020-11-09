@@ -13,6 +13,7 @@ import System.Exit
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.DynamicLog
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -176,21 +177,18 @@ myStartupHook = return ()
 --
 main = do
   xmproc <- spawnPipe "xmobar -b /home/anthony/.config/xmonad/xmobarrc"
-  xmonad $ docks defaults
+  xmonad $ docks myConfig
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
 -- use the defaults defined in xmonad/XMonad/Config.hs
---
--- No need to modify this.
---
-defaults = def {
+myConfig = def {
   terminal           = "alacritty",
   focusFollowsMouse  = True,
   clickJustFocuses   = False,
   borderWidth        = 1,
   modMask            = mod4Mask,
-  workspaces         = ["terminal","browser","3","4","5","6","7","8"],
+  workspaces         = ["terminal","browser","3","4","5"],
   normalBorderColor  = "#969896",
   focusedBorderColor = "#373b41",
   keys               = myKeys,
@@ -209,7 +207,7 @@ help = unlines ["The default modifier key is 'Super'. Keybindings:",
     "-- launching and killing programs",
     "mod-Shift-Enter  Launch xterminal",
     "mod-d            Launch dmenu",
-    "mod-Shift-c      Close/kill the focused window",
+    "mod-Shift-q      Close/kill the focused window",
     "mod-Space        Rotate through the available layout algorithms",
     "mod-Shift-Space  Reset the layouts on the current workSpace to default",
     "mod-n            Resize/refresh viewed windows to the correct size",
@@ -239,7 +237,7 @@ help = unlines ["The default modifier key is 'Super'. Keybindings:",
     "mod-period (mod-.)   Deincrement the number of windows in the master area",
     "",
     "-- quit, or restart",
-    "mod-Shift-q  Quit xmonad",
+    "mod-Shift-c  Quit xmonad",
     "mod-q        Restart xmonad",
     "mod-[1..9]   Switch to workSpace N",
     "",
