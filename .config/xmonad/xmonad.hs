@@ -14,7 +14,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
     -- launch dmenu
-    , ((modm,               xK_d     ), spawn "dmenu_run")
+    , ((modm,               xK_d     ), spawn "dmenu_run -fn '-xos-terminus-medium-r-*-*-14-*'")
     -- launch browser
     , ((modm,               xK_b     ), spawn "$BROWSER")
     -- close focused window
