@@ -162,7 +162,8 @@ abbr -a -g dm cd $HOME/Documents
 if status is-login
   if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
     if test "$hostname" = 'violet' -o "$hostname" = 'raven'
-    # auto start X11 server
-    ssh-agent startx -- -keeptty
+      # auto start X11 server
+      ssh-agent startx -- -keeptty
+    end
   end
 end
