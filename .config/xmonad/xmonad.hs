@@ -158,7 +158,7 @@ main = do
 -- use the defaults defined in xmonad/XMonad/Config.hs
 myConfig = def {
   terminal           = "alacritty",
-  focusFollowsMouse  = True,
+  focusFollowsMouse  = False,
   clickJustFocuses   = False,
   borderWidth        = 1,
   modMask            = mod4Mask,
