@@ -95,9 +95,9 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
      -- The default number of windows in the master pane
      nmaster = 1
      -- Default proportion of screen occupied by master pane
-     ratio   = 4/7
+     ratio   = 5/8
      -- Percent of screen to increment by when resizing panes
-     delta   = 3/100
+     delta   = 2/100
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -160,10 +160,10 @@ myConfig = def {
   terminal           = "alacritty",
   focusFollowsMouse  = False,
   clickJustFocuses   = False,
-  borderWidth        = 1,
+  borderWidth        = 2,
   modMask            = mod4Mask,
   workspaces         = ["1","2","3","4","5"],
-  normalBorderColor  = "#969896",
+  normalBorderColor  = "#20221f",
   focusedBorderColor = "#373b41",
   keys               = myKeys,
   mouseBindings      = myMouseBindings,
