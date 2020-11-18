@@ -2,7 +2,7 @@ Config { font = "xft:NotoSans:style=Bold:size=11:antialias=true"
   , border = BottomB
   , borderColor = "#373b41"
   , borderWidth = 2
-  , bgColor = "#1d1f21"
+  , bgColor = "#20221f"
   , fgColor = "#969896"
   , position = Top --Bottom
   , commands = [  Run Cpu [] 10

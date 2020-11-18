@@ -20,7 +20,10 @@ xbacklight -set 20 &
 setxkbmap -option caps:ctrl_modifier &
 
 # set background color
-xsetroot -solid '#4E0707' &
+# xsetroot -solid '#4E0707' &
+
+# set background wallpaper
+feh --bg-scale /usr/share/backgrounds/archlinux/simple.png
 
 # start notification manager
 dunst &
@@ -28,5 +31,5 @@ dunst &
 # start a terminal
 $TERMINAL &
 
-# start windows manager 
+# start windows manager
 exec xmonad
