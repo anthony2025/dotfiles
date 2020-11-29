@@ -23,6 +23,9 @@ xbacklight -set 20 &
 # set caps to act as another ctrl key
 setxkbmap -option caps:ctrl_modifier &
 
+# set a nicer cursor
+xsetroot -cursor_name left_ptr
+
 # set background color
 # xsetroot -solid '#4E0707' &
 
@@ -33,7 +36,7 @@ feh --bg-scale /usr/share/backgrounds/archlinux/simple.png
 dunst &
 
 # start a terminal
-$TERMINAL &
+# $TERMINAL &
 
 # start windows manager
 exec xmonad

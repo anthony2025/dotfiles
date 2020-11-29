@@ -3,6 +3,7 @@ import Data.Monoid
 import System.Exit
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.Util.EZConfig
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 
@@ -16,7 +17,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_d     ), spawn "dmenu_run -fn '-xos-terminus-medium-r-*-*-14-*'")
     -- launch browser
-    , ((modm,               xK_b     ), spawn "$BROWSER")
+    , ((modm .|. shiftMask, xK_b     ), spawn "$BROWSER")
     -- close focused window
     , ((modm .|. shiftMask, xK_q     ), kill)
      -- Rotate through the available layout algorithms
