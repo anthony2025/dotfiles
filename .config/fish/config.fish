@@ -4,7 +4,7 @@ set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
 set -gx FILE vifm
-set -gx TERMINAL alacritty
+set -gx TERMINAL kitty
 set -gx BROWSER firefox-beta
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
@@ -45,7 +45,7 @@ set -gx fish_term24bit 1
 fish_user_key_bindings
 
 # set start greeting
-set -gx fish_greeting Hii, (date --utc)
+# set -gx fish_greeting Hii, (date --utc)
 
 # Tomorrow Night color palette
 set -gx base16_color00 1d1f21
@@ -115,16 +115,16 @@ set -gx fish_pager_color_progress $base16_foreground --background=cyan
 # gnu utilities
 abbr -a -g .. cd ..
 abbr -a -g :q exit
-abbr -a -g ls ls -1 --color=auto
-abbr -a -g lsa ls -lAh --color=auto
-abbr -a -g grep grep --color=auto
-abbr -a -g diff diff --color=auto
+abbr -a -g ls ls -1
+abbr -a -g lsa ls -lAh
+abbr -a -g grep grep
+abbr -a -g diff diff
 abbr -a -g mkdir mkdir -p
 abbr -a -g mv mv -v
 abbr -a -g rm rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
-abbr -a -g ip ip -color=auto
+abbr -a -g ip ip 
 abbr -a -g cclip 'xclip -f -selection primary | xclip -selection clipboard'
 abbr -a -g rsync rsync -r
 abbr -a -g zip zip -r
@@ -138,7 +138,7 @@ abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate
 abbr -a -g dotfiles git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
 abbr -a -g orphans pacman -Qtdq
-abbr -a -g caps setxkbmap -option caps:ctrl_modifier 
+abbr -a -g caps setxkbmap -option caps:ctrl_modifier
 
 # server admin
 abbr -a -g mount_raven sshfs raven:/srv/fabric $HOME/mnt/raven
