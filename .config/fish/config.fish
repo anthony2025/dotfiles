@@ -33,7 +33,7 @@ if not contains $local_bin_path $PATH
 end
 
 # add doom emacs bin path only if necessary
-set emacs_doom_path $XDG_CONFIG_HOME/emacs/bin
+set emacs_doom_path $HOME/.emacs.d/bin
 if not contains $emacs_doom_path $PATH
     set fish_user_paths $fish_user_paths $emacs_doom_path
 end
@@ -138,7 +138,7 @@ abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate
 abbr -a -g dotfiles git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
 abbr -a -g orphans pacman -Qtdq
-abbr -a -g caps setxkbmap -option caps:ctrl_modifier 
+abbr -a -g caps setxkbmap -option caps:ctrl_modifier
 
 # server admin
 abbr -a -g mount_raven sshfs raven:/srv/fabric $HOME/mnt/raven
