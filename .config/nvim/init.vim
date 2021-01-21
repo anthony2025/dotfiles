@@ -3,9 +3,9 @@ set nocompatible
 set nomodeline
 
 " if posix is needed uncomment this
-"if &shell =~# 'fish$'
-"set shell=/bin/sh
-"endif
+if &shell =~# 'fish$'
+    set shell=/bin/sh
+endif
 
 " Automatic installation  of plugins
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -24,7 +24,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'svermeulen/vim-yoink'
-Plug 'sjl/gundo.vim'
 
 " navigation
 Plug 'junegunn/fzf'
@@ -47,6 +46,7 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-afterimage'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " cosmetics
 Plug 'ap/vim-css-color'
@@ -71,6 +71,7 @@ set noswapfile
 
 " disable backup files
 set nobackup
+set nowritebackup
 
 " automatically change cwd to the one of the current open file
 set autochdir
@@ -111,10 +112,6 @@ nnoremap <C-i> :bn<CR>
 nnoremap <C-c> :BD<CR>
 nnoremap <C-q> :bd<CR>
 
-" easier buffer switch
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-
 " change the mapleader from \ to spacebar
 let g:mapleader = "\<SPACE>"
 
@@ -123,7 +120,7 @@ autocmd StdinReadPre * let s:std_in=1
 
 " nerdtree setting stuff
 nmap <silent> <leader>f :NERDTreeToggle<CR>
-nmap <silent> <leader>ff :NerdTreeFind<CR>
+nmap <silent> <leader>ff :NERDTreeFind<CR>
 nmap <silent> <leader>F :NERDTree<CR>
 let NERDTreeHijackNetrw = 1
 let NERDTreeAutoDeleteBuffer = 1
@@ -218,17 +215,19 @@ noremap <leader>y "+y
 noremap <leader>p "+p
 
 " lightline
+
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'filename', 'readonly', 'modified' ] ],
       \ 'right': [ [ 'lineinfo' ],
-      \           [ 'percent' ],
+      \           [ 'percent', 'cocstatus' ],
       \           [ 'fileformat', 'filetype'] ],
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'fugitive#head',
+      \   'cocstatus': 'coc#status'
       \ },
       \ }
 
@@ -246,19 +245,85 @@ nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
 
-" vim-gundo
-nnoremap <leader>u :GundoToggle<CR>
-
 " quick-scope
 " trigger a highlight in the appropriate direction when pressing these keys
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" quickly edit a macro
-nnoremap <leader>q :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
 " only use cursor line when in the current window and not when being in insert mode
 autocmd InsertLeave,WinEnter * set cursorline
 autocmd InsertEnter,WinLeave * set nocursorline
 
-" quickly spawn new vertical split
-nnore map <silent> vv <C-w>v
+" correctly format highlight jsonc configuration language
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+
+"
+" Language Server configuration
+
+" default is 4000 ms = 4 s leads to noticeable delays and poor user experience
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Formatting selected code.
+nmap <leader>=  <Plug>(coc-format-selected)
+xmap <leader>=  <Plug>(coc-format-selected)
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
