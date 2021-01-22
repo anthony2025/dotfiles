@@ -33,7 +33,7 @@ if not contains $local_bin_path $PATH
 end
 
 # add doom emacs bin path only if necessary
-set emacs_doom_path $XDG_CONFIG_HOME/emacs/bin
+set emacs_doom_path $HOME/.emacs.d/bin
 if not contains $emacs_doom_path $PATH
     set fish_user_paths $fish_user_paths $emacs_doom_path
 end

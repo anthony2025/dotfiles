@@ -4,6 +4,10 @@
 # only exec last line on this file
 # run with $ startx
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+xrandr --dpi 96
+
 # load settings for X server, do not ampersand this line
 [[ -f ${XDG_CONFIG_HOME}/X11/Xresources ]] && xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/Xresources
 
