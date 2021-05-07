@@ -14,6 +14,7 @@ SETUVAR _fish_abbr__3A_q:exit
 SETUVAR _fish_abbr_cp:cp\x20\x2dr
 SETUVAR _fish_abbr_ctrl__key:setxkbmap\x20\x2doption\x20caps\x3actrl_modifier
 SETUVAR _fish_abbr_diff:diff\x20\x2d\x2dcolor\x3dauto
+SETUVAR _fish_abbr_dlbucket:dld\x2d47deg\x2d9igs46wa
 SETUVAR _fish_abbr_dm:cd\x20/home/anthony/Documents
 SETUVAR _fish_abbr_dotfiles:/usr/bin/git\x20\x2d\x2dgit\x2ddir\x3d/home/anthony/\x2edotfiles\x20\x2d\x2dwork\x2dtree\x3d/home/anthony
 SETUVAR _fish_abbr_ds:cd\x20/home/anthony/Desktop
@@ -65,4 +66,4 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/anthony/\x2elocal/bin\x1e/home/anthony/\x2econfig/emacs/bin\x1e/Users/anthony/\x2elocal/bin\x1e/Users/anthony/\x2econfig/emacs/bin
+SETUVAR fish_user_paths:/home/anthony/\x2elocal/bin\x1e/home/anthony/\x2econfig/emacs/bin\x1e/Users/anthony/\x2elocal/bin\x1e/Users/anthony/\x2econfig/emacs/bin\x1e/Users/anthony/\x2eemacs\x2ed/bin\x1e/Users/anthony/\x2elocal/bin\x1e/usr/local/sbin

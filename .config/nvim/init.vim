@@ -142,7 +142,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
       \ | endif
 
 " quickly edit the vimrc file
-nmap <silent> <leader>c :e $MYVIMRC<CR>
+nmap <silent> <leader>t :e $MYVIMRC<CR>
 
 " quickly reload the vimrc file
 nmap <silent> <leader>r :source $MYVIMRC<CR>
@@ -285,11 +285,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -388,3 +384,5 @@ nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
 " Reveal current current class (trait or object) in Tree View 'metalsPackages'
 nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
 
+"FZF
+nmap <silent> <leader>t :Files<CR>

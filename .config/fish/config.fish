@@ -4,8 +4,8 @@ set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
 set -gx FILE vifm
-set -gx TERMINAL kitty
-set -gx BROWSER firefox-beta
+set -gx TERMINAL iTerm2
+set -gx BROWSER firefox
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR
@@ -25,6 +25,15 @@ set -gx XDG_PICTURES_DIR $HOME/media
 set -gx XDG_VIDEOS_DIR $HOME/media
 set -gx XDG_PUBLICSHARE_DIR $HOME/shared
 set -gx XDG_TEMPLATES_DIR $HOME/templates
+
+# for banno artifacts
+set -gx SBT_CREDENTIALS $HOME/.ivy2/.credentials
+
+# add local sbin path only if necessary
+set local_sbin_path /usr/local/sbin
+if not contains $local_sbin_path $PATH
+    set fish_user_paths $fish_user_paths $local_sbin_path
+end
 
 # add local bin path only if necessary
 set local_bin_path $HOME/.local/bin
@@ -124,7 +133,7 @@ abbr -a -g mv mv -v
 abbr -a -g rm rm -rf
 abbr -a -g cp cp -r
 abbr -a -g scp scp -r
-abbr -a -g ip ip 
+abbr -a -g ip ip
 abbr -a -g cclip 'xclip -f -selection primary | xclip -selection clipboard'
 abbr -a -g rsync rsync -r
 abbr -a -g zip zip -r
@@ -157,6 +166,7 @@ abbr -a -g fishrc $EDITOR $XDG_CONFIG_HOME/fish/config.fish
 abbr -a -g prompt $EDITOR $XDG_CONFIG_HOME/fish/functions/fish_prompt.fish
 abbr -a -g refresh source $XDG_CONFIG_HOME/fish/config.fish
 abbr -a -g tridactyl $EDITOR $XDG_CONFIG_HOME/tridactyl/tridactylrc
+abbr -a -g vim nvim
 
 # file shortcuts
 abbr -a -g ds cd $HOME/Desktop
