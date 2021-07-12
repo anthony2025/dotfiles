@@ -12,87 +12,86 @@ end
 require('packer').startup(
 	function(use)
 		use 'wbthomason/packer.nvim'
-		-- use 'christoomey/vim-tmux-navigator'
-		-- use 'terryma/vim-multiple-cursors'
-		-- use 'AndrewRadev/splitjoin.vim'
-		-- use 'kosayoda/nvim-lightbulb'
-		-- use 'tpope/vim-afterimage'
-		-- use 'sunjon/shade.nvim'
-		-- use 'justinmk/vim-sneak'
-		-- use 'RRethy/vim-illuminate'
+		use 'christoomey/vim-tmux-navigator'
+		use 'terryma/vim-multiple-cursors'
+		use 'andrewradev/splitjoin.vim'
+		use 'kosayoda/nvim-lightbulb'
+		use 'tpope/vim-afterimage'
+		use 'sunjon/shade.nvim'
+		use 'justinmk/vim-sneak'
+		use 'rrethy/vim-illuminate'
 		use 'marko-cerovac/material.nvim'
-		-- use 'famiu/bufdelete.nvim'
-		-- use 'onsails/lspkind-nvim'
-		-- use 'folke/lsp-colors.nvim'
-		-- use 'RRethy/nvim-base16'
-		-- use 'rafamadriz/neon'
-		-- use 'jubnzv/virtual-types.nvim'
-		-- use 'airblade/vim-rooter'
-		-- use 'gennaro-tedesco/nvim-peekup'
-		-- use 'edluffy/specs.nvim'
-		-- use 'norcalli/nvim-colorizer.lua'
-		-- use 'lambdalisue/suda.vim'
+		use 'famiu/bufdelete.nvim'
+		use 'onsails/lspkind-nvim'
+		use 'folke/lsp-colors.nvim'
+		use 'RRethy/nvim-base16'
+		use 'rafamadriz/neon'
+		use 'jubnzv/virtual-types.nvim'
+		use 'airblade/vim-rooter'
+		use 'gennaro-tedesco/nvim-peekup'
+		use 'edluffy/specs.nvim'
+		use 'norcalli/nvim-colorizer.lua'
+		use 'lambdalisue/suda.vim'
 		use 'akinsho/nvim-bufferline.lua'
 		use 'kyazdani42/nvim-tree.lua'
-		-- use 'lukas-reineke/indent-blankline.nvim'
-		-- use 'matze/vim-move'
+		use 'lukas-reineke/indent-blankline.nvim'
+		use 'matze/vim-move'
 		use 'mboughaba/vim-lessmess'
-		-- use {
-		--   'glepnir/dashboard-nvim',
-		--   requires = {
-		--     'junegunn/fzf',
-		--     'junegunn/fzf.vim',
-		--   }
-		-- }
-		-- use {
-		--   'TimUntersberger/neogit',
-		--   requires = 'nvim-lua/plenary.nvim',
-		-- }
+		use {
+			'glepnir/dashboard-nvim',
+			requires = {
+				'junegunn/fzf',
+				'junegunn/fzf.vim',
+			}
+		}
+		use {
+			'TimUntersberger/neogit',
+			requires = 'nvim-lua/plenary.nvim',
+		}
 		use {
 			'glepnir/galaxyline.nvim',
 			branch = 'main',
 			config = require'eviline',
 			requires = {'kyazdani42/nvim-web-devicons', opt = true}
 		}
--- 		use {
--- 				"vhyrro/neorg",
--- 				config = function()
--- 			require('neorg').setup {
--- 					load = {
--- 				["core.defaults"] = {}, -- Load all the default modules
--- 				["core.norg.concealer"] = {}, -- Allows for use of icons
--- 				["core.norg.dirman"] = { -- Manage your directories with Neorg
--- 						config = {
--- 					workspaces = {
--- 							my_workspace = "~/neorg"
--- 					}
--- 						}
--- 				}
--- 					},
---
--- 			}
--- 				end,
--- 		}
-		-- use {
-		--   'nvim-treesitter/nvim-treesitter',
-		--   run = ':TSUpdate'
-		-- }
-		-- use {
-		--   'terrortylor/nvim-comment',
-		--   config = function() require('nvim_comment').setup() end,
-		-- }
-		-- use {
-		--   'jghauser/mkdir.nvim',
-		--   config = function() require('mkdir') end,
-		-- }
-		-- use {
-		--   'kristijanhusak/orgmode.nvim',
-		--   config = function() require('orgmode').setup{} end,
-		-- }
-		-- use {
-		--   'folke/trouble.nvim',
-		--   config = function() require("trouble").setup{} end,
-		-- }
+		use {
+			"vhyrro/neorg",
+			config = function()
+				require('neorg').setup {
+					load = {
+						["core.defaults"] = {}, -- Load all the default modules
+						["core.norg.concealer"] = {}, -- Allows for use of icons
+						["core.norg.dirman"] = { -- Manage your directories with Neorg
+							config = {
+								workspaces = {
+										my_workspace = "~/neorg"
+								}
+							}
+						}
+					},
+				}
+			end,
+		}
+		use {
+			'nvim-treesitter/nvim-treesitter',
+			run = ':TSUpdate'
+		}
+		use {
+			'terrortylor/nvim-comment',
+			config = function() require('nvim_comment').setup() end,
+		}
+		use {
+			'jghauser/mkdir.nvim',
+			config = function() require('mkdir') end,
+		}
+		use {
+			'kristijanhusak/orgmode.nvim',
+			config = function() require('orgmode').setup{} end,
+		}
+		use {
+			'folke/trouble.nvim',
+			config = function() require("trouble").setup{} end,
+		}
 		use {
 			'scalameta/nvim-metals',
 			branch = 'next',
@@ -134,7 +133,7 @@ vim.g.nvim_tree_update_cwd = 1
 vim.opt.hidden = true
 
 -- magit for nvim
--- require('neogit').setup()
+require('neogit').setup()
 
 -- lsp
 metals_config = require("metals").bare_config
@@ -151,7 +150,7 @@ vim.api.nvim_command [[augroup end]]
 -- keybindings
 opts = { silent = true }
 vim.api.nvim_set_keymap('n', '<F3>', ':NvimTreeToggle<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<F5>', ':Dashboard<CR>', opts)
+vim.api.nvim_set_keymap('n', '<F5>', ':Dashboard<CR>', opts)
 
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', opts)
 
@@ -207,6 +206,7 @@ vim.opt.colorcolumn = '120'
 vim.opt.smartindent = true
 vim.opt.copyindent = true
 vim.opt.preserveindent = true
+vim.g.mapleader = '<SPACE>'
 
 vim.opt.swapfile = false
 vim.opt.undofile = false
@@ -223,5 +223,3 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = false
 
-vim.opt.list = true
-vim.g.mapleader = '<SPACE>'
