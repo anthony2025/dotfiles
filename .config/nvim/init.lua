@@ -144,7 +144,7 @@ vim.api.nvim_command [[autocmd FileType sc,scala,sbt lua require('metals').initi
 vim.api.nvim_command [[augroup end]]
 
 -- keybindings
-opts = { silent = true }
+opts = {silent = true, noremap = true}
 vim.api.nvim_set_keymap('n', '<F3>', ':NERDTreeToggle<CR>', opts)
 vim.api.nvim_set_keymap('n', '<F5>', ':Dashboard<CR>', opts)
 
