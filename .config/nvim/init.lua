@@ -12,93 +12,92 @@ end
 require('packer').startup(
 	function(use)
 		use 'wbthomason/packer.nvim'
-		use 'christoomey/vim-tmux-navigator'
-		use 'terryma/vim-multiple-cursors'
-		use 'AndrewRadev/splitjoin.vim'
-		use 'kosayoda/nvim-lightbulb'
-		use 'tpope/vim-afterimage'
-		use 'sunjon/shade.nvim'
-		use 'justinmk/vim-sneak'
-		use 'RRethy/vim-illuminate'
+		-- use 'christoomey/vim-tmux-navigator'
+		-- use 'terryma/vim-multiple-cursors'
+		-- use 'AndrewRadev/splitjoin.vim'
+		-- use 'kosayoda/nvim-lightbulb'
+		-- use 'tpope/vim-afterimage'
+		-- use 'sunjon/shade.nvim'
+		-- use 'justinmk/vim-sneak'
+		-- use 'RRethy/vim-illuminate'
 		use 'marko-cerovac/material.nvim'
-		use 'famiu/bufdelete.nvim'
-		use 'onsails/lspkind-nvim'
-		use 'folke/lsp-colors.nvim'
-		use 'RRethy/nvim-base16'
-		use 'rafamadriz/neon'
-		use 'jubnzv/virtual-types.nvim'
-		use 'airblade/vim-rooter'
-		use 'gennaro-tedesco/nvim-peekup'
-		use 'edluffy/specs.nvim'
-		use 'norcalli/nvim-colorizer.lua'
-		use 'lambdalisue/suda.vim'
+		-- use 'famiu/bufdelete.nvim'
+		-- use 'onsails/lspkind-nvim'
+		-- use 'folke/lsp-colors.nvim'
+		-- use 'RRethy/nvim-base16'
+		-- use 'rafamadriz/neon'
+		-- use 'jubnzv/virtual-types.nvim'
+		-- use 'airblade/vim-rooter'
+		-- use 'gennaro-tedesco/nvim-peekup'
+		-- use 'edluffy/specs.nvim'
+		-- use 'norcalli/nvim-colorizer.lua'
+		-- use 'lambdalisue/suda.vim'
 		use 'akinsho/nvim-bufferline.lua'
 		use 'kyazdani42/nvim-tree.lua'
-		use 'lukas-reineke/indent-blankline.nvim'
-		use 'matze/vim-move'
+		-- use 'lukas-reineke/indent-blankline.nvim'
+		-- use 'matze/vim-move'
 		use 'mboughaba/vim-lessmess'
-		use {
-			'glepnir/dashboard-nvim',
-			requires = { 
-				'junegunn/fzf',
-				'junegunn/fzf.vim',
-			}
-		}
-		use { 
-			'TimUntersberger/neogit', 
-			requires = 'nvim-lua/plenary.nvim',
-		}
+		-- use {
+		--   'glepnir/dashboard-nvim',
+		--   requires = {
+		--     'junegunn/fzf',
+		--     'junegunn/fzf.vim',
+		--   }
+		-- }
+		-- use {
+		--   'TimUntersberger/neogit',
+		--   requires = 'nvim-lua/plenary.nvim',
+		-- }
 		use {
 			'glepnir/galaxyline.nvim',
 			branch = 'main',
 			config = require'eviline',
 			requires = {'kyazdani42/nvim-web-devicons', opt = true}
 		}
+-- 		use {
+-- 				"vhyrro/neorg",
+-- 				config = function()
+-- 			require('neorg').setup {
+-- 					load = {
+-- 				["core.defaults"] = {}, -- Load all the default modules
+-- 				["core.norg.concealer"] = {}, -- Allows for use of icons
+-- 				["core.norg.dirman"] = { -- Manage your directories with Neorg
+-- 						config = {
+-- 					workspaces = {
+-- 							my_workspace = "~/neorg"
+-- 					}
+-- 						}
+-- 				}
+-- 					},
+--
+-- 			}
+-- 				end,
+-- 		}
+		-- use {
+		--   'nvim-treesitter/nvim-treesitter',
+		--   run = ':TSUpdate'
+		-- }
+		-- use {
+		--   'terrortylor/nvim-comment',
+		--   config = function() require('nvim_comment').setup() end,
+		-- }
+		-- use {
+		--   'jghauser/mkdir.nvim',
+		--   config = function() require('mkdir') end,
+		-- }
+		-- use {
+		--   'kristijanhusak/orgmode.nvim',
+		--   config = function() require('orgmode').setup{} end,
+		-- }
+		-- use {
+		--   'folke/trouble.nvim',
+		--   config = function() require("trouble").setup{} end,
+		-- }
 		use {
-		    "vhyrro/neorg",
-		    config = function()
-			require('neorg').setup {
-			    load = {
-				["core.defaults"] = {}, -- Load all the default modules
-				["core.norg.concealer"] = {}, -- Allows for use of icons
-				["core.norg.dirman"] = { -- Manage your directories with Neorg
-				    config = {
-					workspaces = {
-					    my_workspace = "~/neorg"
-					}
-				    }
-				}
-			    },
-
-			}
-		    end,
-		}
-
-		use {
-			'nvim-treesitter/nvim-treesitter',
-			run = ':TSUpdate'
-	        }
-		use {
-			'terrortylor/nvim-comment',
-			config = function() require('nvim_comment').setup() end,
-		}
-		use {
-			'jghauser/mkdir.nvim',
-			config = function() require('mkdir') end,
-		}
-		use {
-			'kristijanhusak/orgmode.nvim',
-			config = function() require('orgmode').setup{} end,
-		}
-		use {
-			'scalameta/nvim-metals', 
+			'scalameta/nvim-metals',
 			branch = 'next',
 		}
-		use {
-			'folke/trouble.nvim',
-			config = function() require("trouble").setup{} end,
-		}
-	end 
+	end
 )
 
 -- set theme
@@ -123,24 +122,36 @@ vim.opt.termguicolors = true
 require("bufferline").setup()
 
 -- file explorer
-vim.g.nvim_tree_gitignore = 1 
-vim.g.nvim_tree_auto_close = 1 
-vim.g.nvim_tree_follow = 1 
-vim.g.nvim_tree_indent_markers = 1 
+vim.g.nvim_tree_gitignore = 1
+vim.g.nvim_tree_auto_close = 1
+vim.g.nvim_tree_follow = 1
+vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_add_trailing = 1 
-vim.g.nvim_tree_lsp_diagnostics = 1 
-vim.g.nvim_tree_disable_window_picker = 1 
-vim.g.nvim_tree_update_cwd = 1 
+vim.g.nvim_tree_add_trailing = 1
+vim.g.nvim_tree_lsp_diagnostics = 1
+vim.g.nvim_tree_disable_window_picker = 1
+vim.g.nvim_tree_update_cwd = 1
 vim.opt.hidden = true
 
 -- magit for nvim
-require('neogit').setup()
+-- require('neogit').setup()
+
+-- lsp
+metals_config = require("metals").bare_config
+-- metals_config.init_options.statusBarProvider = "on"
+metals_config.settings.showImplicitConversionsAndClasses = true
+metals_config.settings.showInferredType = true
+metals_config.settings.superMethodLensesEnabled = true
+vim.api.nvim_command [[augroup lsp]]
+vim.api.nvim_command [[au!]]
+vim.api.nvim_command [[autocmd FileType sc,scala,sbt setlocal omnifunc=v:lua.vim.lsp.omnifunc]]
+vim.api.nvim_command [[autocmd FileType sc,scala,sbt lua require("metals").initialize_or_attach(metals_config)]]
+vim.api.nvim_command [[augroup end]]
 
 -- keybindings
-opts = { silent = true, noremap = true }
+opts = { silent = true }
 vim.api.nvim_set_keymap('n', '<F3>', ':NvimTreeToggle<CR>', opts)
-vim.api.nvim_set_keymap('n', '<F5>', ':Dashboard<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<F5>', ':Dashboard<CR>', opts)
 
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', opts)
 
@@ -158,6 +169,27 @@ vim.cmd([[
   nnoremap <silent> <C-Right> :vertical resize -2<CR>
   nnoremap <silent> <C-Left>  :vertical resize +2<CR>
 ]])
+
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+vim.api.nvim_set_keymap("n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
+vim.api.nvim_set_keymap("n", "gws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>ws", '<cmd>lua require"metals".worksheet_hover()<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader>a", '<cmd>lua require"metals".open_all_diagnostics()<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+vim.api.nvim_set_keymap("n", "[c", "<cmd>lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>", opts)
+vim.api.nvim_set_keymap("n", "]c", "<cmd>lua vim.lsp.diagnostic.goto_next { wrap = false }<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]], opts)
+vim.api.nvim_set_keymap("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]], opts)
+
+vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', { expr = true })
+vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true })
+vim.api.nvim_set_keymap("i", "<CR>", 'compe#confirm("\\<CR>")', { expr = true })
 
 -- global settings
 vim.opt.mouse = 'a'
@@ -184,6 +216,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.ignorecase = true
+vim.opt_global.shortmess:remove("F"):append("c")
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
