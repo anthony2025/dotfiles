@@ -4,7 +4,7 @@ set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
 set -gx FILE vifm
-set -gx TERMINAL iTerm2
+set -gx TERMINAL alacritty
 set -gx BROWSER firefox
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
@@ -25,9 +25,6 @@ set -gx XDG_PICTURES_DIR $HOME/media
 set -gx XDG_VIDEOS_DIR $HOME/media
 set -gx XDG_PUBLICSHARE_DIR $HOME/shared
 set -gx XDG_TEMPLATES_DIR $HOME/templates
-
-# for banno artifacts
-set -gx SBT_CREDENTIALS $HOME/.ivy2/.credentials
 
 # add local sbin path only if necessary
 set local_sbin_path /usr/local/sbin
@@ -50,8 +47,10 @@ end
 # force 24 bit support
 set -gx fish_term24bit 1
 
-# call a function to set our keybindings
-fish_user_key_bindings
+# set our keybindings
+fish_vi_key_bindings
+fzf_configure_bindings
+bind -M insert jj "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end"
 
 # set start greeting
 # set -gx fish_greeting Hii, (date --utc)
@@ -137,19 +136,17 @@ abbr -a -g ip ip
 abbr -a -g cclip 'xclip -f -selection primary | xclip -selection clipboard'
 abbr -a -g rsync rsync -r
 abbr -a -g zip zip -r
+abbr -a -g vim nvim
 
 # utilities
 abbr -a -g resize mogrify -path . -resize 1600x1600\> -format jpg
 abbr -a -g public_ip curl -s icanhazip.com
 abbr -a -g npmg npm ls -g --depth=0
-abbr -a -g ctrl_key setxkbmap -option caps:ctrl_modifier
 abbr -a -g sort_mirrors sudo reflector --latest 100 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 abbr -a -g dotfiles git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 abbr -a -g usage du -ah --max-depth=1 | sort -hr
 abbr -a -g orphans pacman -Qtdq
 abbr -a -g caps setxkbmap -option caps:ctrl_modifier
-
-# server admin
 abbr -a -g mount_raven sshfs raven:/srv/fabric $HOME/mnt/raven
 abbr -a -g umount_raven fusermount -u $HOME/mnt/raven
 abbr -a -g syncthing_raven ssh -L 2025:localhost:8384 raven
@@ -166,18 +163,17 @@ abbr -a -g fishrc $EDITOR $XDG_CONFIG_HOME/fish/config.fish
 abbr -a -g prompt $EDITOR $XDG_CONFIG_HOME/fish/functions/fish_prompt.fish
 abbr -a -g refresh source $XDG_CONFIG_HOME/fish/config.fish
 abbr -a -g tridactyl $EDITOR $XDG_CONFIG_HOME/tridactyl/tridactylrc
-abbr -a -g vim nvim
 
 # file shortcuts
 abbr -a -g ds cd $HOME/Desktop
 abbr -a -g dw cd $HOME/Downloads
 abbr -a -g dm cd $HOME/Documents
 
-if status is-login
-  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-    if test "$hostname" = 'violet' -o "$hostname" = 'raven'
-      # auto start X11 server and discard output
-      ssh-agent startx -- -keeptty &> /dev/null
-    end
-  end
-end
+# if status is-login
+#   if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+#     if test "$hostname" = 'violet' -o "$hostname" = 'raven'
+#       # auto start X11 server and discard output
+#       ssh-agent startx -- -keeptty &> /dev/null
+#     end
+#   end
+# end
