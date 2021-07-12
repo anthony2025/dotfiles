@@ -1,5 +1,7 @@
 -- requires nvim --version >= 0.5.0
 -- to init run :PackerSync or :PackerInstall
+-- for icons you will want to set your terminal to a Nerd patched font
+-- dependencies: fd, ripgrep, fzf, courier
 
 -- bootstrap packer
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -22,21 +24,26 @@ require('packer').startup(
 		use 'rrethy/vim-illuminate'
 		use 'marko-cerovac/material.nvim'
 		use 'famiu/bufdelete.nvim'
-		use 'onsails/lspkind-nvim'
-		use 'folke/lsp-colors.nvim'
 		use 'RRethy/nvim-base16'
 		use 'rafamadriz/neon'
-		use 'jubnzv/virtual-types.nvim'
-		use 'airblade/vim-rooter'
+		use 'matze/vim-move'
+		use 'mboughaba/vim-lessmess'
+		use 'lambdalisue/suda.vim'
 		use 'gennaro-tedesco/nvim-peekup'
 		use 'edluffy/specs.nvim'
 		use 'norcalli/nvim-colorizer.lua'
-		use 'lambdalisue/suda.vim'
-		use 'akinsho/nvim-bufferline.lua'
-		use 'kyazdani42/nvim-tree.lua'
+		use 'airblade/vim-rooter'
 		use 'lukas-reineke/indent-blankline.nvim'
-		use 'matze/vim-move'
-		use 'mboughaba/vim-lessmess'
+		use 'akinsho/nvim-bufferline.lua'
+		use 'jubnzv/virtual-types.nvim'
+		use 'onsails/lspkind-nvim'
+		use 'folke/lsp-colors.nvim'
+		use 'antoinemadec/FixCursorHold.nvim'
+		use 'lambdalisue/fern.vim'
+		use {
+			'preservim/nerdtree',
+			requires = {'ryanoasis/vim-devicons'},
+		}
 		use {
 			'glepnir/dashboard-nvim',
 			requires = {
@@ -49,22 +56,16 @@ require('packer').startup(
 			requires = 'nvim-lua/plenary.nvim',
 		}
 		use {
-			'glepnir/galaxyline.nvim',
-			branch = 'main',
-			config = require'eviline',
-			requires = {'kyazdani42/nvim-web-devicons', opt = true}
-		}
-		use {
-			"vhyrro/neorg",
+			'vhyrro/neorg',
 			config = function()
 				require('neorg').setup {
 					load = {
-						["core.defaults"] = {}, -- Load all the default modules
-						["core.norg.concealer"] = {}, -- Allows for use of icons
-						["core.norg.dirman"] = { -- Manage your directories with Neorg
+						['core.defaults'] = {}, -- Load all the default modules
+						['core.norg.concealer'] = {}, -- Allows for use of icons
+						['core.norg.dirman'] = { -- Manage your directories with Neorg
 							config = {
 								workspaces = {
-										my_workspace = "~/neorg"
+										my_workspace = '~/neorg'
 								}
 							}
 						}
@@ -90,7 +91,13 @@ require('packer').startup(
 		}
 		use {
 			'folke/trouble.nvim',
-			config = function() require("trouble").setup{} end,
+			config = function() require('trouble').setup{} end,
+		}
+		use {
+			'glepnir/galaxyline.nvim',
+			branch = 'main',
+			config = require'eviline',
+			requires = {'kyazdani42/nvim-web-devicons', opt = true}
 		}
 		use {
 			'scalameta/nvim-metals',
@@ -100,7 +107,7 @@ require('packer').startup(
 )
 
 -- set theme
-vim.g.material_style = "darker"
+vim.g.material_style = 'darker'
 vim.g.material_italic_comments = true
 vim.g.material_italic_keywords = true
 vim.g.material_italic_functions = true
@@ -108,48 +115,37 @@ vim.g.material_italic_variables = true
 vim.g.material_contrast = true
 vim.g.material_borders = true
 vim.g.material_disable_background = false
-vim.opt.background = "dark"
-
-vim.opt.guifont = "FiraCode Nerd Font" .. ':h' .. "15"
+vim.opt.background = 'dark'
+vim.opt.termguicolors = true
 require('material').set()
 
 -- start screen
 vim.g.dashboard_default_executive = 'fzf'
 
 -- buffer bar
-vim.opt.termguicolors = true
-require("bufferline").setup()
+require('bufferline').setup()
 
 -- file explorer
-vim.g.nvim_tree_gitignore = 1
-vim.g.nvim_tree_auto_close = 1
-vim.g.nvim_tree_follow = 1
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_lsp_diagnostics = 1
-vim.g.nvim_tree_disable_window_picker = 1
-vim.g.nvim_tree_update_cwd = 1
 vim.opt.hidden = true
 
 -- magit for nvim
 require('neogit').setup()
 
 -- lsp
-metals_config = require("metals").bare_config
--- metals_config.init_options.statusBarProvider = "on"
+metals_config = require('metals').bare_config
+-- metals_config.init_options.statusBarProvider = 'on'
 metals_config.settings.showImplicitConversionsAndClasses = true
 metals_config.settings.showInferredType = true
 metals_config.settings.superMethodLensesEnabled = true
 vim.api.nvim_command [[augroup lsp]]
 vim.api.nvim_command [[au!]]
 vim.api.nvim_command [[autocmd FileType sc,scala,sbt setlocal omnifunc=v:lua.vim.lsp.omnifunc]]
-vim.api.nvim_command [[autocmd FileType sc,scala,sbt lua require("metals").initialize_or_attach(metals_config)]]
+vim.api.nvim_command [[autocmd FileType sc,scala,sbt lua require('metals').initialize_or_attach(metals_config)]]
 vim.api.nvim_command [[augroup end]]
 
 -- keybindings
 opts = { silent = true }
-vim.api.nvim_set_keymap('n', '<F3>', ':NvimTreeToggle<CR>', opts)
+vim.api.nvim_set_keymap('n', '<F3>', ':NERDTreeToggle<CR>', opts)
 vim.api.nvim_set_keymap('n', '<F5>', ':Dashboard<CR>', opts)
 
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', opts)
@@ -169,31 +165,31 @@ vim.cmd([[
   nnoremap <silent> <C-Left>  :vertical resize +2<CR>
 ]])
 
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>ws", '<cmd>lua require"metals".worksheet_hover()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<leader>a", '<cmd>lua require"metals".open_all_diagnostics()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-vim.api.nvim_set_keymap("n", "[c", "<cmd>lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>", opts)
-vim.api.nvim_set_keymap("n", "]c", "<cmd>lua vim.lsp.diagnostic.goto_next { wrap = false }<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]], opts)
-vim.api.nvim_set_keymap("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]], opts)
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gds', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gws', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>ws', '<cmd>lua require("metals").worksheet_hover()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua require("metals").open_all_diagnostics()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+vim.api.nvim_set_keymap('n', '[c', '<cmd>lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>', opts)
+vim.api.nvim_set_keymap('n', ']c', '<cmd>lua vim.lsp.diagnostic.goto_next { wrap = false }<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>tt', [[<cmd>lua require('metals.tvp').toggle_tree_view()<CR>]], opts)
+vim.api.nvim_set_keymap('n', '<leader>tr', [[<cmd>lua require('metals.tvp').reveal_in_tree()<CR>]], opts)
 
-vim.api.nvim_set_keymap("i", "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', { expr = true })
-vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true })
-vim.api.nvim_set_keymap("i", "<CR>", 'compe#confirm("\\<CR>")', { expr = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', "pumvisible() ? '\\<C-p>; : '\\<Tab>'", { expr = true })
+vim.api.nvim_set_keymap('i', '<Tab>', "pumvisible() ? '\\<C-n>' : '\\<Tab>'", { expr = true })
 
 -- global settings
 vim.opt.mouse = 'a'
 vim.opt.updatetime = 200
 vim.opt.timeoutlen = 500
+vim.g.cursorhold_updatetime = 100
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 
@@ -212,14 +208,14 @@ vim.opt.swapfile = false
 vim.opt.undofile = false
 vim.opt.undofile = false
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.guifont = 'FiraCode Nerd Font' .. ':h' .. '15'
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.ignorecase = true
-vim.opt_global.shortmess:remove("F"):append("c")
+vim.opt_global.shortmess:remove('F'):append('c')
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = false
-
