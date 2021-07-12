@@ -4,7 +4,7 @@ set -gx PAGER less
 set -gx LESS eFRX
 set -gx READER zathura
 set -gx FILE vifm
-set -gx TERMINAL alacritty
+set -gx TERMINAL iterm2
 set -gx BROWSER firefox
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
@@ -152,9 +152,8 @@ abbr -a -g umount_raven fusermount -u $HOME/mnt/raven
 abbr -a -g syncthing_raven ssh -L 2025:localhost:8384 raven
 
 # config files
-abbr -a -g vimrc $EDITOR $XDG_CONFIG_HOME/nvim/init.vim
+abbr -a -g vimrc $EDITOR $XDG_CONFIG_HOME/nvim/init.lua
 abbr -a -g tmuxrc $EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf
-abbr -a -g alacrittyrc $EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml
 abbr -a -g gitrc $EDITOR $XDG_CONFIG_HOME/git/config
 abbr -a -g xinitrc $EDITOR $HOME/.xinitrc
 abbr -a -g xmonadrc $EDITOR $XDG_CONFIG_HOME/xmonad/xmonad.hs
