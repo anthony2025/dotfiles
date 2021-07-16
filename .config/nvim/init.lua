@@ -99,10 +99,7 @@ require('packer').startup(
 			config = require'eviline',
 			requires = {'kyazdani42/nvim-web-devicons', opt = true}
 		}
-		use {
-			'scalameta/nvim-metals',
-			branch = 'next',
-		}
+		use 'scalameta/nvim-metals'
 	end
 )
 
