@@ -22,6 +22,7 @@ set -gx FILE vifm
 set -gx BROWSER firefox
 
 # setup our pagers
+set -gx PAGER less
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx LESS \
   --quit-if-one-screen \
