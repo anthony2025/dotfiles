@@ -1,0 +1,8 @@
+[Match]
+Name=enp*
+
+[Network]
+DHCP=yes
+
+[Link]
+#MTUBytes=1470

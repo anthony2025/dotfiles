@@ -1,0 +1,53 @@
+# This sshd was compiled with PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+
+Protocol 2
+Port 22
+AddressFamily inet
+ListenAddress 0.0.0.0
+Subsystem sftp internal-sftp
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+AuthorizedKeysFile %h/.ssh/authorized_keys
+
+LogLevel DEBUG3
+SyslogFacility AUTH
+Banner none
+AllowGroups ssh-user
+
+HostbasedAuthentication no
+IgnoreUserKnownHosts yes
+IgnoreRhosts yes
+UsePAM yes
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+PermitEmptyPasswords no
+PubkeyAuthentication yes
+AuthenticationMethods publickey
+
+LoginGraceTime 30s
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 3
+MaxSessions 2
+
+AllowAgentForwarding no
+AllowTcpForwarding yes
+GatewayPorts no
+X11Forwarding yes
+X11UseLocalhost yes
+PermitTTY yes
+PermitUserEnvironment no
+
+PrintMotd no
+PrintLastLog yes
+Compression delayed
+TCPKeepAlive no
+ClientAliveInterval 5m
+ClientAliveCountMax 2
+
+#UseDNS no
+#PidFile /run/sshd.pid
+#MaxStartups 10:30:100
+#PermitTunnel no
+#VersionAddendum none

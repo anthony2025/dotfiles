@@ -1,0 +1,8 @@
+[Match]
+Name=wl*
+
+[Network]
+DHCP=ipv4
+
+[Link]
+#MTUBytes=1470

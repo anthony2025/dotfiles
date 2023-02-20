@@ -1,0 +1,14 @@
+# $ bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.config/fish/config.fish"
+--theme=OneHalfDark
+
+# could mess with piping
+--italic-text=always
+
+# dont truncate long lines
+--pager='less --quit-if-one-screen --long-prompt --ignore-case --hilite-unread --raw-control-chars --use-color --incsearch --mouse --file-size --no-init --tabs=2 --wheel-lines=1'
+
+# file extensions associations
+--map-syntax="*.ino:C++"
+--map-syntax="*.sc:Scala"
+--map-syntax="*.conf:INI"
+

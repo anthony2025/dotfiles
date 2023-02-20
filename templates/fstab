@@ -1,0 +1,12 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# root /dev/mapper/cryptroot
+UUID=ad426846 / btrfs rw,noatime,discard,ssd,space_cache,subvolid=5,subvol=/  0 0
+
+# boot /dev/sda1
+UUID=A9D6-AD06  /boot vfat  rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro 0 2
+
+# swap
+/swap/swapfile  none  swap  defaults  0 0

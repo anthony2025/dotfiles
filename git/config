@@ -1,0 +1,57 @@
+[protocol]
+	version = 2
+
+[user]
+	email = anthony2025@pm.me
+	name = Anthony Ascencio
+
+[core]
+	editor = vim
+  excludesfile = ~/.config/git/gitignore
+
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[core]
+	# Use custom `.gitignore` and `.gitattributes`
+	# excludesfile = ~/.gitignore
+	# attributesfile = ~/.gitattributes
+
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+
+[commit]
+	gpgsign = false
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[push]
+	default = current
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
+[color]
+	ui = true
+
+[pull]
+	rebase = false
+
+[init]
+	defaultBranch = main
+
+[status]
+	# showUntrackedFiles = no
+

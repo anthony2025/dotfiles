@@ -1,0 +1,35 @@
+abbr -ag l ls -h1G
+abbr -ag ls ls -h1G
+abbr -ag ll ls -Ahl
+abbr -ag lla ls -Ahl
+abbr -ag lsa ls -Ahl
+
+abbr -ag mv mv -v
+abbr -ag cp cp -r
+abbr -ag rm rm -rf
+abbr -ag scp scp -r
+abbr -ag mkdir mkdir -p
+abbr -ag zip zip -r
+abbr -ag rsync rsync --recursive --progress --archive
+
+abbr -ag dm $HOME/Documents
+abbr -ag ds $HOME/Desktop
+abbr -ag dw $HOME/Downloads
+
+abbr -ag vimrc $EDITOR $XDG_CONFIG_HOME/nvim
+abbr -ag fishrc $EDITOR $XDG_CONFIG_HOME/fish
+abbr -ag gitrc $EDITOR $XDG_CONFIG_HOME/git/config
+abbr -ag xmonadrc $EDITOR $XDG_CONFIG_HOME/xmonad/xmonad.hs
+abbr -ag tmuxrc $EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf
+abbr -ag xmobarrc $EDITOR $XDG_CONFIG_HOME/xmonad/xmobarrc
+abbr -ag tridactylrc $EDITOR $XDG_CONFIG_HOME/tridactyl/trydactylrc
+abbr -ag kittyrc $EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf
+
+abbr -ag :q exit
+abbr -ag dotfiles 'git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+abbr -ag refresh source $XDG_CONFIG_HOME/fish/config.fish 
+
+abbr -ag tmux_update $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all 
+abbr -ag npmg npm ls -g --depth=0 
+abbr -ag caps setxkbmap -option caps:ctrl_modifier 
+abbr -ag scala_repl scala-cli repl -S 2.13 -d org.http4s::http4s-client:0.23 

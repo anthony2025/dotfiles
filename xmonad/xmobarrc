@@ -1,0 +1,26 @@
+Config { font = "xft:NotoSans:style=Bold:size=11:antialias=true"
+  , border = TopB
+  , borderColor = "#373b41"
+  , borderWidth = 2
+  , bgColor = "#20221f"
+  , fgColor = "#969896"
+  , position = Top --Bottom
+  , commands = [  Run Cpu [] 10
+    , Run Memory ["-t","Mem: <usedratio>%"] 10
+    , Run MultiCoreTemp ["-t", "Temp: <avg>°C"] 40
+    , Run Battery [
+      "-t", "<acstatus> <left>%",
+      "--", "-a", "notify-send -u critical 'Battery running out'",
+      "-O", "Charging",
+      "-i", "AC",
+      "-o", "Battery",
+      "-A", "5"
+    ] 40
+    , Run Date "%A, %b %d, %H:%M:%S" "date" 10
+    , Run DynNetwork ["--", "--devices", "wlp4s0,enp3s0"] 40
+    , Run Com "hostname" [] "" 600
+  ]
+  , sepChar = "%"
+  , alignSep = "}{"
+  , template = " <fc=#cc6666>%cpu%</fc> | <fc=#f0c674>%memory%</fc> | <fc=#b5bd68>%multicoretemp%</fc> | <fc=#81a2be>%battery%</fc> }{ <fc=#8abeb7>%dynnetwork%</fc> |  <fc=#de935f>%date%</fc> | <fc=#b294bb>%hostname%</fc> "
+}
