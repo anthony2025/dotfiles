@@ -17,7 +17,7 @@ return {
         { "<c-p>", ":NERDTreeToggle<cr>" },
         { "<c-y>", ":NERDTreeFind<cr>" } -- select file in tree
       },
-      cmd = "NERDTree",
+      cmd = { "NERDTree", "NERDTreeRefreshRoot" },
       init = function()
         -- close tree if it is the only tab left
         vim.api.nvim_create_autocmd("BufEnter", {

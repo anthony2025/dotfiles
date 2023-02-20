@@ -14,7 +14,7 @@ return {
   {
     'folke/trouble.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = true,
+    opts = { use_diagnostic_signs = true },
     keys = {
       { "gl", ":TroubleToggle<cr>" }
     }
