@@ -1,3 +1,4 @@
+-- TODO: move to neo-tree.nvim
 return {
   {
     {
@@ -26,7 +27,7 @@ return {
 
         -- start tree if no arguments passed
         vim.api.nvim_create_autocmd("VimEnter", {
-          command = "if argc() == 0 | execute 'NERDTree' | wincmd p | endif"
+          command = "if argc() == 0 | execute 'NERDTree' | wincmd p | enew | endif"
         })
 
         -- turn on color highlights

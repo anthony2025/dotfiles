@@ -14,19 +14,25 @@ return {
         ensure_installed = {
           "arduino",
           "bash",
+          "fish",
           "vim",
           "python",
           "nix",
           "markdown",
-          "fish",
           "json",
+          "yaml",
           "javascript",
+          "typescript",
+          "tsx",
           "html",
           "go",
           "gitignore",
           "gitcommit",
           "dockerfile",
-          "diff"
+          "diff",
+          "lua",
+          "python",
+          "regex",
         },
         highlight = {
           enable = true

@@ -11,13 +11,6 @@ return {
     end
   },
   {
-    "lambdalisue/suda.vim",
-    event = "VeryLazy",
-    init = function()
-      vim.g.suda_smart_edit = 1
-    end
-  },
-  {
     'terrortylor/nvim-comment',
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
@@ -35,4 +28,11 @@ return {
       end
     }
   },
+  {
+    "echasnovski/mini.surround",
+    event = "VeryLazy",
+    config = function()
+      require'mini.surround'.setup()
+    end
+  }
 }

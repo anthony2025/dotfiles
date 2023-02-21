@@ -3,5 +3,5 @@ jorgebucaran/fisher
 2m/fish-history-merge
 edc/bass
 lilyball/nix-env.fish
-reitzig/sdkman-for-fish@v1.4.0
 nickeb96/puffer-fish
+reitzig/sdkman-for-fish

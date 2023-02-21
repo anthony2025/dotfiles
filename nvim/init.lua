@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
---
+
 -- setup general options before anything else
 require'options'
 
@@ -23,16 +23,6 @@ require'keymaps'
 
 -- initialize package manager
 require'lazy'.setup({
-  spec = {
-    "folke/lazy.nvim", -- package manager manages itself
-    { import = "asthetics" },
-    { import = "syntax" },
-    { import = "navigation" },
-    { import = "explorer" },
-    { import = "editing" },
-    { import = "diagnostics" },
-    { import = "language" },
-  },
   defaults = {
     lazy = true, -- lazy load all plugins unless specified otherwise
     version = false -- use the latest git commit instead of release
@@ -40,5 +30,28 @@ require'lazy'.setup({
   concurrency = 4,
   checker = { enabled = true }, -- automatically check for plugin updates
   change_detection = { notify = false }, -- disable annoying messages
-  install = { colorscheme = { "material" } } -- try setting theme on first launch
+  install = { colorscheme = { "material" } }, -- try setting theme on first launch
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      }
+    }
+  },
+  spec = {
+    "folke/lazy.nvim", -- package manager manages itself
+    { import = "theme" },
+    { import = "statusline" },
+    { import = "syntax" },
+    { import = "files" },
+    { import = "editing" },
+    { import = "explorer" },
+    { import = "lsp" },
+    { import = "autocompletion" },
+    { import = "diagnostics" },
+  },
 })

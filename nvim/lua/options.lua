@@ -1,11 +1,3 @@
--- setup leader the earliest for correct key mappings
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
---
--- essential key mappings
-vim.keymap.set("n", "<esc>", ":noh<cr>") -- disable search highlighting
-vim.keymap.set("i", "jj", "<esc>") -- quickly exit to normal mode
-
 -- enable 24 bit color support
 vim.opt.termguicolors = true
 
@@ -24,7 +16,7 @@ vim.opt.softtabstop = 0
 vim.opt.expandtab = true
 
 -- divide words on dash as well as underscore
-vim.cmd "set iskeyword+=-"
+vim.opt.iskeyword:append("-")
 
 -- disable start screen
 vim.opt_global.shortmess:append("I")
@@ -35,6 +27,12 @@ vim.opt.cursorline = true
 -- draw a column after that many characters
 -- vim.opt.colorcolumn = "80" --javascript
 vim.opt.colorcolumn = "120" -- scala
+
+-- Hide * markup for bold and italic
+vim.opt.conceallevel = 3
+
+-- Dont show mode since we have a statusline
+vim.opt.showmode = false
 
 vim.opt.ignorecase = true
 vim.opt.hidden = false
