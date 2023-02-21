@@ -50,8 +50,9 @@ require'lazy'.setup({
     { import = "files" },
     { import = "editing" },
     { import = "explorer" },
+    { import = "terminal" },
     { import = "lsp" },
-    { import = "autocompletion" },
+    { import = "completion" },
     { import = "diagnostics" },
   },
 })
