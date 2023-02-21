@@ -2,7 +2,7 @@ return {
   {
     url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     keys = {
-      { "<leader>l", function() require'lsp_lines'.toggle() end }
+      { "<c-l>", function() require'lsp_lines'.toggle() end }
     },
     config = function()
       local lsp_lines = require'lsp_lines'
@@ -15,11 +15,20 @@ return {
     'folke/trouble.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "gl", ":TroubleToggle<cr>" }
+      { "<c-d>", ":TroubleToggle<cr>" }
     },
     opts = {
       use_diagnostic_signs = true ,
       auto_close = false,
+    },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+    config = true,
+    keys = {
+      { "<c-x>", ":TodoTrouble<cr>" },
     },
   }
 }

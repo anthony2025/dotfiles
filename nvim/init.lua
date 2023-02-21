@@ -12,14 +12,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- setup general options before anything else
+-- setup essential options before anything else
 require'options'
 
--- setup general autocmds
+-- setup autocommands on events
 require'autocmds'
 
--- setup general keymaps
-require'keymaps'
+-- setup general use key maps
+require'keybindings'
 
 -- initialize package manager
 require'lazy'.setup({
