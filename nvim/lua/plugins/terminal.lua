@@ -2,7 +2,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     keys = {
-      { "<c-s>", ":ToggleTerm direction=float<cr>" }
+      { "<c-s>", "<cmd>ToggleTerm direction=float<cr>" }
     },
     opts = {
       open_mapping = "<c-s>",

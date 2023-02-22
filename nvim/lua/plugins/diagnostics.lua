@@ -15,7 +15,7 @@ return {
     'folke/trouble.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "<c-d>", ":TroubleToggle<cr>" }
+      { "<c-x>", "<cmd>TroubleToggle<cr>" }
     },
     opts = {
       use_diagnostic_signs = true ,
@@ -28,7 +28,7 @@ return {
     event = "VeryLazy",
     config = true,
     keys = {
-      { "<c-x>", ":TodoTrouble<cr>" },
+      { "<c-d>", "<cmd>TodoTrouble<cr>" },
     },
   }
 }

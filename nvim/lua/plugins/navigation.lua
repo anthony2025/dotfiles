@@ -15,7 +15,7 @@ return {
   {
     "famiu/bufdelete.nvim",
     keys = {
-      { "<c-c>", ":Bwipeout<cr>" }
+      { "<c-c>", "<cmd>Bwipeout<cr>" }
     }
   },
   {

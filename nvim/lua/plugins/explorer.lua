@@ -5,7 +5,7 @@ return {
       "jason0x43/vim-wildgitignore",
       event = "VeryLazy",
       config = function()
-        vim.cmd ":NERDTreeRefreshRoot"
+        vim.cmd "NERDTreeRefreshRoot"
       end
     },
     {
@@ -15,10 +15,10 @@ return {
         "johnstef99/vim-nerdtree-syntax-highlight",
       },
       keys = {
-        { "<c-p>", ":NERDTreeToggle<cr>" },
-        { "<c-y>", ":NERDTreeFind<cr>" } -- select file in tree
+        { "<c-p>", "<cmd>NERDTreeToggle<cr>" },
+        { "<c-y>", "<cmd>NERDTreeFind<cr>" } -- select file in tree
       },
-      cmd = { "NERDTree", "NERDTreeRefreshRoot", "NERDTreeClose" },
+      cmd = { "NERDTree", "NERDTreeRefreshRoot" },
       init = function()
         -- if another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
         vim.api.nvim_create_autocmd("BufEnter", {
