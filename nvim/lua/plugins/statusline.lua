@@ -9,10 +9,6 @@ return {
         theme = "material-nvim",
         globalstatus = true
       },
-      disabled_filetypes = {
-        tabline = {},
-        winbar = {},
-      },
       sections = {
         lualine_b = {
           "branch",
