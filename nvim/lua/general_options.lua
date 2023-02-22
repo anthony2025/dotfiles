@@ -45,20 +45,9 @@ return {
     -- hide * markup for bold and italic
     vim.opt.conceallevel = 3
 
-    -- confirm to save changes before exiting modified buffer
-    vim.opt.confirm = true
-
-    -- case insensitive searches
+    -- case insensitive searches unless includes capitals
     vim.opt.ignorecase = true
-
-    -- don't ignore case with capitals
     vim.opt.smartcase = true
-
-    -- show some invisible characters (tabs...
-    vim.opt.list = true
-
-    -- dont wrap long lines
-    vim.opt.wrap = false
 
     -- to which side to open new splits
     vim.opt.splitright = true

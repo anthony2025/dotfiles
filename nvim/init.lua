@@ -1,6 +1,6 @@
 require'general_options'.setup()
-require'autocommands'.setup()
-require'keybindings'.setup()
+require'auto_commands'.setup()
+require'key_bindings'.setup()
 
 -- bootstrap plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -16,11 +16,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- initialize pplugin manager
+-- initialize plugin manager
 require'lazy'.setup(
   {
-    "folke/lazy.nvim",
-    { import = "plugins" }
+    "folke/lazy.nvim", -- plugin manager manages itself
+    { import = "plugins" } -- automatically import any file in plugins directory
   },
   {
     defaults = {
@@ -31,7 +31,7 @@ require'lazy'.setup(
     checker = { enabled = true }, -- automatically check for plugin updates
     change_detection = { notify = false }, -- disable annoying messages
     install = { colorscheme = { "material" } }, -- try setting theme on first launch
-    performance = {
+    performance = { -- disable unused plugins
       rtp = {
         disabled_plugins = {
           "gzip",
