@@ -29,6 +29,7 @@ require'lazy'.setup {
   concurrency = 8,
   change_detection = { notify = false }, -- disable annoying messages
   install = { colorscheme = { "material" } }, -- try setting theme on first launch
+  checker = { enabled = true }, -- automatically check for plugin updates
   performance = { -- disable unused plugins
     rtp = {
       disabled_plugins = {
