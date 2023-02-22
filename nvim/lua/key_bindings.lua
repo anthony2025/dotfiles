@@ -4,14 +4,11 @@ return {
     vim.g.mapleader = " "
     vim.g.maplocalleader = " "
 
-    -- disable search highlighting
-    vim.keymap.set("n", "<esc>", "<cmd>noh<cr>")
+    -- quickly exit to normal mode
+    vim.keymap.set("i", "jj", "<esc>")
 
     -- clear search with <esc>
     vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
-
-    -- quickly exit to normal mode
-    vim.keymap.set("i", "jj", "<esc>")
 
     -- save file
     vim.keymap.set({ "i", "v", "n", "s" }, "<leader>s", "<cmd>w<cr><esc>")
@@ -33,7 +30,7 @@ return {
     vim.keymap.set("n", "<c-u>", "<cmd>bprevious<cr>")
 
     -- resize splits using arrow keys
-    vim.keymap.set("n", "<a-p>", "<cmd>resize +2<cr>")
+    vim.keymap.set("n", "<a-up>", "<cmd>resize +2<cr>")
     vim.keymap.set("n", "<a-down>", "<cmd>resize -2<cr>")
     vim.keymap.set("n", "<a-left>", "<cmd>vertical resize +2<cr>")
     vim.keymap.set("n", "<a-right>", "<cmd>vertical resize -2<cr>")

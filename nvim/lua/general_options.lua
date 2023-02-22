@@ -11,7 +11,7 @@ return {
     vim.opt.number = true
     vim.opt.relativenumber = true
 
-    -- use spaces overe tabs, call :retab from visual mode to convert tabs to spaces
+    -- use spaces over tabs, call :retab from visual mode to convert tabs to spaces
     vim.opt.tabstop = 2
     vim.opt.shiftwidth = 2
     vim.opt.softtabstop = 0
@@ -35,9 +35,6 @@ return {
 
     -- draw a column after that many characters
     vim.opt.colorcolumn = "120"
-
-    -- hide * markup for bold and italic
-    vim.opt.conceallevel = 3
 
     -- dont show mode since we have a statusline
     vim.opt.showmode = false
