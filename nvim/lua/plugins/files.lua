@@ -8,12 +8,6 @@ return {
   {
     "christoomey/vim-tmux-navigator",
     event = "VeryLazy",
-    keys = {
-      { "<tab>", ":bnext<cr>" },
-      { "<s-tab>", ":bprevious<cr>" },
-      { "<c-i>", ":bnext<cr>" },
-      { "<c-u>", ":bprevious<cr>" }
-    },
     init = function()
       vim.g.tmux_navigator_disable_when_zoomed = 1
     end
