@@ -1,4 +1,4 @@
--- bootstrap package manager
+-- bootstrap plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -6,23 +6,17 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
 
--- setup essential options before anything else
 require'options'
-
--- setup autocommands on events
 require'autocmds'
-
--- setup general use key maps
 require'keybindings'
 
--- initialize package manager
-require'lazy'.setup({
+require'lazy'.setup("plugins", {
   defaults = {
     lazy = true, -- lazy load all plugins unless specified otherwise
     version = false -- use the latest git commit instead of release
@@ -41,18 +35,5 @@ require'lazy'.setup({
         "zipPlugin",
       }
     }
-  },
-  spec = {
-    "folke/lazy.nvim", -- package manager manages itself
-    { import = "theme" },
-    { import = "statusline" },
-    { import = "syntax" },
-    { import = "files" },
-    { import = "editing" },
-    { import = "explorer" },
-    { import = "terminal" },
-    { import = "lsp" },
-    { import = "completion" },
-    { import = "diagnostics" },
-  },
+  }
 })
