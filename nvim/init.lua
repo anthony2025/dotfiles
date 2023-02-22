@@ -1,6 +1,6 @@
 require'general_options'.setup()
-require'auto_commands'.setup()
 require'key_bindings'.setup()
+require'auto_commands'.setup()
 
 -- bootstrap plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
