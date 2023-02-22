@@ -1,32 +1,38 @@
 return {
   {
-    "mboughaba/vim-lessmess",
-    event = "VeryLazy"
-  },
-  {
-    "matze/vim-move",
+    "ggandor/leap.nvim",
+    dependencies = { "tpope/vim-repeat" },
     event = "VeryLazy",
-    init = function()
-      vim.g.move_normal_option = 1
+    config = function()
+      require'leap'.add_default_mappings()
     end
   },
   {
-    'terrortylor/nvim-comment',
+    "ggandor/leap-spooky.nvim",
+    dependencies = { "ggandor/leap.nvim" },
+    event = "VeryLazy",
+    config = true,
+  },
+  {
+    "ggandor/flit.nvim",
+    dependencies = { "ggandor/leap.nvim" },
+    event = "VeryLazy",
+    config = true,
+  },
+  {
+    "ggandor/leap-ast.nvim",
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "JoosepAlviste/nvim-ts-context-commentstring"
+      "ggandor/leap.nvim",
+      "nvim-treesitter/nvim-treesitter"
     },
     keys = {
-      { "<leader>c", ":CommentToggle<cr>", mode = { "n", "v" } }
-    },
-    name = "nvim_comment",
-    opts = {
-      comment_empty = false,
-      create_mappings = false,
-      hook = function()
-        require'ts_context_commentstring.internal'.update_commentstring()
-      end
+      { "<leader>s", function() require'leap-ast'.leap() end, mode = {"n", "x", "o"} }
     }
+  },
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    event = "VeryLazy",
   },
   {
     "echasnovski/mini.surround",

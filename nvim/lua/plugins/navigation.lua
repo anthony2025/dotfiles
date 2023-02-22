@@ -19,6 +19,10 @@ return {
     }
   },
   {
+    "mboughaba/vim-lessmess",
+    event = "VeryLazy"
+  },
+  {
     "lambdalisue/suda.vim",
     event = "VeryLazy",
     init = function()

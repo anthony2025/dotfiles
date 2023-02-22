@@ -67,6 +67,9 @@ return {
     -- command-line completion mode
     vim.opt.wildmode = "longest:full,full"
 
+    -- dont wrap long lines
+    vim.opt.wrap = false
+
     -- fix markdown indentation settings
     vim.g.markdown_recommended_style = 0
   end
