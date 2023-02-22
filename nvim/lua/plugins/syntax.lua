@@ -53,7 +53,7 @@ return {
       "JoosepAlviste/nvim-ts-context-commentstring"
     },
     keys = {
-      { "<leader>c", "<cmd>CommentToggle<cr>", mode = { "n", "v" } }
+      { "gc", "<cmd>CommentToggle<cr>", mode = { "n", "v" } }
     },
     name = "nvim_comment",
     opts = {

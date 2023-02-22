@@ -20,24 +20,19 @@ return {
       },
       cmd = { "NERDTree", "NERDTreeRefreshRoot" },
       init = function()
-        -- if another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-        vim.api.nvim_create_autocmd("BufEnter", {
-          command = [[ if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif ]]
-        })
-
         -- close tree if it is the only tab left
         vim.api.nvim_create_autocmd("BufEnter", {
           command = "if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif"
         })
 
-        -- start tree if no arguments passed
-        vim.api.nvim_create_autocmd("VimEnter", {
-          command = "if argc() == 0 | execute 'NERDTree' | wincmd p | enew | endif"
-        })
-
         -- hijack netrw if it is a directory
         vim.api.nvim_create_autocmd("VimEnter", {
           command = "if argc() == 1 && isdirectory(argv()[0]) | execute 'cd '.argv()[0] | execute 'NERDTree' argv()[0] | wincmd p | execute 'bdelete' | wincmd c | endif"
+        })
+
+        -- start tree if no arguments passed
+        vim.api.nvim_create_autocmd("VimEnter", {
+          command = "if argc() == 0 | execute 'NERDTree' | wincmd p | enew | endif"
         })
 
         -- turn on color highlights

@@ -7,8 +7,20 @@ return {
     -- disable search highlighting
     vim.keymap.set("n", "<esc>", "<cmd>noh<cr>")
 
+    -- clear search with <esc>
+    vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
+
     -- quickly exit to normal mode
     vim.keymap.set("i", "jj", "<esc>")
+
+    -- save file
+    vim.keymap.set({ "i", "v", "n", "s" }, "<leader>s", "<cmd>w<cr><esc>")
+
+    -- new file
+    vim.keymap.set("n", "<leader>e", "<cmd>enew<cr>")
+
+    -- quit all windows
+    vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>")
 
     -- go up/down more intuitievly on long lines that wrap
     vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -20,10 +32,25 @@ return {
     vim.keymap.set("n", "<c-i>", "<cmd>bnext<cr>")
     vim.keymap.set("n", "<c-u>", "<cmd>bprevious<cr>")
 
-    -- resize window using <ctrl> arrow keys
-    vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>")
-    vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>")
-    vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>")
-    vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>")
+    -- resize splits using arrow keys
+    vim.keymap.set("n", "<a-p>", "<cmd>resize +2<cr>")
+    vim.keymap.set("n", "<a-down>", "<cmd>resize -2<cr>")
+    vim.keymap.set("n", "<a-left>", "<cmd>vertical resize +2<cr>")
+    vim.keymap.set("n", "<a-right>", "<cmd>vertical resize -2<cr>")
+
+    -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+    vim.keymap.set("n", "n", "'Nn'[v:searchforward]", { expr = true })
+    vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true })
+    vim.keymap.set("o", "n", "'Nn'[v:searchforward]", { expr = true })
+    vim.keymap.set("n", "N", "'nN'[v:searchforward]", { expr = true })
+    vim.keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true })
+    vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true })
+
+    -- more intuitive indenting
+    vim.keymap.set("v", "<", "<gv")
+    vim.keymap.set("v", ">", ">gv")
+
+    -- open plugin manager
+    vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
   end
 }
