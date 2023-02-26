@@ -40,7 +40,7 @@ return {
     vim.opt.showmode = false
 
     -- hide * markup for bold and italic
-    vim.opt.conceallevel = 3
+    -- vim.opt.conceallevel = 3
 
     -- case insensitive searches unless includes capitals
     vim.opt.ignorecase = true

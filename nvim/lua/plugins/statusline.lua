@@ -38,6 +38,7 @@ return {
             "buffers",
             hide_filename_extension = true,
             mode = 2,
+            max_length = vim.o.columns,
             filetype_names = {
               Trouble = "Diagnostics",
               packer = "Plugin Manager",

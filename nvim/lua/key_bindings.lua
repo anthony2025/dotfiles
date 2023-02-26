@@ -19,6 +19,10 @@ return {
     -- quit all windows
     vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>")
 
+    -- yank to system clipboard
+    vim.keymap.set("n", "<leader>y", '"+y', { expr = true })
+    vim.keymap.set("n", "<leader>p", '"+p', { expr = true })
+
     -- go up/down more intuitievly on long lines that wrap
     vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
     vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -49,5 +53,13 @@ return {
 
     -- open plugin manager
     vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
+
+    -- split management
+    vim.keymap.set("n", "<leader>ww", "<c-w>p")
+    vim.keymap.set("n", "<leader>wd", "<c-w>c")
+    vim.keymap.set("n", "<leader>w-", "<c-w>s")
+    vim.keymap.set("n", "<leader>w|", "<c-w>v")
+    vim.keymap.set("n", "<leader>-", "<c-w>s")
+    vim.keymap.set("n", "<leader>|", "<c-w>v")
   end
 }
