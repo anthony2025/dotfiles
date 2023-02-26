@@ -26,10 +26,10 @@ abbr -ag tridactylrc $EDITOR $XDG_CONFIG_HOME/tridactyl/trydactylrc
 abbr -ag kittyrc $EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf
 
 abbr -ag :q exit
-abbr -ag dotfiles 'git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-abbr -ag refresh source $XDG_CONFIG_HOME/fish/config.fish 
+abbr -ag refresh source $XDG_CONFIG_HOME/fish/config.fish
 
-abbr -ag tmux_update $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all 
-abbr -ag npmg npm ls -g --depth=0 
-abbr -ag caps setxkbmap -option caps:ctrl_modifier 
-abbr -ag scala_repl scala-cli repl -S 2.13 -d org.http4s::http4s-client:0.23 
+abbr -ag sbt sbtn --color=always
+abbr -ag tmux_update $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all
+abbr -ag npmg npm ls -g --depth=0
+abbr -ag caps setxkbmap -option caps:ctrl_modifier
+abbr -ag scala_repl scala-cli repl -S 2.13 -d org.http4s::http4s-client:0.23
