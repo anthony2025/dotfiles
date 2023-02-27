@@ -18,7 +18,7 @@ set -gx GIT_EDITOR $EDITOR
 # setup our file explorer
 set -gx FILE vifm
 
-# setup our internet browser 
+# setup our internet browser
 set -gx BROWSER firefox
 
 # setup our pagers
@@ -49,16 +49,19 @@ end
 # macos specific overrides
 if test (uname) = Darwin
   # override location of coursier binaries
-	fish_add_path -ga "$HOME/Library/Application Support/Coursier/bin"
+  fish_add_path -ga "$HOME/Library/Application Support/Coursier/bin"
 
   # add firefox to path
-	fish_add_path -ga /Applications/Firefox.app/Contents/MacOS
+  fish_add_path -ga /Applications/Firefox.app/Contents/MacOS
 
   # prepend coreutils so they take precedence over defaults
-	fish_add_path -gp /usr/local/opt/coreutils/libexec/gnubin
+  fish_add_path -gp /usr/local/opt/coreutils/libexec/gnubin
+
+  # prepend gnu sed for nvim-spectre
+  fish_add_path -gp /usr/local/opt/gnu-sed/libexec/gnubin
 
   # move homebrew config
-	set -gx HOMEBREW_BUNDLE_FILE $XDG_CONFIG_HOME/homebrew/Brewfile
+  set -gx HOMEBREW_BUNDLE_FILE $XDG_CONFIG_HOME/homebrew/Brewfile
 
   # silence too many redundant messages
   set -gx HOMEBREW_NO_ENV_HINTS true

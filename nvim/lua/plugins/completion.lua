@@ -5,6 +5,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-nvim-lsp-document-symbol",
+      "hrsh7th/cmp-path",
       "hrsh7th/vim-vsnip",
       "hrsh7th/vim-vsnip-integ",
       "hrsh7th/cmp-vsnip",
@@ -37,6 +38,7 @@ return {
           { name = "nvim_lsp" },
           { name = "nvim_lsp_signature_help" },
           { name = "nvim_lsp_document_symbol" },
+          { name = "cmp-path" },
           { name = "vsnip" },
         },
         mapping = cmp.mapping.preset.insert({

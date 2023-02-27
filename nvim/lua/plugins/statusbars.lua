@@ -40,9 +40,9 @@ return {
             mode = 2,
             max_length = vim.o.columns,
             filetype_names = {
-              Trouble = "Diagnostics",
-              packer = "Plugin Manager",
-              nerdtree = "File Explorer",
+              trouble = "Diagnostics",
+              lazy = "Plugin Manager",
+              ["neo-tree"] = "File Explorer",
               fzf = "File Picker"
             }
           }

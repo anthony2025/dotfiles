@@ -6,6 +6,8 @@ return {
     -- disable temporal files
     vim.opt.swapfile = false
     vim.opt.undofile = false
+    vim.opt.backup = false
+    vim.opt.writebackup = false
 
     -- hybrid line numbering
     vim.opt.number = true
@@ -39,9 +41,6 @@ return {
     -- dont show mode since we have a statusline
     vim.opt.showmode = false
 
-    -- hide * markup for bold and italic
-    -- vim.opt.conceallevel = 3
-
     -- case insensitive searches unless includes capitals
     vim.opt.ignorecase = true
     vim.opt.smartcase = true
@@ -50,13 +49,11 @@ return {
     vim.opt.splitright = true
     vim.opt.splitbelow = true
 
-    -- always show the signcolumn, otherwise it would shift the text each time
-    vim.opt.signcolumn = "yes"
-
     -- insert indents automatically
     vim.opt.smartindent = true
     vim.opt.copyindent = true
     vim.opt.preserveindent = true
+    vim.opt.shiftround = true
 
     -- languages to check spelling in
     vim.opt.spelllang = { "en", "es" }
@@ -66,6 +63,20 @@ return {
 
     -- dont wrap long lines
     vim.opt.wrap = false
+
+    -- default is 4000ms
+    vim.opt.updatetime = 200
+    vim.opt.timeoutlen = 300
+
+    -- allow hidden buffers
+    vim.opt.hidden = true
+
+    -- lines of context to keep when scrolling
+    vim.opt.scrolloff = 4
+    vim.opt.sidescrolloff = 8
+
+    -- always show the signcolumn, otherwise it would shift the text each time
+    vim.opt.signcolumn = "yes"
 
     -- fix markdown indentation settings
     vim.g.markdown_recommended_style = 0
