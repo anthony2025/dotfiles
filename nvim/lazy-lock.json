@@ -29,7 +29,6 @@
   "vim-lessmess": { "branch": "master", "commit": "497f4626f5ada5f29d8a1b6addad9f25d91852fd" },
   "vim-move": { "branch": "master", "commit": "a4bbedda7ef516b4a1b74d145cd642297e82e800" },
   "vim-nerdtree-syntax-highlight": { "branch": "master", "commit": "0c495b4ec3776946d4b6a9f08c0e48d683af4add" },
-  "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" },
   "vim-tmux-navigator": { "branch": "master", "commit": "cdd66d6a37d991bba7997d593586fc51a5b37aa8" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "vim-vsnip": { "branch": "master", "commit": "8dde8c0ef10bb1afdbb301e2bd7eb1c153dd558e" },
