@@ -18,6 +18,7 @@
   "mini.bufremove": { "branch": "main", "commit": "8464390c932556dbb298ccf8a7587d6ef765e94f" },
   "mini.pairs": { "branch": "main", "commit": "61811b4f3e29dc4926f8418dd64aebe0013914c2" },
   "mini.surround": { "branch": "main", "commit": "21babf8f50afbb403ab1b9c2053806ccc28e40b6" },
+  "neo-tree-diagnostics.nvim": { "branch": "main", "commit": "b1825e82bef78657ef364d2419926e414fd7eb20" },
   "neo-tree.nvim": { "branch": "v2.x", "commit": "74040b34278910d9b467fd914862e2a9a1ebacaa" },
   "nui.nvim": { "branch": "main", "commit": "d147222a1300901656f3ebd5b95f91732785a329" },
   "nvim-cmp": { "branch": "main", "commit": "01f697a68905f9dcae70960a9eb013695a17f9a2" },
