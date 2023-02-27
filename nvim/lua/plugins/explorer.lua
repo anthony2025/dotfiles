@@ -10,7 +10,7 @@ return {
     },
     cmd = "Neotree",
     keys = {
-      { "<c-p>", function() require'neo-tree.command'.execute{ toggle = true, dir = vim.loop.cwd() } end }
+      { "<c-p>", function() require'neo-tree.command'.execute{ toggle = true, reveal = true } end }
     },
     init = function()
       vim.g.neo_tree_remove_legacy_commands = 1
@@ -25,9 +25,15 @@ return {
       end
     end,
     opts = {
+      close_if_last_window = true,
+      source_selector = {
+        winbar = true,
+      },
       filesystem = {
         bind_to_cwd = true,
         follow_current_file = true,
+        group_empty_dirs = true,
+        use_libuv_file_watcher = true
       }
     },
     deactivate = function()
