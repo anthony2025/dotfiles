@@ -2,7 +2,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     keys = {
-      { "<c-y>" }
+      { "<c-y>", mode = { "i", "n", "v" }}
     },
     opts = {
       open_mapping = "<c-y>",

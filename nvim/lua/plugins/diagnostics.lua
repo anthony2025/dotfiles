@@ -3,7 +3,7 @@ return {
     'folke/trouble.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "<c-d>", "<cmd>TroubleToggle<cr>" }
+      { "<c-d>", "<cmd>TroubleToggle<cr>", mode = { "i", "n", "v" }}
     },
     opts = { use_diagnostic_signs = true }
   },

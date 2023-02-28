@@ -8,7 +8,11 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     keys = {
-      { "<c-p>", function() require'neo-tree.command'.execute{ toggle = true, reveal = true } end }
+      {
+        "<c-p>",
+        function() require'neo-tree.command'.execute{ toggle = true, reveal = true } end,
+        mode = { "i", "n", "v" }
+      }
     },
     init = function()
       vim.g.neo_tree_remove_legacy_commands = 1

@@ -24,8 +24,8 @@ return {
   {
     "echasnovski/mini.bufremove",
     keys = {
-      { "<c-c>", function() require'mini.bufremove'.wipeout(0, false) end },
-      { "<c-x>", function() require'mini.bufremove'.wipeout(0, true) end },
+      { "<c-c>", function() require'mini.bufremove'.wipeout(0, false) end, mode = { "i", "n", "v" } },
+      { "<c-x>", function() require'mini.bufremove'.wipeout(0, true) end, mode = { "i", "n", "v" } },
     },
     config = function()
       require'mini.bufremove'.setup()
@@ -34,17 +34,12 @@ return {
   {
     "ibhagwan/fzf-lua",
     keys = {
-      { "<c-t>", function() require'fzf-lua'.files() end }
+      { "<c-t>", function() require'fzf-lua'.files() end, mode = { "i", "n", "v" }}
     }
   },
   {
     "christoomey/vim-tmux-navigator",
-    keys = {
-      "<c-h>",
-      "<c-j>",
-      "<c-k>",
-      "<c-l>",
-    },
+    event = "VeryLazy",
     init = function()
       vim.g.tmux_navigator_disable_when_zoomed = 1
     end
