@@ -32,6 +32,19 @@ return {
       end,
     })
 
+    -- quick close some filetypes
+    vim.api.nvim_create_autocmd("FileType", {
+      group = vim.api.nvim_create_augroup("quick_close", {}),
+      pattern = {
+        "help",
+        "spectre_panel",
+      },
+      callback = function(event)
+        vim.bo[event.buf].buflisted = false
+        vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+      end,
+    })
+
     -- wrap and check for spell in text filetypes
     vim.api.nvim_create_autocmd("FileType", {
       group = vim.api.nvim_create_augroup("wrap_spell", {}),

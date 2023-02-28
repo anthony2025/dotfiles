@@ -24,5 +24,12 @@ return {
       vim.g.material_style = "deep ocean"
       vim.cmd "colorscheme material"
     end
-  }
+  },
+  {
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    config = function()
+      require'mini.animate'.setup()
+    end
+  },
 }

@@ -37,4 +37,24 @@ return {
       { "<c-t>", function() require'fzf-lua'.files() end }
     }
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    keys = {
+      "<c-h>",
+      "<c-j>",
+      "<c-k>",
+      "<c-l>",
+    },
+    init = function()
+      vim.g.tmux_navigator_disable_when_zoomed = 1
+    end
+  },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    config = true,
+    keys  = {
+      { "<leader>h", function() require'persistence'.load() end }
+    }
+  },
 }
