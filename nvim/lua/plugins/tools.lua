@@ -33,5 +33,5 @@ return {
     keys  = {
       { "<leader>h", function() require'persistence'.load() end }
     }
-  },
+  }
 }

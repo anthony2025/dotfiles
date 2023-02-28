@@ -25,7 +25,7 @@ return {
       "nvim-lua/plenary.nvim",
       "folke/trouble.nvim",
     },
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
     config = true,
     keys = {
       { "<leader>dd", "<cmd>TodoTrouble<cr>" },

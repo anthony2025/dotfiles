@@ -33,3 +33,4 @@ abbr -ag tmux_update $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all
 abbr -ag npmg npm ls -g --depth=0
 abbr -ag caps setxkbmap -option caps:ctrl_modifier
 abbr -ag scala_repl scala-cli repl -S 2.13 -d org.http4s::http4s-client:0.23
+abbr -ag weather curl wttr.in

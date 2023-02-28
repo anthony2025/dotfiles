@@ -16,7 +16,8 @@ return {
         "trouble",
         "lazy",
         "fzf",
-        "spectre_panel"
+        "spectre_panel",
+        "toggleterm",
       },
       show_trailing_blankline_indent = false,
       show_current_context = false,
