@@ -25,7 +25,6 @@ return {
     vim.opt.shortmess:append {
       I = true, -- disable start screen
       W = true,-- don't give "written" or "[w]" when writing a file
-      F = true, -- don't give the file info when editing a file
       c = true, -- don't give ins-completion-menu messages
       C = true, -- don't give messages while scanning for ins-completion
       a = true, -- use abbreviations for some commands

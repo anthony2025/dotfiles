@@ -1,33 +1,30 @@
 return {
   {
-    "matze/vim-move",
-    event = "VeryLazy",
-    init = function()
-      vim.g.move_normal_option = 1
-    end
-  },
-  {
     "mg979/vim-visual-multi",
     branch = "master",
     event = "VeryLazy",
   },
   {
     "ggandor/leap.nvim",
-    keys = {
-      { "s", mode = { "n", "x", "o" } },
-      { "S", mode = { "n", "x", "o" } },
-      { "gs", mode = { "n", "x", "o" } },
-    },
+    event = "VeryLazy",
     config = function()
       local leap = require'leap'
-      leap.add_default_mappings()
-      leap.init_highlight(true)
+      leap.add_default_mappings(true)
     end
   },
   {
     "ggandor/flit.nvim",
+    enabled = false, -- throwing on the latest commit
+    event = "VeryLazy",
     dependencies =  { "ggandor/leap.nvim" },
     config = true
+  },
+  {
+    "echasnovski/mini.move",
+    event = "VeryLazy",
+    config = function()
+      require'mini.move'.setup()
+    end
   },
   {
     "echasnovski/mini.ai",
@@ -47,17 +44,8 @@ return {
     "echasnovski/mini.surround",
     event = "VeryLazy",
     config = function()
-      require'mini.surround'.setup {
-        mappings = {
-          add = "gza", -- Add surrounding in Normal and Visual modes
-          delete = "gzd", -- Delete surrounding
-          find = "gzf", -- Find surrounding (to the right)
-          find_left = "gzF", -- Find surrounding (to the left)
-          highlight = "gzh", -- Highlight surrounding
-          replace = "gzr", -- Replace surrounding
-          update_n_lines = "gzn", -- Update `n_lines`
-        }
-      }
+      require'mini.surround'.setup()
     end
-  }
+  },
 }
+

@@ -1,7 +1,11 @@
 return {
   {
     "scalameta/nvim-metals",
-    dependencies = { "nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp",  },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp"
+    },
     ft = { "scala", "sbt", "sc", "java" },
     keys = {
       { "K",  vim.lsp.buf.hover },
@@ -19,17 +23,13 @@ return {
     },
     init = function()
       vim.opt_global.shortmess:remove("F")
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "scala", "sbt", "sc", "java" },
-        group = vim.api.nvim_create_augroup("nvim-metals", { clear = true }),
-        callback = function()
-          local metals = require'metals'
-          local metals_config = metals.bare_config()
-          metals_config.init_options.statusBarProvider = "on"
-          metals_config.capabilities = require'cmp_nvim_lsp'.default_capabilities()
-          metals.initialize_or_attach(metals_config)
-        end
-      })
+    end,
+    config = function()
+      local metals = require'metals'
+      local metals_config = metals.bare_config()
+      metals_config.init_options.statusBarProvider = "on"
+      metals_config.capabilities = require'cmp_nvim_lsp'.default_capabilities()
+      metals.initialize_or_attach(metals_config)
     end
   }
 }

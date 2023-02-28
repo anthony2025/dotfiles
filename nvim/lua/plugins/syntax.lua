@@ -9,7 +9,7 @@ return {
       require'nvim-treesitter.configs'.setup {
         context_commentstring = {
           enable = true,
-          enable_autocmd = true
+          enable_autocmd = false
         },
         ensure_installed = {
           "arduino",
@@ -33,6 +33,8 @@ return {
           "lua",
           "python",
           "regex",
+          "css",
+          "scss"
         },
         highlight = {
           enable = true
@@ -47,21 +49,25 @@ return {
     end
   },
   {
-    "terrortylor/nvim-comment",
+    "echasnovski/mini.comment",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "JoosepAlviste/nvim-ts-context-commentstring"
     },
     keys = {
-      { "gc", "<cmd>CommentToggle<cr>", mode = { "n", "v" } }
+      { "gc", mode = { "n", "v" } }
     },
-    name = "nvim_comment",
-    opts = {
-      comment_empty = false,
-      create_mappings = false,
-      hook = function()
-        require'ts_context_commentstring.internal'.update_commentstring()
-      end
-    }
+    config = function()
+      require("mini.comment").setup {
+        hooks = {
+          pre = function()
+            require("ts_context_commentstring.internal").update_commentstring({})
+          end
+        },
+        options = {
+          ignore_blank_line = true
+        }
+      }
+    end
   }
 }

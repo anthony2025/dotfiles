@@ -2887,7 +2887,7 @@
         }
       },
       "firefox": {
-        "version": "110.0",
+        "version": "110.0.1",
         "options": {
           "full_name": "firefox"
         }
@@ -2965,7 +2965,7 @@
         }
       },
       "zoom": {
-        "version": "5.13.7.15481",
+        "version": "5.13.10.16307",
         "options": {
           "full_name": "zoom"
         }

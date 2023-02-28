@@ -1,3 +1,4 @@
+-- let plugins override our base options
 require'general_options'.setup()
 require'key_bindings'.setup()
 require'auto_commands'.setup()
@@ -28,12 +29,15 @@ require'lazy'.setup {
   },
   concurrency = 8,
   change_detection = { notify = false }, -- disable annoying messages
-  install = { colorscheme = { "material" } }, -- try setting theme on first launch
   checker = { enabled = true }, -- automatically check for plugin updates
-  performance = { -- disable unused plugins
+  install = { colorscheme = { "material" } }, -- try setting theme on first launch
+  performance = { -- disable unused rtp plugins
     rtp = {
       disabled_plugins = {
         "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",

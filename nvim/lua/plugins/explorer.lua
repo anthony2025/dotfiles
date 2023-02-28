@@ -2,13 +2,11 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    version = "*",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons",
     },
-    cmd = "Neotree",
     keys = {
       { "<c-p>", function() require'neo-tree.command'.execute{ toggle = true, reveal = true } end }
     },
@@ -19,9 +17,10 @@ return {
         if stat and stat.type == "directory" then
           require'neo-tree'
         end
-      end
-      if vim.fn.argc() == 0 then -- no arguments passed
-        require'neo-tree.command'.execute{ toggle = true, dir = vim.loop.cwd() }
+      else
+        if vim.fn.argc() == 0 then -- no arguments passed
+          require'neo-tree.command'.execute { toggle = true }
+        end
       end
     end,
     opts = {
@@ -36,7 +35,7 @@ return {
         use_libuv_file_watcher = true
       }
     },
-    deactivate = function()
+    deactivate = function() -- unloads the plugin, not documented
       vim.cmd "Neotree close"
     end
   }
