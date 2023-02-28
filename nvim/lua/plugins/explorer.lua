@@ -38,9 +38,6 @@ return {
         group_empty_dirs = true,
         use_libuv_file_watcher = true
       }
-    },
-    deactivate = function() -- unloads the plugin, not documented
-      vim.cmd "Neotree close"
-    end
+    }
   }
 }

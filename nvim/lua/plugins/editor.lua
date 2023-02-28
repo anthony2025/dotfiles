@@ -1,5 +1,19 @@
 return {
   {
+    "christoomey/vim-tmux-navigator",
+    event = "VeryLazy",
+    init = function()
+      vim.g.tmux_navigator_disable_when_zoomed = 1
+    end
+  },
+  {
+    "lambdalisue/suda.vim",
+    event = "VeryLazy",
+    init = function()
+      vim.g.suda_smart_edit = 1
+    end
+  },
+  {
     "echasnovski/mini.trailspace",
     event = "BufWrite",
     init = function()
@@ -15,13 +29,6 @@ return {
     end
   },
   {
-    "lambdalisue/suda.vim",
-    event = "VeryLazy",
-    init = function()
-      vim.g.suda_smart_edit = 1
-    end
-  },
-  {
     "echasnovski/mini.bufremove",
     keys = {
       { "<c-c>", function() require'mini.bufremove'.wipeout(0, false) end, mode = { "i", "n", "v" } },
@@ -30,26 +37,5 @@ return {
     config = function()
       require'mini.bufremove'.setup()
     end
-  },
-  {
-    "ibhagwan/fzf-lua",
-    keys = {
-      { "<c-t>", function() require'fzf-lua'.files() end, mode = { "i", "n", "v" }}
-    }
-  },
-  {
-    "christoomey/vim-tmux-navigator",
-    event = "VeryLazy",
-    init = function()
-      vim.g.tmux_navigator_disable_when_zoomed = 1
-    end
-  },
-  {
-    "folke/persistence.nvim",
-    event = "BufReadPre",
-    config = true,
-    keys  = {
-      { "<leader>h", function() require'persistence'.load() end }
-    }
   },
 }

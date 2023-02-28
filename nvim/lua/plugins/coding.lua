@@ -20,14 +20,6 @@ return {
     config = true
   },
   {
-    "windwp/nvim-spectre",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = true,
-    keys = {
-      { "<leader>r", function() require('spectre').open() end }
-    },
-  },
-  {
     "echasnovski/mini.move",
     event = "VeryLazy",
     config = function()

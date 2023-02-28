@@ -45,7 +45,9 @@ return {
               trouble = "Diagnostics",
               lazy = "Plugin Manager",
               ["neo-tree"] = "File Explorer",
-              fzf = "File Picker"
+              fzf = "File Picker",
+              spectre_panel = "Search/Replace",
+              toggleterm = "Terminal"
             }
           }
         }

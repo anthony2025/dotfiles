@@ -25,11 +25,4 @@ return {
       vim.cmd "colorscheme material"
     end
   },
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    config = function()
-      require'mini.animate'.setup()
-    end
-  },
 }
