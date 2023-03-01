@@ -56,7 +56,7 @@ return {
     vim.keymap.set('i', '<a-k>', '<up>', { silent = false })
 
     -- better paste
-    vim.keymap.set("v", "p", '"_dP')
+    vim.keymap.set('v', 'p', '"_dP')
 
     -- repeat macros more easily
     vim.keymap.set({ 'n', 'v' }, "''", '@@')
@@ -76,5 +76,5 @@ return {
 
     -- open plugin manager
     vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>')
-  end
+  end,
 }
