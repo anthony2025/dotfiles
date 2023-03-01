@@ -1,22 +1,31 @@
 return {
   {
     'mg979/vim-visual-multi',
-    branch = 'master',
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile' },
+  },
+  {
+    'echasnovski/mini.jump',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function() require('mini.jump').setup() end,
+  },
+  {
+    'echasnovski/mini.jump2d',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function() require('mini.jump2d').setup() end,
   },
   {
     'echasnovski/mini.move',
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.move').setup() end,
   },
   {
     'echasnovski/mini.ai',
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.ai').setup() end,
   },
   {
     'echasnovski/mini.surround',
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.surround').setup() end,
   },
 }
