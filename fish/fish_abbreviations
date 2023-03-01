@@ -1,8 +1,5 @@
 abbr -ag l ls -h1G
-abbr -ag ls ls -h1G
-abbr -ag ll ls -Ahl
-abbr -ag lla ls -Ahl
-abbr -ag lsa ls -Ahl
+abbr -ag la ls -Ahl
 
 abbr -ag mv mv -v
 abbr -ag cp cp -r
