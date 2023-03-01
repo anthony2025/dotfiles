@@ -2,11 +2,10 @@ return {
   {
     'akinsho/toggleterm.nvim',
     keys = {
-      { '<c-y>', mode = { 'i', 'n', 'v' } },
+      { '<c-t>', mode = { 'i', 'n', 'v' } },
     },
     opts = {
-      open_mapping = '<c-y>',
-      open_mapping = '<c-y>',
+      open_mapping = '<c-t>',
       autochdir = true,
       direction = 'float',
       close_on_exit = false,

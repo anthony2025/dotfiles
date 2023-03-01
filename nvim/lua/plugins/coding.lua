@@ -1,9 +1,5 @@
 return {
   {
-    'mg979/vim-visual-multi',
-    event = { 'BufReadPost', 'BufNewFile' },
-  },
-  {
     'echasnovski/mini.jump',
     event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.jump').setup() end,
