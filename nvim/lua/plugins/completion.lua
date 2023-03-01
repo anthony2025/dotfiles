@@ -1,29 +1,15 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    ft = {
-      'scala',
-      'sbt',
-      'sc',
-      'java',
-      'lua',
-      'json',
-      'sh',
-      'bash',
-      'fish',
-      'nix',
-      'markdown',
-      'text',
-      'gitcommit',
-    },
+    event = "BufReadPre",
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
       'saadparwaiz1/cmp_luasnip',
       'L3MON4D3/LuaSnip',
-      'rafamadriz/friendly-snippets',
       'onsails/lspkind.nvim',
     },
     init = function() vim.opt.completeopt = { 'menu', 'menuone', 'noselect' } end,
@@ -55,6 +41,7 @@ return {
           { name = 'nvim_lsp_document_symbol' },
           { name = 'luasnip' },
           { name = 'cmp-path' },
+          { name = 'cmp-buffer' },
         },
         mapping = cmp.mapping.preset.insert {
           ['<c-up>'] = cmp.mapping.scroll_docs(-4),
@@ -88,21 +75,31 @@ return {
   {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
-    dependencies = { "rafamadriz/friendly-snippets" },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "rafamadriz/friendly-snippets",
+      "honza/vim-snippets",
     },
-    keys = {
-      {
-        "<tab>",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true, silent = true, mode = "i",
-      },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-      { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-    }
+    config = function()
+        local luasnip = require'luasnip'
+        luasnip.setup {
+          history = true,
+          enable_autosnippets = true,
+          store_selection_keys = "<Tab>",
+          update_events = "TextChanged,TextChangedI",
+          delete_check_events = "TextChanged",
+          ft_func = require'luasnip.extras.filetype_functions'.from_cursor_pos,
+          ext_opts = {
+            [require'luasnip.util.types'.choiceNode] = {
+              active = {
+                virt_text = { { "choiceNode", "Comment" } }
+              }
+            }
+          }
+        }
+        luasnip.filetype_extend("all", { "_" })
+        require'luasnip.loaders.from_vscode'.lazy_load()
+        require'luasnip.loaders.from_snipmate'.lazy_load()
+    end
   }
 }
