@@ -83,14 +83,12 @@ return {
         sources = {
           -- text
           nls.builtins.diagnostics.proselint,
-          nls.builtins.code_actions.proselint,
           -- shell
           nls.builtins.diagnostics.shellcheck,
           nls.builtins.diagnostics.fish,
           nls.builtins.formatting.fish_indent,
           -- nix
           nls.builtins.diagnostics.statix,
-          nls.builtins.code_actions.statix,
           nls.builtins.formatting.alejandra,
         },
       }
