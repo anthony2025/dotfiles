@@ -20,9 +20,6 @@ return {
     vim.opt.expandtab = true -- convert tabs to spaces, call :retab to manually trigger
     vim.opt.softtabstop = 0 -- disables this feature
 
-    -- turn on completion
-    vim.opt_global.completeopt = { 'menuone', 'noinsert', 'noselect' }
-
     -- divide words on dash as well as underscore
     vim.opt.iskeyword:append '-'
 
@@ -126,9 +123,6 @@ return {
 
     -- hide partial command in the last line of the screen
     vim.opt.showcmd = false
-
-    -- keys allowed to move to the previous/next line when the beginning/end of line is reached
-    vim.opt.whichwrap:append '<,>,[,],h,l'
 
     -- fix markdown indentation settings
     vim.g.markdown_recommended_style = 0
