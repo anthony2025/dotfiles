@@ -1,7 +1,21 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    ft = { 'scala', 'sbt', 'sc', 'java', 'lua' },
+    ft = {
+      'scala',
+      'sbt',
+      'sc',
+      'java',
+      'lua',
+      'json',
+      'sh',
+      'bash',
+      'fish',
+      'nix',
+      'markdown',
+      'text',
+      'gitcommit'
+    },
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-signature-help',

@@ -12,12 +12,17 @@ return {
       local metals_config = metals.bare_config()
       metals_config.init_options.statusBarProvider = 'on'
       metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
+      metals_config.capabilities.textDocument.completion.completionItem.snippetSupport = true
       metals.initialize_or_attach(metals_config)
     end,
   },
   {
     'folke/neodev.nvim',
-    dependencies = { 'neovim/nvim-lspconfig' },
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-nvim-lsp',
+    },
     ft = { 'lua' },
     config = function()
       require('neodev').setup()
@@ -37,11 +42,13 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
-    ft = { 'json' },
     dependencies = {
+      'neovim/nvim-lspconfig',
+      'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-nvim-lsp',
       'b0o/SchemaStore.nvim',
     },
+    ft = { 'json' },
     config = function()
       local schemas = require('schemastore').json.schemas()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -61,6 +68,15 @@ return {
   {
     'jose-elias-alvarez/null-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
+    ft = {
+      "sh",
+      "bash",
+      "fish",
+      "nix",
+      "markdown",
+      "text",
+      "gitcommit"
+    },
     config = function()
       local nls = require 'null-ls'
       nls.setup {
