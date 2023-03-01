@@ -57,10 +57,10 @@ return {
         capabilities = capabilities,
         settings = {
           json = {
+            schemas = schemas,
             format = { enable = true },
             validate = { enable = true },
           },
-          schemas = schemas,
         },
       }
     end,
