@@ -1,119 +1,136 @@
 return {
-	setup = function()
-		-- enable all filetype plugins
-		vim.cmd("filetype plugin indent on")
+  setup = function()
+    -- enable 24 bit color support
+    vim.opt.termguicolors = true
 
-		-- enable 24 bit color support
-		vim.opt.termguicolors = true
+    -- disable temporal files
+    vim.opt.swapfile = false
+    vim.opt.backup = false
+    vim.opt.writebackup = false
 
-		-- disable temporal files
-		vim.opt.swapfile = false
-		vim.opt.backup = false
-		vim.opt.writebackup = false
+    -- enable persistent undo history
+    vim.opt.undofile = true
 
-		-- enable persistent undo history
-		vim.opt.undofile = true
+    -- absolute line numbering
+    vim.opt.number = true
 
-		-- absolute line numbering
-		vim.opt.number = true
+    -- use two spaces instead of tabs
+    vim.opt.tabstop = 2 -- number of spaces to a tab
+    vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
+    vim.opt.expandtab = true -- convert tabs to spaces, call :retab to manually trigger
+    vim.opt.softtabstop = 0 -- disables this feature
 
-		-- use spaces over tabs, call :retab from visual mode to convert tabs to spaces
-		vim.opt.tabstop = 2
-		vim.opt.shiftwidth = 2
-		vim.opt.softtabstop = 0
-		vim.opt.expandtab = true
+    -- turn on completion
+    vim.opt_global.completeopt = { 'menuone', 'noinsert', 'noselect' }
 
-		-- divide words on dash as well as underscore
-		vim.opt.iskeyword:append("-")
+    -- divide words on dash as well as underscore
+    vim.opt.iskeyword:append '-'
 
-		vim.opt.shortmess:append({
-			W = true, -- don't give "written" or "[w]" when writing a file
-			c = true, -- don't give ins-completion-menu messages
-			C = true, -- don't give messages while scanning for ins-completion
-			a = true, -- use abbreviations for some commands
-			t = true, -- truncate messages when necessary
-			I = true, -- disable start screen
-		})
+    -- needed for proper metals behaviour
+    vim.opt_global.shortmess:remove 'F' -- silence some commands
 
-		-- darken the row under the cursor
-		vim.opt.cursorline = true
+    vim.opt.shortmess:append {
+      W = true, -- don't give "written" or "[w]" when writing a file
+      c = true, -- don't give ins-completion-menu messages
+      C = true, -- don't give messages while scanning for ins-completion
+      a = true, -- use abbreviations for some commands
+      t = true, -- truncate messages when necessary
+      I = true, -- disable start screen
+    }
 
-		-- draw a column after that many characters
-		vim.opt.colorcolumn = "120"
+    -- darken the row under the cursor
+    vim.opt.cursorline = true
 
-		-- dont show mode since we have a statusline
-		vim.opt.showmode = false
+    -- draw a column after that many characters
+    vim.opt.colorcolumn = '120'
 
-		-- case insensitive searches by default
-		vim.opt.ignorecase = true
+    -- dont show mode since we have a statusline
+    vim.opt.showmode = false
 
-		-- dont ignore case if pattern has upper case
-		vim.opt.smartcase = true
+    -- case insensitive searches by default
+    vim.opt.ignorecase = true
 
-		-- show search results while typing
-		vim.opt.incsearch = true
+    -- dont ignore case if pattern has upper case
+    vim.opt.smartcase = true
 
-		-- infer letter cases for a richer built-in keyword completion
-		vim.opt.infercase = true
+    -- show search results while typing
+    vim.opt.incsearch = true
 
-		-- to which side to open new splits
-		vim.opt.splitright = true
-		vim.opt.splitbelow = true
+    -- infer letter cases for a richer built-in keyword completion
+    vim.opt.infercase = true
 
-		-- indent wrapped lines to match line start
-		vim.opt.breakindent = true
+    -- to which side to open new splits
+    vim.opt.splitright = true
+    vim.opt.splitbelow = true
 
-		-- wrap long lines more intelligently
-		vim.opt.linebreak = true
+    -- indent wrapped lines to match line start
+    vim.opt.breakindent = true
 
-		-- insert indents automatically
-		vim.opt.smartindent = true
-		vim.opt.copyindent = true
-		vim.opt.preserveindent = true
-		vim.opt.shiftround = true
+    -- wrap long lines more intelligently
+    vim.opt.linebreak = true
 
-		-- languages to check spelling in
-		vim.opt.spelllang = { "en", "es" }
+    -- insert indents automatically
+    vim.opt.smartindent = true
+    vim.opt.copyindent = true
+    vim.opt.preserveindent = true
+    vim.opt.shiftround = true
 
-		-- command-line completion mode
-		vim.opt.wildmode = "longest:full,full"
+    -- languages to check spelling in
+    vim.opt.spelllang = { 'en', 'es' }
 
-		-- dont wrap long lines
-		vim.opt.wrap = false
+    -- command-line completion mode
+    vim.opt.wildmode = 'longest:full,full'
 
-		-- default is 4000ms
-		vim.opt.updatetime = 200
-		vim.opt.timeoutlen = 300
+    -- dont wrap long lines
+    vim.opt.wrap = false
 
-		-- allow hidden buffers
-		vim.opt.hidden = true
+    -- faster completions, default is 4000ms
+    vim.opt.updatetime = 200
 
-		-- lines of context to keep when scrolling
-		vim.opt.scrolloff = 4
-		vim.opt.sidescrolloff = 8
+    -- time to wait for a mapped sequence to complete
+    vim.opt.timeoutlen = 400
 
-		-- always show the signcolumn, otherwise it would shift the text
-		vim.opt.signcolumn = "yes"
+    -- allow hidden buffers
+    vim.opt.hidden = true
 
-		-- reduce scroll during window split
-		vim.opt.splitkeep = "screen"
+    -- lines of context to keep when scrolling
+    vim.opt.scrolloff = 4
+    vim.opt.sidescrolloff = 8
 
-		-- make builtin completion menus slightly transparent
-		vim.opt.pumblend = 10
+    -- always show the signcolumn, otherwise it would shift the text
+    vim.opt.signcolumn = 'yes'
 
-		-- make popup menu smaller
-		vim.opt.pumheight = 10
+    -- reduce scroll during window split
+    vim.opt.splitkeep = 'screen'
 
-		-- make floating windows slightly transparent
-		vim.opt.winblend = 10
+    -- make builtin completion menus slightly transparent
+    vim.opt.pumblend = 10
 
-		-- define which helper symbols to show
-		vim.opt.listchars = "extends:…,precedes:…,nbsp:␣"
+    -- make popup menu smaller
+    vim.opt.pumheight = 10
 
-		-- show some helper symbols
-		vim.opt.list = true
+    -- make floating windows slightly transparent
+    vim.opt.winblend = 10
 
-		-- fix markdown indentation settings
-		vim.g.markdown_recommended_style = 0
-	end,
+    -- define which helper symbols to show
+    vim.opt.listchars = 'extends:…,precedes:…,nbsp:␣'
+
+    -- show some helper symbols
+    vim.opt.list = true
+
+    -- show some helper symbols
+    vim.opt.list = true
+
+    -- so that `` is visible in markdown files
+    vim.opt.conceallevel = 0
+
+    -- hide partial command in the last line of the screen
+    vim.opt.showcmd = false
+
+    -- keys allowed to move to the previous/next line when the beginning/end of line is reached
+    vim.opt.whichwrap:append '<,>,[,],h,l'
+
+    -- fix markdown indentation settings
+    vim.g.markdown_recommended_style = 0
+  end,
 }
