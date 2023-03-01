@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    ft = { "scala", "sbt", "sc", "java", "lua" },
+    ft = { 'scala', 'sbt', 'sc', 'java', 'lua' },
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-signature-help',
@@ -12,27 +12,23 @@ return {
       'rafamadriz/friendly-snippets',
       'onsails/lspkind.nvim',
     },
-    init = function()
-      vim.opt.completeopt = { "menu", "menuone", "noselect" }
-    end,
+    init = function() vim.opt.completeopt = { 'menu', 'menuone', 'noselect' } end,
     config = function()
-      local cmp = require'cmp'
-      local luasnip = require'luasnip'
+      local cmp = require 'cmp'
+      local luasnip = require 'luasnip'
       cmp.setup {
         view = {
           entries = 'custom',
         },
         snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end
+          expand = function(args) luasnip.lsp_expand(args.body) end,
         },
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
         },
         formatting = {
-          format = require'lspkind'.cmp_format(),
+          format = require('lspkind').cmp_format(),
         },
         sources = {
           { name = 'nvim_lsp' },
