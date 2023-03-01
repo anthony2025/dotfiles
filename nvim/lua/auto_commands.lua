@@ -38,6 +38,7 @@ return {
       pattern = {
         "help",
         "spectre_panel",
+        "quickfix"
       },
       callback = function(event)
         vim.bo[event.buf].buflisted = false

@@ -8,6 +8,7 @@ return {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    version = "*",
     event = { "BufReadPost", "BufNewFile" },
     opts = {
       filetype_exclude = {

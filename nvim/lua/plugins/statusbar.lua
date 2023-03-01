@@ -47,7 +47,8 @@ return {
               ["neo-tree"] = "File Explorer",
               fzf = "File Picker",
               spectre_panel = "Search/Replace",
-              toggleterm = "Terminal"
+              toggleterm = "Terminal",
+              quickfix = "Quickfix"
             }
           }
         }

@@ -3,3 +3,10 @@
 2023.02.28 15:16:56 WARN  Build server is not auto-connectable.[0m
 2023.02.28 15:16:56 WARN  no build tool detected in workspace '/Users/anthony/.config'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 2023.02.28 15:22:31 INFO  shutting down Metals[0m
+2023.02.28 19:49:38 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/anthony/.config/.metals/lsp.trace.json or /Users/anthony/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2023.02.28 19:49:38 INFO  logging to file /Users/anthony/.config/.metals/metals.log[0m
+2023.02.28 19:49:38 INFO  Started: Metals version 0.11.9 in workspace '/Users/anthony/.config' for client Neovim 0.9.0.[0m
+2023.02.28 19:49:39 INFO  time: initialize in 1.04s[0m
+2023.02.28 19:49:39 WARN  Build server is not auto-connectable.[0m
+2023.02.28 19:49:39 WARN  no build tool detected in workspace '/Users/anthony/.config'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2023.02.28 19:52:00 INFO  shutting down Metals[0m
