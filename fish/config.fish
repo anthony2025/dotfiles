@@ -25,44 +25,43 @@ set -gx BROWSER firefox
 set -gx PAGER less
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx LESS \
-  --quit-if-one-screen \
-  --long-prompt \
-  --ignore-case \
-  --hilite-unread \
-  --raw-control-chars \
-  --use-color \
-  --incsearch \
-  --mouse \
-  --file-size \
-  --no-init  \
-  --tabs=2 \
-  --wheel-lines=1
+    --quit-if-one-screen \
+    --long-prompt \
+    --ignore-case \
+    --hilite-unread \
+    --raw-control-chars \
+    --use-color \
+    --incsearch \
+    --mouse \
+    --file-size \
+    --no-init \
+    --tabs=2 \
+    --wheel-lines=1
 
 # add coursier binaries dynamically to the path
 fish_add_path -ga $HOME/.local/share/coursier/bin
 
-# setup our abbreviations, hopefully only once
+# setup our abbreviations only once
 if status --is-interactive && status --is-login
-  source $XDG_CONFIG_HOME/fish/fish_abbreviations
+    source $XDG_CONFIG_HOME/fish/fish_abbreviations
 end
 
-# macos specific overrides
-if test (uname) = Darwin
-  # override location of coursier binaries
-  fish_add_path -ga "$HOME/Library/Application Support/Coursier/bin"
+if is_macos
+    # override location of coursier binaries
+    fish_add_path -ga "$HOME/Library/Application Support/Coursier/bin"
 
-  # add firefox to path
-  fish_add_path -ga /Applications/Firefox.app/Contents/MacOS
+    # add firefox to path
+    fish_add_path -ga /Applications/Firefox.app/Contents/MacOS
 
-  # prepend coreutils so they take precedence over defaults
-  fish_add_path -gp /usr/local/opt/coreutils/libexec/gnubin
+    # prepend coreutils so they take precedence over defaults
+    fish_add_path -gp /usr/local/opt/coreutils/libexec/gnubin
 
-  # prepend gnu sed for nvim-spectre
-  fish_add_path -gp /usr/local/opt/gnu-sed/libexec/gnubin
+    # prepend gnu sed for nvim-spectre
+    fish_add_path -gp /usr/local/opt/gnu-sed/libexec/gnubin
 
-  # move homebrew config
-  set -gx HOMEBREW_BUNDLE_FILE $XDG_CONFIG_HOME/homebrew/Brewfile
+    # move homebrew config
+    set -gx HOMEBREW_BUNDLE_FILE $XDG_CONFIG_HOME/homebrew/Brewfile
 
-  # silence too many redundant messages
-  set -gx HOMEBREW_NO_ENV_HINTS true
+    # silence too many redundant messages
+    set -gx HOMEBREW_NO_ENV_HINTS true
 end

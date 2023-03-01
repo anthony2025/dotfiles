@@ -18,6 +18,6 @@ function fish_mode_prompt --description 'Displays the current vi mode'
         case visual
             set_color --bold purple
             echo '[V] '
-		end
+    end
     set_color normal
 end

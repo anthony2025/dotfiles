@@ -1,5 +1,5 @@
 function 24_bit_color
-  bash -c 'awk \'BEGIN{
+    bash -c 'awk \'BEGIN{
       s="/\\\\/\\\\/\\\\/\\\\/\\\\"; s=s s s s s s s s;
       for (colnum = 0; colnum<77; colnum++) {
           r = 255-(colnum*255/76);
