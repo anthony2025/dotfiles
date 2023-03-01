@@ -24,14 +24,10 @@ return {
     },
   },
   {
-    "RRethy/vim-illuminate",
+    "echasnovski/mini.cursorword",
     event = { "BufReadPost", "BufNewFile" },
-    keys = {
-      { "]]", function() require'illuminate'.goto_next_reference() end },
-      { "[[", function() require'illuminate'.goto_prev_reference() end },
-    },
     config = function()
-      require("illuminate").configure()
+      require("mini.cursorword").setup()
     end,
   },
 }

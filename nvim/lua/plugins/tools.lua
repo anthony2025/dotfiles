@@ -23,7 +23,7 @@ return {
   {
     "ibhagwan/fzf-lua",
     keys = {
-      { "<c-t>", function() require'fzf-lua'.files() end, mode = { "i", "n", "v" }}
+      { "<c-p>", function() require'fzf-lua'.files() end, mode = { "i", "n", "v" }}
     }
   },
   {

@@ -9,21 +9,22 @@ return {
     },
     keys = {
       {
-        "<c-p>",
-        function() require'neo-tree.command'.execute{ toggle = true, reveal = true } end,
+        "<c-e>",
+        function() require'neo-tree.command'.execute{ toggle = true, reveal_force_cwd = true } end,
         mode = { "i", "n", "v" }
       }
     },
     init = function()
       vim.g.neo_tree_remove_legacy_commands = 1
-      if vim.fn.argc() == 1 then -- passed a directory
+      if vim.fn.argc() == 0 then
+        require'neo-tree.command'.execute {
+          action = "show"
+        }
+      end
+      if vim.fn.argc() == 1 then
         local stat = vim.loop.fs_stat(vim.fn.argv(0))
         if stat and stat.type == "directory" then
           require'neo-tree'
-        end
-      else
-        if vim.fn.argc() == 0 then -- no arguments passed
-          require'neo-tree.command'.execute { toggle = true }
         end
       end
     end,
