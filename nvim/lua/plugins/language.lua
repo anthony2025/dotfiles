@@ -69,13 +69,13 @@ return {
     'jose-elias-alvarez/null-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     ft = {
-      "sh",
-      "bash",
-      "fish",
-      "nix",
-      "markdown",
-      "text",
-      "gitcommit"
+      'sh',
+      'bash',
+      'fish',
+      'nix',
+      'markdown',
+      'text',
+      'gitcommit',
     },
     config = function()
       local nls = require 'null-ls'

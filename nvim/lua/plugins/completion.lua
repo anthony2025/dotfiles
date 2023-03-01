@@ -14,7 +14,7 @@ return {
       'nix',
       'markdown',
       'text',
-      'gitcommit'
+      'gitcommit',
     },
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
