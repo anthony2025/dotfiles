@@ -17,16 +17,44 @@ return {
   },
   {
     'folke/neodev.nvim',
-    dependencies = { 'neovim/nvim-lspconfig' }, -- shouldn't be needed
+    dependencies = { 'neovim/nvim-lspconfig' },
     ft = { 'lua' },
     config = function()
       require('neodev').setup()
-      vim.lsp.start {
-        name = 'lua-language-server',
-        cmd = { 'lua-language-server' },
-        before_init = require('neodev.lsp').before_init,
-        root_dir = vim.fn.getcwd(),
-        settings = { Lua = {} },
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      require('lspconfig').lua_ls.setup {
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            completion = {
+              callSnippet = 'Replace',
+            },
+          },
+        },
+      }
+    end,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    ft = { 'json' },
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'b0o/SchemaStore.nvim',
+    },
+    config = function()
+      local schemas = require('schemastore').json.schemas()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      require('lspconfig').jsonls.setup {
+        capabilities = capabilities,
+        settings = {
+          json = {
+            format = { enable = true },
+            validate = { enable = true },
+          },
+          schemas = schemas,
+        },
       }
     end,
   },
