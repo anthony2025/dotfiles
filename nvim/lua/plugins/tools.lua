@@ -34,7 +34,7 @@ return {
   },
   {
     'folke/persistence.nvim',
-    event = 'BufReadPre',
+    event = 'VeryLazy',
     config = true,
     keys = {
       {
