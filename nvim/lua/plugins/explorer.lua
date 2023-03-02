@@ -17,7 +17,7 @@ return {
     init = function()
       vim.g.neo_tree_remove_legacy_commands = 1
       if vim.fn.argc() == 0 then
-        require('neo-tree.command').execute { action = 'show' }
+        --require('neo-tree.command').execute { action = 'show' }
       elseif vim.fn.argc() == 1 then
         --- @diagnostic disable-next-line
         local stat = vim.loop.fs_stat(vim.fn.argv(0))
