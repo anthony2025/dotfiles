@@ -1,7 +1,7 @@
 return {
 	{
 		"echasnovski/mini.jump",
-		event = { "BufReadPost", "BufNewFile" },
+	  event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.jump").setup()
 		end,

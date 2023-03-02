@@ -85,3 +85,7 @@
 2023.03.01 12:22:35 WARN  Build server is not auto-connectable.[0m
 2023.03.01 12:22:35 WARN  no build tool detected in workspace '/Users/anthony/.config'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 2023.03.01 12:22:51 INFO  shutting down Metals[0m
+2023.03.02 18:24:24 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/anthony/.config/.metals/lsp.trace.json or /Users/anthony/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2023.03.02 18:24:25 INFO  logging to file /Users/anthony/Desktop/athena/.metals/metals.log[0m
+2023.03.02 18:52:27 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/anthony/.config/.metals/lsp.trace.json or /Users/anthony/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2023.03.02 18:52:28 INFO  logging to file /Users/anthony/Desktop/athena/.metals/metals.log[0m
