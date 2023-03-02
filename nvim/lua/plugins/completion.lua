@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    event = "BufReadPre",
+    event = 'BufReadPre',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-signature-help',
@@ -32,7 +32,7 @@ return {
         },
         experimental = {
           ghost_text = {
-            hl_group = "LspCodeLens",
+            hl_group = 'LspCodeLens',
           },
         },
         sources = {
@@ -73,33 +73,33 @@ return {
     end,
   },
   {
-    "L3MON4D3/LuaSnip",
-    build = "make install_jsregexp",
+    'L3MON4D3/LuaSnip',
+    build = 'make install_jsregexp',
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "rafamadriz/friendly-snippets",
-      "honza/vim-snippets",
+      'nvim-treesitter/nvim-treesitter',
+      'rafamadriz/friendly-snippets',
+      'honza/vim-snippets',
     },
     config = function()
-        local luasnip = require'luasnip'
-        luasnip.setup {
-          history = true,
-          enable_autosnippets = true,
-          store_selection_keys = "<Tab>",
-          update_events = "TextChanged,TextChangedI",
-          delete_check_events = "TextChanged",
-          ft_func = require'luasnip.extras.filetype_functions'.from_cursor_pos,
-          ext_opts = {
-            [require'luasnip.util.types'.choiceNode] = {
-              active = {
-                virt_text = { { "choiceNode", "Comment" } }
-              }
-            }
-          }
-        }
-        luasnip.filetype_extend("all", { "_" })
-        require'luasnip.loaders.from_vscode'.lazy_load()
-        require'luasnip.loaders.from_snipmate'.lazy_load()
-    end
-  }
+      local luasnip = require 'luasnip'
+      luasnip.setup {
+        history = true,
+        enable_autosnippets = true,
+        store_selection_keys = '<Tab>',
+        update_events = 'TextChanged,TextChangedI',
+        delete_check_events = 'TextChanged',
+        ft_func = require('luasnip.extras.filetype_functions').from_cursor_pos,
+        ext_opts = {
+          [require('luasnip.util.types').choiceNode] = {
+            active = {
+              virt_text = { { 'choiceNode', 'Comment' } },
+            },
+          },
+        },
+      }
+      luasnip.filetype_extend('all', { '_' })
+      require('luasnip.loaders.from_vscode').lazy_load()
+      require('luasnip.loaders.from_snipmate').lazy_load()
+    end,
+  },
 }
