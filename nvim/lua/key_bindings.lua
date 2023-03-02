@@ -18,7 +18,7 @@ return {
     vim.keymap.set('n', '<leader>e', '<cmd>enew<cr>')
 
     -- quit all windows
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-q>', '<cmd>qa<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<leader>qq', '<cmd>qa<cr>')
 
     -- yank to system clipboard
     vim.keymap.set('v', '<leader>y', '"+y')
