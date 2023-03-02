@@ -886,6 +886,11 @@
               "sha256": "8612bf10b8605184e317c8ce31a0ea7a3c4d10785b5fe074a189b3b11146deb4"
             }
           }
+        },
+        "options": {
+          "args": [
+            "HEAD"
+          ]
         }
       },
       "entr": {
@@ -1062,6 +1067,11 @@
               "sha256": "3e2476caac96faa299f1b474ad8970ab7bc71c0498e1357ffd7a4ace93e802b1"
             }
           }
+        },
+        "options": {
+          "args": [
+            "HEAD"
+          ]
         }
       },
       "fzf": {
@@ -2554,6 +2564,11 @@
               "sha256": "26f29148b3a5fdd0a36d5278f6199a8b413a26dd689ac7b185b54a38e23d1133"
             }
           }
+        },
+        "options": {
+          "args": [
+            "HEAD"
+          ]
         }
       },
       "tree": {

@@ -1,5 +1,6 @@
 return {
   {
+    -- TODO: handle quickfix and loclist
     'folke/trouble.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {

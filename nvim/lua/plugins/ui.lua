@@ -26,18 +26,13 @@ return {
     end,
   },
   {
-    'echasnovski/mini.animate',
-    event = 'VeryLazy',
-    config = function() require('mini.animate').setup() end,
-  },
-  {
     'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     opts = {
       filetype_exclude = {
         'help',
         'neo-tree',
-        'trouble',
+        'Trouble',
         'lazy',
         'fzf',
         'spectre_panel',
@@ -53,5 +48,10 @@ return {
     'echasnovski/mini.cursorword',
     event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.cursorword').setup() end,
+  },
+  {
+    'echasnovski/mini.animate',
+    event = 'VeryLazy',
+    config = function() require('mini.animate').setup() end,
   },
 }
