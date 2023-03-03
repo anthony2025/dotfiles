@@ -9,7 +9,7 @@ return {
     },
     config = function()
       require('tokyonight').setup {
-        style = "night",
+        style = 'night',
         styles = {
           comments = { italic = true },
           keywords = { bold = true },

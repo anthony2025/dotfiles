@@ -85,7 +85,7 @@ return {
             require('neo-tree.command').execute {
               action = 'focus',
               position = 'float',
-              dir = path,
+              dir = vim.fn.resolve(path),
             }
           end
         end
