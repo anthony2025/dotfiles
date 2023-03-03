@@ -14,14 +14,29 @@ return {
           sidebars = true,
           floating_windows = true,
           cursor_line = true,
+          non_current_windows = true,
+          filetypes = {
+            'neo-tree',
+            'trouble',
+            'lazy',
+            'fzf',
+            'spectre_panel',
+            'quickfix',
+          },
         },
         styles = {
           comments = { italic = true },
         },
-        plugins = { 'nvim-web-devicons', 'trouble', 'nvim-cmp' },
+        plugins = {
+          'nvim-web-devicons',
+          'trouble',
+          'nvim-cmp',
+          'indent-blankline',
+          'mini',
+        },
         lualine_style = 'default',
       }
-      vim.g.material_style = 'deep ocean'
+      vim.g.material_style = 'darker'
       vim.cmd 'colorscheme material'
     end,
   },
