@@ -14,7 +14,6 @@ return {
           sidebars = true,
           floating_windows = true,
           cursor_line = true,
-          non_current_windows = true,
           filetypes = {
             'neo-tree',
             'trouble',
