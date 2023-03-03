@@ -8,7 +8,7 @@ return {
     },
     init = function()
       vim.api.nvim_create_autocmd('Colorscheme', {
-        group = vim.api.nvim_create_augroup('current_tab_color', {}),
+        group = vim.api.nvim_create_augroup('tab_color', {}),
         callback = function()
           vim.api.nvim_set_hl(0, 'BufferCurrent', { bg = '#242536' })
           vim.api.nvim_set_hl(0, 'BufferCurrentSign', { bg = '#242536' })
