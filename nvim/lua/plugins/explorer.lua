@@ -103,7 +103,7 @@ return {
             filetype = {
               'help',
               'neo-tree',
-              'Trouble',
+              'trouble',
               'lazy',
               'fzf',
               'spectre_panel',

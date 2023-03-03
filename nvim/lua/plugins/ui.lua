@@ -1,6 +1,6 @@
 return {
   {
-    'marko-cerovac/material.nvim',
+    'folke/tokyonight.nvim',
     lazy = false,
     priority = 90,
     dependencies = {
@@ -8,35 +8,27 @@ return {
       'nvim-lualine/lualine.nvim',
     },
     config = function()
-      require('material').setup {
-        contrast = {
-          terminal = true,
-          sidebars = true,
-          floating_windows = true,
-          cursor_line = true,
-          filetypes = {
-            'neo-tree',
-            'trouble',
-            'lazy',
-            'fzf',
-            'spectre_panel',
-            'quickfix',
-          },
-        },
+      require('tokyonight').setup {
+        style = "night",
         styles = {
           comments = { italic = true },
+          keywords = { bold = true },
         },
-        plugins = {
-          'nvim-web-devicons',
+        sidebars = {
+          'help',
+          'neo-tree',
           'trouble',
-          'nvim-cmp',
-          'indent-blankline',
-          'mini',
+          'lazy',
+          'fzf',
+          'spectre_panel',
+          'toggleterm',
+          'quickfix',
         },
-        lualine_style = 'default',
+        hide_inactive_statusline = true,
+        dim_inactive = true,
+        lualine_bold = true,
       }
-      vim.g.material_style = 'darker'
-      vim.cmd 'colorscheme material'
+      vim.cmd 'colorscheme tokyonight'
     end,
   },
   {
@@ -65,7 +57,7 @@ return {
   },
   {
     'echasnovski/mini.animate',
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.animate').setup() end,
   },
 }

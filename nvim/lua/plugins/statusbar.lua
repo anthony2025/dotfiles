@@ -1,14 +1,13 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    lazy = false,
-    priority = 80,
     dependencies = {
+      'folke/tokyonight.nvim',
       'nvim-tree/nvim-web-devicons',
     },
     opts = {
       options = {
-        theme = 'material-nvim',
+        theme = 'tokyonight',
         globalstatus = true,
       },
       sections = {

@@ -30,7 +30,7 @@ require('lazy').setup {
   concurrency = 8,
   change_detection = { notify = false }, -- disable annoying messages
   checker = { enabled = true }, -- automatically check for plugin updates
-  install = { colorscheme = { 'material' } }, -- try setting theme on first launch
+  install = { colorscheme = { 'tokyonight' } }, -- try setting theme on first launch
   performance = { -- disable unused rtp plugins
     rtp = {
       disabled_plugins = {
