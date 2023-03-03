@@ -4,12 +4,11 @@ return {
     lazy = false,
     priority = 80,
     dependencies = {
-      'folke/tokyonight.nvim',
       'nvim-tree/nvim-web-devicons',
     },
     opts = {
       options = {
-        theme = 'tokyonight',
+        theme = 'ayu_dark',
         globalstatus = true,
       },
       sections = {
@@ -35,12 +34,12 @@ return {
         lualine_y = { 'filetype' },
         lualine_z = { 'progress' },
       },
-      extensions = { 'fzf', 'nerdtree' },
+      extensions = {
+        'fzf',
+        'neo-tree',
+        'quickfix',
+        'toggleterm'
+      },
     },
   },
 }
--- ['neo-tree'] = 'File Explorer',
--- fzf = 'File Picker',
--- spectre_panel = 'Search/Replace',
--- toggleterm = 'Terminal',
--- quickfix = 'Quickfix',

@@ -28,6 +28,7 @@ return {
     config = function()
       require('bufferline').setup {
         icon_custom_colors = true,
+        no_name_title = "New File",
       }
     end,
   },

@@ -33,7 +33,6 @@ return {
           'toggleterm',
           'quickfix',
         },
-        hide_inactive_statusline = true,
         dim_inactive = true,
       }
       vim.cmd 'colorscheme tokyonight'
