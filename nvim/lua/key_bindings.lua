@@ -1,6 +1,5 @@
 return {
   setup = function()
-    -- TODO:  correct this
     -- setup leader to spacebar early for correct key mappings
     vim.g.mapleader = ' '
 
@@ -21,20 +20,16 @@ return {
     vim.keymap.set({ 'i', 'n', 'v' }, '<a-q>', '<cmd>qa!<cr>')
 
     -- yank to system clipboard
-    vim.keymap.set('v', '<leader>y', '"+y')
+    vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y')
+    vim.keymap.set({ 'v', 'n' }, '<leader>p', '"+p')
     vim.keymap.set('n', '<leader>y', '"+yy')
-    vim.keymap.set('n', '<leader>p', '"+p')
 
     -- go up/down more intuitively on long lines that wrap
     vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
     vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
     -- focus on other window
-    vim.keymap.set('n', '<c-w>', [[<c-\><c-n><c-w>]])
-
-    -- buffer navigation
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-u>', '<cmd>bprevious<cr>')
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-i>', '<cmd>bnext<cr>')
+    vim.keymap.set('n', '<leader>w', [[<c-\><c-n><c-w>]])
 
     -- resize splits using arrow keys
     vim.keymap.set({ 'i', 'n', 'v' }, '<c-up>', '<cmd>resize +2<cr>')

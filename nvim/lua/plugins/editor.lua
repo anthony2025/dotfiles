@@ -20,20 +20,4 @@ return {
     end,
     config = function() require('mini.trailspace').setup() end,
   },
-  {
-    'echasnovski/mini.bufremove',
-    keys = {
-      {
-        '<c-c>',
-        function() require('mini.bufremove').wipeout(0, false) end,
-        mode = { 'i', 'n', 'v' },
-      },
-      {
-        '<c-q>',
-        function() require('mini.bufremove').wipeout(0, true) end,
-        mode = { 'i', 'n', 'v' },
-      },
-    },
-    config = function() require('mini.bufremove').setup() end,
-  },
 }
