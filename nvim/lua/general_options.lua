@@ -21,25 +21,25 @@ return {
     vim.opt.expandtab = true -- convert tabs to spaces, call :retab to manually trigger
 
     -- divide words on dash as well as underscore
-    vim.opt.iskeyword:append("-")
+    vim.opt.iskeyword:append '-'
 
     -- needed for proper metals behaviour
-    vim.opt_global.shortmess:remove("F") -- silence some commands
+    vim.opt_global.shortmess:remove 'F' -- silence some commands
 
-    vim.opt.shortmess:append({
+    vim.opt.shortmess:append {
       W = true, -- don't give "written" or "[w]" when writing a file
       c = true, -- don't give ins-completion-menu messages
       C = true, -- don't give messages while scanning for ins-completion
       a = true, -- use abbreviations for some commands
       t = true, -- truncate messages when necessary
       I = true, -- disable start screen
-    })
+    }
 
     -- darken the row under the cursor
     vim.opt.cursorline = true
 
     -- draw a column after that many characters
-    vim.opt.colorcolumn = "120"
+    vim.opt.colorcolumn = '120'
 
     -- dont show mode since we have a statusline
     vim.opt.showmode = false
@@ -73,10 +73,10 @@ return {
     vim.opt.shiftround = true
 
     -- languages to check spelling in
-    vim.opt.spelllang = { "en", "es" }
+    vim.opt.spelllang = { 'en', 'es' }
 
     -- command-line completion mode
-    vim.opt.wildmode = "longest:full,full"
+    vim.opt.wildmode = 'longest:full,full'
 
     -- dont wrap long lines
     vim.opt.wrap = false
@@ -85,7 +85,7 @@ return {
     vim.opt.updatetime = 200
 
     -- time to wait for a mapped sequence to complete
-    vim.opt.timeoutlen = 400
+    vim.opt.timeoutlen = 300
 
     -- allow hidden buffers
     vim.opt.hidden = true
@@ -95,10 +95,10 @@ return {
     vim.opt.sidescrolloff = 8
 
     -- always show the signcolumn, otherwise it would shift the text
-    vim.opt.signcolumn = "yes"
+    vim.opt.signcolumn = 'yes'
 
     -- reduce scroll during window split
-    vim.opt.splitkeep = "screen"
+    vim.opt.splitkeep = 'screen'
 
     -- make builtin completion menus slightly transparent
     vim.opt.pumblend = 10
@@ -110,7 +110,7 @@ return {
     vim.opt.winblend = 10
 
     -- define which helper symbols to show
-    vim.opt.listchars = "extends:…,precedes:…,nbsp:␣"
+    vim.opt.listchars = 'extends:…,precedes:…,nbsp:␣'
 
     -- show some helper symbols
     vim.opt.list = true
