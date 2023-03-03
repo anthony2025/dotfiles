@@ -42,12 +42,7 @@ set -gx LESS \
 fish_add_path -ga $HOME/.local/share/coursier/bin
 
 if status --is-interactive && status --is-login
-  # shortcuts to personal folders
-  set -g dm $HOME/Documents
-  set -g ds $HOME/Desktop
-  set -g dw $HOME/Downloads
-
-  # shortcuts to config files
+  # links to config files
   set -g vimrc $XDG_CONFIG_HOME/nvim
   set -g fishrc $XDG_CONFIG_HOME/fish
   set -g gitrc $XDG_CONFIG_HOME/git
@@ -55,6 +50,11 @@ if status --is-interactive && status --is-login
   set -g kittyrc $XDG_CONFIG_HOME/kitty
   set -g tridactylrc $XDG_CONFIG_HOME/tridactyl
   set -g xmonadrc $XDG_CONFIG_HOME/xmonad
+
+  # shortcuts to personal folders
+  abbr -ag dm $HOME/Documents
+  abbr -ag ds $HOME/Desktop
+  abbr -ag dw $HOME/Downloads
 
   # better defaults
   abbr -ag :q exit
