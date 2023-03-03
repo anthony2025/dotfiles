@@ -1,3 +1,4 @@
+-- TODO: add border to tree
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',

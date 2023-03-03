@@ -1,23 +1,24 @@
 return {
   setup = function()
+    -- TODO:  correct this
     -- setup leader to spacebar early for correct key mappings
     vim.g.mapleader = ' '
 
-    -- quickly exit to normal mode
+    -- -- quickly exit to normal mode
     vim.keymap.set('i', 'jj', '<esc>')
 
-    -- clear search
+    -- -- clear search
     vim.keymap.set({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>')
 
-    -- alternative way to save file
+    -- -- alternative way to save file
     vim.keymap.set('n', '<c-s>', '<cmd>silent! update | redraw<cr>')
     vim.keymap.set({ 'i', 'v' }, '<c-s>', '<esc><cmd>silent! update | redraw<cr>')
 
-    -- new file
+    -- -- new file
     vim.keymap.set('n', '<leader>e', '<cmd>enew<cr>')
 
-    -- quit all windows
-    vim.keymap.set({ 'i', 'n', 'v' }, '<leader>qq', '<cmd>qa<cr>')
+    -- -- quit all windows
+    vim.keymap.set({ 'i', 'n', 'v' }, '<a-q>', '<cmd>qa!<cr>')
 
     -- yank to system clipboard
     vim.keymap.set('v', '<leader>y', '"+y')
@@ -72,8 +73,5 @@ return {
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
     vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action)
     vim.keymap.set('n', '<leader>c', vim.lsp.codelens.run)
-
-    -- open plugin manager
-    vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)
   end,
 }

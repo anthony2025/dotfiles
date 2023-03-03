@@ -23,17 +23,11 @@ return {
     -- divide words on dash as well as underscore
     vim.opt.iskeyword:append '-'
 
-    -- needed for proper metals behaviour
-    vim.opt_global.shortmess:remove 'F' -- silence some commands
+    -- we hide the most messages possible, dont truncate, and disable the start screen
+    vim.api.nvim_command 'set shortmess=CWIOs'
 
-    vim.opt.shortmess:append {
-      W = true, -- don't give "written" or "[w]" when writing a file
-      c = true, -- don't give ins-completion-menu messages
-      C = true, -- don't give messages while scanning for ins-completion
-      a = true, -- use abbreviations for some commands
-      t = true, -- truncate messages when necessary
-      I = true, -- disable start screen
-    }
+    -- hide the unruly line
+    vim.opt.cmdheight = 0
 
     -- darken the row under the cursor
     vim.opt.cursorline = true

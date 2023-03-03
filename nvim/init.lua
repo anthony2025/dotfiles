@@ -23,6 +23,9 @@ require('lazy').setup {
     'folke/lazy.nvim', -- plugin manager manages itself
     { import = 'plugins' }, -- automatically import any file in plugins directory
   },
+  ui = {
+    border = 'rounded',
+  },
   defaults = {
     lazy = true, -- lazy load all plugins unless specified otherwise
     version = false, -- use the latest git commit instead of release
@@ -46,3 +49,6 @@ require('lazy').setup {
     },
   },
 }
+
+-- quickly open plugin manager
+vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)

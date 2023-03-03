@@ -1,37 +1,5 @@
 return {
   {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 90,
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-      'nvim-lualine/lualine.nvim',
-    },
-    config = function()
-      require('tokyonight').setup {
-        style = 'night',
-        styles = {
-          comments = { italic = true },
-          keywords = { bold = true },
-        },
-        sidebars = {
-          'help',
-          'neo-tree',
-          'trouble',
-          'lazy',
-          'fzf',
-          'spectre_panel',
-          'toggleterm',
-          'quickfix',
-        },
-        hide_inactive_statusline = true,
-        dim_inactive = true,
-        lualine_bold = true,
-      }
-      vim.cmd 'colorscheme tokyonight'
-    end,
-  },
-  {
     'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     opts = {
@@ -48,6 +16,61 @@ return {
       show_trailing_blankline_indent = false,
       show_current_context = true,
       use_treesitter = true,
+    },
+  },
+  {
+    'folke/noice.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    event = { 'BufReadPost', 'BufNewFile' },
+    opts = {
+      cmdline = {
+        view = 'cmdline',
+        format = {
+          search_down = {
+            view = 'cmdline',
+          },
+          search_up = {
+            view = 'cmdline',
+          },
+        },
+      },
+      routes = {
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'written',
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'modified',
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'lines',
+          },
+          opts = { skip = true },
+        },
+      },
+      lsp = {
+        override = {
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          --["cmp.entry.get_documentation"] = true,
+        },
+      },
+      presets = {
+        inc_rename = true,
+        lsp_doc_border = true,
+      },
     },
   },
   {
