@@ -41,9 +41,38 @@ set -gx LESS \
 # add coursier binaries dynamically to the path
 fish_add_path -ga $HOME/.local/share/coursier/bin
 
-# setup our abbreviations only once
 if status --is-interactive && status --is-login
-    source $XDG_CONFIG_HOME/fish/fish_abbreviations
+  # shortcuts to personal folders
+  set -g dm $HOME/Documents
+  set -g ds $HOME/Desktop
+  set -g dw $HOME/Downloads
+
+  # shortcuts to config files
+  set -g vimrc $XDG_CONFIG_HOME/nvim
+  set -g fishrc $XDG_CONFIG_HOME/fish
+  set -g gitrc $XDG_CONFIG_HOME/git
+  set -g tmuxrc $XDG_CONFIG_HOME/tmux
+  set -g kittyrc $XDG_CONFIG_HOME/kitty
+  set -g tridactylrc $XDG_CONFIG_HOME/tridactyl
+  set -g xmonadrc $XDG_CONFIG_HOME/xmonad
+
+  # better defaults
+  abbr -ag :q exit
+  abbr -ag l ls -h1G
+  abbr -ag la ls -Ahl
+  abbr -ag mv mv -v
+  abbr -ag cp cp -r
+  abbr -ag rm rm -rf
+  abbr -ag scp scp -r
+  abbr -ag mkdir mkdir -p
+  abbr -ag zip zip -r
+  abbr -ag sbt sbtn --color=always
+  abbr -ag rsync rsync --recursive --progress --archive
+
+  # shell utilities
+  abbr -ag merge_history history --merge
+  abbr -ag sync_config source $XDG_CONFIG_HOME/fish/config.fish
+  abbr -ag tmux_update $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all
 end
 
 if is_macos
