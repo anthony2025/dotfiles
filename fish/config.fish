@@ -1,14 +1,11 @@
-# setup our dotfiles directory
-set -gx XDG_CONFIG_HOME $HOME/.config
+# enable 24 bits color
+set -gx COLORTERM truecolor
 
 # move ack config
 set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
 
 # move xmonad config
 set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
-
-# enable 24 bits color
-set -gx COLORTERM truecolor
 
 # setup our file editor
 set -gx EDITOR nvim
@@ -38,15 +35,6 @@ set -gx LESS \
     --tabs=2 \
     --wheel-lines=1
 
-# setup forgit yank command across platforms
-set -gx FORGIT_COPY_CMD fish_clipboard_copy
-
-# fix output of forgit logs graph
-set -gx FORGIT_LOG_FZF_OPTS --reverse
-
-# activate forgit's git subcommands
-fish_add_path -ga $XDG_CONFIG_HOME/fish/conf.d/bin
-
 # add coursier binaries to the path
 fish_add_path -ga $HOME/.local/share/coursier/bin
 
@@ -71,7 +59,7 @@ if is_macos
 end
 
 if status --is-interactive
-    # links
+    # configuration links
     abbr -a --position=anywhere vimrc $XDG_CONFIG_HOME/nvim
     abbr -a --position=anywhere fishrc $XDG_CONFIG_HOME/fish
     abbr -a --position=anywhere gitrc $XDG_CONFIG_HOME/git
@@ -80,7 +68,7 @@ if status --is-interactive
     abbr -a --position=anywhere tridactylrc $XDG_CONFIG_HOME/tridactyl
     abbr -a --position=anywhere xmonadrc $XDG_CONFIG_HOME/xmonad
 
-    # shortcuts
+    # folder shortcuts
     abbr -a dm $HOME/Documents
     abbr -a ds $HOME/Desktop
     abbr -a dw $HOME/Downloads
@@ -98,14 +86,15 @@ if status --is-interactive
     abbr -a sbt sbtn --color=always
     abbr -a rsync rsync --recursive --progress --archive
 
-    # replace system utilities
+    # replace commands
     alias vim nvim
     alias cat bat
     alias find fd
     alias grep rg
 
-    # define some shell utilities
+    # shell utilities
     alias :q exit
+    alias stylua 'stylua --search-parent-directories'
     alias merge_history 'history --merge'
     alias sync_config "source $XDG_CONFIG_HOME/fish/config.fish"
     alias tmux_update "$XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all"

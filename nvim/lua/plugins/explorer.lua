@@ -18,7 +18,6 @@ return {
             action = 'focus',
             position = 'right',
             toggle = true,
-            reveal_force_cwd = true,
           }
         end,
         mode = { 'i', 'n', 'v' },
@@ -35,29 +34,31 @@ return {
         mode = { 'i', 'n', 'v' },
       },
     },
-    opts = {
-      close_if_last_window = true,
-      window = {
-        position = 'right',
-      },
-      source_selector = {
-        winbar = true,
-        tab_labels = {
-          filesystem = ' Files',
-          buffers = ' Buffers',
-          git_status = ' Git',
+    config = function()
+      require'neo-tree'.setup {
+        close_if_last_window = true,
+        window = {
+          position = 'right',
         },
-      },
-      filesystem = {
-        scan_mode = 'deep',
-        search_limit = 100,
-        bind_to_cwd = true,
-        follow_current_file = true,
-        group_empty_dirs = true,
-        use_libuv_file_watcher = true,
-        find_by_full_path_words = true,
-      },
-    },
+        source_selector = {
+          winbar = true,
+          tab_labels = {
+            filesystem = ' Files',
+            buffers = ' Buffers',
+            git_status = ' Git',
+          },
+        },
+        filesystem = {
+          scan_mode = 'deep',
+          search_limit = 100,
+          bind_to_cwd = true,
+          follow_current_file = true,
+          group_empty_dirs = true,
+          use_libuv_file_watcher = true,
+          find_by_full_path_words = true,
+        },
+      }
+    end,
     init = function() vim.g.neo_tree_remove_legacy_commands = 1 end,
   },
   {

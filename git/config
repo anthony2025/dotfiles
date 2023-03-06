@@ -1,57 +1,77 @@
 [protocol]
-	version = 2
+  version = 2
 
 [user]
-	email = anthony2025@pm.me
-	name = Anthony Ascencio
+  email = anthony2025@pm.me
+  name = Anthony Ascencio
 
 [core]
-	editor = vim
-  excludesfile = ~/.config/git/gitignore
+  editor = nvim
+  eol = LF
+  autocrlf = input
+  safecrlf = true
+  excludesfile = ~/.config/git/ignore
+  attributesfile = ~/.config/git/attributes
+  whitespace = space-before-tab,trailing-space,indent-with-non-tab
+  untrackedCache = true
 
 [apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
-
-[core]
-	# Use custom `.gitignore` and `.gitattributes`
-	# excludesfile = ~/.gitignore
-	# attributesfile = ~/.gitattributes
-
-	# Treat spaces before tabs and all kinds of trailing whitespace as an error
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
-	# Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
+  whitespace = fix
 
 [commit]
-	gpgsign = false
+  gpgsign = false
 
 [help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+  autocorrect = 1
 
 [merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+  log = true
 
 [push]
-	default = current
-	# Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
+  default = current
+  followTags = true
 
 [color]
-	ui = true
+  ui = true
 
 [pull]
-	rebase = false
+  rebase = false
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
-[status]
-	# showUntrackedFiles = no
+[alias]
+	glo = forgit log
+  gd = forgit diff
+  ga = forgit add
+  grh = forgit reset_head
+  gi = forgit_ignore
+  gcf = forgit checkout_file
+  gcb = forgit checkout_branch
+  gbd = forgit branch_delete
+  gct = forgit checkout_tag
+  gco = forgit checkout_commit
+  grc = forgit revert_commit
+  gclean = forgit clean
+  gss = forgit stash_show
+  gsp = forgit stash_push
+  gcp = forgit cherry_pick
+  grb = forgit rebase
+  gbl = forgit blame
+  gfu = forgit fixup
 
+[ghq]
+  root = ~/Desktop
+
+[delta]
+  minus-style = syntax "#37222c"
+  minus-non-emph-style = syntax "#37222c"
+  minus-emph-style = syntax "#713137"
+  minus-empty-line-marker-style = syntax "#37222c"
+  line-numbers-minus-style = "#c25d64"
+  plus-style = syntax "#20303b"
+  plus-non-emph-style = syntax "#20303b"
+  plus-emph-style = syntax "#2c5a66"
+  plus-empty-line-marker-style = syntax "#20303b"
+  line-numbers-plus-style = "#399a96"
+  line-numbers-zero-style = "#3b4261"

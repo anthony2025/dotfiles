@@ -1,0 +1,11 @@
+# automatically detect most files
+text=auto
+
+# overrides that need line endings corrected
+*.txt  text
+*.md   text
+
+# tells git not to touch these files
+*.png  binary
+*.jpg binary
+*.jepg binary
