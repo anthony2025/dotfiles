@@ -2,6 +2,7 @@
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',
+    cmd = "Neotree",
     branch = 'v2.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -17,7 +18,7 @@ return {
             action = 'focus',
             position = 'right',
             toggle = true,
-            reveal_force_cwd = true,
+            reveal_force_cwd = true
           }
         end,
         mode = { 'i', 'n', 'v' },
@@ -29,7 +30,6 @@ return {
             action = 'focus',
             position = 'float',
             toggle = true,
-            reveal_force_cwd = true,
           }
         end,
         mode = { 'i', 'n', 'v' },
@@ -37,7 +37,6 @@ return {
     },
     opts = {
       close_if_last_window = true,
-      hijack_netrw_behavior = 'disabled',
       window = {
         position = 'right',
       },
@@ -50,7 +49,6 @@ return {
         },
       },
       filesystem = {
-        hijack_netrw_behavior = 'disabled',
         scan_mode = 'deep',
         search_limit = 100,
         bind_to_cwd = true,
@@ -62,35 +60,15 @@ return {
     },
     init = function()
       vim.g.neo_tree_remove_legacy_commands = 1
-      local arg_count = vim.fn.argc()
-      if arg_count == 0 then
-        -- not passed any arguments
-        require('neo-tree.command').execute {
-          action = 'show',
-          position = 'right',
-        }
-      elseif arg_count == 1 then
-        local path = vim.fn.argv(0)
-        local path_exists = vim.fn.filereadable(path)
-        if path_exists then
-          local path_kind = vim.loop.fs_stat(vim.fn.resolve(path)) and vim.loop.fs_stat(vim.fn.resolve(path)).type
-          if path_kind == 'file' then
-            -- passed an existing file
-            require('neo-tree.command').execute {
-              action = 'show',
-              position = 'right',
-              reveal_force_cwd = true,
-            }
-          elseif path_kind == 'directory' then
-            -- passed an existing directory
-            require('neo-tree.command').execute {
-              action = 'focus',
-              position = 'float',
-              dir = vim.fn.resolve(path),
-            }
-          end
+      vim.api.nvim_create_autocmd('BufReadPost', {
+        group = vim.api.nvim_create_augroup('open_explorer', {}),
+        callback = function()
+          require('neo-tree.command').execute {
+            action = 'show',
+            position = 'right',
+          }
         end
-      end
+      })
     end,
   },
   {

@@ -1,6 +1,6 @@
 function fish_user_key_bindings --description "setup bindings automatically on startup"
-    # sets emacs keybindings first so vi ones win but common ones remain
-    fish_hybrid_key_bindings
+    # by default erases all previously defined bindings
+    fish_vi_key_bindings --no-erase
 
     # fzf mappings for normal mode
     bind -M default \ct fzf_file_widget

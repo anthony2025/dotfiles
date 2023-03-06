@@ -1,4 +1,4 @@
-# setup our config directory dinamically
+# setup our dotfiles directory
 set -gx XDG_CONFIG_HOME $HOME/.config
 
 # move ack config
@@ -10,7 +10,7 @@ set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
 # enable 24 bits color
 set -gx COLORTERM truecolor
 
-# setup our editor
+# setup our file editor
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR
@@ -38,49 +38,15 @@ set -gx LESS \
     --tabs=2 \
     --wheel-lines=1
 
-# add coursier binaries dynamically to the path
+# activate forgit's git subcommands
+fish_add_path -ga $XDG_CONFIG_HOME/fish/conf.d/bin
+
+# add coursier binaries to the path
 fish_add_path -ga $HOME/.local/share/coursier/bin
-
-if status --is-interactive && status --is-login
-  # links to config files
-  set -g vimrc $XDG_CONFIG_HOME/nvim
-  set -g fishrc $XDG_CONFIG_HOME/fish
-  set -g gitrc $XDG_CONFIG_HOME/git
-  set -g tmuxrc $XDG_CONFIG_HOME/tmux
-  set -g kittyrc $XDG_CONFIG_HOME/kitty
-  set -g tridactylrc $XDG_CONFIG_HOME/tridactyl
-  set -g xmonadrc $XDG_CONFIG_HOME/xmonad
-
-  # shortcuts to personal folders
-  abbr -ag dm $HOME/Documents
-  abbr -ag ds $HOME/Desktop
-  abbr -ag dw $HOME/Downloads
-
-  # better defaults
-  abbr -ag :q exit
-  abbr -ag l ls -h1G
-  abbr -ag la ls -Ahl
-  abbr -ag mv mv -v
-  abbr -ag cp cp -r
-  abbr -ag rm rm -rf
-  abbr -ag scp scp -r
-  abbr -ag mkdir mkdir -p
-  abbr -ag zip zip -r
-  abbr -ag sbt sbtn --color=always
-  abbr -ag rsync rsync --recursive --progress --archive
-
-  # shell utilities
-  abbr -ag merge_history history --merge
-  abbr -ag sync_config source $XDG_CONFIG_HOME/fish/config.fish
-  abbr -ag tmux_update $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all
-end
 
 if is_macos
     # override location of coursier binaries
     fish_add_path -ga "$HOME/Library/Application Support/Coursier/bin"
-
-    # add firefox to path
-    fish_add_path -ga /Applications/Firefox.app/Contents/MacOS
 
     # prepend coreutils so they take precedence over defaults
     fish_add_path -gp /usr/local/opt/coreutils/libexec/gnubin
@@ -93,4 +59,48 @@ if is_macos
 
     # silence too many redundant messages
     set -gx HOMEBREW_NO_ENV_HINTS true
+
+    # correct firefox path
+    alias firefox /Applications/Firefox.app/Contents/MacOS/
+end
+
+if status --is-interactive
+  # links
+  abbr -a --position=anywhere vimrc $XDG_CONFIG_HOME/nvim
+  abbr -a --position=anywhere fishrc $XDG_CONFIG_HOME/fish
+  abbr -a --position=anywhere gitrc $XDG_CONFIG_HOME/git
+  abbr -a --position=anywhere tmuxrc $XDG_CONFIG_HOME/tmux
+  abbr -a --position=anywhere kittyrc $XDG_CONFIG_HOME/kitty
+  abbr -a --position=anywhere tridactylrc $XDG_CONFIG_HOME/tridactyl
+  abbr -a --position=anywhere xmonadrc $XDG_CONFIG_HOME/xmonad
+
+  # shortcuts
+  abbr -a dm $HOME/Documents
+  abbr -a ds $HOME/Desktop
+  abbr -a dw $HOME/Downloads
+
+  # better defaults
+  abbr -a l ls -h1G
+  abbr -a la ls -Ahl
+  abbr -a mv mv -v
+  abbr -a cp cp -r
+  abbr -a rm rm -rf
+  abbr -a scp scp -r
+  abbr -a mkdir mkdir -p
+  abbr -a zip zip -r
+  abbr -a ln ln -s
+  abbr -a sbt sbtn --color=always
+  abbr -a rsync rsync --recursive --progress --archive
+
+  # replace system utilities
+  alias vim nvim
+  alias cat bat
+  alias find fd
+  alias grep rg
+
+  # define some shell utilities
+  alias :q exit
+  alias merge_history 'history --merge'
+  alias sync_config "source $XDG_CONFIG_HOME/fish/config.fish"
+  alias tmux_update "$XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all"
 end
