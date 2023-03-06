@@ -1,3 +1,3 @@
 function emacs
-  __launch_emacs $argv --no-wait
+    __launch_emacs $argv --no-wait
 end

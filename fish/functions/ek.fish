@@ -1,3 +1,3 @@
 function ek
-  __kill_emacs
+    __kill_emacs
 end

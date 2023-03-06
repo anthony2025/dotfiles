@@ -52,4 +52,3 @@ require('lazy').setup {
 
 -- quickly open plugin manager
 vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)
-
