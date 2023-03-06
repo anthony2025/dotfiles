@@ -20,4 +20,14 @@ return {
     end,
     config = function() require('mini.trailspace').setup() end,
   },
+  {
+    'jghauser/mkdir.nvim',
+    event = "VeryLazy"
+  },
+  {
+    'gennaro-tedesco/nvim-peekup',
+    keys = {
+      { '""', mode = { "v", "n" } }
+    }
+  }
 }
