@@ -11,8 +11,9 @@ return {
     -- enable persistent undo history
     vim.opt.undofile = true
 
-    -- absolute line numbering
+    -- hybrid line numbering by default
     vim.opt.number = true
+    vim.opt.relativenumber = true
 
     -- use two spaces instead of tabs
     vim.opt.tabstop = 2 -- number of spaces to a tab

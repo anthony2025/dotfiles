@@ -55,5 +55,12 @@ return {
         vim.opt_local.spell = true
       end,
     })
-  end,
+
+    -- only display relative numbers on current buffer
+    vim.cmd [[augroup number_toggle
+      autocmd!
+      autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+      autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+    augroup END]]
+  end
 }
