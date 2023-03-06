@@ -38,6 +38,12 @@ set -gx LESS \
     --tabs=2 \
     --wheel-lines=1
 
+# setup forgit yank command across platforms
+set -gx FORGIT_COPY_CMD fish_clipboard_copy
+
+# fix output of forgit logs graph
+set -gx FORGIT_LOG_FZF_OPTS --reverse
+
 # activate forgit's git subcommands
 fish_add_path -ga $XDG_CONFIG_HOME/fish/conf.d/bin
 
