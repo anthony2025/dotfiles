@@ -16,9 +16,11 @@ SETUVAR __fish_git_prompt_showupstream:yes
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_lilyball_2F_nix_2D_env_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/nix\x2denv\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_battery_files:\x7e/\x2econfig/fish/functions/battery\x2efish\x1e\x7e/\x2econfig/fish/functions/battery\x2einfo\x2eupdate\x2edarwin\x2efish\x1e\x7e/\x2econfig/fish/functions/battery\x2einfo\x2eupdate\x2efish\x1e\x7e/\x2econfig/fish/functions/battery\x2einfo\x2eupdate\x2elinux\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/battery\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_gityaw_files:\x7e/\x2econfig/fish/functions/gitunyaw\x2efish\x1e\x7e/\x2econfig/fish/functions/gityaw\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_osx_files:\x7e/\x2econfig/fish/functions/cdf\x2efish\x1e\x7e/\x2econfig/fish/functions/flushdns\x2efish\x1e\x7e/\x2econfig/fish/functions/itunes\x2efish\x1e\x7e/\x2econfig/fish/functions/manp\x2efish\x1e\x7e/\x2econfig/fish/functions/pfd\x2efish\x1e\x7e/\x2econfig/fish/functions/pfs\x2efish\x1e\x7e/\x2econfig/fish/functions/pushdf\x2efish\x1e\x7e/\x2econfig/fish/functions/ql\x2efish\x1e\x7e/\x2econfig/fish/functions/showhidden\x2efish\x1e\x7e/\x2econfig/fish/functions/trash\x2efish\x1e\x7e/\x2econfig/fish/functions/unset\x2efish\x1e\x7e/\x2econfig/fish/functions/updatedb\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_wttr_files:\x7e/\x2econfig/fish/functions/moon\x2efish\x1e\x7e/\x2econfig/fish/functions/wttr\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1elilyball/nix\x2denv\x2efish\x1ereitzig/sdkman\x2dfor\x2dfish\x1eoh\x2dmy\x2dfish/plugin\x2dgityaw\x1ewfxr/forgit\x1eoh\x2dmy\x2dfish/plugin\x2dwttr
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1elilyball/nix\x2denv\x2efish\x1ereitzig/sdkman\x2dfor\x2dfish\x1eoh\x2dmy\x2dfish/plugin\x2dgityaw\x1ewfxr/forgit\x1eoh\x2dmy\x2dfish/plugin\x2dwttr\x1eoh\x2dmy\x2dfish/plugin\x2dosx\x1eoh\x2dmy\x2dfish/plugin\x2dbattery
 SETUVAR _fisher_reitzig_2F_sdkman_2D_for_2D_fish_files:\x7e/\x2econfig/fish/functions/sdk\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/sdk\x2efish\x1e\x7e/\x2econfig/fish/completions/sdk\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _fisher_wfxr_2F_forgit_files:\x7e/\x2econfig/fish/conf\x2ed/bin\x1e\x7e/\x2econfig/fish/conf\x2ed/forgit\x2eplugin\x2efish\x1e\x7e/\x2econfig/fish/completions/git\x2dforgit\x2ebash
