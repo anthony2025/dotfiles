@@ -2,7 +2,7 @@
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',
-    cmd = "Neotree",
+    cmd = 'Neotree',
     branch = 'v2.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -18,7 +18,7 @@ return {
             action = 'focus',
             position = 'right',
             toggle = true,
-            reveal_force_cwd = true
+            reveal_force_cwd = true,
           }
         end,
         mode = { 'i', 'n', 'v' },
@@ -58,18 +58,7 @@ return {
         find_by_full_path_words = true,
       },
     },
-    init = function()
-      vim.g.neo_tree_remove_legacy_commands = 1
-      vim.api.nvim_create_autocmd('BufReadPost', {
-        group = vim.api.nvim_create_augroup('open_explorer', {}),
-        callback = function()
-          require('neo-tree.command').execute {
-            action = 'show',
-            position = 'right',
-          }
-        end
-      })
-    end,
+    init = function() vim.g.neo_tree_remove_legacy_commands = 1 end,
   },
   {
     's1n7ax/nvim-window-picker',

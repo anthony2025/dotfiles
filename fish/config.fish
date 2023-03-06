@@ -65,42 +65,42 @@ if is_macos
 end
 
 if status --is-interactive
-  # links
-  abbr -a --position=anywhere vimrc $XDG_CONFIG_HOME/nvim
-  abbr -a --position=anywhere fishrc $XDG_CONFIG_HOME/fish
-  abbr -a --position=anywhere gitrc $XDG_CONFIG_HOME/git
-  abbr -a --position=anywhere tmuxrc $XDG_CONFIG_HOME/tmux
-  abbr -a --position=anywhere kittyrc $XDG_CONFIG_HOME/kitty
-  abbr -a --position=anywhere tridactylrc $XDG_CONFIG_HOME/tridactyl
-  abbr -a --position=anywhere xmonadrc $XDG_CONFIG_HOME/xmonad
+    # links
+    abbr -a --position=anywhere vimrc $XDG_CONFIG_HOME/nvim
+    abbr -a --position=anywhere fishrc $XDG_CONFIG_HOME/fish
+    abbr -a --position=anywhere gitrc $XDG_CONFIG_HOME/git
+    abbr -a --position=anywhere tmuxrc $XDG_CONFIG_HOME/tmux
+    abbr -a --position=anywhere kittyrc $XDG_CONFIG_HOME/kitty
+    abbr -a --position=anywhere tridactylrc $XDG_CONFIG_HOME/tridactyl
+    abbr -a --position=anywhere xmonadrc $XDG_CONFIG_HOME/xmonad
 
-  # shortcuts
-  abbr -a dm $HOME/Documents
-  abbr -a ds $HOME/Desktop
-  abbr -a dw $HOME/Downloads
+    # shortcuts
+    abbr -a dm $HOME/Documents
+    abbr -a ds $HOME/Desktop
+    abbr -a dw $HOME/Downloads
 
-  # better defaults
-  abbr -a l ls -h1G
-  abbr -a la ls -Ahl
-  abbr -a mv mv -v
-  abbr -a cp cp -r
-  abbr -a rm rm -rf
-  abbr -a scp scp -r
-  abbr -a mkdir mkdir -p
-  abbr -a zip zip -r
-  abbr -a ln ln -s
-  abbr -a sbt sbtn --color=always
-  abbr -a rsync rsync --recursive --progress --archive
+    # better defaults
+    abbr -a l ls -h1G
+    abbr -a la ls -Ahl
+    abbr -a mv mv -v
+    abbr -a cp cp -r
+    abbr -a rm rm -rf
+    abbr -a scp scp -r
+    abbr -a mkdir mkdir -p
+    abbr -a zip zip -r
+    abbr -a ln ln -s
+    abbr -a sbt sbtn --color=always
+    abbr -a rsync rsync --recursive --progress --archive
 
-  # replace system utilities
-  alias vim nvim
-  alias cat bat
-  alias find fd
-  alias grep rg
+    # replace system utilities
+    alias vim nvim
+    alias cat bat
+    alias find fd
+    alias grep rg
 
-  # define some shell utilities
-  alias :q exit
-  alias merge_history 'history --merge'
-  alias sync_config "source $XDG_CONFIG_HOME/fish/config.fish"
-  alias tmux_update "$XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all"
+    # define some shell utilities
+    alias :q exit
+    alias merge_history 'history --merge'
+    alias sync_config "source $XDG_CONFIG_HOME/fish/config.fish"
+    alias tmux_update "$XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all"
 end

@@ -1,7 +1,7 @@
 return {
   setup = function()
     -- setup leader to spacebar early for correct key mappings
-    vim.keymap.set("", "<space>", "<nop>")
+    vim.keymap.set('', '<space>', '<nop>')
     vim.g.mapleader = ' '
 
     -- -- quickly exit to normal mode

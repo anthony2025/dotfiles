@@ -38,7 +38,7 @@ return {
         'fzf',
         'neo-tree',
         'quickfix',
-        'toggleterm'
+        'toggleterm',
       },
     },
   },
