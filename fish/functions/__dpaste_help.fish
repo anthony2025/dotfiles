@@ -1,6 +1,6 @@
 function __dpaste_help
-    echo -e \
-        "Examples:
+  echo -e \
+"Examples:
   dpaste \"I <3 to paste\"
   dpaste -t week README.md
   dpaste -t onetime < README.md

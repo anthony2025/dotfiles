@@ -1,3 +1,3 @@
 function pushdf -d "pushd to the current Finder directory"
-    pushd (pfd)
+  pushd (pfd)
 end
