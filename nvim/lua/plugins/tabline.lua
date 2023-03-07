@@ -8,8 +8,8 @@ return {
       'folke/tokyonight.nvim',
     },
     keys = {
-      { '<c-u>', '<cmd>bprevious<cr>' },
-      { '<c-i>', '<cmd>bnext<cr>' },
+      { '<c-u>', '<cmd>BufferPrevious<cr>' },
+      { '<c-i>', '<cmd>BufferNext<cr>' },
       { '<a-u>', '<cmd>BufferMovePrevious<cr>' },
       { '<a-i>', '<cmd>BufferMoveNext<cr>' },
 
