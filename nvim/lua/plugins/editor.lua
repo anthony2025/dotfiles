@@ -35,4 +35,14 @@ return {
     end,
     config = function() require('mini.trailspace').setup() end,
   },
+  {
+    "max397574/better-escape.nvim",
+    opts = {
+      clear_empty_lines = true, -- clear line after escaping if there is only whitespace
+      -- no idea what this does, but says "recommended"
+      keys = function()
+        return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
+      end
+    }
+  }
 }

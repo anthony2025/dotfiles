@@ -80,7 +80,7 @@ return {
     vim.opt.updatetime = 200
 
     -- time to wait for a mapped sequence to complete
-    vim.opt.timeoutlen = 300
+    vim.opt.timeoutlen = 200
 
     -- allow hidden buffers
     vim.opt.hidden = true
