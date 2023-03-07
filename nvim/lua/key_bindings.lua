@@ -3,6 +3,7 @@ return {
     -- setup leader to spacebar early for correct key mappings
     vim.keymap.set('', '<space>', '<nop>')
     vim.g.mapleader = ' '
+    vim.g.maplocaleader = ','
 
     -- -- quickly exit to normal mode
     vim.keymap.set('i', 'jj', '<esc>')

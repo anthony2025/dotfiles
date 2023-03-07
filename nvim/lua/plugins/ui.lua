@@ -1,4 +1,5 @@
 return {
+  -- TODO: setup mini.starter
   {
     'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
@@ -9,7 +10,6 @@ return {
         'Trouble',
         'lazy',
         'fzf',
-        'spectre_panel',
         'toggleterm',
         'quickfix',
       },
@@ -28,13 +28,4 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.animate').setup() end,
   },
-  {
-    'glepnir/dashboard-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-      }
-    end,
-  }
 }

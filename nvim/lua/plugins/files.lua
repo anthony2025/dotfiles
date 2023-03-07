@@ -1,6 +1,5 @@
--- TODO: add border to tree
 return {
-  {
+  { -- TODO: add border to tree
     'nvim-neo-tree/neo-tree.nvim',
     cmd = 'Neotree',
     branch = 'v2.x',
@@ -34,31 +33,29 @@ return {
         mode = { 'i', 'n', 'v' },
       },
     },
-    config = function()
-      require('neo-tree').setup {
-        close_if_last_window = true,
-        window = {
-          position = 'right',
+    opts = {
+      close_if_last_window = true,
+      window = {
+        position = 'right',
+      },
+      source_selector = {
+        winbar = true,
+        tab_labels = {
+          filesystem = ' Files',
+          buffers = ' Buffers',
+          git_status = ' Git',
         },
-        source_selector = {
-          winbar = true,
-          tab_labels = {
-            filesystem = ' Files',
-            buffers = ' Buffers',
-            git_status = ' Git',
-          },
-        },
-        filesystem = {
-          scan_mode = 'deep',
-          search_limit = 100,
-          bind_to_cwd = true,
-          follow_current_file = true,
-          group_empty_dirs = true,
-          use_libuv_file_watcher = true,
-          find_by_full_path_words = true,
-        },
-      }
-    end,
+      },
+      filesystem = {
+        scan_mode = 'deep',
+        search_limit = 100,
+        bind_to_cwd = true,
+        follow_current_file = true,
+        group_empty_dirs = true,
+        use_libuv_file_watcher = true,
+        find_by_full_path_words = true,
+      },
+    },
     init = function() vim.g.neo_tree_remove_legacy_commands = 1 end,
   },
   {
@@ -75,7 +72,6 @@ return {
               'trouble',
               'lazy',
               'fzf',
-              'spectre_panel',
               'toggleterm',
               'quickfix',
             },

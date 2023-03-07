@@ -10,10 +10,17 @@ return {
     keys = {
       { '<c-u>', '<cmd>bprevious<cr>' },
       { '<c-i>', '<cmd>bnext<cr>' },
-      { '<c-c>', '<cmd>BufferWipeout<cr>' },
-      { '<c-q>', '<cmd>BufferPick<cr>' },
       { '<a-u>', '<cmd>BufferMovePrevious<cr>' },
       { '<a-i>', '<cmd>BufferMoveNext<cr>' },
+
+      { '<c-c>', '<cmd>BufferWipeout<cr>' },
+      { '<c-q>', '<cmd>BufferPick<cr>' },
+
+      { '<leader>bn', '<cmd>BufferOrderByBufferNumber<cr>' },
+      { '<leader>bd', '<cmd>BufferOrderByDirectory<cr>' },
+      { '<leader>bl', '<cmd>BufferOrderByLanguage<cr>' },
+      { '<leader>bw', '<cmd>BufferOrderByWindowNumber<cr>' },
+
       { '<a-1>', '<cmd>BufferGoto 1<cr>' },
       { '<a-2>', '<cmd>BufferGoto 2<cr>' },
       { '<a-3>', '<cmd>BufferGoto 3<cr>' },
@@ -27,8 +34,13 @@ return {
     },
     config = function()
       require('bufferline').setup {
-        icon_custom_colors = true,
         no_name_title = 'New File',
+        icons = 'buffer_number_with_icon',
+        icon_custom_colors = true,
+        hide = { extensions = true },
+        highlight_inactive_file_icons = true,
+        -- TODO: setup alternate buffer colors
+        -- highlight_alternate = true,
       }
     end,
   },

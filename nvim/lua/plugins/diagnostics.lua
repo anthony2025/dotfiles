@@ -12,7 +12,7 @@ return {
     url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
     keys = {
       {
-        '<leader>d',
+        '<leader>dl',
         function() require('lsp_lines').toggle() end,
       },
     },
@@ -32,7 +32,7 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     config = true,
     keys = {
-      { '<leader>dd', '<cmd>TodoTrouble<cr>' },
+      { '<leader>dt', '<cmd>TodoTrouble<cr>' },
     },
   },
 }

@@ -1,13 +1,28 @@
 return {
   {
-    'christoomey/vim-tmux-navigator',
-    event = 'VeryLazy',
-    init = function() vim.g.tmux_navigator_disable_when_zoomed = 1 end,
+    'echasnovski/mini.jump',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function() require('mini.jump').setup() end,
   },
   {
-    'lambdalisue/suda.vim',
-    event = 'VeryLazy',
-    init = function() vim.g.suda_smart_edit = 1 end,
+    'echasnovski/mini.jump2d',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function() require('mini.jump2d').setup() end,
+  },
+  {
+    'echasnovski/mini.move',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function() require('mini.move').setup() end,
+  },
+  {
+    'echasnovski/mini.ai',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function() require('mini.ai').setup() end,
+  },
+  {
+    'echasnovski/mini.surround',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function() require('mini.surround').setup() end,
   },
   {
     'echasnovski/mini.trailspace',
@@ -20,14 +35,4 @@ return {
     end,
     config = function() require('mini.trailspace').setup() end,
   },
-  {
-    'jghauser/mkdir.nvim',
-    event = "VeryLazy"
-  },
-  {
-    'gennaro-tedesco/nvim-peekup',
-    keys = {
-      { '""', mode = { "v", "n" } }
-    }
-  }
 }

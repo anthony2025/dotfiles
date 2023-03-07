@@ -33,7 +33,6 @@ return {
       group = vim.api.nvim_create_augroup('quick_close', {}),
       pattern = {
         'help',
-        'spectre_panel',
         'quickfix',
       },
       callback = function(event)
@@ -62,5 +61,5 @@ return {
       autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
       autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
     augroup END]]
-  end
+  end,
 }

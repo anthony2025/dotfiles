@@ -13,6 +13,7 @@ return {
           'python',
           'nix',
           'markdown',
+          'markdown_inline',
           'yaml',
           'json',
           'javascript',
