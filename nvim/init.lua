@@ -3,13 +3,15 @@ require('general_options').setup()
 require('key_bindings').setup()
 require('auto_commands').setup()
 
+-- setup a binding for our plugin manager
+vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)
+
 -- bootstrap plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     'git',
     'clone',
-    '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
     lazypath,
   }
@@ -48,6 +50,3 @@ require('lazy').setup {
     },
   },
 }
-
--- quickly open plugin manager
-vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)
