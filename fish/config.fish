@@ -95,7 +95,7 @@ if status --is-interactive
     # shell utilities
     alias :q exit
     alias stylua 'stylua --search-parent-directories'
-    alias npmg 'npm list -g --depth=0'
+    alias npm_dump "npm list -g --depth=0 > $XDG_CONFIG_HOME/npm/global_packages"
     alias merge_history 'history --merge'
     alias sync_config "source $XDG_CONFIG_HOME/fish/config.fish"
     alias tmux_update "$XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all"
