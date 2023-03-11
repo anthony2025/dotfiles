@@ -1,9 +1,11 @@
 return {
   setup = function()
     -- setup leader to spacebar early for correct key mappings
-    vim.keymap.set('', '<space>', '<nop>')
     vim.g.mapleader = ' '
-    vim.g.maplocaleader = ','
+
+    -- unset some problematic bindings
+    vim.keymap.set('n', '<c-u>', '<noop>')
+    vim.keymap.set('n', '<c-i>', '<noop>')
 
     -- -- quickly exit to normal mode
     vim.keymap.set('i', 'jj', '<esc>')

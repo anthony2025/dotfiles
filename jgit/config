@@ -4,3 +4,6 @@
 [filesystem "Temurin|1.8.0_352|/dev/disk1s1"]
 	timestampResolution = 1001 milliseconds
 	minRacyThreshold = 0 nanoseconds
+[filesystem "Oracle Corporation|17.0.2|/dev/disk1s1"]
+	timestampResolution = 4000 nanoseconds
+	minRacyThreshold = 0 nanoseconds

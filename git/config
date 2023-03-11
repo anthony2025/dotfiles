@@ -7,6 +7,7 @@
 
 [core]
   editor = nvim
+  pager = delta
   eol = LF
   autocrlf = input
   safecrlf = true
@@ -14,6 +15,9 @@
   attributesfile = ~/.config/git/attributes
   whitespace = space-before-tab,trailing-space,indent-with-non-tab
   untrackedCache = true
+
+[pager]
+  hyperlinks = true
 
 [apply]
   whitespace = fix
@@ -26,6 +30,7 @@
 
 [merge]
   log = true
+  conflictstyle = diff3
 
 [push]
   default = current
@@ -40,30 +45,37 @@
 [init]
   defaultBranch = main
 
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[diff]
+  colorMoved = default
+
 [alias]
-	glo = forgit log
-  gd = forgit diff
   ga = forgit add
-  grh = forgit reset_head
+  gd = forgit diff
   gi = forgit_ignore
+	glo = forgit log
+  grh = forgit reset_head
   gcf = forgit checkout_file
   gcb = forgit checkout_branch
   gbd = forgit branch_delete
   gct = forgit checkout_tag
   gco = forgit checkout_commit
   grc = forgit revert_commit
-  gclean = forgit clean
   gss = forgit stash_show
   gsp = forgit stash_push
   gcp = forgit cherry_pick
   grb = forgit rebase
   gbl = forgit blame
   gfu = forgit fixup
+  gclean = forgit clean
 
 [ghq]
   root = ~/Desktop
 
 [delta]
+  navigate = true
   minus-style = syntax "#37222c"
   minus-non-emph-style = syntax "#37222c"
   minus-emph-style = syntax "#713137"
