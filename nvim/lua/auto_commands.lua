@@ -41,7 +41,7 @@ return {
       end,
     })
 
-    -- wrap and check for spell in text filetypes
+    -- wrap long lines and check for spell in text filetypes
     vim.api.nvim_create_autocmd('FileType', {
       group = vim.api.nvim_create_augroup('wrap_spell', {}),
       pattern = {

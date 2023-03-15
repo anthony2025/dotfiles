@@ -67,7 +67,8 @@ return {
     vim.opt.preserveindent = true
     vim.opt.shiftround = true
 
-    -- languages to check spelling in
+    -- activate spell checking by default
+    vim.opt.spell = true
     vim.opt.spelllang = { 'en', 'es' }
 
     -- command-line completion mode
@@ -89,7 +90,7 @@ return {
     vim.opt.scrolloff = 4
     vim.opt.sidescrolloff = 8
 
-    -- always show the signcolumn, otherwise it would shift the text
+    -- always shw the signcolumn, otherwise it would shift the text
     vim.opt.signcolumn = 'yes'
 
     -- reduce scroll during window split
