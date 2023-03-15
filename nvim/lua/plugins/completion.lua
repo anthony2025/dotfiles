@@ -5,9 +5,9 @@ return {
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-signature-help',
-      'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lua',
       'saadparwaiz1/cmp_luasnip',
       'L3MON4D3/LuaSnip',
       'onsails/lspkind.nvim',
@@ -38,8 +38,8 @@ return {
         sources = {
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
-          { name = 'nvim_lsp_document_symbol' },
           { name = 'luasnip' },
+          { name = 'nvim_lua' },
           { name = 'cmp-path' },
           { name = 'cmp-buffer' },
         },
@@ -85,7 +85,7 @@ return {
       luasnip.setup {
         history = true,
         enable_autosnippets = true,
-        store_selection_keys = '<Tab>',
+        store_selection_keys = '<tab>',
         update_events = 'TextChanged,TextChangedI',
         delete_check_events = 'TextChanged',
         ft_func = require('luasnip.extras.filetype_functions').from_cursor_pos,

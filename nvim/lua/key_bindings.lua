@@ -7,9 +7,6 @@ return {
     vim.keymap.set('n', '<c-u>', '<noop>')
     vim.keymap.set('n', '<c-i>', '<noop>')
 
-    -- -- quickly exit to normal mode
-    vim.keymap.set('i', 'jj', '<esc>')
-
     -- -- clear search
     vim.keymap.set({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>')
 
