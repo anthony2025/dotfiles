@@ -11,6 +11,7 @@ SETUVAR __fish_git_prompt_color_branch:grey
 SETUVAR __fish_git_prompt_color_dirtystate:yellow
 SETUVAR __fish_git_prompt_color_stagedstate:green
 SETUVAR __fish_git_prompt_color_upstream:blue
+SETUVAR __fish_git_prompt_show_informative_status:1
 SETUVAR __fish_git_prompt_showdirtystate:yes
 SETUVAR __fish_git_prompt_showupstream:yes
 SETUVAR __fish_initialized:3400
