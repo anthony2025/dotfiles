@@ -39,8 +39,6 @@ return {
         icon_custom_colors = true,
         hide = { extensions = true },
         highlight_inactive_file_icons = true,
-        highlight_alternate = true,
-        -- TODO: setup alternate buffer colors
       }
     end,
   },

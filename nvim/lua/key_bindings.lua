@@ -8,17 +8,16 @@ return {
     vim.keymap.set('n', '<c-i>', '<noop>')
 
     -- -- clear search
-    vim.keymap.set({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>')
+    vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>')
 
     -- -- alternative way to save file
     vim.keymap.set('n', '<c-s>', '<cmd>silent! update | redraw<cr>')
-    vim.keymap.set({ 'i', 'v' }, '<c-s>', '<esc><cmd>silent! update | redraw<cr>')
 
     -- -- new file
     vim.keymap.set('n', '<leader>e', '<cmd>enew<cr>')
 
     -- -- quit all windows
-    vim.keymap.set({ 'i', 'n', 'v' }, '<a-q>', '<cmd>qa!<cr>')
+    vim.keymap.set('n', '<leader>qq', '<cmd>qa!<cr>')
 
     -- yank to system clipboard
     vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y')
