@@ -8,9 +8,6 @@
 [core]
   editor = nvim
   pager = delta
-  eol = LF
-  autocrlf = input
-  safecrlf = true
   excludesfile = ~/.config/git/ignore
   attributesfile = ~/.config/git/attributes
   whitespace = space-before-tab,trailing-space,indent-with-non-tab
@@ -40,6 +37,7 @@
   ui = true
 
 [pull]
+  default = current
   rebase = false
 
 [init]

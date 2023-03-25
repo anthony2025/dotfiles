@@ -92,11 +92,16 @@ if status --is-interactive
     alias find fd
     alias grep rg
 
-    # shell utilities
-    alias :q exit
-    alias stylua 'stylua --search-parent-directories'
-    alias npm_dump "npm list -g --depth=0 > $XDG_CONFIG_HOME/npm/global_packages"
+    # shell commands
+    alias config "source $XDG_CONFIG_HOME/fish/config.fish"
+    alias refresh "source $XDG_CONFIG_HOME/fish/config.fish"
     alias merge_history 'history --merge'
-    alias sync_config "source $XDG_CONFIG_HOME/fish/config.fish"
     alias tmux_update "$XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all"
+    alias stylua 'stylua --search-parent-directories'
+
+    # miscellaneous utilities
+    alias :q exit
+    alias todo 'nvim ~/Desktop/todo.txt'
+    alias npm_dump "npm list -g --depth=0 > $XDG_CONFIG_HOME/npm/global_packages"
+    alias lg lazygit
 end

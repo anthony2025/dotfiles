@@ -16,3 +16,7 @@ oh-my-fish/plugin-errno
 oh-my-fish/plugin-dpaste
 oh-my-fish/plugin-grc
 decors/fish-colors
+patrickf1/fzf.fish
+jorgebucaran/autopair.fish
+meaningful-ooo/sponge
+dideler/fish-dl
