@@ -1,12 +1,3 @@
-# enable 24 bits color
-set -gx COLORTERM truecolor
-
-# move ack config
-set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
-
-# move xmonad config
-set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
-
 # setup our file editor
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
@@ -20,7 +11,7 @@ set -gx BROWSER firefox
 
 # setup our pagers
 set -gx PAGER less
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -gx MANPAGER 'sh -c "col -bx | bat -l man -p"'
 set -gx LESS \
     --quit-if-one-screen \
     --long-prompt \
@@ -35,47 +26,52 @@ set -gx LESS \
     --tabs=2 \
     --wheel-lines=1
 
+# enable 24 bits color
+set -gx COLORTERM truecolor
+
+# paranoid set that might be unnecessary on most systems
+set -gx XDG_CONFIG_HOME $HOME/.config
+
+# move ack config
+set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
+
+# move xmonad config
+set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
+
+# move homebrew bundle file
+set -gx HOMEBREW_BUNDLE_FILE $XDG_CONFIG_HOME/homebrew/Brewfile
+
+# silences too many redundant messages when installing new packages
+set -gx HOMEBREW_NO_ENV_HINTS true
+
+# add forgit binaries
+fish_add_path $XDG_CONFIG_HOME/.config/fish/conf.d/bin
+
 # add coursier binaries to the path
-fish_add_path -ga $HOME/.local/share/coursier/bin
-
 if is_macos
-    # override location of coursier binaries
-    fish_add_path -ga "$HOME/Library/Application Support/Coursier/bin"
-
-    # prepend coreutils so they take precedence over defaults
-    fish_add_path -gp /usr/local/opt/coreutils/libexec/gnubin
-
-    # prepend gnu sed for nvim-spectre
-    fish_add_path -gp /usr/local/opt/gnu-sed/libexec/gnubin
-
-    # move homebrew config
-    set -gx HOMEBREW_BUNDLE_FILE $XDG_CONFIG_HOME/homebrew/Brewfile
-
-    # silence too many redundant messages
-    set -gx HOMEBREW_NO_ENV_HINTS true
-
-    # correct firefox path
-    alias firefox /Applications/Firefox.app/Contents/MacOS/
+  fish_add_path "$HOME/Library/Application Support/coursier/bin"
+else
+  fish_add_path $HOME/.local/share/coursier/bin
 end
 
 if status --is-interactive
-    # configuration links
-    abbr -a --position=anywhere vimrc $XDG_CONFIG_HOME/nvim
-    abbr -a --position=anywhere fishrc $XDG_CONFIG_HOME/fish
-    abbr -a --position=anywhere gitrc $XDG_CONFIG_HOME/git
-    abbr -a --position=anywhere tmuxrc $XDG_CONFIG_HOME/tmux
-    abbr -a --position=anywhere kittyrc $XDG_CONFIG_HOME/kitty
-    abbr -a --position=anywhere tridactylrc $XDG_CONFIG_HOME/tridactyl
-    abbr -a --position=anywhere xmonadrc $XDG_CONFIG_HOME/xmonad
+    # configuration shortcuts
+    abbr -a vimrc $XDG_CONFIG_HOME/nvim
+    abbr -a fishrc $XDG_CONFIG_HOME/fish
+    abbr -a gitrc $XDG_CONFIG_HOME/git
+    abbr -a tmuxrc $XDG_CONFIG_HOME/tmux
+    abbr -a kittyrc $XDG_CONFIG_HOME/kitty
+    abbr -a tridactylrc $XDG_CONFIG_HOME/tridactyl
+    abbr -a xmonadrc $XDG_CONFIG_HOME/xmonad
 
-    # folder shortcuts
+    # personal directories
     abbr -a dm $HOME/Documents
     abbr -a ds $HOME/Desktop
     abbr -a dw $HOME/Downloads
 
     # better defaults
-    abbr -a l ls -h1G
-    abbr -a la ls -Ahl
+    abbr -a :q exit
+    abbr -a ls ls -AhGl
     abbr -a mv mv -v
     abbr -a cp cp -r
     abbr -a rm rm -rf
@@ -85,23 +81,5 @@ if status --is-interactive
     abbr -a ln ln -s
     abbr -a sbt sbtn --color=always
     abbr -a rsync rsync --recursive --progress --archive
-
-    # replace commands
-    alias vim nvim
-    alias cat bat
-    alias find fd
-    alias grep rg
-
-    # shell commands
-    alias config "source $XDG_CONFIG_HOME/fish/config.fish"
-    alias refresh "source $XDG_CONFIG_HOME/fish/config.fish"
-    alias merge_history 'history --merge'
-    alias tmux_update "$XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all"
-    alias stylua 'stylua --search-parent-directories'
-
-    # miscellaneous utilities
-    alias :q exit
-    alias todo 'nvim ~/Desktop/todo.txt'
-    alias npm_dump "npm list -g --depth=0 > $XDG_CONFIG_HOME/npm/global_packages"
-    alias lg lazygit
+    abbr -a vim nvim
 end
