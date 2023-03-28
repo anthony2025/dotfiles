@@ -79,9 +79,11 @@ return {
     -- dont wrap long lines
     vim.opt.wrap = false
 
-    vim.o.timeout = true
-    vim.opt.updatetime = 500 -- time to wait for completions
-    vim.opt.timeoutlen = 300 -- time to wait for next key
+    -- time for completions to appear
+    vim.opt.updatetime = 1000
+
+    -- time to wait for next key
+    vim.opt.timeoutlen = 500
 
     -- allow hidden buffers
     vim.opt.hidden = true
