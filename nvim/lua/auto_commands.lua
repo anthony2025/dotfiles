@@ -49,9 +49,7 @@ return {
         'markdown',
         'text',
       },
-      callback = function()
-        vim.opt_local.wrap = true
-      end,
+      callback = function() vim.opt_local.wrap = true end,
     })
 
     -- only display relative numbers on current buffer

@@ -49,9 +49,9 @@ fish_add_path $XDG_CONFIG_HOME/.config/fish/conf.d/bin
 
 # add coursier binaries to the path
 if is_macos
-  fish_add_path "$HOME/Library/Application Support/coursier/bin"
+    fish_add_path "$HOME/Library/Application Support/coursier/bin"
 else
-  fish_add_path $HOME/.local/share/coursier/bin
+    fish_add_path $HOME/.local/share/coursier/bin
 end
 
 if status --is-interactive

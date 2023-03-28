@@ -80,7 +80,7 @@ return {
     vim.opt.wrap = false
 
     vim.o.timeout = true
-    vim.opt.updatetime = 300 -- faster completions
+    vim.opt.updatetime = 500 -- time to wait for completions
     vim.opt.timeoutlen = 300 -- time to wait for next key
 
     -- allow hidden buffers

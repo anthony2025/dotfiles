@@ -10,7 +10,7 @@ return {
         mode = { 'i', 'n', 'v' },
       },
     },
-    opts = { "skim" } -- fzf-native or fzf-tmux
+    opts = { 'skim' }, -- fzf-native or fzf-tmux
   },
   {
     'akinsho/toggleterm.nvim',

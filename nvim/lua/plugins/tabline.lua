@@ -8,13 +8,13 @@ return {
       'folke/tokyonight.nvim',
     },
     keys = {
-      { '<c-j>', '<cmd>BufferPrevious<cr>' },
-      { '<c-k>', '<cmd>BufferNext<cr>' },
-      { '<c-up>', '<cmd>BufferMovePrevious<cr>' },
-      { '<c-down>', '<cmd>BufferMoveNext<cr>' },
+      { '<s-tab>', '<cmd>BufferPrevious<cr>' },
+      { '<tab>', '<cmd>BufferNext<cr>' },
+      { '<c-m', '<cmd>BufferMovePrevious<cr>' },
+      { '<c-n>', '<cmd>BufferMoveNext<cr>' },
 
       { '<c-c>', '<cmd>BufferClose<cr>' },
-      { '<c-q>', '<cmd>BufferPick<cr>' },
+      { '<c-u>', '<cmd>BufferPick<cr>' },
 
       { '<leader>bn', '<cmd>BufferOrderByBufferNumber<cr>' },
       { '<leader>bd', '<cmd>BufferOrderByDirectory<cr>' },

@@ -8,8 +8,8 @@ return {
     'echasnovski/mini.jump2d',
     event = { 'BufReadPost', 'BufNewFile' },
     keys = {
-      { '<leader>f', function() require('mini.jump2d').start() end }
-   },
+      { '<leader>f', function() require('mini.jump2d').start() end },
+    },
     config = function()
       require('mini.jump2d').setup {
         mappings = {
@@ -30,17 +30,17 @@ return {
   },
   {
     'echasnovski/mini.surround',
-    event = {'BufReadPost', 'BufNewFile'},
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.surround').setup() end,
   },
   {
     'echasnovski/mini.splitjoin',
-    event = {'BufReadPost', 'BufNewFile'},
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       require('mini.splitjoin').setup {
-        mappings = { toggle = 'gs', }
+        mappings = { toggle = 'gs' },
       }
-    end
+    end,
   },
   {
     'echasnovski/mini.trailspace',
@@ -55,7 +55,7 @@ return {
   },
   {
     'max397574/better-escape.nvim',
-    event = "VeryLazy",
+    event = 'VeryLazy',
     opts = {
       clear_empty_lines = true,
     },

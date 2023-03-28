@@ -8,9 +8,9 @@ return {
     },
     ft = { 'scala', 'sbt', 'sc', 'amm', 'java' },
     init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup("nvim-metals", {}),
-        pattern = { "scala", "sbt", "sc", 'amm', "java" },
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('nvim-metals', {}),
+        pattern = { 'scala', 'sbt', 'sc', 'amm', 'java' },
         callback = function()
           local metals = require 'metals'
           local metals_config = metals.bare_config()
@@ -18,11 +18,10 @@ return {
           metals_config.enableSemanticHighlighting = true
           metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
           metals.initialize_or_attach(metals_config)
-        end
+        end,
       })
     end,
-    config = function()
-    end,
+    config = function() end,
   },
   {
     'folke/neodev.nvim',
@@ -34,7 +33,7 @@ return {
     ft = { 'lua' },
     config = function()
       require('neodev').setup()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities({})
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
       require('lspconfig').lua_ls.setup {
         capabilities = capabilities,
       }

@@ -18,7 +18,7 @@ return {
     vim.keymap.set('n', '<leader>e', '<cmd>enew<cr>')
 
     -- close the current window
-    vim.keymap.set({ 'n', 'v' }, '<c-w>', '<cmd>wincmd q<cr>')
+    vim.keymap.set({ 'n', 'v' }, '<c-q>', '<cmd>wincmd q<cr>')
 
     -- -- quit all windows
     vim.keymap.set('n', '<leader>qq', '<cmd>qa!<cr>')
