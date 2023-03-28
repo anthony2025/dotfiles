@@ -28,7 +28,7 @@ return {
     vim.api.nvim_command 'set shortmess=CWIOs'
 
     -- line below tabline
-    vim.opt.cmdheight = 2
+    vim.opt.cmdheight = 1
 
     -- darken the row under the cursor
     vim.opt.cursorline = true

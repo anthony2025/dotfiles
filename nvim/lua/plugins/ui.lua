@@ -47,8 +47,8 @@ return {
       { '<C-w>=', '<cmd>WindowsEqualize<cr>' },
     },
     init = function()
-      vim.o.winwidth = 12
-      vim.o.winminwidth = 5
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
       vim.o.equalalways = false
     end,
     opts = {
