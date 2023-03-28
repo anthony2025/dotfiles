@@ -8,12 +8,12 @@ return {
       'folke/tokyonight.nvim',
     },
     keys = {
-      { '<c-u>', '<cmd>BufferPrevious<cr>' },
-      { '<c-i>', '<cmd>BufferNext<cr>' },
-      { '<a-u>', '<cmd>BufferMovePrevious<cr>' },
-      { '<a-i>', '<cmd>BufferMoveNext<cr>' },
+      { '<c-j>', '<cmd>BufferPrevious<cr>' },
+      { '<c-k>', '<cmd>BufferNext<cr>' },
+      { '<c-up>', '<cmd>BufferMovePrevious<cr>' },
+      { '<c-down>', '<cmd>BufferMoveNext<cr>' },
 
-      { '<c-c>', '<cmd>BufferWipeout<cr>' },
+      { '<c-c>', '<cmd>BufferClose<cr>' },
       { '<c-q>', '<cmd>BufferPick<cr>' },
 
       { '<leader>bn', '<cmd>BufferOrderByBufferNumber<cr>' },
@@ -35,7 +35,7 @@ return {
     config = function()
       require('bufferline').setup {
         no_name_title = 'New File',
-        icons = 'buffer_number_with_icon',
+        icons = 'both',
         icon_custom_colors = true,
         hide = { extensions = true },
         highlight_inactive_file_icons = true,

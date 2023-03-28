@@ -7,7 +7,16 @@ return {
   {
     'echasnovski/mini.jump2d',
     event = { 'BufReadPost', 'BufNewFile' },
-    config = function() require('mini.jump2d').setup() end,
+    keys = {
+      { '<leader>f', function() require('mini.jump2d').start() end }
+   },
+    config = function()
+      require('mini.jump2d').setup {
+        mappings = {
+          start_jumping = '',
+        },
+      }
+    end,
   },
   {
     'echasnovski/mini.move',
@@ -26,12 +35,10 @@ return {
   },
   {
     'echasnovski/mini.splitjoin',
-    keys = { "gs" },
+    event = {'BufReadPost', 'BufNewFile'},
     config = function()
       require('mini.splitjoin').setup {
-        mappings = {
-          toggle = 'gs',
-        }
+        mappings = { toggle = 'gs', }
       }
     end
   },

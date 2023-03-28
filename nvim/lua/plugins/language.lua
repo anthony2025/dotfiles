@@ -6,14 +6,22 @@ return {
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-nvim-lsp',
     },
-    ft = { 'scala', 'sbt', 'sc', 'java' },
+    ft = { 'scala', 'sbt', 'sc', 'amm', 'java' },
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("nvim-metals", {}),
+        pattern = { "scala", "sbt", "sc", 'amm', "java" },
+        callback = function()
+          local metals = require 'metals'
+          local metals_config = metals.bare_config()
+          metals_config.init_options.statusBarProvider = 'on'
+          metals_config.enableSemanticHighlighting = true
+          metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
+          metals.initialize_or_attach(metals_config)
+        end
+      })
+    end,
     config = function()
-      local metals = require 'metals'
-      local metals_config = metals.bare_config()
-      metals_config.init_options.statusBarProvider = 'on'
-      metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
-      metals_config.capabilities.textDocument.completion.completionItem.snippetSupport = true
-      metals.initialize_or_attach(metals_config)
     end,
   },
   {
@@ -26,17 +34,9 @@ return {
     ft = { 'lua' },
     config = function()
       require('neodev').setup()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      local capabilities = require('cmp_nvim_lsp').default_capabilities({})
       require('lspconfig').lua_ls.setup {
         capabilities = capabilities,
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-          },
-        },
       }
     end,
   },
@@ -52,7 +52,6 @@ return {
     config = function()
       local schemas = require('schemastore').json.schemas()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
       require('lspconfig').jsonls.setup {
         capabilities = capabilities,
         settings = {

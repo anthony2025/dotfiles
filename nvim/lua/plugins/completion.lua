@@ -7,16 +7,17 @@ return {
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-nvim-lua',
       'saadparwaiz1/cmp_luasnip',
-      'L3MON4D3/LuaSnip',
       'onsails/lspkind.nvim',
+      'L3MON4D3/LuaSnip',
     },
-    init = function() vim.opt.completeopt = { 'menu', 'menuone', 'noselect' } end,
     config = function()
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       cmp.setup {
+        preselect = cmp.PreselectMode.None,
         view = {
           entries = 'custom',
         },
@@ -38,14 +39,16 @@ return {
         sources = {
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
-          { name = 'luasnip' },
-          { name = 'nvim_lua' },
           { name = 'cmp-path' },
           { name = 'cmp-buffer' },
+          { name = 'luasnip' },
+          { name = 'cmp-cmdline' },
+          { name = 'nvim_lua' },
         },
         mapping = cmp.mapping.preset.insert {
           ['<c-up>'] = cmp.mapping.scroll_docs(-4),
           ['<c-down>'] = cmp.mapping.scroll_docs(4),
+          ['<c-space>'] = cmp.mapping.complete(),
           ['<cr>'] = cmp.mapping.confirm {
             select = true,
             behavior = cmp.ConfirmBehavior.Replace,
@@ -70,6 +73,24 @@ return {
           end, { 'i', 's' }),
         },
       }
+
+      -- use buffer source for `/` and `?`
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+
+      -- use path and cmdline on command mode
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          { name = 'cmdline' }
+        })
+      })
     end,
   },
   {

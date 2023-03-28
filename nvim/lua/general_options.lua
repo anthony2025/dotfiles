@@ -27,8 +27,8 @@ return {
     -- we hide the most messages possible, dont truncate, and disable the start screen
     vim.api.nvim_command 'set shortmess=CWIOs'
 
-    -- hide the unruly line
-    vim.opt.cmdheight = 0
+    -- line below tabline
+    vim.opt.cmdheight = 2
 
     -- darken the row under the cursor
     vim.opt.cursorline = true
@@ -47,6 +47,8 @@ return {
 
     -- show search results while typing
     vim.opt.incsearch = true
+
+    vim.opt.completeopt = { 'menu', 'menuone', 'preview' }
 
     -- infer letter cases for a richer built-in keyword completion
     vim.opt.infercase = true
@@ -77,11 +79,9 @@ return {
     -- dont wrap long lines
     vim.opt.wrap = false
 
-    -- faster completions, default is 4000ms
-    vim.opt.updatetime = 200
-
-    -- time to wait for a mapped sequence to complete
-    vim.opt.timeoutlen = 200
+    vim.o.timeout = true
+    vim.opt.updatetime = 300 -- faster completions
+    vim.opt.timeoutlen = 300 -- time to wait for next key
 
     -- allow hidden buffers
     vim.opt.hidden = true

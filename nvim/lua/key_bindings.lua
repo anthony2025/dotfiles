@@ -1,20 +1,24 @@
 return {
   setup = function()
     -- setup leader to spacebar early for correct key mappings
+    vim.keymap.set({ 'n', 'v' }, '<space>', '<nop>', { silent = true })
     vim.g.mapleader = ' '
+    vim.g.maplocalleader = ' '
 
     -- unset some problematic bindings
-    vim.keymap.set('n', '<c-u>', '<noop>')
-    vim.keymap.set('n', '<c-i>', '<noop>')
+    --vim.keymap.set('n', '', '<noop>')
 
     -- -- clear search
     vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>')
 
-    -- -- alternative way to save file
+    -- alternative way to save file
     vim.keymap.set('n', '<c-s>', '<cmd>silent! update | redraw<cr>')
 
-    -- -- new file
+    -- new file
     vim.keymap.set('n', '<leader>e', '<cmd>enew<cr>')
+
+    -- close the current window
+    vim.keymap.set({ 'n', 'v' }, '<c-w>', '<cmd>wincmd q<cr>')
 
     -- -- quit all windows
     vim.keymap.set('n', '<leader>qq', '<cmd>qa!<cr>')
@@ -22,7 +26,7 @@ return {
     -- yank to system clipboard
     vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y')
     vim.keymap.set({ 'v', 'n' }, '<leader>p', '"+p')
-    vim.keymap.set('n', '<leader>y', '"+yy')
+    vim.keymap.set('n', '<leader>yy', '"+yy')
 
     -- go up/down more intuitively on long lines that wrap
     vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -57,8 +61,8 @@ return {
     vim.keymap.set({ 'n', 'v' }, "''", '@@')
 
     -- lsp common mappings
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover)
     vim.keymap.set('n', 'H', vim.lsp.buf.signature_help)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references)
@@ -66,7 +70,9 @@ return {
     vim.keymap.set('n', 'gws', vim.lsp.buf.workspace_symbol)
     vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
-    vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action)
-    vim.keymap.set('n', '<leader>c', vim.lsp.codelens.run)
+    vim.keymap.set('n', '<leader>c', vim.lsp.codelens.display)
+
+    -- open plugin manager
+    vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)
   end,
 }

@@ -61,7 +61,6 @@ if status --is-interactive
     abbr -a gitrc $XDG_CONFIG_HOME/git
     abbr -a tmuxrc $XDG_CONFIG_HOME/tmux
     abbr -a kittyrc $XDG_CONFIG_HOME/kitty
-    abbr -a tridactylrc $XDG_CONFIG_HOME/tridactyl
     abbr -a xmonadrc $XDG_CONFIG_HOME/xmonad
 
     # personal directories

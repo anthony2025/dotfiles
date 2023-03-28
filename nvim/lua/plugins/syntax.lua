@@ -26,6 +26,7 @@ return {
           'gitcommit',
           'dockerfile',
           'scala',
+          'help',
           'java',
           'diff',
           'lua',
@@ -34,6 +35,7 @@ return {
           'css',
           'scss',
         },
+        auto_install = true,
         highlight = {
           enable = true,
         },
@@ -43,18 +45,9 @@ return {
         autopairs = {
           enable = true,
         },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
-            scope_incremental = '<nop>',
-            node_decremental = '<bs>',
-          },
-        },
         context_commentstring = {
           enable = true,
-          enable_autocmd = false,
+          enable_autocmd = true,
         },
       }
     end,
@@ -65,9 +58,7 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'JoosepAlviste/nvim-ts-context-commentstring',
     },
-    keys = {
-      { 'gc', mode = { 'n', 'v' } },
-    },
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       require('mini.comment').setup {
         hooks = {

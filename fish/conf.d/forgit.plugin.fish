@@ -14,7 +14,7 @@ end
 # export all user-defined FORGIT variables to make them available in git-forgit
 set unexported_vars 0
 set | awk -F ' ' '{ print $1 }' | grep FORGIT_ | while read var
-    if ! set -x | grep -q "^$var "
+    if not set -x | grep -q "^$var\b"
         if test $unexported_vars = 0
             forgit::warn "Config options have to be exported in future versions of forgit."
             forgit::warn "Please update your config accordingly:"
@@ -53,7 +53,7 @@ function forgit::clean -d "git clean selector"
     "$FORGIT" clean $argv
 end
 
-function forgit::cherry::pick -d "git cherry-picking" --argument-names target --wraps "git cherry-pick"
+function forgit::cherry::pick -d "git cherry-picking" --argument-names 'target' --wraps "git cherry-pick"
     "$FORGIT" cherry_pick $argv
 end
 
@@ -69,19 +69,19 @@ function forgit::fixup -d "git fixup"
     "$FORGIT" fixup $argv
 end
 
-function forgit::checkout::file -d "git checkout-file selector" --argument-names file_name --wraps "git checkout --"
+function forgit::checkout::file -d "git checkout-file selector" --argument-names 'file_name' --wraps "git checkout --"
     "$FORGIT" checkout_file $argv
 end
 
-function forgit::checkout::branch -d "git checkout branch selector" --argument-names input_branch_name --wraps "git branch"
+function forgit::checkout::branch -d "git checkout branch selector" --argument-names 'input_branch_name' --wraps "git branch"
     "$FORGIT" checkout_branch $argv
 end
 
-function forgit::checkout::tag -d "git checkout tag selector" --argument-names tag_name --wraps "git checkout"
+function forgit::checkout::tag -d "git checkout tag selector" --argument-names 'tag_name' --wraps "git checkout"
     "$FORGIT" checkout_tag $argv
 end
 
-function forgit::checkout::commit -d "git checkout commit selector" --argument-names commit_id --wraps "git checkout"
+function forgit::checkout::commit -d "git checkout commit selector" --argument-names 'commit_id' --wraps "git checkout"
     "$FORGIT" checkout_commit $argv
 end
 
@@ -89,7 +89,7 @@ function forgit::branch::delete -d "git checkout branch deleter" --wraps "git br
     "$FORGIT" branch_delete $argv
 end
 
-function forgit::revert::commit --argument-names commit_hash --wraps "git revert --"
+function forgit::revert::commit --argument-names 'commit_hash' --wraps "git revert --"
     "$FORGIT" revert_commit $argv
 end
 
