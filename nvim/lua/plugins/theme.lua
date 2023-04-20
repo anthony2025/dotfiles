@@ -2,7 +2,7 @@ return {
   {
     'folke/tokyonight.nvim',
     lazy = false,
-    priority = 90,
+    priority = 1000,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },

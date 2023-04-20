@@ -60,4 +60,24 @@ return {
       clear_empty_lines = true,
     },
   },
+  {
+    'mbbill/undotree',
+    keys = {
+      { '<leader>u', vim.cmd.UndotreeToggle }
+    }
+  },
+  {
+    'romainl/vim-qf',
+    event = 'VeryLazy',
+  },
+  {
+    'willothy/flatten.nvim',
+    lazy = false,
+    priority = 1001,
+    opts = {
+      window = {
+        open = "alternate"
+      },
+    }
+  }
 }

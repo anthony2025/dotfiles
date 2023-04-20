@@ -3,6 +3,7 @@ return {
     'romgrk/barbar.nvim',
     lazy = false,
     priority = 70,
+    version = "*",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
       'folke/tokyonight.nvim',

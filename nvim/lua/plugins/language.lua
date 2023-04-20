@@ -98,4 +98,23 @@ return {
       }
     end,
   },
+  {
+    'kosayoda/nvim-lightbulb',
+    event = 'VeryLazy',
+    dependencies = {
+      'antoinemadec/FixCursorHold.nvim',
+    },
+    opts = {
+      autocmd = {
+        enabled = true
+      }
+    }
+  },
+  {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+    keys = {
+      { '<leader>ca', vim.lsp.commands.CodeActionMenu }
+    }
+  }
 }

@@ -1,5 +1,4 @@
-return {
-  setup = function()
+return { setup = function()
     -- enable 24 bit color support
     vim.opt.termguicolors = true
 
@@ -11,9 +10,10 @@ return {
     -- enable persistent undo history
     vim.opt.undofile = true
 
-    -- hybrid line numbering by default
+    -- hybrid line numbering in the same column
     vim.opt.number = true
     vim.opt.relativenumber = true
+    vim.opt.signcolumn = "number"
 
     -- use two spaces instead of tabs
     vim.opt.tabstop = 2 -- number of spaces to a tab
@@ -25,7 +25,7 @@ return {
     vim.opt.iskeyword:append '-'
 
     -- we hide the most messages possible, dont truncate, and disable the start screen
-    vim.api.nvim_command 'set shortmess=CWIOs'
+    vim.opt.shortmess:append 'CWIOs'
 
     -- line below tabline
     vim.opt.cmdheight = 1
@@ -108,7 +108,7 @@ return {
     vim.opt.winblend = 10
 
     -- define which helper symbols to show
-    vim.opt.listchars = 'extends:…,precedes:…,nbsp:␣'
+    vim.opt.listchars = "tab:>⋅,trail:·,extends:▷,precedes:◁,nbsp:␣"
 
     -- show some helper symbols
     vim.opt.list = true
@@ -118,6 +118,15 @@ return {
 
     -- hide partial command in the last line of the screen
     vim.opt.showcmd = false
+
+    -- hide the command bar below the status bar, it only took us 40 years to figure out
+    vim.opt.cmdheight = 0
+
+    -- global status bar
+    vim.opt.laststatus = 3
+
+    -- stabilize text when opening a split
+    vim.opt.splitkeep = 'screen'
 
     -- fix markdown indentation settings
     vim.g.markdown_recommended_style = 0

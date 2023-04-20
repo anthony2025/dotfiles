@@ -11,7 +11,7 @@ set -gx BROWSER firefox
 
 # setup our pagers
 set -gx PAGER less
-set -gx MANPAGER 'sh -c "col -bx | bat -l man -p"'
+set -gx MANPAGER 'nvim +Man!'
 set -gx LESS \
     --quit-if-one-screen \
     --long-prompt \
@@ -82,3 +82,11 @@ if status --is-interactive
     abbr -a rsync rsync --recursive --progress --archive
     abbr -a vim nvim
 end
+
+# >>> coursier install directory >>>
+fish_add_path "$HOME/Library/Application Support/Coursier/bin"
+
+# >>> JVM installed by coursier >>>
+set -gx JAVA_HOME "/Users/anthony/Library/Caches/Coursier/arc/https/github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16%252B36/OpenJDK16-jdk_x64_mac_hotspot_16_36.tar.gz/jdk-16+36/Contents/Home"
+
+

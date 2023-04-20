@@ -20,7 +20,7 @@ function __dl_print_version
 end
 
 function dl --description "Opinionated alias for youtube-dl"
-    set --local options h/help v/version
+    set --local options 'h/help' 'v/version'
     argparse $options -- $argv
 
     if set --query _flag_help
@@ -38,12 +38,12 @@ end
 
 function __dl_download --argument path
     set --local output_dir "$HOME/Music"
-    set --local yt_dl_options --ignore-config \
-        --quiet \
-        --no-mtime \
-        "--output '$output_dir/%(title)s.%(ext)s'" \
-        --extract-audio \
-        "--audio-format mp3"
+    set --local yt_dl_options "--ignore-config" \
+                              "--quiet" \
+                              "--no-mtime" \
+                              "--output '$output_dir/%(title)s.%(ext)s'" \
+                              "--extract-audio" \
+                              "--audio-format mp3"
     set --local dl_cmd "youtube-dl $yt_dl_options '$path'"
     set --local spinner_msg " @ Saving to $output_dir\r"
 
