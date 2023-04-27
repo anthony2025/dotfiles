@@ -63,8 +63,8 @@ return {
   {
     'mbbill/undotree',
     keys = {
-      { '<leader>u', vim.cmd.UndotreeToggle }
-    }
+      { '<leader>u', vim.cmd.UndotreeToggle },
+    },
   },
   {
     'romainl/vim-qf',
@@ -76,8 +76,8 @@ return {
     priority = 1001,
     opts = {
       window = {
-        open = "alternate"
+        open = 'alternate',
       },
-    }
-  }
+    },
+  },
 }

@@ -1,4 +1,5 @@
-return { setup = function()
+return {
+  setup = function()
     -- enable 24 bit color support
     vim.opt.termguicolors = true
 
@@ -13,7 +14,7 @@ return { setup = function()
     -- hybrid line numbering in the same column
     vim.opt.number = true
     vim.opt.relativenumber = true
-    vim.opt.signcolumn = "number"
+    vim.opt.signcolumn = 'number'
 
     -- use two spaces instead of tabs
     vim.opt.tabstop = 2 -- number of spaces to a tab
@@ -108,7 +109,7 @@ return { setup = function()
     vim.opt.winblend = 10
 
     -- define which helper symbols to show
-    vim.opt.listchars = "tab:>⋅,trail:·,extends:▷,precedes:◁,nbsp:␣"
+    vim.opt.listchars = 'tab:>⋅,trail:·,extends:▷,precedes:◁,nbsp:␣'
 
     -- show some helper symbols
     vim.opt.list = true

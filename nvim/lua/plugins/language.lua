@@ -34,15 +34,15 @@ return {
     config = function()
       require('neodev').setup()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      require'lspconfig'.lua_ls.setup {
+      require('lspconfig').lua_ls.setup {
         capabilities = capabilities,
         settings = {
           Lua = {
             completion = {
-              callSnippet = "Replace"
-            }
-          }
-        }
+              callSnippet = 'Replace',
+            },
+          },
+        },
       }
     end,
   },
@@ -106,15 +106,15 @@ return {
     },
     opts = {
       autocmd = {
-        enabled = true
-      }
-    }
+        enabled = true,
+      },
+    },
   },
   {
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
     keys = {
-      { '<leader>ca', vim.lsp.commands.CodeActionMenu }
-    }
-  }
+      { '<leader>ca', vim.lsp.commands.CodeActionMenu },
+    },
+  },
 }
