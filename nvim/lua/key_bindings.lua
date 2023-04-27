@@ -1,12 +1,8 @@
 return {
   setup = function()
     -- setup leader to spacebar early for correct key mappings
-    vim.keymap.set({ 'n', 'v' }, '<space>', '<nop>', { silent = true })
     vim.g.mapleader = ' '
     vim.g.maplocalleader = ' '
-
-    -- unset some problematic bindings
-    --vim.keymap.set('n', '', '<noop>')
 
     -- -- clear search
     vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>')
@@ -46,7 +42,7 @@ return {
     vim.keymap.set('n', 'go', "<cmd>call append(line('.'), repeat([''], v:count1))<cr>")
 
     -- reselect latest changed, put, or yanked text
-    vim.keymap.set('n', 'gh', '"`[" . strpart(getregtype(), 0, 1) . "`]"', { expr = true })
+    vim.keymap.set('n', '<leader>h', '"`[" . strpart(getregtype(), 0, 1) . "`]"', { expr = true })
 
     -- move with home row in insert mode
     vim.keymap.set('i', '<a-h>', '<left>', { silent = false })
@@ -61,16 +57,15 @@ return {
     vim.keymap.set({ 'n', 'v' }, "''", '@@')
 
     -- lsp common mappings
-    vim.keymap.set('n', 'H', vim.lsp.buf.signature_help)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+    vim.keymap.set('n', 'gh', vim.lsp.buf.hover)
+    vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references)
-    vim.keymap.set('n', 'gds', vim.lsp.buf.document_symbol)
-    vim.keymap.set('n', 'gws', vim.lsp.buf.workspace_symbol)
-    vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
-    vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
-    vim.keymap.set('n', '<leader>c', vim.lsp.codelens.display)
+    vim.keymap.set('n', 'gf', vim.lsp.buf.format)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.rename)
+    vim.keymap.set('n', 'ga', vim.lsp.buf.code_action)
+    vim.keymap.set('n', 'gc', vim.lsp.codelens.display)
 
     -- open plugin manager
     vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)

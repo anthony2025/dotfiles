@@ -32,6 +32,9 @@ set -gx COLORTERM truecolor
 # paranoid set that might be unnecessary on most systems
 set -gx XDG_CONFIG_HOME $HOME/.config
 
+# quick jumping to commonly used directories
+set -gxp CDPATH . $XDG_CONFIG_HOME
+
 # move ack config
 set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
 
@@ -54,15 +57,10 @@ else
     fish_add_path $HOME/.local/share/coursier/bin
 end
 
-if status --is-interactive
-    # configuration shortcuts
-    abbr -a vimrc $XDG_CONFIG_HOME/nvim
-    abbr -a fishrc $XDG_CONFIG_HOME/fish
-    abbr -a gitrc $XDG_CONFIG_HOME/git
-    abbr -a tmuxrc $XDG_CONFIG_HOME/tmux
-    abbr -a kittyrc $XDG_CONFIG_HOME/kitty
-    abbr -a xmonadrc $XDG_CONFIG_HOME/xmonad
+# JVM installed by coursier
+set -gx JAVA_HOME "/Users/anthony/Library/Caches/Coursier/arc/https/github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16%252B36/OpenJDK16-jdk_x64_mac_hotspot_16_36.tar.gz/jdk-16+36/Contents/Home"
 
+if status --is-interactive
     # personal directories
     abbr -a dm $HOME/Documents
     abbr -a ds $HOME/Desktop
@@ -82,11 +80,3 @@ if status --is-interactive
     abbr -a rsync rsync --recursive --progress --archive
     abbr -a vim nvim
 end
-
-# >>> coursier install directory >>>
-fish_add_path "$HOME/Library/Application Support/Coursier/bin"
-
-# >>> JVM installed by coursier >>>
-set -gx JAVA_HOME "/Users/anthony/Library/Caches/Coursier/arc/https/github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16%252B36/OpenJDK16-jdk_x64_mac_hotspot_16_36.tar.gz/jdk-16+36/Contents/Home"
-
-

@@ -8,10 +8,10 @@ end
 
 function _git-branch-prune_simple-confirm
     set confirm (_git-branch-prune_default-read "$argv[1] Y or N" "n")
-    if [ "$confirm" = "n" ] ;
+    if [ "$confirm" = n ]
         return 1
     end
-    if [ "$confirm" = "N" ] ;
+    if [ "$confirm" = N ]
         return 1
     end
     return 0
@@ -19,8 +19,8 @@ end
 
 function git-branch-prune --description 'Cleanup git branches'
     # check git repository
-    git branch > /dev/null
-    if [ $status -ne 0 ] ;
+    git branch >/dev/null
+    if [ $status -ne 0 ]
         echo "Here is not a git repository."
         return 1
     end
@@ -39,13 +39,13 @@ function git-branch-prune --description 'Cleanup git branches'
         if contains $branch $targetBranches
             continue
         end
-        if [ $branch = "master" ]
+        if [ $branch = master ]
             continue
         end
-        if [ $branch = "develop" ]
+        if [ $branch = develop ]
             continue
         end
-        if [ $branch = "main" ]
+        if [ $branch = main ]
             continue
         end
 
@@ -57,7 +57,7 @@ function git-branch-prune --description 'Cleanup git branches'
         end
     end
 
-    if [ "$targetBranches" = "" ] ;
+    if [ "$targetBranches" = "" ]
         echo "Nothing to merged branch."
         return 1
     end
@@ -68,7 +68,7 @@ function git-branch-prune --description 'Cleanup git branches'
     echo
 
     _git-branch-prune_simple-confirm "Delete OK?"
-    if [ $status -ne 0 ] ;
+    if [ $status -ne 0 ]
         echo "Abort."
         return 1
     end
