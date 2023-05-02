@@ -39,8 +39,8 @@ return {
         icons = {
           buffer_index = true,
           filetype = {
-            enabled = true ,
-            custom_colors = true
+            enabled = true,
+            custom_colors = true,
           },
         },
         hide = { extensions = true },

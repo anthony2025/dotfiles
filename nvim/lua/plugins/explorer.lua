@@ -2,7 +2,7 @@ return {
   { -- TODO: add border to tree
     'nvim-neo-tree/neo-tree.nvim',
     cmd = 'Neotree',
-    branch = 'v2.x',
+    version = 'v2.56',
     dependencies = {
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
@@ -35,20 +35,10 @@ return {
     },
     opts = {
       close_if_last_window = true,
-      window = {
-        position = 'right',
-      },
       source_selector = {
         winbar = true,
-        tab_labels = {
-          filesystem = ' Files',
-          buffers = ' Buffers',
-          git_status = ' Git',
-        },
       },
       filesystem = {
-        scan_mode = 'deep',
-        search_limit = 100,
         bind_to_cwd = true,
         follow_current_file = true,
         group_empty_dirs = true,
