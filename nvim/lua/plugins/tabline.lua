@@ -38,9 +38,11 @@ return {
         no_name_title = 'New File',
         icons = {
           buffer_index = true,
-          filetype = { enabled = true },
+          filetype = {
+            enabled = true ,
+            custom_colors = true
+          },
         },
-        icon_custom_colors = true,
         hide = { extensions = true },
         highlight_inactive_file_icons = true,
       }
