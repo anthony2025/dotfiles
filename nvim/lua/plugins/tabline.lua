@@ -36,7 +36,10 @@ return {
     config = function()
       require('bufferline').setup {
         no_name_title = 'New File',
-        icons = 'both',
+        icons = {
+          buffer_index = true,
+          filetype = { enabled = true },
+        },
         icon_custom_colors = true,
         hide = { extensions = true },
         highlight_inactive_file_icons = true,

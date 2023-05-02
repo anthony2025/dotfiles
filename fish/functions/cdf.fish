@@ -1,3 +1,3 @@
 function cdf -d "cd to the current Finder directory"
-    cd (pfd)
+  cd (pfd)
 end
