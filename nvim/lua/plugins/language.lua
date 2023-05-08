@@ -111,6 +111,11 @@ return {
     },
   },
   {
+    'j-hui/fidget.nvim',
+    event = 'VeryLazy',
+    config = true,
+  },
+  {
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
     keys = {

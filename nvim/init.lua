@@ -4,16 +4,16 @@ require('key_bindings').setup()
 require('auto_commands').setup()
 
 -- bootstrap plugin manager
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+local path = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(path) then
   vim.fn.system {
     'git',
     'clone',
     'https://github.com/folke/lazy.nvim.git',
-    lazypath,
+    path,
   }
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(path)
 
 -- initialize plugin manager
 require('lazy').setup {
@@ -32,17 +32,15 @@ require('lazy').setup {
   change_detection = { notify = false }, -- disable annoying messages
   checker = { enabled = true }, -- automatically check for plugin updates
   install = { colorscheme = { 'tokyonight' } }, -- try setting theme on first launch
-  performance = { -- disable unused rtp plugins
+  performance = { -- disable unused runtime path plugins
     rtp = {
       disabled_plugins = {
         'gzip',
-        'matchit',
-        'matchparen',
         'tarPlugin',
-        'tohtml',
-        'tutor',
         'zipPlugin',
-        'netrwPlugin',
+        'tohtml',
+        'tutor', -- ha
+        'netrwPlugin', -- let neotree take over
       },
     },
   },

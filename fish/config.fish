@@ -68,7 +68,7 @@ if status --is-interactive
 
     # better defaults
     abbr -a :q exit
-    abbr -a ls ls -AhGl
+    abbr -a lsa ls -AhGl
     abbr -a mv mv -v
     abbr -a cp cp -r
     abbr -a rm rm -rf

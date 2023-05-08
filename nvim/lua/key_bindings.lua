@@ -5,7 +5,7 @@ return {
     vim.g.maplocalleader = ' '
 
     -- -- clear search
-    vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>')
+    vim.keymap.set('n', '<leader><esc>', '<cmd>noh<cr><esc>')
 
     -- alternative way to save file
     vim.keymap.set('n', '<c-s>', '<cmd>silent! update | redraw<cr>')
@@ -28,14 +28,11 @@ return {
     vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
     vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
-    -- focus on other window
-    vim.keymap.set('n', '<leader>w', [[<c-\><c-n><c-w>]])
-
     -- resize splits using arrow keys
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-up>', '<cmd>resize +2<cr>')
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-down>', '<cmd>resize -2<cr>')
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-left>', '<cmd>vertical resize +2<cr>')
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-right>', '<cmd>vertical resize -2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<c-k>', '<cmd>resize +2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<c-j>', '<cmd>resize -2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<c-h>', '<cmd>vertical resize +2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<c-l>', '<cmd>vertical resize -2<cr>')
 
     -- add empty lines before and after cursor line
     vim.keymap.set('n', 'gO', "<cmd>call append(line('.') - 1, repeat([''], v:count1))<cr>")
@@ -44,16 +41,10 @@ return {
     -- reselect latest changed, put, or yanked text
     vim.keymap.set('n', '<leader>h', '"`[" . strpart(getregtype(), 0, 1) . "`]"', { expr = true })
 
-    -- move with home row in insert mode
-    vim.keymap.set('i', '<a-h>', '<left>', { silent = false })
-    vim.keymap.set('i', '<a-l>', '<right>', { silent = false })
-    vim.keymap.set('i', '<a-j>', '<down>', { silent = false })
-    vim.keymap.set('i', '<a-k>', '<up>', { silent = false })
-
     -- better paste
     vim.keymap.set('v', 'p', '"_dP')
 
-    -- repeat macros more easily
+    -- repeat last macro more easily
     vim.keymap.set({ 'n', 'v' }, "''", '@@')
 
     -- lsp common mappings
@@ -63,11 +54,11 @@ return {
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references)
     vim.keymap.set('n', 'gf', vim.lsp.buf.format)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.rename)
+    vim.keymap.set('n', 'gn', vim.lsp.buf.rename)
     vim.keymap.set('n', 'ga', vim.lsp.buf.code_action)
-    vim.keymap.set('n', 'gc', vim.lsp.codelens.display)
+    vim.keymap.set('n', 'gl', vim.lsp.codelens.display)
 
     -- open plugin manager
-    vim.keymap.set('n', '<leader>l', function() require('lazy').show() end)
+    vim.keymap.set('n', '<leader>pp', function() require('lazy').show() end)
   end,
 }

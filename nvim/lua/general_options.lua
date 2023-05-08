@@ -25,31 +25,27 @@ return {
     -- divide words on dash as well as underscore
     vim.opt.iskeyword:append '-'
 
-    -- we hide the most messages possible, dont truncate, and disable the start screen
+    -- hide the most messages possible, dont truncate long messages, and disable the start screen
     vim.opt.shortmess:append 'CWIOs'
 
-    -- line below tabline
+    -- dont show mode since we have a statusline
+    vim.opt.showmode = false
+
+    -- hide the commandline, the one under the statusline
     vim.opt.cmdheight = 1
 
     -- darken the row under the cursor
     vim.opt.cursorline = true
 
-    -- draw a column after that many characters
+    -- draw a column after this many characters
     vim.opt.colorcolumn = '120'
 
-    -- dont show mode since we have a statusline
-    vim.opt.showmode = false
-
-    -- case insensitive searches by default
+    -- case insensitive searches if only lower case
     vim.opt.ignorecase = true
-
-    -- dont ignore case if pattern has upper case
     vim.opt.smartcase = true
 
-    -- show search results while typing
+    -- highlight search results while typing
     vim.opt.incsearch = true
-
-    vim.opt.completeopt = { 'menu', 'menuone', 'preview' }
 
     -- infer letter cases for a richer built-in keyword completion
     vim.opt.infercase = true
@@ -74,6 +70,9 @@ return {
     vim.opt.spell = true
     vim.opt.spelllang = { 'en', 'es' }
 
+    -- richer completion options
+    vim.opt.completeopt = { 'menu', 'menuone', 'preview' }
+
     -- command-line completion mode
     vim.opt.wildmode = 'longest:full,full'
 
@@ -81,10 +80,10 @@ return {
     vim.opt.wrap = false
 
     -- time for completions to appear
-    vim.opt.updatetime = 1000
+    vim.opt.updatetime = 800
 
     -- time to wait for next key
-    vim.opt.timeoutlen = 500
+    vim.opt.timeoutlen = 400
 
     -- allow hidden buffers
     vim.opt.hidden = true
@@ -95,9 +94,6 @@ return {
 
     -- always shw the signcolumn, otherwise it would shift the text
     vim.opt.signcolumn = 'yes'
-
-    -- reduce scroll during window split
-    vim.opt.splitkeep = 'screen'
 
     -- make builtin completion menus slightly transparent
     vim.opt.pumblend = 10
@@ -114,13 +110,10 @@ return {
     -- show some helper symbols
     vim.opt.list = true
 
-    -- so that `` is visible in markdown files
-    vim.opt.conceallevel = 0
-
     -- hide partial command in the last line of the screen
     vim.opt.showcmd = false
 
-    -- hide the command bar below the status bar, it only took us 40 years to figure out
+    -- hide the command bar below the status bar, it only took us 40 years to figure this out
     vim.opt.cmdheight = 0
 
     -- global status bar
@@ -128,6 +121,9 @@ return {
 
     -- stabilize text when opening a split
     vim.opt.splitkeep = 'screen'
+
+    -- so that `` is visible in markdown files
+    vim.opt.conceallevel = 0
 
     -- fix markdown indentation settings
     vim.g.markdown_recommended_style = 0

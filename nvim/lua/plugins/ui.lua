@@ -25,11 +25,6 @@ return {
     config = function() require('mini.cursorword').setup() end,
   },
   {
-    'j-hui/fidget.nvim',
-    event = 'VeryLazy',
-    config = true,
-  },
-  {
     'echasnovski/mini.animate',
     event = { 'BufReadPost', 'BufNewFile' },
     config = function() require('mini.animate').setup() end,
