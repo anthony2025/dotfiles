@@ -29,10 +29,10 @@ return {
     vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
     -- resize splits using arrow keys
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-k>', '<cmd>resize +2<cr>')
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-j>', '<cmd>resize -2<cr>')
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-h>', '<cmd>vertical resize +2<cr>')
-    vim.keymap.set({ 'i', 'n', 'v' }, '<c-l>', '<cmd>vertical resize -2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<leader><up>', '<cmd>resize +2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<leader><down>', '<cmd>resize -2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<leader><left>', '<cmd>vertical resize +2<cr>')
+    vim.keymap.set({ 'i', 'n', 'v' }, '<leader><right>', '<cmd>vertical resize -2<cr>')
 
     -- add empty lines before and after cursor line
     vim.keymap.set('n', 'gO', "<cmd>call append(line('.') - 1, repeat([''], v:count1))<cr>")
