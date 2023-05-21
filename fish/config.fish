@@ -33,7 +33,7 @@ set -gx COLORTERM truecolor
 set -gx XDG_CONFIG_HOME $HOME/.config
 
 # quick jumping to commonly used directories
-set -gxp CDPATH . $XDG_CONFIG_HOME
+set -gxp CDPATH . $XDG_CONFIG_HOME $HOME/Desktop
 
 # move ack config
 set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc

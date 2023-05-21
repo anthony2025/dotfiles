@@ -80,4 +80,9 @@ return {
       },
     },
   },
+  {
+    'ecthelionvi/NeoComposer.nvim',
+    dependencies = { 'kkharji/sqlite.lua' },
+    setup = true,
+  },
 }

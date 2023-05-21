@@ -17,7 +17,10 @@ return {
     vim.keymap.set({ 'n', 'v' }, '<c-q>', '<cmd>wincmd q<cr>')
 
     -- -- quit all windows
-    vim.keymap.set('n', '<leader>qq', '<cmd>qa!<cr>')
+    vim.keymap.set('n', '<leader><c-q>', '<cmd>qa!<cr>')
+
+    -- -- quit all windows
+    vim.keymap.set('n', '<leader><c-q>', '<cmd>qa!<cr>')
 
     -- yank to system clipboard
     vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y')

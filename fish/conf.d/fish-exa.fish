@@ -6,34 +6,34 @@ function __fish_exa_install --on-event fish-exa_install
     set -Ux __FISH_EXA_ALIASES
     set -Ux __FISH_EXA_SORT_OPTIONS name .name size ext mod old acc cr inode
 
-    set -Ux EXA_STANDARD_OPTIONS --group --header --group-directories-first
+    set -Ux EXA_STANDARD_OPTIONS "--group" "--header" "--group-directories-first"
 
     # Base aliases
     set -Ux EXA_L_OPTIONS
-    set -Ux EXA_LL_OPTIONS --long
-    set -Ux EXA_LG_OPTIONS --git --git-ignore --long
-    set -Ux EXA_LE_OPTIONS --extended --long
-    set -Ux EXA_LT_OPTIONS --tree --level
-    set -Ux EXA_LC_OPTIONS --across
-    set -Ux EXA_LO_OPTIONS --oneline
+    set -Ux EXA_LL_OPTIONS "--long"
+    set -Ux EXA_LG_OPTIONS "--git" "--git-ignore" "--long"
+    set -Ux EXA_LE_OPTIONS "--extended" "--long"
+    set -Ux EXA_LT_OPTIONS "--tree" "--level"
+    set -Ux EXA_LC_OPTIONS "--across"
+    set -Ux EXA_LO_OPTIONS "--oneline"
 
     # Extended aliases
-    set -Ux EXA_LI_OPTIONS --icons
-    set -Ux EXA_LD_OPTIONS --only-dirs
-    set -Ux EXA_LID_OPTIONS --icons --only-dirs
-    set -Ux EXA_LA_OPTIONS --all --binary
-    set -Ux EXA_LAD_OPTIONS --all --binary --only-dirs
-    set -Ux EXA_LAI_OPTIONS --all --binary --icons
-    set -Ux EXA_LAID_OPTIONS --all --binary --icons --only-dirs
-    set -Ux EXA_LAA_OPTIONS --all --all --binary
-    set -Ux EXA_LAAD_OPTIONS --all --all --binary --only-dirs
-    set -Ux EXA_LAAI_OPTIONS --all --all --binary --icons
-    set -Ux EXA_LAAID_OPTIONS --all --all --binary --icons --only-dirs
+    set -Ux EXA_LI_OPTIONS "--icons"
+    set -Ux EXA_LD_OPTIONS "--only-dirs"
+    set -Ux EXA_LID_OPTIONS "--icons" "--only-dirs"
+    set -Ux EXA_LA_OPTIONS "--all" "--binary"
+    set -Ux EXA_LAD_OPTIONS "--all" "--binary" "--only-dirs"
+    set -Ux EXA_LAI_OPTIONS  "--all" "--binary" "--icons"
+    set -Ux EXA_LAID_OPTIONS  "--all" "--binary" "--icons" "--only-dirs"
+    set -Ux EXA_LAA_OPTIONS "--all" "--all" "--binary"
+    set -Ux EXA_LAAD_OPTIONS "--all" "--all" "--binary" "--only-dirs"
+    set -Ux EXA_LAAI_OPTIONS  "--all" "--all" "--binary" "--icons"
+    set -Ux EXA_LAAID_OPTIONS  "--all" "--all" "--binary" "--icons" "--only-dirs"
 
     for a in $__FISH_EXA_BASE_ALIASES
         set -l opt_name (string join '_' "EXA" (string upper $a) "OPTIONS")
-        if test $a = ll
-            alias --save "$a" exa_git
+        if test $a = "ll"
+            alias --save "$a" "exa_git"
         else
             alias --save "$a" "exa \$EXA_STANDARD_OPTIONS \$$opt_name"
         end
@@ -43,7 +43,7 @@ function __fish_exa_install --on-event fish-exa_install
         for i in (seq (count $__FISH_EXA_EXPANDED))
             set -l name "$a$__FISH_EXA_EXPANDED[$i]"
             # --tree is useless given --all --all
-            if test $name = ltaa; or test $name = ltaac
+            if test $name = "ltaa"; or test $name = "ltaac"
                 continue
             end
             set -l exp_opt_name (string join '_' "EXA" $__FISH_EXA_EXPANDED_OPT_NAME[$i] "OPTIONS")

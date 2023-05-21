@@ -1,9 +1,11 @@
 # MIT (c) Chris Apple
 
 set INSTALL_DIR (dirname (dirname (status -f)))
-set FORGIT "$INSTALL_DIR/conf.d/bin/git-forgit"
+set -x FORGIT_INSTALL_DIR "$INSTALL_DIR/conf.d"
+set -x FORGIT "$FORGIT_INSTALL_DIR/bin/git-forgit"
 if [ ! -e "$FORGIT" ]
-    set FORGIT "$INSTALL_DIR/vendor_conf.d/bin/git-forgit"
+    set -x FORGIT_INSTALL_DIR "$INSTALL_DIR/vendor_conf.d"
+    set -x FORGIT "$FORGIT_INSTALL_DIR/bin/git-forgit"
 end
 
 function forgit::warn
@@ -53,7 +55,7 @@ function forgit::clean -d "git clean selector"
     "$FORGIT" clean $argv
 end
 
-function forgit::cherry::pick -d "git cherry-picking" --argument-names target --wraps "git cherry-pick"
+function forgit::cherry::pick -d "git cherry-picking" --argument-names 'target' --wraps "git cherry-pick"
     "$FORGIT" cherry_pick $argv
 end
 
@@ -69,19 +71,19 @@ function forgit::fixup -d "git fixup"
     "$FORGIT" fixup $argv
 end
 
-function forgit::checkout::file -d "git checkout-file selector" --argument-names file_name --wraps "git checkout --"
+function forgit::checkout::file -d "git checkout-file selector" --argument-names 'file_name' --wraps "git checkout --"
     "$FORGIT" checkout_file $argv
 end
 
-function forgit::checkout::branch -d "git checkout branch selector" --argument-names input_branch_name --wraps "git branch"
+function forgit::checkout::branch -d "git checkout branch selector" --argument-names 'input_branch_name' --wraps "git branch"
     "$FORGIT" checkout_branch $argv
 end
 
-function forgit::checkout::tag -d "git checkout tag selector" --argument-names tag_name --wraps "git checkout"
+function forgit::checkout::tag -d "git checkout tag selector" --argument-names 'tag_name' --wraps "git checkout"
     "$FORGIT" checkout_tag $argv
 end
 
-function forgit::checkout::commit -d "git checkout commit selector" --argument-names commit_id --wraps "git checkout"
+function forgit::checkout::commit -d "git checkout commit selector" --argument-names 'commit_id' --wraps "git checkout"
     "$FORGIT" checkout_commit $argv
 end
 
@@ -89,7 +91,7 @@ function forgit::branch::delete -d "git checkout branch deleter" --wraps "git br
     "$FORGIT" branch_delete $argv
 end
 
-function forgit::revert::commit --argument-names commit_hash --wraps "git revert --"
+function forgit::revert::commit --argument-names 'commit_hash' --wraps "git revert --"
     "$FORGIT" revert_commit $argv
 end
 

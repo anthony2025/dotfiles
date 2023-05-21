@@ -5,6 +5,7 @@ return {
     priority = 80,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
+      'ecthelionvi/NeoComposer.nvim',
     },
     opts = {
       options = {
@@ -28,6 +29,9 @@ return {
           {
             'filename',
             path = 3,
+          },
+          {
+            require('NeoComposer.ui').status_recording,
           },
         },
         lualine_x = { 'location' },
