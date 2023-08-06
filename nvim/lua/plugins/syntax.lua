@@ -1,7 +1,6 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    version = '*',
     event = { 'BufReadPost', 'BufNewFile' },
     build = function() require('nvim-treesitter.install').update { with_sync = true }() end,
     config = function()
@@ -26,7 +25,6 @@ return {
           'gitcommit',
           'dockerfile',
           'scala',
-          'help',
           'java',
           'diff',
           'lua',
@@ -54,6 +52,7 @@ return {
   },
   {
     'echasnovski/mini.comment',
+    enabled = false,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'JoosepAlviste/nvim-ts-context-commentstring',

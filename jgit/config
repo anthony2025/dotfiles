@@ -1,0 +1,6 @@
+[filesystem "Temurin|1.8.0_372|/dev/disk2s1"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "AdoptOpenJDK|1.8.0_292|/dev/disk2s1"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds

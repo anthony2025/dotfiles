@@ -2,7 +2,7 @@ return {
   { -- TODO: add border to tree
     'nvim-neo-tree/neo-tree.nvim',
     cmd = 'Neotree',
-    version = 'v2.56',
+    branch = "v3.x",
     dependencies = {
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',

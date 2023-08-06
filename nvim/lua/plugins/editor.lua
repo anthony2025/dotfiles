@@ -68,6 +68,7 @@ return {
   },
   {
     'romainl/vim-qf',
+    enabled = false,
     event = 'VeryLazy',
   },
   {

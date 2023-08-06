@@ -52,13 +52,13 @@ fish_add_path $XDG_CONFIG_HOME/.config/fish/conf.d/bin
 
 # add coursier binaries to the path
 if is_macos
-    fish_add_path "$HOME/Library/Application Support/coursier/bin"
+    fish_add_path "$HOME/Library/Application Support/Coursier/bin"
 else
     fish_add_path $HOME/.local/share/coursier/bin
 end
 
 # JVM installed by coursier
-set -gx JAVA_HOME "/Users/anthony/Library/Caches/Coursier/arc/https/github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16%252B36/OpenJDK16-jdk_x64_mac_hotspot_16_36.tar.gz/jdk-16+36/Contents/Home"
+set -gx JAVA_HOME $HOME/Library/Caches/Coursier/arc/https/github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jdk_x64_mac_hotspot_8u292b10.tar.gz/jdk8u292-b10/Contents/Home
 
 if status --is-interactive
     # personal directories
