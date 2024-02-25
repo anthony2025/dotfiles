@@ -2,8 +2,8 @@
   version = 2
 
 [user]
-  email = anthony2025@pm.me
-  name = Anthony Ascencio
+  # $EMAIL is the fallback email address in case the user.email configuration value isn’t set.
+  # If no user is set, Git falls back to the system user and host names.
 
 [core]
   editor = nvim

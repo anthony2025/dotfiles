@@ -1,5 +1,5 @@
 return {
-  { -- TODO: add border to tree
+  {
     'nvim-neo-tree/neo-tree.nvim',
     cmd = 'Neotree',
     branch = "v3.x",
@@ -8,8 +8,20 @@ return {
       'MunifTanjim/nui.nvim',
       'nvim-tree/nvim-web-devicons',
       's1n7ax/nvim-window-picker',
+      '3rd/image.nvim',
     },
     keys = {
+      {
+        '<c-space>',
+        function()
+          require('neo-tree.command').execute {
+            action = 'focus',
+            position = 'current',
+            toggle = true,
+          }
+        end,
+        mode = { 'i', 'n', 'v' },
+      },
       {
         '<c-e>',
         function()
@@ -37,6 +49,11 @@ return {
       close_if_last_window = true,
       source_selector = {
         winbar = true,
+      },
+      window = {
+        mappings = {
+          ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
+        }
       },
       filesystem = {
         bind_to_cwd = true,
