@@ -3,7 +3,6 @@ lilyball/nix-env.fish
 oh-my-fish/plugin-gityaw
 wfxr/forgit
 oh-my-fish/plugin-wttr
-oh-my-fish/plugin-osx
 oh-my-fish/plugin-battery
 oh-my-fish/plugin-xdg
 oh-my-fish/plugin-hash
@@ -14,14 +13,12 @@ oh-my-fish/plugin-aws
 oh-my-fish/plugin-license
 oh-my-fish/plugin-errno
 oh-my-fish/plugin-dpaste
-oh-my-fish/plugin-grc
 decors/fish-colors
-patrickf1/fzf.fish
 jorgebucaran/autopair.fish
 meaningful-ooo/sponge
 dideler/fish-dl
 avimehenwal/git-refresh
 sters/fish-git-branch-prune
 reitzig/sdkman-for-fish@v1.4.0
-gazorby/fish-exa
 0rax/fish-bd
+oh-my-fish/plugin-grc

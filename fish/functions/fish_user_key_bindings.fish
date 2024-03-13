@@ -2,9 +2,6 @@ function fish_user_key_bindings --description "setup bindings automatically on s
     # by default erases all previously defined bindings
     fish_vi_key_bindings --no-erase
 
-    # fzf mappings from fzf.fish
-    fzf_configure_bindings --directory=\cp --processes=\cs --git_log=\cl --git_status=\ct
-
     # thefuck quick correct commands
     bind -M default \cf thefuck-command-line
     bind -M insert \cf thefuck-command-line

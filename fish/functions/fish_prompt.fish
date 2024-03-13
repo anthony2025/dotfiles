@@ -19,7 +19,7 @@ function fish_prompt
     _print_in_color $USER yellow
     _print_in_color @ (_prompt_color_for_status $last_status)
     _print_in_color (prompt_hostname) blue
-    _print_in_color ' '(prompt_pwd --full-length-dirs=3 --dir-length=4) purple
+    _print_in_color ' '(prompt_pwd) purple
     _print_in_color '] ' red
     _print_in_color (date +%H:%M.%S) yellow
 

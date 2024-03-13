@@ -26,13 +26,10 @@ return {
     vim.opt.iskeyword:append '-'
 
     -- hide the most messages possible, dont truncate long messages, and disable the start screen
-    vim.opt.shortmess:append 'CWIOs'
+    --vim.opt.shortmess:append 'CWIOs'
 
     -- dont show mode since we have a statusline
     vim.opt.showmode = false
-
-    -- hide the commandline, the one under the statusline
-    vim.opt.cmdheight = 1
 
     -- darken the row under the cursor
     vim.opt.cursorline = true
@@ -114,13 +111,13 @@ return {
     vim.opt.showcmd = false
 
     -- hide the command bar below the status bar, it only took us 40 years to figure this out
-    vim.opt.cmdheight = 0
+    --vim.opt.cmdheight = 0
 
     -- global status bar
     vim.opt.laststatus = 3
 
     -- stabilize text when opening a split
-    vim.opt.splitkeep = 'screen'
+    --vim.opt.splitkeep = 'screen'
 
     -- so that `` is visible in markdown files
     vim.opt.conceallevel = 0
