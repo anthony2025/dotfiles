@@ -1,7 +1,7 @@
 -- let plugins override our base options
 require('general_options').setup()
---require('key_bindings').setup()
---require('auto_commands').setup()
+require('key_bindings').setup()
+require('auto_commands').setup()
 
 -- bootstrap plugin manager
 local path = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
