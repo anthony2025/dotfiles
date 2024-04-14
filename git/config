@@ -2,8 +2,8 @@
   version = 2
 
 [user]
-	email = anthony2025@pm.me
-	name = Anthony Ascencio
+  email = anthony2025@pm.me
+  name = "Anthony Ascencio"
   # $EMAIL is the fallback email address in case the user.email configuration value isn’t set.
   # If no user is set, Git falls back to the system user and host names.
 
@@ -50,26 +50,6 @@
 
 [diff]
   colorMoved = default
-
-[alias]
-  ga = forgit add
-  gd = forgit diff
-  gi = forgit_ignore
-	glo = forgit log
-  grh = forgit reset_head
-  gcf = forgit checkout_file
-  gcb = forgit checkout_branch
-  gbd = forgit branch_delete
-  gct = forgit checkout_tag
-  gco = forgit checkout_commit
-  grc = forgit revert_commit
-  gss = forgit stash_show
-  gsp = forgit stash_push
-  gcp = forgit cherry_pick
-  grb = forgit rebase
-  gbl = forgit blame
-  gfu = forgit fixup
-  gclean = forgit clean
 
 [ghq]
   root = ~/Desktop

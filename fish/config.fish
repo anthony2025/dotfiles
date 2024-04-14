@@ -44,24 +44,8 @@ set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
 # move xmonad config
 set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
 
-# move homebrew bundle file
-set -gx HOMEBREW_BUNDLE_FILE $XDG_CONFIG_HOME/homebrew/Brewfile
-
-# silences too many redundant messages when installing new packages
-set -gx HOMEBREW_NO_ENV_HINTS true
-
-# add forgit binaries
-fish_add_path $XDG_CONFIG_HOME/.config/fish/conf.d/bin
-
 # add coursier binaries to the path
-if is_macos
-    fish_add_path "$HOME/Library/Application Support/Coursier/bin"
-else
-    fish_add_path $HOME/.local/share/coursier/bin
-end
-
-# JVM installed by coursier
-set -gx JAVA_HOME $HOME/Library/Caches/Coursier/arc/https/github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jdk_x64_mac_hotspot_8u292b10.tar.gz/jdk8u292-b10/Contents/Home
+fish_add_path $HOME/.local/share/coursier/bin
 
 if status --is-interactive
     # personal directories

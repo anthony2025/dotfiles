@@ -1,16 +1,13 @@
 jorgebucaran/fisher
 lilyball/nix-env.fish
 oh-my-fish/plugin-gityaw
-oh-my-fish/plugin-wttr
 oh-my-fish/plugin-xdg
 oh-my-fish/plugin-hash
 oh-my-fish/plugin-extract
 decors/fish-ghq
-oh-my-fish/plugin-errno
 oh-my-fish/plugin-dpaste
 decors/fish-colors
 jorgebucaran/autopair.fish
-dideler/fish-dl
 avimehenwal/git-refresh
 sters/fish-git-branch-prune
 reitzig/sdkman-for-fish@v1.4.0
