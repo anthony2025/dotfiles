@@ -6,7 +6,6 @@ oh-my-fish/plugin-xdg
 oh-my-fish/plugin-hash
 oh-my-fish/plugin-extract
 decors/fish-ghq
-oh-my-fish/plugin-license
 oh-my-fish/plugin-errno
 oh-my-fish/plugin-dpaste
 decors/fish-colors
@@ -17,3 +16,4 @@ sters/fish-git-branch-prune
 reitzig/sdkman-for-fish@v1.4.0
 0rax/fish-bd
 oh-my-fish/plugin-grc
+edc/bass

@@ -1,3 +1,6 @@
+# inherit system-wide environment variables.
+bass source /etc/profile
+
 # setup our file editor
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
