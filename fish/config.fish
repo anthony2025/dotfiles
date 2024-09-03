@@ -1,6 +1,3 @@
-# inherit system-wide environment variables.
-bass source /etc/profile
-
 # setup our file editor
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
@@ -52,6 +49,7 @@ if status --is-interactive
     abbr -a dm $HOME/Documents
     abbr -a ds $HOME/Desktop
     abbr -a dw $HOME/Downloads
+    abbr -a config $XDG_CONFIG_HOME
 
     # better defaults
     abbr -a :q exit

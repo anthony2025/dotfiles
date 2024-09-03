@@ -1,5 +1,9 @@
 return {
   {
+    'OmniSharp/omnisharp-vim',
+    event = 'VeryLazy'
+  },
+  {
     'scalameta/nvim-metals',
     dependencies = {
       'nvim-lua/plenary.nvim',
