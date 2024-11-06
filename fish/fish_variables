@@ -19,7 +19,6 @@ SETUVAR --export EXA_LO_OPTIONS:\x2d\x2doneline
 SETUVAR --export EXA_LT_OPTIONS:\x2d\x2dtree\x1e\x2d\x2dlevel
 SETUVAR --export EXA_L_OPTIONS:\x1d
 SETUVAR --export EXA_STANDARD_OPTIONS:\x2d\x2dgroup\x1e\x2d\x2dheader\x1e\x2d\x2dgroup\x2ddirectories\x2dfirst
-SETUVAR --export SBT_CREDENTIALS:/Users/anthony/\x2eivy2/\x2ecredentials
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/anthony/\x2elocal/share/z/data
@@ -145,7 +144,7 @@ SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
 SETUVAR fish_prompt_pwd_dir_length:3
 SETUVAR fish_term24bit:1
-SETUVAR fish_user_paths:/home/anthony/\x2edotnet/tools\x1e/Users/anthony/Library/Application\x20Support/coursier/bin\x1e/Applications/Firefox\x2eapp/Contents/MacOS\x1e/usr/local/opt/coreutils/libexec/gnubin
+SETUVAR fish_user_paths:/home/anthony/\x2elocal/share/coursier/bin\x1e/home/anthony/\x2edotnet/tools\x1e/Users/anthony/Library/Application\x20Support/coursier/bin\x1e/Applications/Firefox\x2eapp/Contents/MacOS\x1e/usr/local/opt/coreutils/libexec/gnubin
 SETUVAR fish_vi_force_cursor:true
 SETUVAR nvm_default_version:latest
 SETUVAR sponge_allow_previously_successful:true
