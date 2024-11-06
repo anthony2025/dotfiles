@@ -64,4 +64,10 @@ if status --is-interactive
     abbr -a sbt sbtn --color=always
     abbr -a rsync rsync --recursive --progress --archive
     abbr -a vim nvim
+
+    # tmux aliases
+    abbr -a t tmux
+    abbr -a tls tmux ls
+    abbr -a ta tmux a -t
+    abbr -a tn tmux new -t
 end
