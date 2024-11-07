@@ -103,18 +103,6 @@ return {
     end,
   },
   {
-    'kosayoda/nvim-lightbulb',
-    event = 'VeryLazy',
-    dependencies = {
-      'antoinemadec/FixCursorHold.nvim',
-    },
-    opts = {
-      autocmd = {
-        enabled = true,
-      },
-    },
-  },
-  {
     'j-hui/fidget.nvim',
     event = 'VeryLazy',
     config = true,
