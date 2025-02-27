@@ -106,8 +106,8 @@ SETUVAR fish_color_escape:bb9af7
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:\x1d
 SETUVAR fish_color_host_remote:\x1d
-SETUVAR fish_color_keyword:bb9af7
-SETUVAR fish_color_match:F28779
+SETUVAR fish_color_keyword:\x1d
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:c0caf5
 SETUVAR fish_color_operator:9ece6a
 SETUVAR fish_color_option:\x1d

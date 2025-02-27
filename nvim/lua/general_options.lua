@@ -63,8 +63,8 @@ return {
     vim.opt.preserveindent = true
     vim.opt.shiftround = true
 
-    -- activate spell checking by default
-    vim.opt.spell = true
+    -- deactivate spell checking by default
+    vim.opt.spell = false
     vim.opt.spelllang = { 'en', 'es' }
 
     -- richer completion options
@@ -110,8 +110,8 @@ return {
     -- hide partial command in the last line of the screen
     vim.opt.showcmd = false
 
-    -- hide the command bar below the status bar, it only took us 40 years to figure this out
-    vim.opt.cmdheight = 0
+    -- hide the command bar below the status bar
+    --vim.opt.cmdheight = 0
 
     -- global status bar
     vim.opt.laststatus = 3
