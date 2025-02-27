@@ -70,4 +70,12 @@ if status --is-interactive
     abbr -a tls tmux ls
     abbr -a ta tmux a -t
     abbr -a tn tmux new -t
+
+
+  # kitty manual shell integration
+  if set -q KITTY_INSTALLATION_DIR
+    set -gx KITTY_SHELL_INTEGRATION enabled
+    source $KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish 2> /dev/null
+    set --prepend fish_complete_path $KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_completions.d
+  end
 end
