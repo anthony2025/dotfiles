@@ -13,18 +13,6 @@ return {
     opts = { 'skim' }, -- fzf-native or fzf-tmux
   },
   {
-    'akinsho/toggleterm.nvim',
-    keys = {
-      { '<c-t>', mode = { 'i', 'n', 'v' } },
-    },
-    opts = {
-      open_mapping = '<c-t>',
-      autochdir = true,
-      direction = 'float',
-      close_on_exit = false,
-    },
-  },
-  {
     'christoomey/vim-tmux-navigator',
     event = 'VeryLazy',
     init = function() vim.g.tmux_navigator_disable_when_zoomed = 1 end,

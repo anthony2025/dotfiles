@@ -1,7 +1,6 @@
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',
-    cmd = 'Neotree',
     branch = "v3.x",
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -10,17 +9,6 @@ return {
       's1n7ax/nvim-window-picker',
     },
     keys = {
-      {
-        '<c-space>',
-        function()
-          require('neo-tree.command').execute {
-            action = 'focus',
-            position = 'current',
-            toggle = true,
-          }
-        end,
-        mode = { 'i', 'n', 'v' },
-      },
       {
         '<c-e>',
         function()
@@ -33,7 +21,7 @@ return {
         mode = { 'i', 'n', 'v' },
       },
       {
-        '<c-y>',
+        '<c-f>',
         function()
           require('neo-tree.command').execute {
             action = 'focus',
@@ -51,10 +39,12 @@ return {
       },
       filesystem = {
         bind_to_cwd = true,
-        follow_current_file = true,
         group_empty_dirs = true,
         use_libuv_file_watcher = true,
         find_by_full_path_words = true,
+        follow_current_file = {
+          enabled = true
+        },
       },
     },
     init = function() vim.g.neo_tree_remove_legacy_commands = 1 end,
@@ -79,6 +69,16 @@ return {
           },
         },
       }
+    end,
+  },
+  {
+    'antosha417/nvim-lsp-file-operations',
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-neo-tree/neo-tree.nvim",
+    },
+    config = function()
+      require("lsp-file-operations").setup()
     end,
   },
 }
