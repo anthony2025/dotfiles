@@ -123,6 +123,10 @@
     lazygit
     gcc
     gnumake
+    keepassxc
+    openssh
+    bat
+    xclip
   ];
 
   # Enable the OpenSSH daemon.
