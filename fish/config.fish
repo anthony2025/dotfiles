@@ -45,32 +45,35 @@ set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
 fish_add_path $HOME/.local/share/coursier/bin
 
 if status --is-interactive
-    # personal directories
-    abbr -a dm $HOME/Documents
-    abbr -a ds $HOME/Desktop
-    abbr -a dw $HOME/Downloads
-    abbr -a config $XDG_CONFIG_HOME
+  # personal directories
+  abbr -a dm $HOME/Documents
+  abbr -a ds $HOME/Desktop
+  abbr -a dw $HOME/Downloads
+  abbr -a config $XDG_CONFIG_HOME
 
-    # better defaults
-    abbr -a :q exit
-    abbr -a lsa ls -AhGl
-    abbr -a mv mv -v
-    abbr -a cp cp -r
-    abbr -a rm rm -rf
-    abbr -a scp scp -r
-    abbr -a mkdir mkdir -p
-    abbr -a zip zip -r
-    abbr -a ln ln -s
-    abbr -a sbt sbtn --color=always
-    abbr -a rsync rsync --recursive --progress --archive
-    abbr -a vim nvim
+  # better defaults
+  abbr -a :q exit
+  abbr -a lsa ls -AhGl
+  abbr -a mv mv -v
+  abbr -a cp cp -r
+  abbr -a rm rm -rf
+  abbr -a scp scp -r
+  abbr -a mkdir mkdir -p
+  abbr -a zip zip -r
+  abbr -a ln ln -s
+  abbr -a sbt sbtn --color=always
+  abbr -a rsync rsync --recursive --progress --archive
+  abbr -a vim nvim
 
-    # tmux aliases
-    abbr -a t tmux
-    abbr -a tls tmux ls
-    abbr -a ta tmux a -t
-    abbr -a tn tmux new -t
+  # tmux aliases
+  abbr -a t tmux
+  abbr -a tls tmux ls
+  abbr -a ta tmux a -t
+  abbr -a tn tmux new -t
 
+
+  # nix aliases
+  abbr -a load sudo nixos-rebuild switch --flake /home/anthony/.config/nix/flake.nix
 
   # kitty manual shell integration
   if set -q KITTY_INSTALLATION_DIR

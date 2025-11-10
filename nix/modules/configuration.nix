@@ -6,7 +6,7 @@
 
 {
   # Activate nix flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Setup the bootloader
   boot.loader.systemd-boot.enable = true;
