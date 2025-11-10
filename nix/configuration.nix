@@ -10,6 +10,9 @@
       ./hardware-configuration.nix # Include the results of the hardware scan.
     ];
 
+  # Activate nix flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Setup the bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
