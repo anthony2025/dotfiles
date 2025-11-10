@@ -75,34 +75,6 @@ return {
     end,
   },
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    ft = {
-      'sh',
-      'bash',
-      'fish',
-      'nix',
-      'markdown',
-      'text',
-      'gitcommit',
-    },
-    config = function()
-      local nls = require 'null-ls'
-      nls.setup {
-        sources = {
-          -- text
-          nls.builtins.diagnostics.proselint,
-          -- shell
-          nls.builtins.diagnostics.shellcheck,
-          nls.builtins.diagnostics.fish,
-          nls.builtins.formatting.fish_indent,
-          -- nix
-          nls.builtins.diagnostics.statix,
-          nls.builtins.formatting.alejandra,
-        },
-      }
-    end,
-  },
-  {
     'j-hui/fidget.nvim',
     event = 'VeryLazy',
     config = true,

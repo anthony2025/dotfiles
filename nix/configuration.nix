@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix # Include the results of the hardware scan.
     ];
 
@@ -21,10 +21,10 @@
   boot.initrd.luks.devices."luks-be40fdd3-3aa3-4c9d-b31d-5216d36bd4b8".device = "/dev/disk/by-uuid/be40fdd3-3aa3-4c9d-b31d-5216d36bd4b8";
 
   # Define your hostname
-  networking.hostName = "glimmer"; 
+  networking.hostName = "glimmer";
 
   # Enables wireless support via wpa_supplicant
-  # networking.wireless.enable = true;  
+  # networking.wireless.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
