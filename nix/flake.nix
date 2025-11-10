@@ -14,7 +14,7 @@
       modules = [
         ./modules/hardware-configuration.nix
         ./modules/configuration.nix
-        #./modules/user.nix
+        ./modules/home.nix
       ];
     };
   };
