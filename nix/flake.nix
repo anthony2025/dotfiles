@@ -9,17 +9,19 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-
-    # Use "nixos", or your hostname as the name of the configuration
-    nixosConfigurations.glimmer = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
       system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./modules/hardware-configuration.nix
-        ./modules/configuration.nix
-        ./modules/home.nix
-      ];
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      # Use "nixos", or your hostname as the name of the configuration
+      nixosConfigurations.glimmer = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./modules/hardware-configuration.nix
+          ./modules/configuration.nix
+          #./modules/home.nix
+        ];
+      };
     };
-  };
 }
