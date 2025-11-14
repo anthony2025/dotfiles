@@ -73,7 +73,8 @@ if status --is-interactive
 
 
   # nix aliases
-  abbr -a load sudo nixos-rebuild switch --flake /home/anthony/.config/nix
+  abbr -a refresh_os sudo nixos-rebuild switch --flake /home/anthony/.config/nix
+  abbr -a refresh_user home-manager switch -f /home/anthony/.config/home-manager
 
   # kitty manual shell integration
   if set -q KITTY_INSTALLATION_DIR
