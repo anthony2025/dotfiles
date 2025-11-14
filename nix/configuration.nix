@@ -5,7 +5,6 @@
 { config, pkgs, ... }:
 
 {
-
   # Activate nix flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -113,8 +112,6 @@
     git
     fish
     tmux
-    fzf
-    ghq
     kitty
     ack
     bat
@@ -126,6 +123,7 @@
     openssh
     bat
     xclip
+    home-manager
   ];
 
   # Enable the OpenSSH daemon.
