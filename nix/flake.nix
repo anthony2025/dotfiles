@@ -11,8 +11,8 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
-        ./modules/hardware-configuration.nix
-        ./modules/configuration.nix
+        ./hardware-configuration.nix
+        ./configuration.nix
       ];
     };
   };
