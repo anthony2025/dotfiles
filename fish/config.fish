@@ -41,6 +41,9 @@ set -gx ACKRC $XDG_CONFIG_HOME/ack/ackrc
 # move xmonad config
 set -gx XMONAD_CONFIG_DIR $XDG_CONFIG_HOME/xmonad
 
+# import session variables from nix
+#bass "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
 # add coursier binaries to the path
 fish_add_path $HOME/.local/share/coursier/bin
 

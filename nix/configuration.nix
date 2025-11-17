@@ -111,7 +111,8 @@
     gcc
     gnumake
     openssh
-    home-manager
+    python3
+    alacritty
   ];
 
   # Enable the OpenSSH daemon.
