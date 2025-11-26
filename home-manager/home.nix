@@ -34,6 +34,7 @@
     pkgs.curl
     pkgs.fish
     pkgs.neovim
+    pkgs.ghq
     pkgs.nerd-fonts.fira-code
 
     # # You can also create simple shell scripts directly inside your
@@ -46,7 +47,7 @@
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
+  #home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -57,8 +58,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  };
-
+  #};
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -74,9 +74,11 @@
   # or
   #
   #  /etc/profiles/per-user/anthony/etc/profile.d/hm-session-vars.sh
+  # bass ~/.nix-profile/etc/profile.d/hm-session-vars.sh is throwing a permission error
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    #HOME_MANAGER = "hello";
   };
 
   # Let Home Manager install and manage itself.

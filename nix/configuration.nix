@@ -5,9 +5,6 @@
 { config, pkgs, ... }:
 
 {
-  # Activate nix flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
   # Setup the bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -113,6 +110,7 @@
     openssh
     python3
     alacritty
+    nerd-fonts.fira-code
   ];
 
   # Enable the OpenSSH daemon.

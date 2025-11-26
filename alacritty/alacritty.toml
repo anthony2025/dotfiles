@@ -15,25 +15,67 @@
 # I put the file alacritty.toml in $HOME/.config/alacritty. However it can be kept anywhere among the places mentioned in
 # https://github.com/alacritty/alacritty/tree/master#configuration
 
-[window]
+[bell]
+animation = "EaseOutExpo"
+duration = 0
 
-opacity = 0.9
+[colors]
+draw_bold_text_with_bright_colors = true
 
-padding.x = 10
-padding.y = 10
+# https://github.com/alacritty/alacritty-theme/blob/master/themes/one_dark.toml
+# Colors (One Dark)
 
-decorations = "Full"
-decorations_theme_variant = "Light" # "Dark"
+# Default colors
+[colors.primary]
+background = '#303030'
+foreground = '#abb2bf'
+
+# Normal colors
+[colors.normal]
+black   = '#1e2127'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#abb2bf'
+
+# Bright colors
+[colors.bright]
+black   = '#5c6370'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#ffffff'
+
+[debug]
+render_timer = false
 
 [font]
+size = 13
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family ="FiraCode Nerd Font", style = "Italic" }
 
-normal.family = "FiraCode Nerd Font Mono"
-bold.family = "FiraCode Nerd Font Mono"
-italic.family = "FiraCode Nerd Font Mono"
-bold_italic.family = "FiraCode Nerd Font Mono"
+[mouse]
+hide_when_typing = true
 
-size = 15.0
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
 
-# Tip: for inspiration, look for values in the source code files of your favorite VS Code themes, and use the color picker in
-# Google to test colors before setting a value, or simply using an editor such as VS Code where colors are displayed in a
-# small box when a HEX is detected by the editor.
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+dynamic_padding = true
+dynamic_title = true
+startup_mode = "Maximized"
+opacity = 0.8
+decorations = "Full"
+decorations_theme_variant = "Dark"
+

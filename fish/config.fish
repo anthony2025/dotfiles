@@ -74,10 +74,9 @@ if status --is-interactive
   abbr -a ta tmux a -t
   abbr -a tn tmux new -t
 
-
   # nix aliases
-  abbr -a refresh_os sudo nixos-rebuild switch --flake /home/anthony/.config/nix
-  abbr -a refresh_user home-manager switch -f /home/anthony/.config/home-manager
+  abbr -a refresh_os sudo nixos-rebuild switch --flake /home/anthony/.config/nix --upgrade
+  abbr -a refresh_user home-manager switch
 
   # kitty manual shell integration
   if set -q KITTY_INSTALLATION_DIR

@@ -34,7 +34,6 @@ SETUVAR _fish_abbr_zip:zip\x20\x2dr
 SETUVAR _fisher_0rax_2F_fish_2D_bd_files:\x7e/\x2econfig/fish/functions/bd\x2efish\x1e\x7e/\x2econfig/fish/completions/bd\x2efish
 SETUVAR _fisher_decors_2F_fish_2D_colors_files:\x7e/\x2econfig/fish/functions/colors\x2efish\x1e\x7e/\x2econfig/fish/completions/colors\x2efish
 SETUVAR _fisher_decors_2F_fish_2D_ghq_files:\x7e/\x2econfig/fish/functions/__ghq_repository_search\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/ghq_key_bindings\x2efish\x1e\x7e/\x2econfig/fish/completions/ghq\x2efish
-SETUVAR _fisher_edc_2F_bass_files:\x7e/\x2econfig/fish/functions/__bass\x2epy\x1e\x7e/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_lilyball_2F_nix_2D_env_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/nix\x2denv\x2efish
@@ -43,8 +42,7 @@ SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_extract_files:\x7e/\x2econfig/fish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_gityaw_files:\x7e/\x2econfig/fish/functions/gitunyaw\x2efish\x1e\x7e/\x2econfig/fish/functions/gityaw\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_hash_files:\x7e/\x2econfig/fish/functions/hash\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_xdg_files:\x7e/\x2econfig/fish/conf\x2ed/xdg\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1elilyball/nix\x2denv\x2efish\x1eoh\x2dmy\x2dfish/plugin\x2dgityaw\x1eoh\x2dmy\x2dfish/plugin\x2dxdg\x1eoh\x2dmy\x2dfish/plugin\x2dhash\x1eoh\x2dmy\x2dfish/plugin\x2dextract\x1edecors/fish\x2dghq\x1eoh\x2dmy\x2dfish/plugin\x2ddpaste\x1edecors/fish\x2dcolors\x1ejorgebucaran/autopair\x2efish\x1eavimehenwal/git\x2drefresh\x1esters/fish\x2dgit\x2dbranch\x2dprune\x1ereitzig/sdkman\x2dfor\x2dfish\x40v1\x2e4\x2e0\x1e0rax/fish\x2dbd\x1eedc/bass
-SETUVAR _fisher_reitzig_2F_sdkman_2D_for_2D_fish_40_v1_2E_34_2E_30__files:\x7e/\x2econfig/fish/functions/sdk\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/sdk\x2efish\x1e\x7e/\x2econfig/fish/completions/sdk\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1elilyball/nix\x2denv\x2efish\x1eoh\x2dmy\x2dfish/plugin\x2dgityaw\x1eoh\x2dmy\x2dfish/plugin\x2dxdg\x1eoh\x2dmy\x2dfish/plugin\x2dhash\x1eoh\x2dmy\x2dfish/plugin\x2dextract\x1edecors/fish\x2dghq\x1eoh\x2dmy\x2dfish/plugin\x2ddpaste\x1edecors/fish\x2dcolors\x1ejorgebucaran/autopair\x2efish\x1eavimehenwal/git\x2drefresh\x1esters/fish\x2dgit\x2dbranch\x2dprune\x1e0rax/fish\x2dbd
 SETUVAR _fisher_sters_2F_fish_2D_git_2D_branch_2D_prune_files:\x7e/\x2econfig/fish/functions/git\x2dbranch\x2dprune\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:565f89
