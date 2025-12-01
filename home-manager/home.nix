@@ -18,8 +18,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly "Hello, world!" when run.
-    pkgs.hello
+    pkgs.hello # # Adds the 'hello' command to your environment. It prints a friendly "Hello, world!" when run.
     pkgs.tmux
     pkgs.fzf
     pkgs.fish
@@ -46,20 +45,16 @@
     # '')
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  #home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      t = "tmux";
+      tls = "tmux ls";
+      ta = "tmux a -t";
+      tn = "tmux new -t";
+    };
+  };
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  #};
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -68,18 +63,9 @@
   #
   #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
   #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/anthony/etc/profile.d/hm-session-vars.sh
-  # bass ~/.nix-profile/etc/profile.d/hm-session-vars.sh is throwing a permission error
-  #
   home.sessionVariables = {
     # EDITOR = "emacs";
-    #HOME_MANAGER = "hello";
+    HOME_MANAGER = "hello world";
   };
 
   # Let Home Manager install and manage itself.
