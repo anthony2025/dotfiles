@@ -35,6 +35,7 @@
     pkgs.fish
     pkgs.neovim
     pkgs.ghq
+    pkgs.zoxide
     pkgs.nerd-fonts.fira-code
 
     # # You can also create simple shell scripts directly inside your

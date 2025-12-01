@@ -36,13 +36,14 @@ SETUVAR _fisher_decors_2F_fish_2D_colors_files:\x7e/\x2econfig/fish/functions/co
 SETUVAR _fisher_decors_2F_fish_2D_ghq_files:\x7e/\x2econfig/fish/functions/__ghq_repository_search\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/ghq_key_bindings\x2efish\x1e\x7e/\x2econfig/fish/completions/ghq\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_kidonng_2F_zoxide_2E_fish_files:\x7e/\x2econfig/fish/functions/__zoxide_cd\x2efish\x1e\x7e/\x2econfig/fish/functions/__zoxide_pwd\x2efish\x1e\x7e/\x2econfig/fish/functions/__zoxide_z\x2efish\x1e\x7e/\x2econfig/fish/functions/__zoxide_z_complete\x2efish\x1e\x7e/\x2econfig/fish/functions/__zoxide_zi\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/zoxide\x2efish
 SETUVAR _fisher_lilyball_2F_nix_2D_env_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/nix\x2denv\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_dpaste_files:\x7e/\x2econfig/fish/functions/__dpaste_auth\x2efish\x1e\x7e/\x2econfig/fish/functions/__dpaste_gist\x2efish\x1e\x7e/\x2econfig/fish/functions/__dpaste_help\x2efish\x1e\x7e/\x2econfig/fish/functions/__dpaste_parse_expires\x2efish\x1e\x7e/\x2econfig/fish/functions/__dpaste_parse_help\x2efish\x1e\x7e/\x2econfig/fish/functions/__dpaste_pastebin\x2efish\x1e\x7e/\x2econfig/fish/functions/__dpaste_send\x2efish\x1e\x7e/\x2econfig/fish/functions/__dpaste_send_gist\x2efish\x1e\x7e/\x2econfig/fish/functions/dpaste\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/dpaste\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_extract_files:\x7e/\x2econfig/fish/functions/extract\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_gityaw_files:\x7e/\x2econfig/fish/functions/gitunyaw\x2efish\x1e\x7e/\x2econfig/fish/functions/gityaw\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_hash_files:\x7e/\x2econfig/fish/functions/hash\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_xdg_files:\x7e/\x2econfig/fish/conf\x2ed/xdg\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1elilyball/nix\x2denv\x2efish\x1eoh\x2dmy\x2dfish/plugin\x2dgityaw\x1eoh\x2dmy\x2dfish/plugin\x2dxdg\x1eoh\x2dmy\x2dfish/plugin\x2dhash\x1eoh\x2dmy\x2dfish/plugin\x2dextract\x1edecors/fish\x2dghq\x1eoh\x2dmy\x2dfish/plugin\x2ddpaste\x1edecors/fish\x2dcolors\x1ejorgebucaran/autopair\x2efish\x1eavimehenwal/git\x2drefresh\x1esters/fish\x2dgit\x2dbranch\x2dprune\x1e0rax/fish\x2dbd
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1elilyball/nix\x2denv\x2efish\x1eoh\x2dmy\x2dfish/plugin\x2dgityaw\x1eoh\x2dmy\x2dfish/plugin\x2dxdg\x1eoh\x2dmy\x2dfish/plugin\x2dhash\x1eoh\x2dmy\x2dfish/plugin\x2dextract\x1edecors/fish\x2dghq\x1eoh\x2dmy\x2dfish/plugin\x2ddpaste\x1edecors/fish\x2dcolors\x1ejorgebucaran/autopair\x2efish\x1eavimehenwal/git\x2drefresh\x1esters/fish\x2dgit\x2dbranch\x2dprune\x1e0rax/fish\x2dbd\x1ekidonng/zoxide\x2efish
 SETUVAR _fisher_sters_2F_fish_2D_git_2D_branch_2D_prune_files:\x7e/\x2econfig/fish/functions/git\x2dbranch\x2dprune\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:565f89
@@ -97,6 +98,8 @@ SETUVAR fish_prompt_pwd_dir_length:3
 SETUVAR fish_term24bit:1
 SETUVAR fish_user_paths:/home/anthony/\x2elocal/share/coursier/bin\x1e/home/anthony/\x2edotnet/tools\x1e/Users/anthony/Library/Application\x20Support/coursier/bin\x1e/Applications/Firefox\x2eapp/Contents/MacOS\x1e/usr/local/opt/coreutils/libexec/gnubin
 SETUVAR fish_vi_force_cursor:true
+SETUVAR _ZO_ECHO:1
+SETUVAR _ZO_RESOLVE_SYMLINKS:1
 SETUVAR sponge_allow_previously_successful:true
 SETUVAR sponge_delay:2
 SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched
