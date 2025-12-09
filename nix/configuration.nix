@@ -110,7 +110,13 @@
     openssh
     python3
     alacritty
+    keepassxc
+    spotify
+  ];
+
+  fonts.packages = with pkgs; [
     nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
   ];
 
   # Enable the OpenSSH daemon.

@@ -25,7 +25,6 @@
     pkgs.tmux
     pkgs.bat
     pkgs.xclip
-    pkgs.keepassxc
     pkgs.lazygit
     pkgs.htop
     pkgs.ack
@@ -35,7 +34,6 @@
     pkgs.neovim
     pkgs.ghq
     pkgs.zoxide
-    pkgs.nerd-fonts.fira-code
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

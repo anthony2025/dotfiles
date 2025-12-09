@@ -57,9 +57,9 @@ render_timer = false
 
 [font]
 size = 13
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
-bold = { family = "FiraCode Nerd Font", style = "Bold" }
-italic = { family ="FiraCode Nerd Font", style = "Italic" }
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+bold = { family = "FiraCode Nerd Font Mono", style = "Bold" }
+italic = { family ="FiraCode Nerd Font Mono", style = "Italic" }
 
 [mouse]
 hide_when_typing = true
