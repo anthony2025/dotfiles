@@ -24,9 +24,10 @@
     pkgs.fish
     pkgs.tmux
     pkgs.bat
+    pkgs.fd
+    pkgs.ripgrep
     pkgs.xclip
     pkgs.lazygit
-    pkgs.htop
     pkgs.ack
     pkgs.wget
     pkgs.curl
@@ -40,6 +41,7 @@
     pkgs.gnumake
     pkgs.openssh
     pkgs.python3
+    pkgs.htop
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
