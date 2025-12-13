@@ -76,7 +76,7 @@ if status --is-interactive
 
   # nix aliases
   abbr -a refresh_os sudo nixos-rebuild switch --flake $XDG_CONFIG_HOME/nixos#glimmer
-  abbr -a refresh_wsl sudo nixos-rebuild switch --flake $XDG_CONFIG_HOME/nixwsl#glimmer
+  abbr -a refresh_wsl sudo nixos-rebuild switch --flake $XDG_CONFIG_HOME/nixwsl#glimmer --impure
   abbr -a refresh_user home-manager switch
 
   # kitty manual shell integration
