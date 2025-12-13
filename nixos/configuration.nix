@@ -109,9 +109,10 @@
     gnumake
     openssh
     python3
-    alacritty
+    kitty
     keepassxc
     spotify
+    home-manager
   ];
 
   fonts.packages = with pkgs; [

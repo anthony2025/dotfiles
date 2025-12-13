@@ -10,15 +10,19 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { self, nixpkgs, home-manager, ... }:
     let
+      username = "anthony"
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."anthony" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.username = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [
+          { nix.settings.experimental-features = ["nix-command" "flakes"]; } # Activate nix flakes
+          ./home.nix
+        ];
       };
     };
 }
