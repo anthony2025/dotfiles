@@ -34,6 +34,12 @@
     pkgs.neovim
     pkgs.ghq
     pkgs.zoxide
+    pkgs.vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    pkgs.git
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.openssh
+    pkgs.python3
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
