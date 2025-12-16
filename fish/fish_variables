@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR _ZO_ECHO:1
+SETUVAR _ZO_RESOLVE_SYMLINKS:1
 SETUVAR __fish_git_prompt_char_dirtystate:\x2a
 SETUVAR __fish_git_prompt_char_stagedstate:\u21e2
 SETUVAR __fish_git_prompt_char_upstream_ahead:\u21e1
@@ -14,7 +16,7 @@ SETUVAR __fish_git_prompt_color_upstream:blue
 SETUVAR __fish_git_prompt_show_informative_status:1
 SETUVAR __fish_git_prompt_showdirtystate:yes
 SETUVAR __fish_git_prompt_showupstream:yes
-SETUVAR __fish_initialized:3800
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr__21_21_:\x2d\x2dposition\x20anywhere\x20\x2d\x2dfunction\x20last_history_item
 SETUVAR _fish_abbr__3A_q:exit
 SETUVAR _fish_abbr_cp:cp\x20\x2dr
@@ -98,8 +100,6 @@ SETUVAR fish_prompt_pwd_dir_length:3
 SETUVAR fish_term24bit:1
 SETUVAR fish_user_paths:/home/anthony/\x2elocal/share/coursier/bin\x1e/home/anthony/\x2edotnet/tools\x1e/Users/anthony/Library/Application\x20Support/coursier/bin\x1e/Applications/Firefox\x2eapp/Contents/MacOS\x1e/usr/local/opt/coreutils/libexec/gnubin
 SETUVAR fish_vi_force_cursor:true
-SETUVAR _ZO_ECHO:1
-SETUVAR _ZO_RESOLVE_SYMLINKS:1
 SETUVAR sponge_allow_previously_successful:true
 SETUVAR sponge_delay:2
 SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched

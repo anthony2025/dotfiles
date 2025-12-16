@@ -75,9 +75,9 @@ if status --is-interactive
   abbr -a tn tmux new -t
 
   # nix aliases
-  abbr -a refresh_os sudo nixos-rebuild switch --flake $XDG_CONFIG_HOME/nixos#glimmer
-  abbr -a refresh_droid nix-on-droid switch --flake $XDG_CONFIG_HOME/nix-droid#asuka
-  abbr -a refresh_wsl sudo nixos-rebuild switch --flake $XDG_CONFIG_HOME/nix-wsl#glimmer-nix --impure
+  abbr -a refresh_os sudo nixos-rebuild switch --flake "$XDG_CONFIG_HOME/nixos#glimmer"
+  abbr -a refresh_droid nix-on-droid switch --flake "$XDG_CONFIG_HOME/nix-droid#asuka"
+  abbr -a refresh_wsl sudo nixos-rebuild switch --flake "$XDG_CONFIG_HOME/nix-wsl#glimmer-nix" --impure
   abbr -a refresh_user home-manager switch
 
   # kitty manual shell integration
