@@ -13,8 +13,24 @@
     <nixos-wsl/modules>
   ];
 
+  environment.systemPackages = [
+    pkgs.git
+    pkgs.vim
+    pkgs.openssh
+    pkgs.home-manager
+  ];
+
   wsl.enable = true;
   wsl.defaultUser = "anthony";
+
+  # set hostname
+  wsl.wslConf.network.hostname = "glimmer-nix";
+
+  # Whether to enable Docker Desktop integration. False by default.
+  wsl.docker-desktop.enable = true;
+
+  # Whether to enable shortcuts for GUI applications in the windows start menu. False by default.
+  wsl.startMenuLaunchers = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
