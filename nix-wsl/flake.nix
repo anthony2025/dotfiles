@@ -4,7 +4,7 @@
   };
 
   outputs = { self, nixpkgs,... }@inputs: {
-    nixosConfigurations.glimmer = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."glimmer-nix" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # we are only targeting nixos
       specialArgs = {inherit inputs;};
       modules = [

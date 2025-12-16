@@ -15,7 +15,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."anthony" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.anthony = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home.nix ];
       };
