@@ -42,6 +42,16 @@
     pkgs.openssh
     pkgs.python3
     pkgs.htop
+    pkgs.eza
+    pkgs.yazi
+    pkgs.ffmpeg
+    pkgs.jq
+    pkgs.fd
+    pkgs.poppler
+    pkgs.ripgrep
+    pkgs.resvg
+    pkgs.imagemagick
+
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

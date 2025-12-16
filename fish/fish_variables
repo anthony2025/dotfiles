@@ -16,7 +16,7 @@ SETUVAR __fish_git_prompt_color_upstream:blue
 SETUVAR __fish_git_prompt_show_informative_status:1
 SETUVAR __fish_git_prompt_showdirtystate:yes
 SETUVAR __fish_git_prompt_showupstream:yes
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr__21_21_:\x2d\x2dposition\x20anywhere\x20\x2d\x2dfunction\x20last_history_item
 SETUVAR _fish_abbr__3A_q:exit
 SETUVAR _fish_abbr_cp:cp\x20\x2dr
