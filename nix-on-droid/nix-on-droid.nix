@@ -45,7 +45,4 @@
 
   # Set the hostname, unsure if this exists on nix-on-droid
   #networking.hostName = "asuka";
-
-  user.userName = "anthony"
-  user.home = "/data/data/com.termux.nix/files/home"
 }
