@@ -51,6 +51,7 @@
     pkgs.ripgrep
     pkgs.resvg
     pkgs.imagemagick
+    pkgs.file
 
 
     # # You can also create simple shell scripts directly inside your
