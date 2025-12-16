@@ -8,9 +8,10 @@
     git
     openssh
     home-manager
-
+    neovim
     tmux
     fish
+    home-manager
 
     # Some common stuff that people expect to have
     #procps
