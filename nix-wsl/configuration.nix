@@ -13,6 +13,13 @@
     <nixos-wsl/modules>
   ];
 
+  environment.systemPackages = [
+    pkgs.git
+    pkgs.vim
+    pkgs.openssh
+    pkgs.home-manager
+  ];
+
   wsl.enable = true;
   wsl.defaultUser = "anthony";
 
