@@ -9,6 +9,9 @@
     openssh
     home-manager
 
+    tmux
+    fish
+
     # Some common stuff that people expect to have
     #procps
     #killall
