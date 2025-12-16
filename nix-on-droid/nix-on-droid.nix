@@ -5,6 +5,9 @@
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
     vim # or some other editor, e.g. nano or neovim
+    git
+    openssh
+    home-manager
 
     # Some common stuff that people expect to have
     #procps
@@ -39,4 +42,10 @@
 
   # Set your time zone
   time.timeZone = "America/New_York";
+
+  # Set the hostname, unsure if this exists on nix-on-droid
+  #networking.hostName = "asuka";
+
+  user.userName = "anthony"
+  user.home = "/data/data/com.termux.nix/files/home"
 }

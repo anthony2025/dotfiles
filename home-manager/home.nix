@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "anthony";
-  home.homeDirectory = "/home/anthony";
+  home.username = "nix-on-droid";
+  home.homeDirectory = "data/data/com.termux.nix/files/home";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
