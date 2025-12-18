@@ -53,6 +53,7 @@
     pkgs.imagemagick
     pkgs.file
     pkgs._7zz
+    pkgs.ld
 
 
     # # You can also create simple shell scripts directly inside your
