@@ -53,7 +53,16 @@
     pkgs.imagemagick
     pkgs.file
     pkgs._7zz
-    pkgs.ld
+
+    # for Scala development
+    pkgs.ammonite
+    pkgs.bloop
+    pkgs.coursier
+    pkgs.jdk
+    pkgs.mill
+    pkgs.sbt
+    pkgs.scala-cli
+    pkgs.scalafmt
 
 
     # # You can also create simple shell scripts directly inside your
