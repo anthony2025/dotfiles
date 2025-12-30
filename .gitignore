@@ -1,1 +1,2 @@
 *
+gcloud # redundant, avoids accidentally commiting secrets

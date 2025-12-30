@@ -12,6 +12,9 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
+  # allow unfree programs
+  nixpkgs.config.allowUnfree = true;
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -23,52 +26,57 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.hello # # Adds the 'hello' command to your environment. It prints a friendly "Hello, world!" when run.
-    pkgs.tmux
-    pkgs.fzf
-    pkgs.fish
-    pkgs.tmux
-    pkgs.bat
-    pkgs.fd
-    pkgs.ripgrep
-    pkgs.xclip
-    pkgs.lazygit
-    pkgs.ack
-    pkgs.wget
-    pkgs.curl
-    pkgs.fish
-    pkgs.neovim
-    pkgs.ghq
-    pkgs.zoxide
-    pkgs.vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    pkgs.git
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.openssh
-    pkgs.python3
-    pkgs.htop
-    pkgs.eza
-    pkgs.yazi
-    pkgs.ffmpeg
-    pkgs.jq
-    pkgs.fd
-    pkgs.poppler
-    pkgs.ripgrep
-    pkgs.resvg
-    pkgs.imagemagick
-    pkgs.file
-    pkgs._7zz
+  home.packages = with pkgs; [
+    hello # # Adds the 'hello' command to your environment. It prints a friendly "Hello, world!" when run.
+    tmux
+    fzf
+    fish
+    tmux
+    bat
+    fd
+    ripgrep
+    xclip
+    lazygit
+    ack
+    wget
+    curl
+    fish
+    neovim
+    ghq
+    zoxide
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    git
+    gcc
+    gnumake
+    openssh
+    python3
+    htop
+    eza
+    yazi
+    ffmpeg
+    jq
+    fd
+    poppler
+    ripgrep
+    resvg
+    imagemagick
+    file
+    _7zz
+    zellij
 
     # for Scala development
-    pkgs.ammonite
-    pkgs.bloop
-    pkgs.coursier
-    pkgs.jdk
-    pkgs.mill
-    pkgs.sbt
-    pkgs.scala-cli
-    pkgs.scalafmt
+    ammonite
+    bloop
+    coursier
+    jdk
+    mill
+    sbt
+    scala-cli
+    scalafmt
+
+    # for Zoomcamp
+    terraform
+
 
 
     # # You can also create simple shell scripts directly inside your

@@ -35,6 +35,7 @@
   # Set the timezone to Eastern Time.
   time.timeZone = "America/New_York";
 
+  # activate flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default

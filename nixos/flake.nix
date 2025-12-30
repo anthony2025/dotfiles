@@ -9,7 +9,6 @@
       system = "x86_64-linux"; # we are only targeting nixos
       specialArgs = {inherit inputs;};
       modules = [
-        { nix.settings.experimental-features = ["nix-command" "flakes"]; } # Activate nix flakes
         ./hardware-configuration.nix
         ./configuration.nix
       ];
