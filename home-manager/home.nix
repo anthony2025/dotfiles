@@ -24,10 +24,10 @@
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
     hello # # Adds the 'hello' command to your environment. It prints a friendly "Hello, world!" when run.
+    python3
+    python3Packages.pip
     tmux
     fzf
     fish
@@ -49,7 +49,6 @@
     gcc
     gnumake
     openssh
-    python3
     htop
     eza
     yazi
@@ -76,7 +75,12 @@
 
     # for Zoomcamp
     terraform
+    google-cloud-sdk
+    pgcli
+    uv
 
+    # for assessment
+    nodejs_24
 
 
     # # You can also create simple shell scripts directly inside your
