@@ -62,6 +62,7 @@
     file
     _7zz
     zellij
+    less
 
     # for Scala development
     ammonite
