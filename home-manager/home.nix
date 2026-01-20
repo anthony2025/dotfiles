@@ -63,6 +63,7 @@
     _7zz
     zellij
     less
+    delta
 
     # for Scala development
     ammonite
