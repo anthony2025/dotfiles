@@ -42,10 +42,10 @@ return {
     vim.keymap.set('n', 'go', "<cmd>call append(line('.'), repeat([''], v:count1))<cr>")
 
     -- reselect latest changed, put, or yanked text
-    vim.keymap.set('n', '<leader>h', '"`[" . strpart(getregtype(), 0, 1) . "`]"', { expr = true })
+    vim.keymap.set('n', '<leader>v', '"`[" . strpart(getregtype(), 0, 1) . "`]"', { expr = true })
 
     -- better paste
-    vim.keymap.set('v', 'p', '"_dP')
+    --vim.keymap.set('v', 'p', '"_dP')
 
     -- repeat last macro more easily
     vim.keymap.set({ 'n', 'v' }, "''", '@@')

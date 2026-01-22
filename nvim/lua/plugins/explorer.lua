@@ -21,7 +21,7 @@ return {
         mode = { 'i', 'n', 'v' },
       },
       {
-        '<c-f>',
+        '<c-t>',
         function()
           require('neo-tree.command').execute {
             action = 'focus',
@@ -72,8 +72,16 @@ return {
     end,
   },
   {
-    'ibhagwan/fzf-lua',
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "nvim-mini/mini.icons" },
+    ---@module "fzf-lua"
+    ---@type fzf-lua.Config|{}
+    ---@diagnostic disable: missing-fields
+    opts = {},
+    ---@diagnostic enable: missing-fields
     keys = {
       {
         '<c-p>',
@@ -81,7 +89,6 @@ return {
         mode = { 'i', 'n', 'v' },
       },
     },
-    opts = "sk",
   },
   {
     'christoomey/vim-tmux-navigator',
