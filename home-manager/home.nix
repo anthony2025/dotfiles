@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "anthony";
   home.homeDirectory = "/home/anthony";
 
@@ -83,6 +82,7 @@
 
     # for assessment
     nodejs_24
+    typescript-language-server
 
 
     # # You can also create simple shell scripts directly inside your
