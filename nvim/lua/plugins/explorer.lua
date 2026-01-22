@@ -72,13 +72,20 @@ return {
     end,
   },
   {
-    'antosha417/nvim-lsp-file-operations',
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-neo-tree/neo-tree.nvim",
+    'ibhagwan/fzf-lua',
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      {
+        '<c-p>',
+        function() require('fzf-lua').files() end,
+        mode = { 'i', 'n', 'v' },
+      },
     },
-    config = function()
-      require("lsp-file-operations").setup()
-    end,
+    opts = "sk",
+  },
+  {
+    'christoomey/vim-tmux-navigator',
+    event = 'VeryLazy',
+    init = function() vim.g.tmux_navigator_disable_when_zoomed = 1 end,
   },
 }

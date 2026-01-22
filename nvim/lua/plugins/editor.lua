@@ -72,18 +72,31 @@ return {
     event = 'VeryLazy',
   },
   {
-    'willothy/flatten.nvim',
-    lazy = false,
-    priority = 1001,
-    opts = {
-      window = {
-        open = 'alternate',
-      },
+    'echasnovski/mini.comment',
+    enabled = false,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'JoosepAlviste/nvim-ts-context-commentstring',
     },
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function()
+      require('mini.comment').setup {
+        hooks = {
+          pre = function() require('ts_context_commentstring.internal').update_commentstring {} end,
+        },
+        options = {
+          ignore_blank_line = true,
+        },
+      }
+    end,
   },
   {
-    'ecthelionvi/NeoComposer.nvim',
-    dependencies = { 'kkharji/sqlite.lua' },
-    setup = true,
+    'lambdalisue/suda.vim',
+    event = 'VeryLazy',
+    init = function() vim.g.suda_smart_edit = 1 end,
+  },
+  {
+    'jghauser/mkdir.nvim',
+    event = 'VeryLazy',
   },
 }

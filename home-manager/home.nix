@@ -64,6 +64,12 @@
     less
     delta
 
+    # nvim language servers
+    nodejs_24
+    typescript-language-server
+    lua-language-server
+    skim
+
     # for Scala development
     ammonite
     bloop
@@ -79,10 +85,6 @@
     google-cloud-sdk
     pgcli
     uv
-
-    # for assessment
-    nodejs_24
-    typescript-language-server
 
 
     # # You can also create simple shell scripts directly inside your
