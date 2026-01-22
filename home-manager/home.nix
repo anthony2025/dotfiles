@@ -68,7 +68,6 @@
     nodejs_24
     typescript-language-server
     lua-language-server
-    skim
 
     # for Scala development
     ammonite

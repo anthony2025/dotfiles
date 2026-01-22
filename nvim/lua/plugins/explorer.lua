@@ -73,15 +73,7 @@ return {
   },
   {
     "ibhagwan/fzf-lua",
-    -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- or if using mini.icons/mini.nvim
-    -- dependencies = { "nvim-mini/mini.icons" },
-    ---@module "fzf-lua"
-    ---@type fzf-lua.Config|{}
-    ---@diagnostic disable: missing-fields
-    opts = {},
-    ---@diagnostic enable: missing-fields
     keys = {
       {
         '<c-p>',
@@ -89,6 +81,26 @@ return {
         mode = { 'i', 'n', 'v' },
       },
     },
+    opts = {
+      files = {
+        no_ignore = true,
+      }
+    }
+  },
+  {
+    'nvim-telescope/telescope.nvim', version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
+    -- keys = {
+    --   {
+    --     '<c-p>',
+    --     function() require('fzf-lua').files() end,
+    --     mode = { 'i', 'n', 'v' },
+    --   },
+    -- },
   },
   {
     'christoomey/vim-tmux-navigator',
