@@ -60,6 +60,8 @@ return {
     vim.keymap.set('n', 'gn', vim.lsp.buf.rename)
     vim.keymap.set('n', 'ga', vim.lsp.buf.code_action)
     vim.keymap.set('n', 'gl', vim.lsp.codelens.display)
+    vim.keymap.set('i', '<C-space>', '<C-x><C-o>') -- omnifunc
+
 
     -- open plugin manager
     vim.keymap.set('n', '<leader>pp', function() require('lazy').show() end)

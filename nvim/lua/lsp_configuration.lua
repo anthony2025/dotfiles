@@ -11,8 +11,14 @@ return {
       cmd = { 'typescript-language-server', '--stdio' },
       filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
     })
-
-    -- Enable Typescript Language Server
     vim.lsp.enable('ts_ls')
+
+    -- Set configuration for lua language server
+    vim.lsp.config('luals', {
+      cmd = {'lua-language-server'},
+      filetypes = {'lua'},
+      root_markers = {'.luarc.json', '.luarc.jsonc'},
+    })
+    vim.lsp.enable('luals')
   end
 }
