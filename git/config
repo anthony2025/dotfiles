@@ -4,7 +4,7 @@
 [user]
   email = anthony2025@pm.me
   name = "Anthony Ascencio"
-  signingKey = ~/.ssh/id_ed25519.pub
+  signingkey = ~/.ssh/id_ed25519.pub
 
 [core]
   pager = delta
