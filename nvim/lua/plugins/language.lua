@@ -164,29 +164,19 @@ return {
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
-    event = 'VeryLazy',
-    opts = {
-      -- list of servers for mason to install
-      ensure_installed = {
-        "ts_ls",
-        "html",
-        "cssls",
-        "tailwindcss",
-        "svelte",
-        "lua_ls",
-        "graphql",
-        "emmet_ls",
-        "prismals",
-        "pyright",
-        "eslint",
-        "lua-language-server",
+    url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    keys = {
+      {
+        '<leader>dl',
+        function() require('lsp_lines').toggle() end,
       },
     },
-    dependencies = {
-      "williamboman/mason.nvim",
-      "neovim/nvim-lspconfig",
-    },
+    config = function()
+      local lsp_lines = require 'lsp_lines'
+      lsp_lines.setup()
+      lsp_lines.toggle()
+      vim.diagnostic.config { virtual_text = false } -- disable redundant text
+    end,
   },
 }
 
