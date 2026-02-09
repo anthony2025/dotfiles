@@ -52,7 +52,7 @@ return {
 
     -- lsp common mappings
     vim.keymap.set('n', 'gh', vim.lsp.buf.hover)
-    vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help)
+    vim.keymap.set('n', 'gH', vim.lsp.buf.signature_help)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references)
