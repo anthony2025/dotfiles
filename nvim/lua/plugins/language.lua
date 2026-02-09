@@ -116,6 +116,7 @@ return {
   {
     'L3MON4D3/LuaSnip',
     build = 'make install_jsregexp',
+    event = 'VeryLazy',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'rafamadriz/friendly-snippets',
@@ -143,4 +144,49 @@ return {
       require('luasnip.loaders.from_snipmate').lazy_load()
     end,
   },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      { "antosha417/nvim-lsp-file-operations", config = true },
+      { "folke/lazydev.nvim", opts = {} },
+    },
+    config = function()
+      -- import cmp-nvim-lsp plugin
+      local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+      -- used to enable autocompletion (assign to every lsp server config)
+      local capabilities = cmp_nvim_lsp.default_capabilities()
+
+      vim.lsp.config("*", {
+        capabilities = capabilities,
+      })
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    event = 'VeryLazy',
+    opts = {
+      -- list of servers for mason to install
+      ensure_installed = {
+        "ts_ls",
+        "html",
+        "cssls",
+        "tailwindcss",
+        "svelte",
+        "lua_ls",
+        "graphql",
+        "emmet_ls",
+        "prismals",
+        "pyright",
+        "eslint",
+        "lua-language-server",
+      },
+    },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
+    },
+  },
 }
+
