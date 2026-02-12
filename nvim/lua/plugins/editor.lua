@@ -54,24 +54,6 @@ return {
     config = function() require('mini.trailspace').setup() end,
   },
   {
-    'max397574/better-escape.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-  {
-    'mbbill/undotree',
-    keys = {
-      { '<leader>u', vim.cmd.UndotreeToggle },
-    },
-  },
-  {
-    'romainl/vim-qf',
-    enabled = false,
-    event = 'VeryLazy',
-  },
-  {
     'echasnovski/mini.comment',
     enabled = false,
     dependencies = {
@@ -88,6 +70,13 @@ return {
           ignore_blank_line = true,
         },
       }
+    end,
+  },
+  {
+    'max397574/better-escape.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require("better_escape").setup()
     end,
   },
   {
