@@ -99,8 +99,6 @@ return {
     event = 'VeryLazy',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
-      'rafamadriz/friendly-snippets',
-      'honza/vim-snippets',
     },
     config = function()
       local luasnip = require 'luasnip'

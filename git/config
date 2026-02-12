@@ -22,7 +22,7 @@
   sort = version:refname
 
 [branch]
-  sort = -committerdate/
+  sort = -committerdate
 
 [pager]
   hyperlinks = true

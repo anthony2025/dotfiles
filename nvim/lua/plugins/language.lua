@@ -21,6 +21,7 @@ return {
   },
   {
     url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    lazy = false, -- this toggles lines on during start but prevents us needing to call the keybind twice
     keys = {
       {
         '<leader>dl',
