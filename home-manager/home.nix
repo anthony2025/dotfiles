@@ -65,26 +65,8 @@
     delta
 
     # nvim language servers
-    nodejs_24
     typescript-language-server
     lua-language-server
-
-    # for Scala development
-    ammonite
-    bloop
-    coursier
-    jdk
-    mill
-    sbt
-    scala-cli
-    scalafmt
-
-    # for Zoomcamp
-    terraform
-    google-cloud-sdk
-    pgcli
-    uv
-
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
