@@ -56,21 +56,7 @@ return {
   {
     'echasnovski/mini.comment',
     enabled = false,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    },
     event = { 'BufReadPost', 'BufNewFile' },
-    config = function()
-      require('mini.comment').setup {
-        hooks = {
-          pre = function() require('ts_context_commentstring.internal').update_commentstring {} end,
-        },
-        options = {
-          ignore_blank_line = true,
-        },
-      }
-    end,
   },
   {
     'max397574/better-escape.nvim',

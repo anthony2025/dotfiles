@@ -97,9 +97,9 @@ return {
     'L3MON4D3/LuaSnip',
     build = 'make install_jsregexp',
     event = 'VeryLazy',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
+    -- dependencies = {
+    --   'nvim-treesitter/nvim-treesitter',
+    -- },
     config = function()
       local luasnip = require 'luasnip'
       luasnip.setup {
